@@ -72,7 +72,7 @@ $mat-accent: (
 );
 $primary: mat-palette($mat-primary);
 $accent: mat-palette($mat-accent);
-$theme: mat-dark-theme($primary, $accent);
+$theme: mat-light-theme($primary, $accent);
 @include angular-material-theme($theme);
 
 
@@ -82,8 +82,6 @@ body {
   font: 16px;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: $color_primary_900;
-  color: white;
   &::-webkit-scrollbar { position: absolute; top: 0; right: 0; width:10px; height: 10px;}
   &::-webkit-scrollbar-track { background-color:transparent; }
   &::-webkit-scrollbar-track:hover { background-color:transparent; }

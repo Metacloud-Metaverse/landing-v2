@@ -21,19 +21,13 @@ export class MainLayoutComponent implements OnInit {
 
   openVideoModal() {
     this.dialog.open(VideoModalComponent, {
-      data: {
-        width: '500',
-        panelclass: 'video-modal'
-      },
+      panelClass: 'video-modal-container'
     });
   }
 
   menuModal() {
     this.dialog.open(MenuModalComponent, {
-      data: {
-        width: '500',
-        panelclass: 'menu-modal'
-      },
+      panelClass: 'menu-modal-container'
     });
   }
 }

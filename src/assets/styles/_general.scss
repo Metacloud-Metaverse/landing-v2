@@ -18,14 +18,12 @@
 
   @keyframes introComponent {
     0% {
-      position: relative;
-      top: 20px;
       opacity: 0;
+      transform: translateY(20px);
     }
     100% {
-      position: relative;
-      top: 0px;
       opacity: 1;
+      transform: translateY(0);
     }
   }
 }
