@@ -1,0 +1,218 @@
+@import "./vars";
+
+/* @include gt-sm {
+  ::-webkit-scrollbar { width:8px; height: 8px;}
+  ::-webkit-scrollbar-track { background-color:transparent; }
+  ::-webkit-scrollbar-track:hover { background-color:transparent; }
+  ::-webkit-scrollbar-thumb { background-color:#ceced3; border-radius:8px; border:0px solid #fff;}
+  ::-webkit-scrollbar-thumb:hover { background-color:#adadb8; }
+  ::-webkit-scrollbar-button {display:none;}
+} */
+
+.intro-component-animation {
+  transition: $animation;
+  -moz-transition: $animation;
+  -o-transition: $animation;
+  -webkit-transition: $animation;
+  animation: introComponent 0.3s ease-out;
+
+  @keyframes introComponent {
+    0% {
+      position: relative;
+      top: 20px;
+      opacity: 0;
+    }
+    100% {
+      position: relative;
+      top: 0px;
+      opacity: 1;
+    }
+  }
+}
+
+.btn-icon {
+  background: white;
+  color: $black_medium_emphasis;
+  border-radius: 6px;
+  min-width: initial;
+  &:hover {
+    color: $black_high_emphasis;
+    box-shadow: $box_shadow_12;
+  }
+}
+
+.container {
+  width: 1200px;
+  max-width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 2em;
+  @include xs {
+    padding: 1.2em;
+  }
+  @include sm {
+    padding: 1.2em 3em;
+  }
+}
+
+.animated {
+  transition: $animation;
+  -moz-transition: $animation;
+  -o-transition: $animation;
+  -webkit-transition: $animation;
+}
+
+.link {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: $color_primary_500;
+}
+
+.hover-linear {
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    background-color: $color_primary_500;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+    border-radius: 100px;
+  }
+  &:hover {
+    &:after {
+      transform-origin: bottom left;
+      transform: scaleX(1);
+    }
+  }
+}
+
+.separate-line-vert {
+  width: 1px;
+  min-width: 1px;
+  height: 20px;
+  min-height: 20px;
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  margin: 0 1em;
+  display: inline-block;
+}
+
+.color-success {
+  color: $color_success;
+}
+
+.color-primary {
+  color: $color_primary_500;
+}
+
+.color-accent {
+  color: $color_accent_500;
+}
+
+.alert {
+  font-family: $font_text;
+  border-radius: 6px;
+  margin: 16px 0;
+  padding: 16px 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  mat-icon {
+    margin-right: 16px;
+  }
+}
+
+.alert-primary {
+  color: $color_primary_500 !important;
+  background-color: rgba($color: $color_primary_500, $alpha: 0.1) !important;
+}
+
+.alert-success {
+  color: $color_success !important;
+  background-color: rgba($color: $color_success, $alpha: 0.1) !important;
+}
+
+.alert-error {
+  color: $color_error !important;
+  background-color: rgba($color: $color_error, $alpha: 0.1) !important;
+}
+
+.alert-warning {
+  color: $color_warning !important;
+  background-color: rgba($color: $color_warning, $alpha: 0.1) !important;
+}
+
+.box {
+  padding: 1.2em;
+  box-shadow: $box_shadow_12;
+  background-color: white;
+  border-radius: 0.5em;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.snackbar_success {
+  background: $color_success_hover;
+  color: white;
+  font-weight: 400;
+  box-shadow: $box_shadow_24;
+}
+
+
+.avatar {
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border-radius: 40px;
+  overflow: hidden;
+  display: block;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.btn-load-more{
+  background-color: rgba($color: $color_primary_500, $alpha: 0.1) !important;
+  color: $color_primary_500 !important;
+  transition: $animation;
+  display: block !important;
+  margin: auto !important;
+  &:hover{
+    background-color: rgba($color: $color_primary_500, $alpha: 0.2) !important;
+  }
+}
+
+.text-shadow{
+  text-shadow: 0 0 0.4em rgba($color: white, $alpha: 0.4);
+}
+
+.light-circle{
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(100px);
+  opacity: 0.15;
+  width: 600px;
+  height: 600px;
+  border-radius: 6000px;
+}

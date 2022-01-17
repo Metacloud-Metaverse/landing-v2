@@ -1,0 +1,68 @@
+@import "./media-breakpoint";
+
+/* Components */
+$animation: all 0.3s ease;
+
+// Typography
+$font_title: "PT Sans Caption", sans-serif;
+$font_text: "Montserrat", sans-serif;
+
+// Colors
+$black_high_emphasis: rgba(29, 21, 45, 1);
+$black_medium_emphasis: rgba(29, 21, 45, 0.7);
+$black_inactive: rgba(29, 21, 45, 0.54);
+$black_disabled: rgba(29, 21, 45, 0.38);
+$black_focus_overlay: rgba(29, 21, 45, 0.38);
+
+$white_high_emphasis: rgba(255, 255, 255, 1);
+$white_medium_emphasis: rgba(255, 255, 255, 0.7);
+$white_inactive: rgba(255, 255, 255, 0.54);
+$white_disabled: rgba(255, 255, 255, 0.5);
+
+$color_primary_50:  #ECF1F2;
+$color_primary_100: #CEECFF;
+$color_primary_200: #8DC0E2;
+$color_primary_300: #4B9ED6;
+$color_primary_400: #1884CD;
+$color_primary_500: #8850EB;
+$color_primary_600: #0063A6;
+$color_primary_700: #00558E;
+$color_primary_800: #004777;
+$color_primary_900: #1d152d;
+$color_primary_A100: #C3D9FF;
+$color_primary_A200: #90B8FF;
+$color_primary_A400: #5D97FF;
+$color_primary_A700: #4487FF;
+
+$color_accent_50:  #F9EFE4;
+$color_accent_100: #F9E8CB;
+$color_accent_200: #F8DA9B;
+$color_accent_300: #F8CB69;
+$color_accent_400: #F8B725;
+$color_accent_500: #EAA413;
+$color_accent_600: #D18911;
+$color_accent_700: #BC7410;
+$color_accent_800: #A55C0F;
+$color_accent_900: #91460E;
+$color_accent_A100: #FFFFFF;
+$color_accent_A200: #FFE7D0;
+$color_accent_A400: #FFCD9D;
+$color_accent_A700: #FFC084;
+
+$color_success: #49B45F;
+$color_success_hover: #349146;
+$color_error: #FF0C3E;
+$color_error_hover: #c91a3d;
+$color_warning: #f39200;
+$color_warning_hover: #f18a00;
+$color_background: #F3F4F8;
+$color_background_hover: #dce0e7;
+
+// Borders
+$borderLight: 1px solid rgba(0, 0, 0, 0.1);
+
+// Shadows
+$box_shadow_6: 0 3px 4px 0 rgba( $color: #000000, $alpha: 0.07), 0 4px 20px 0 rgba( $color: #000000, $alpha: 0.06);
+$box_shadow_12: 0 3px 10px -8px rgba($color: #000000, $alpha: 0.04), 0 10px 23px 0 rgba($color: #000000, $alpha: 0.1);
+$box_shadow_16: 0 4px 20px -6px rgba($color: #000000, $alpha: 0.1), 0 14px 23px 0 rgba($color: #000000, $alpha: 0.2);
+$box_shadow_24: 0 4px 20px -6px rgba($color: #000000, $alpha: 0.2), 0 14px 23px 0 rgba($color: #000000, $alpha: 0.3);

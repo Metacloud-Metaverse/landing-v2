@@ -1,4 +1,125 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/vars";
+
+// Angular Material Colors
+$mat-primary: (
+  50: $color_primary_50,
+  100: $color_primary_100,
+  200: $color_primary_200,
+  300: $color_primary_300,
+  400: $color_primary_400,
+  500: $color_primary_500,
+  600: $color_primary_600,
+  700: $color_primary_700,
+  800: $color_primary_800,
+  900: $color_primary_900,
+  A100: $color_primary_A100,
+  A200: $color_primary_A200,
+  A400: $color_primary_A400,
+  A700: $color_primary_A700,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$mat-accent: (
+  50: $color_accent_50,
+  100: $color_accent_100,
+  200: $color_accent_200,
+  300: $color_accent_300,
+  400: $color_accent_400,
+  500: $color_accent_500,
+  600: $color_accent_600,
+  700: $color_accent_700,
+  800: $color_accent_800,
+  900: $color_accent_900,
+  A100: $color_accent_A100,
+  A200: $color_accent_A200,
+  A400: $color_accent_A400,
+  A700: $color_accent_A700,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+$primary: mat-palette($mat-primary);
+$accent: mat-palette($mat-accent);
+$theme: mat-dark-theme($primary, $accent);
+@include angular-material-theme($theme);
+
+
+html, body { height: 100%; font-size: 100%; }
+body {
+  font-size: 16px;
+  font: 16px;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: $color_primary_900;
+  color: white;
+  &::-webkit-scrollbar { position: absolute; top: 0; right: 0; width:10px; height: 10px;}
+  &::-webkit-scrollbar-track { background-color:transparent; }
+  &::-webkit-scrollbar-track:hover { background-color:transparent; }
+  &::-webkit-scrollbar-thumb { background-color:#bbb5b536; border-radius:8px; border:0px solid rgb(0, 0, 0);}
+  &::-webkit-scrollbar-thumb:hover { background-color:#6b6b70; }
+  &::-webkit-scrollbar-button {display:none;}
+  @include xs { font-size: 14px; }
+  @include sm { font-size: 15px; }
+  @include md { font-size: 15.5px; }
+}
+
+$custom-typography: mat-typography-config(
+  $font-family: '"Montserrat", sans-serif'
+);
+@include angular-material-typography($custom-typography);
+@include mat-base-typography($custom-typography);
+
+@import "./assets/styles/mat-menu";
+@import "./assets/styles/typography";
+@import "./assets/styles/general";
+
+.mat-tooltip{
+  background-color: rgba($color: #000000, $alpha: 0.8);
+  font-size: 0.85em;
+}
+
+::selection {
+  color: $black_high_emphasis;
+  background-color: lighten($color_primary_500, 10%);
+}
+
+.mat-dialog-container{
+  background-color: $color_primary_900;
+}
+
+app-waves{
+  z-index: 1;
+  position: relative;
+}
