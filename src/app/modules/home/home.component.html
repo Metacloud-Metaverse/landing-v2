@@ -15,8 +15,16 @@
   </div>
 </div>
 
-
-<p>home works!</p>
+<br><br><br><br><br><br><br><br><br>
 
 
 <button mat-stroked-button (click)="clickToStart = true;">Click to Start</button>
+<button mat-stroked-button (click)="activeBlink = !activeBlink;">Active Blink animation</button>
+
+<!-- <div class="blink"></div> -->
+
+<video *ngIf="activeBlink" src="/assets/videos/blink-video.mp4" autoplay muted class="blink-video"></video>
+
+<section class="section1">
+  <h2><b></b></h2>
+</section>

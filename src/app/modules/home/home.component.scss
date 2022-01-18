@@ -1,32 +1,27 @@
 @import "../../../assets/styles/vars";
 
-
-
-
-
 @function randomNum($max, $min: 0, $u: 1) {
-	@return ($min + random($max)) * $u;
+  @return ($min + random($max)) * $u;
 }
 
 @function randomColor() {
-    @return rgb(randomNum(255), randomNum(255), randomNum(255));
+  @return rgb(randomNum(255), randomNum(255), randomNum(255));
 }
 
 @function shadowSet($maxWidth, $maxHeight, $count) {
-    $shadow : 0 0 0 0 randomColor();
+  $shadow: 0 0 0 0 randomColor();
 
-    @for $i from 0 through $count {
-        $x: #{random(10000) / 10000 * $maxWidth};
-        $y: #{random(10000) / 10000 * $maxHeight};
+  @for $i from 0 through $count {
+    $x: #{random(10000) / 10000 * $maxWidth};
+    $y: #{random(10000) / 10000 * $maxHeight};
 
+    $shadow: $shadow, #{$x} #{$y} 0 #{random(5)}px randomColor();
+  }
 
-        $shadow: $shadow, #{$x} #{$y} 0 #{random(5)}px randomColor();
-    }
-
-    @return $shadow;
+  @return $shadow;
 }
 
-.lines-speed{
+.lines-speed {
   margin: auto;
   perspective: 5px;
   perspective-origin: 50% 50%;
@@ -35,7 +30,7 @@
   top: 200px;
   pointer-events: none;
   opacity: 0;
-  .g-group{
+  .g-group {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -45,7 +40,7 @@
     animation: move 8s infinite linear;
   }
 
-  .g-group:nth-child(2){
+  .g-group:nth-child(2) {
     animation: move 8s infinite linear;
     animation-delay: -4s;
   }
@@ -97,24 +92,24 @@
   }
 
   @keyframes move {
-    0%{
+    0% {
       transform: translateZ(-200px) rotate(0deg);
     }
-    100%{
+    100% {
       transform: translateZ(150px) rotate(0deg);
     }
   }
 
   @keyframes fade {
-    0%{
-      opacity: .2;
+    0% {
+      opacity: 0.2;
     }
     25%,
-    60%{
+    60% {
       opacity: 1;
     }
-    100%{
-      opacity: .2;
+    100% {
+      opacity: 0.2;
     }
   }
 
@@ -128,6 +123,78 @@
   }
 }
 
-.lines-speed-active{
+.lines-speed-active {
   opacity: 1;
 }
+
+.blink-video{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 20000;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* .blink {
+  position: fixed;
+  top: -20%;
+  left: -15%;
+  width: 130%;
+  height: 0px;
+  background: black;
+  z-index: 2000;
+  transition: all 0.5s ease;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -300px;
+    left: -20px;
+    height: 300px;
+    width: 100%;
+    border-top-left-radius: 50%;
+    background: transparent;
+    box-shadow: 0 -150px 0 0 black;
+    transition: all 0.3s ease;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -300px;
+    right: -20px;
+    height: 300px;
+    width: 100%;
+    border-top-right-radius: 50%;
+    background: transparent;
+    box-shadow: 0 -150px 0 0 black;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    top: -10%;
+    height: calc(100vh + 320px);
+    border-radius: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    transition: all 0.5s ease;
+    &:before {
+      bottom: 0px;
+      height: 300px;
+      width: 100%;
+      border-top-left-radius: 50%;
+      box-shadow: 0 -150px 0 0 black;
+      transition-delay: 0.2s;
+    }
+    &:after {
+      bottom: 0px;
+      height: 300px;
+      width: 100%;
+      border-top-right-radius: 50%;
+      box-shadow: 0 -150px 0 0 black;
+      transition-delay: 0.2s;
+    }
+  }
+} */
