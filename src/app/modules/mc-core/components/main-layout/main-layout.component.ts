@@ -11,6 +11,7 @@ import { MenuModalComponent } from '../../modals/menu-modal/menu-modal.component
 })
 export class MainLayoutComponent implements OnInit {
 
+  isMenuOpen = false;
 
   constructor(
     public dialog: MatDialog
@@ -26,8 +27,14 @@ export class MainLayoutComponent implements OnInit {
   }
 
   menuModal() {
-    this.dialog.open(MenuModalComponent, {
-      panelClass: 'menu-modal-container'
-    });
+    if (this.isMenuOpen == false) {
+      this.dialog.open(MenuModalComponent, {
+        panelClass: 'menu-modal-container'
+      });
+      this.isMenuOpen = true;
+    } else {
+      this.isMenuOpen = false;
+      this.dialog.closeAll();
+    }
   }
 }
