@@ -11,11 +11,20 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
+
+
+// Components
+import { ContactSectionComponent } from './components/contact-section/contact-section.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ContactSectionComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +37,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatMenuModule,
     MatTooltipModule,
     MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatIconModule
   ]
 })
 export class HomeModule { }

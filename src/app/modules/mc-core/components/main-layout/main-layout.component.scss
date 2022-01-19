@@ -82,7 +82,7 @@
     z-index: 9999;
     top: 0em;
     width: 100%;
-
+    box-sizing: border-box;
 
     .logo{
       width: 220px;
@@ -118,6 +118,12 @@
           }
         }
 
+        &:hover.open{
+          .line{
+            stroke: red;
+          }
+        }
+
         .line {
           fill: none;
           stroke: $stroke-color;
@@ -138,6 +144,7 @@
             stroke-width: 6;
           }
         }
+
         &.open .line {
           &1 {
             stroke-dasharray: 90 207;

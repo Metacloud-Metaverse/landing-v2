@@ -1,0 +1,19 @@
+@import '../../../../../assets/styles/_vars.scss';
+
+.contact-section{
+  min-height: 100vh;
+  background: black;
+
+  .row{
+    display: flex;
+    gap: 3em;
+
+    h2,p, mat-checkbox{
+      color: white;
+    }
+  }
+
+  mat-form-field{
+    width: 100%;
+  }
+}

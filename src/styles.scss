@@ -113,10 +113,6 @@ $custom-typography: mat-typography-config(
   background-color: lighten($color_primary_500, 10%);
 }
 
-.mat-dialog-container{
-  background-color: $color_primary_900;
-}
-
 app-waves{
   z-index: 1;
   position: relative;
