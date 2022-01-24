@@ -83,6 +83,7 @@ $text: #8850eb;
       animation: shake 600ms ease-in-out infinite alternate;
       text-shadow: 0 0 0.07em $text, -0.2em 0 2em $faded, 0.2em 0 2em $faded;
       user-select: none;
+      font-family: $font_text !important;
 
       &:before {
         content: attr(t);

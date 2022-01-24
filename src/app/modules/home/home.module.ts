@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -19,12 +19,18 @@ import { MatIconModule } from '@angular/material/icon';
 
 // Components
 import { ContactSectionComponent } from './components/contact-section/contact-section.component';
+import { IntroSectionComponent } from './components/intro-section/intro-section.component';
+
+// Directives
+import { ScrollAnimationDirective } from './directives/scroll-animation.directive';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ContactSectionComponent
+    ContactSectionComponent,
+    IntroSectionComponent,
+    ScrollAnimationDirective,
   ],
   imports: [
     CommonModule,
@@ -40,7 +46,10 @@ import { ContactSectionComponent } from './components/contact-section/contact-se
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class HomeModule { }

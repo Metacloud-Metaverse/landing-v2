@@ -173,6 +173,7 @@
     right: 2em;
     width: 250px;
     height: 140px;
+    z-index: 999;
 
     .contain{
       overflow: hidden;
@@ -180,6 +181,9 @@
       position: relative;
       width: 100%;
       height: 100%;
+      box-shadow: 0 0 0 12px rgba($color: white, $alpha: 0.15);
+      transition: $animation;
+      background-color: $color_primary_900;
 
       img{
         width: 100%;
@@ -190,12 +194,16 @@
 
       button{
         position: absolute;
-        top: 40%;
-        right: 40%;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
         transition: $animation;
+        z-index: 3;
+        color: white;
       }
 
       &:hover{
+        box-shadow: 0 0 0 12px rgba($color: white, $alpha: 0.3);
         img{
           opacity: 0.5;
         }

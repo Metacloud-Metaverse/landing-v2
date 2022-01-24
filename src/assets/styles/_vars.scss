@@ -1,10 +1,11 @@
 @import "./media-breakpoint";
+@import "./fonts.scss";
 
 /* Components */
 $animation: all 0.3s ease;
 
 // Typography
-$font_title: "PT Sans Caption", sans-serif;
+$font_title: 'Aristotelica Pro Display Trial', 'Mulish', sans-serif;
 $font_text: "Montserrat", sans-serif;
 
 // Colors

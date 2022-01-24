@@ -1,0 +1,34 @@
+<div class="lines-speed" [ngClass]="{'lines-speed-active': clickToStart}">
+  <div class="g-group">
+      <div class="item item-right"></div>
+      <div class="item item-left"></div>
+      <div class="item item-top"></div>
+      <div class="item item-bottom"></div>
+      <div class="item item-middle"></div>
+  </div>
+  <div class="g-group">
+      <div class="item item-right"></div>
+      <div class="item item-left"></div>
+      <div class="item item-top"></div>
+      <div class="item item-bottom"></div>
+      <div class="item item-middle"></div>
+  </div>
+</div>
+
+
+<section class="intro-section">
+  <img src="/assets/img/background.jpg" class="background-stars" [ngClass]="{'background-stars-animation': backgroundStarsAnimation}" />
+  <div class="container">
+    <h1 class="display1"><b>REALITY RE-IMAGINED</b></h1>
+    <button mat-stroked-button (click)="clickToStart = !clickToStart;">Start travel effect</button>
+    <button mat-stroked-button (click)="introVideo = !introVideo;">Start video intro</button>
+    <button mat-stroked-button (click)="introAnimation()">Start animation</button>
+  </div>
+</section>
+
+
+<section class="video-intro-section" [ngClass]="{'video-intro-active': introVideo}">
+  <video (mousemove)='onMouseMove($event)' #video src="/assets/videos/metaclubsociety.mp4" autoplay muted playsinline loop></video>
+</section>
+
+<video *ngIf="activeBlink" src="/assets/videos/blink-video.mp4" autoplay muted class="blink-video"></video>
