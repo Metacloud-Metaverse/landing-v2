@@ -319,13 +319,27 @@ model-viewer {
   margin: auto;
   z-index: 0;
   position: fixed;
-  pointer-events: none;
   transition: all 1s ease;
+}
+
+.model-spaceship{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 6vh;
+  left: 40%;
+  z-index: 10;
+  display: none;
+}
+
+.model-spaceship-active{
+  display: inherit;
 }
 
 .movement1{
   filter: blur(40px);
   opacity: 0.5;
+  pointer-events: none;
 }
 
 .movement2{
@@ -336,34 +350,14 @@ model-viewer {
   left: -20%;
 }
 
-/* .movement1{
-  bottom: -345%;
-  left: -44%;
-  opacity: 0.3;
-  width: 160%;
-  height: 5382px;
-}
-
-.movement2{
-  width: 100%;
-  height: 1560px;
-  left: 30%;
-  bottom: -578px;
-  filter: blur(0);
-  opacity: 1;
-}
-
-.movement3{
-  height: 1260px;
-  left: -55%;
-  bottom: -225px;
-}
-
 .movement4{
-  height: 1260px;
-  left: 0;
-  bottom: 200px;
-} */
+  left: 20%;
+}
+
+.movement5{
+  left: 0%;
+}
+
 
 .texts{
   width: 600px;
@@ -400,4 +394,22 @@ model-viewer {
 .texts2{
   top: 20vh;
   right: 20vw;
+}
+
+.texts3{
+  top: 20vh;
+  left: 20vw;
+  h2{
+    margin: 0;
+  }
+}
+
+.texts4{
+  text-align: center;
+  .btn-change{
+    position: fixed;
+    bottom: 5em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

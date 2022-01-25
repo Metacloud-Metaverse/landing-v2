@@ -3,6 +3,7 @@
   <div [ngClass]="{'active': pageState == 1}" (click)="activeSection2()"></div>
   <div [ngClass]="{'active': pageState == 2}" (click)="activeSection3()"></div>
   <div [ngClass]="{'active': pageState == 3}" (click)="activeSection4()"></div>
+  <div [ngClass]="{'active': pageState == 4}" (click)="activeSection5()"></div>
 </div>
 
 <!-- <span class="gradient" [ngStyle]="gradientStyle"></span>
@@ -22,11 +23,12 @@
   shadow-intensity="2"
   shadow-softness="1"
   exposure="1"
+  camera-controls
   camera-orbit="'-45deg 55deg'"
   interpolation-decay="200"
   disable-zoom
   class="avatar-primary"
-  [ngClass]="{'movement1': pageState == 0, 'movement2': pageState == 1, 'movement3': pageState == 2, 'movement4': pageState == 3}">
+  [ngClass]="{'movement1': pageState == 0, 'movement2': pageState == 1, 'movement3': pageState == 2, 'movement4': pageState == 3, 'movement5': pageState == 4}">
 </model-viewer>
 
 <model-viewer
@@ -40,10 +42,28 @@
   disable-zoom
   camera-orbit="-45deg 55deg"
   camera-controls="true"
+  interpolation-decay="200"
   autoplay
   animation-name="Running"
   class="avatar-corner"
   (click)="avatarCornerHi()">
+</model-viewer>
+
+<model-viewer
+  #modelSpaceship
+  alt="Intergalactic spaceship"
+  src="assets/models/intergalactic-spaceship.glb"
+  shadow-intensity="1"
+  shadow-softness="1"
+  exposure="1"
+  disable-zoom
+  camera-orbit="-45deg 55deg"
+  camera-controls
+  interpolation-decay="200"
+  autoplay
+  animation-name=""
+  class="model-spaceship intro-component-animation"
+  [ngClass]="{'model-spaceship-active': pageState == 3}">
 </model-viewer>
 
 
@@ -92,6 +112,18 @@
     <h2 class="display3"><b>UNLOCK YOUR TALENT IN THE IMMERSIVE WORLD OF POSSIBILITY</b></h2>
     <p>A Metaverse virtual reality network prepared to boost your creativity. From static 3D scenes to dynamic systems like:</p>
   </div>
+</section>
+
+<section *ngIf="pageState == 3" class="texts texts3">
+  <div class="container">
+    <h2 class="display3"><b>GAMES</b></h2>
+    <h2 class="display3" *ngIf="section3text2"><b>MUSIC</b></h2>
+    <h2 class="display3" *ngIf="section3text3"><b>CREATIVITY</b></h2>
+  </div>
+</section>
+
+<section *ngIf="pageState == 4" class="texts texts4">
+  <button mat-flat-button color="primary" class="btn-change" (click)="changeState()">Change state</button>
 </section>
 
 <!-- <app-contact-section></app-contact-section> -->

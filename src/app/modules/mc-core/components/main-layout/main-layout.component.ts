@@ -12,6 +12,7 @@ import { MenuModalComponent } from '../../modals/menu-modal/menu-modal.component
 export class MainLayoutComponent implements OnInit {
 
   isMenuOpen = false;
+  isMuted = false;
 
   constructor(
     public dialog: MatDialog

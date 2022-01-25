@@ -21,6 +21,13 @@
       <img src="/assets/img/logos/logo-horiz.png" alt="Metacloud Logo" />
     </a>
 
+    <div class="sound" [ngClass]="{'off': isMuted}" (click)="isMuted = !isMuted" matTooltip="Stop / Play Music">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <button mat-stroked-button (click)="openVideoModal()">OPEN VIDEO <mat-icon>play_arrow</mat-icon></button>
   </nav>
 
