@@ -23,6 +23,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LoadingComponent } from './components/loading/loading.component';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 
 // Modals
 import { VideoModalComponent } from './modals/video-modal/video-modal.component';
@@ -38,6 +39,7 @@ import { MenuModalComponent } from './modals/menu-modal/menu-modal.component';
     FooterComponent,
     VideoModalComponent,
     MenuModalComponent,
+    NavMenuComponent,
   ],
   imports: [
     CommonModule,

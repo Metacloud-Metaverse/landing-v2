@@ -1,3 +1,5 @@
+
+
 <div class="lines-speed" [ngClass]="{'lines-speed-active': clickToStart}">
   <div class="g-group">
       <div class="item item-right"></div>
@@ -17,7 +19,7 @@
 
 
 <section class="intro-section">
-  <img src="/assets/img/background.jpg" class="background-stars" [ngClass]="{'background-stars-animation': backgroundStarsAnimation}" />
+  <!-- <img src="/assets/img/background.jpg" class="background-stars" [ngClass]="{'background-stars-animation': backgroundStarsAnimation}" /> -->
   <div class="container">
     <h1 class="display1"><b>REALITY RE-IMAGINED</b></h1>
     <button mat-stroked-button (click)="clickToStart = !clickToStart;">Start travel effect</button>
@@ -27,8 +29,8 @@
 </section>
 
 
-<section class="video-intro-section" [ngClass]="{'video-intro-active': introVideo}">
-  <video (mousemove)='onMouseMove($event)' #video src="/assets/videos/metaclubsociety.mp4" autoplay muted playsinline loop></video>
-</section>
+<!-- <section class="video-intro-section" [ngClass]="{'video-intro-active': introVideo}">
+  <video (mousemove)='onMouseMove($event)' #video src="/assets/videos/metaclubsociety.mp4" muted playsinline loop></video>
+</section> -->
 
-<video *ngIf="activeBlink" src="/assets/videos/blink-video.mp4" autoplay muted class="blink-video"></video>
+<!-- <video *ngIf="activeBlink" src="/assets/videos/blink-video.mp4" autoplay muted class="blink-video"></video> -->

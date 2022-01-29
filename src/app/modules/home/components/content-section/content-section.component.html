@@ -1,0 +1,126 @@
+<div class="indicators">
+    <div [ngClass]="{'active': pageState == 0}" (click)="activeSection1()"></div>
+    <div [ngClass]="{'active': pageState == 1}" (click)="activeSection2()"></div>
+    <div [ngClass]="{'active': pageState == 2}" (click)="activeSection3()"></div>
+    <div [ngClass]="{'active': pageState == 3}" (click)="activeSection4()"></div>
+    <div [ngClass]="{'active': pageState == 4}" (click)="activeSection5()"></div>
+  </div>
+
+  <!-- <span class="gradient" [ngStyle]="gradientStyle"></span>
+  <span class="content">
+    <ng-content></ng-content>
+  </span> -->
+
+
+  <model-viewer
+    *ngIf="introAvatar"
+    #modelAvatarPrimary
+    alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
+    src="assets/models/NeilArmstrong.glb"
+    shadow-intensity="2"
+    shadow-softness="1"
+    exposure="1"
+    camera-controls
+    camera-orbit="'-45deg 55deg'"
+    interpolation-decay="200"
+    disable-zoom
+    class="avatar-primary"
+    [ngClass]="{'movement1': pageState == 0, 'movement2': pageState == 1, 'movement3': pageState == 2, 'movement4': pageState == 3, 'movement5': pageState == 4}">
+  </model-viewer>
+
+  <model-viewer
+    *ngIf="introAvatar"
+    #modelAvatarCorner
+    alt="An animate 3D model of a robot"
+    src="assets/models/RobotExpressive.glb"
+    shadow-intensity="1"
+    shadow-softness="1"
+    exposure="1"
+    disable-zoom
+    camera-orbit="-45deg 55deg"
+    camera-controls="true"
+    interpolation-decay="200"
+    autoplay
+    animation-name="Running"
+    class="avatar-corner"
+    (click)="avatarCornerHi()">
+  </model-viewer>
+
+  <model-viewer
+    #modelSpaceship
+    alt="Intergalactic spaceship"
+    src="assets/models/intergalactic-spaceship.glb"
+    shadow-intensity="1"
+    shadow-softness="1"
+    exposure="1"
+    disable-zoom
+    camera-orbit="-45deg 55deg"
+    camera-controls
+    interpolation-decay="200"
+    autoplay
+    animation-name=""
+    class="model-spaceship intro-component-animation"
+    [ngClass]="{'model-spaceship-active': pageState == 3}">
+  </model-viewer>
+
+
+  <section *ngIf="pageState == 0" class="header-section">
+    <div class="container">
+      <h1 class="display2">
+        <span>YOU </span>
+        <span>ARE </span>
+        <span>MEANT </span>
+        <span>TO </span>
+        <span>BE </span> <br>
+        <span>AMAZING</span>
+      </h1>
+      <p>EXPLORE AND DISCOVER METACLOUD</p>
+
+      <!-- <button mat-stroked-button (click)="activeBlink = !activeBlink;">Active Blink animation</button> -->
+
+      <div class="scroll-down">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="circles" *ngIf="introCircles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+        <div class="circle circle4"></div>
+      </div>
+
+      <!-- <app-loading></app-loading> -->
+      <!-- <button mat-stroked-button (click)="activeSection1()">Active movement 1</button> -->
+    </div>
+  </section>
+
+
+  <section *ngIf="pageState == 1" class="texts texts1">
+    <div class="container">
+      <h2 class="display3"><b>TAKE YOUR DREAMS SERIOUSLY</b></h2>
+      <p>Feelings are what truly connect us in MetaCloud. You and your loved ones, creating and interacting inside this unlimited 3D reality.</p>
+    </div>
+  </section>
+
+  <section *ngIf="pageState == 2" class="texts texts2">
+    <div class="container">
+      <h2 class="display3"><b>UNLOCK YOUR TALENT IN THE IMMERSIVE WORLD OF POSSIBILITY</b></h2>
+      <p>A Metaverse virtual reality network prepared to boost your creativity. From static 3D scenes to dynamic systems like:</p>
+    </div>
+  </section>
+
+  <section *ngIf="pageState == 3" class="texts texts3">
+    <div class="container">
+      <h2 class="display3"><b>GAMES</b></h2>
+      <h2 class="display3" *ngIf="section3text2"><b>MUSIC</b></h2>
+      <h2 class="display3" *ngIf="section3text3"><b>CREATIVITY</b></h2>
+    </div>
+  </section>
+
+  <section *ngIf="pageState == 4" class="texts texts4">
+    <button mat-flat-button color="primary" class="btn-change" (click)="changeState()">Change state</button>
+  </section>
+
+  <!-- <app-contact-section></app-contact-section> -->
