@@ -7,7 +7,7 @@
   <div class="background-lights light3"></div>
   <div class="background-lights light4"></div>
 
-  <nav [ngClass]="{'nav-white': router.url == '/'}">
+  <nav [ngClass]="{'nav-white': router.url == '/', 'nav-open': isMenuOpen}">
     <div class="menu" (click)="isMenuOpen = !isMenuOpen;">
       <div id="hamburger" onclick="this.classList.toggle('open');" [ngClass]="{'open': isMenuOpen}">
         <svg width="50" height="50" viewBox="0 0 100 100">
@@ -19,8 +19,8 @@
     </div>
 
     <a [routerLink]="['/routePath']" class="logo">
-      <img *ngIf="router.url != '/'" src="/assets/img/logos/logo-horiz.png" alt="Metacloud Logo" />
-      <img *ngIf="router.url == '/'" src="/assets/img/logos/logo-v2.png" alt="Metacloud Logo" />
+      <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/logos/logo-horiz.png" alt="Metacloud Logo" />
+      <img *ngIf="router.url == '/' && !isMenuOpen" src="/assets/img/logos/logo-horiz-white.png" alt="Metacloud Logo" />
     </a>
 
     <div class="sound" [ngClass]="{'off': isMuted}" (click)="playAudio()" matTooltip="Stop / Play Music">
@@ -29,8 +29,8 @@
       <span></span>
       <span></span>
     </div>
-    <audio autoplay loop #audio>
-      <source src="/assets/music/video-metacloud-musica-final.mp3" type="audio/mp3">
+    <audio loop #audio>
+      <source src="/assets/music/swedish-house-mafia-save-the-world-optimized.mp3" type="audio/mp3">
     </audio>
 
     <button mat-stroked-button class="btn-play">PLAY NOW <mat-icon>play_arrow</mat-icon></button>

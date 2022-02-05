@@ -1,5 +1,6 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-intro',
@@ -9,8 +10,10 @@ import { Router } from '@angular/router';
 export class IntroComponent implements OnInit {
 
   startVideo = false;
+  endAnimationHeadline = false;
+  endAnimationMic = false;
   startZoom = false;
-  startLines = false;
+  startLines = true;
   startEndScene = false;
 
   @ViewChild('cursor') cursor:any;
@@ -18,28 +21,26 @@ export class IntroComponent implements OnInit {
   constructor(
     protected navigator: Router,
     public el: ElementRef<HTMLElement>,
+    protected mainService: MainService,
     ) { }
 
   ngOnInit(): void {
   }
 
+
   startAnimation(){
-    this.startLines = true;
-    setTimeout(() => {
-      this.startZoom = true;
-    }, 400);
+    this.endAnimationHeadline = true;
+    this.mainService.audioMain.next(true);
+    this.endAnimationMic = true;
     setTimeout(() => {
       this.startVideo = true;
-    }, 500);
-    setTimeout(() => {
-      this.startLines = false;
-    }, 1000);
+    }, 1600);
     setTimeout(() => {
       this.startEndScene = true;
-    }, 10400);
+    }, 11400);
     setTimeout(() => {
       this.navigator.navigateByUrl('/start');
-    }, 10700);
+    }, 11700);
   }
 
 

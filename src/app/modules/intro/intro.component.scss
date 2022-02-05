@@ -108,8 +108,13 @@
     white-space: nowrap;
     margin: 0;
     color: white;
-    animation: neon1 2s ease-in-out infinite alternate, h1Animation 2s ease;
+    animation: neon1 2s ease-in-out infinite alternate, h1Intro 2s ease;
     transition: all 0.3s ease;
+  }
+
+  .end-animation-h1 {
+    animation: neon1 2s ease-in-out infinite alternate, h1Leave 3s ease;
+    opacity: 0;
   }
 
   $color_hue: rgba( $color: #fd2885, $alpha: 1,);
@@ -129,7 +134,7 @@
     }
   }
 
-  @keyframes h1Animation {
+  @keyframes h1Intro {
     from{
       letter-spacing: 20px;
       filter: blur(40px);
@@ -139,6 +144,19 @@
       letter-spacing: 0;
       filter: blur(0px);
       opacity: 1;
+    }
+  }
+
+  @keyframes h1Leave {
+    0%{
+      letter-spacing: 0px;
+      filter: blur(0px);
+      opacity: 1;
+    }
+    100%{
+      letter-spacing: 20px;
+      filter: blur(40px);
+      opacity: 0;
     }
   }
 
@@ -201,6 +219,11 @@
     }
   }
 
+  .end-animation-mic{
+    transform: translate(-50%, -50%) scale(8);
+    animation: introsShere 3s ease, micLeave 3s ease;
+  }
+
   /* @keyframes circle-size {
     from {
         width: 250px;
@@ -231,28 +254,24 @@
       opacity: 1;
     }
   }
+
+  @keyframes micLeave{
+    0%  { transform: translate(-50%, -50%) scale(0.6); }
+    50% { transform: translate(-50%, -50%) scale(0.5); }
+    100%{ transform: translate(-50%, -50%) scale(8);   }
+  }
 }
 
-.start-animation-intro-page {
-  /* .intro-page-container{
-    animation: startZoom 3s ease-out;
-  } */
+
+/* .start-animation-intro-page {
   h1{
-    letter-spacing: 20px;
+    animation: neon1 2s ease-in-out infinite alternate, h1Leave 3s ease;
     opacity: 0;
-    filter: blur(20px);
   }
   .mic {
-    &::before {
-      width: 4000px;
-      height: 4000px;
-    }
-    &-shadow {
-      width: 4000px;
-      height: 4000px;
-    }
+    animation: introsShere 3s ease, micLeave 3s ease;
   }
-}
+} */
 
 /* @keyframes startZoom{
   0%{
@@ -352,7 +371,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  z-index: 10;
+  z-index: 20;
 
   video {
     position: absolute;
@@ -375,6 +394,22 @@
       width: 100%;
       height: 100%;
       opacity: 1;
+    }
+  }
+
+  button{
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 21;
+    width: 150px;
+    color: white;
+    border-color: rgba($color: white, $alpha: 0.5);
+    transition: all 0.3s ease;
+    &:hover{
+      color: black;
+      background-color: white;
     }
   }
 }

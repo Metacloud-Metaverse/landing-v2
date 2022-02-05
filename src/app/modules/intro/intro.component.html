@@ -1,4 +1,4 @@
-<div class="intro-page" (click)="startAnimation()" [ngClass]="{'start-animation-intro-page': startZoom}">
+<div class="intro-page" (click)="startAnimation()">
 
   <div #cursor class="cursor">
     <span>CLICK START</span>
@@ -14,23 +14,24 @@
     </div> -->
     <!-- <img src="https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Background Space" class="background-space" /> -->
 
-    <div class="mic">
+    <div class="mic" [ngClass]="{'end-animation-mic': endAnimationMic}">
       <div class="mic-shadow"></div>
     </div>
-    <!-- <app-line-speed-element *ngIf="startLines"></app-line-speed-element> -->
+    <app-line-speed-element *ngIf="startLines"></app-line-speed-element>
     <app-stars-element></app-stars-element>
 
 
     <div class="container">
       <!-- <img src="/assets/img/logos/logo-v2.png" alt="Metacloud Logo" class="logo" /> -->
-      <h1 class="display1"><b>REALITY RE-IMAGINED</b></h1>
+      <h1 class="display1" [ngClass]="{'end-animation-h1': endAnimationHeadline}"><b>REALITY RE-IMAGINED</b></h1>
     </div>
 
   </div>
 </div>
 
 <div *ngIf="startVideo" class="video-container">
-  <video src="/assets/videos/intro-hype-video.mp4" type="mp4" autoplay muted></video>
+  <video src="/assets/videos/intro-hype-video-muted.mp4" type="mp4" autoplay muted></video>
+  <button mat-stroked-button [routerLink]="['/start']" >SKIP</button>
 </div>
 
 <div *ngIf="startEndScene" class="end-scene"></div>

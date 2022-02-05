@@ -118,12 +118,6 @@
           }
         }
 
-        &:hover.open {
-          .line {
-            stroke: red;
-          }
-        }
-
         .line {
           fill: none;
           stroke: $stroke-color;
@@ -146,6 +140,7 @@
         }
 
         &.open .line {
+          stroke: red;
           &1 {
             stroke-dasharray: 90 207;
             stroke-dashoffset: -134;
@@ -239,13 +234,20 @@
     .menu {
       #hamburger {
         path {
-          stroke: white !important;
+          stroke: white ;
         }
       }
     }
     .btn-play {
       color: white !important;
       border-color: rgba($color: white, $alpha: 0.75) !important;
+    }
+  }
+
+  .nav-open{
+    .btn-play {
+      color: black !important;
+      border-color: rgba($color: black, $alpha: 0.5) !important;
     }
   }
 

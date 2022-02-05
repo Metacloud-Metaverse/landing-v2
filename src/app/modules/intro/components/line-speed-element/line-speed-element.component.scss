@@ -23,14 +23,15 @@
 }
 
 .lines-container{
+  animation: openLines 10s linear;
 
   .lines-speed {
     margin: auto;
-    perspective: 5px;
-    perspective-origin: 50% 50%;
+    perspective: 7px;
+    perspective-origin: 50%;
     position: relative;
-    animation: hueRotate 20s infinite linear;
-    top: 200px;
+    /* animation: hueRotate 20s infinite linear; */
+    top: 460px;
     pointer-events: none;
     opacity: 1;
     z-index: 3;
@@ -40,7 +41,7 @@
       width: 100vw;
       height: 100vh;
       left: 0vw;
-      top: 0vh;
+      top: -35vh;
       transform-style: preserve-3d;
       animation: move 8s infinite linear;
     }
@@ -139,6 +140,15 @@
       opacity: 1;
       width: 1px;
       height: 1px;
+    }
+  }
+
+  @keyframes openLines {
+    0%, 20%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
     }
   }
 
