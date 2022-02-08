@@ -1,17 +1,37 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { ScrollDirection } from '@angular/material/tabs';
+import { Scroll } from '@angular/router';
 
 @Component({
   selector: 'app-content-section',
   templateUrl: './content-section.component.html',
   styleUrls: ['./content-section.component.scss'],
   animations: [
-    trigger('fade', [
-      state('inactive', style({ opacity: 0 })),
-      state('active', style({ opacity: 1 })),
-      transition('inactive <=> active', animate('500ms ease-in')),
-      transition('active <=> inactive', animate('500ms ease-in'))
-    ])
+
+    /* trigger('h2Animation', [
+      state('visible', style({ opacity: 1, lineHeight: 1.1 })),
+      state('enter', style({ opacity: 0, lineHeight: 4, transform: 'translateY(300)' })),
+      state('leave', style({ opacity: 0, lineHeight: 4, transform: 'translateY(-300)' })),
+      transition('enter => visible', animate('1000ms ease')),
+      transition('visible => leave', animate('500ms ease')),
+    ]), */
+
+    /* trigger('h2Animation', [
+      state('void', style({ opacity: 0, lineHeight: 4 })),
+      transition(':enter', [
+        animate('1000ms ease', style({ opacity: 1, lineHeight: 1.1, transform: 'translateY(0)' }))
+      ]),
+      transition(':leave', [
+        animate('1000ms ease', style({ opacity: 0, lineHeight: 4, transform: 'translateY(-300)' }))
+      ]),
+    ]), */
+
+    trigger('paragraphAnimation', [
+      transition(':leave', [
+        animate('700ms ease', style({ opacity: 0, transform: 'translateY(-200px)', filter: 'blur(30px)' }))
+      ]),
+    ]),
   ]
 })
 export class ContentSectionComponent implements OnInit {
@@ -41,34 +61,54 @@ export class ContentSectionComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  @HostListener('mouseenter')
+  @HostListener('window:mousewheel', ['$event'])
+  scrollHandler(event: any) {
+    console.log("Scroll Event");
+
+    // Is Scroll Down
+    if (this.pageState = 0) {
+      this.activeSection1();
+    } if (this.pageState = 1) {
+      this.activeSection2();
+    } if (this.pageState = 2) {
+      this.activeSection3();
+    } if (this.pageState = 3) {
+      this.activeSection4();
+    } if (this.pageState = 4) {
+      this.activeSection5();
+    } if (this.pageState = 5) {
+      this.activeSection6();
+    } return
+  }
+
+  /* @HostListener('mouseenter')
   onMouseEnter() {
     this.isGradientVisible = true;
-  }
+  } */
 
-  @HostListener('mouseleave')
+  /* @HostListener('mouseleave')
   onMouseLeave() {
     this.isGradientVisible = false;
-  }
+  } */
 
-  @HostListener('mousemove', ['$event'])
+  /* @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     this.gradientLeft = event.pageX - this.el.nativeElement.offsetLeft;
     this.gradientTop = event.pageY - this.el.nativeElement.offsetTop;
-  }
+  } */
 
   ngAfterViewInit() {
     /* this.gradientRadius = this.el.nativeElement.getBoundingClientRect().width; */
     this.activeSection1();
 
-    setTimeout(() => {
+    /* setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = 'Wave';
       console.log('Hola');
       console.log(this.modelAvatarCorner);
-    }, 5000);
+    }, 5000); */
   }
 
-  get gradientStyle() {
+  /* get gradientStyle() {
     const top = this.gradientTop;
     const left = this.gradientLeft;
     const gradientRadius = this.isGradientVisible ? this.gradientRadius : 0;
@@ -79,17 +119,17 @@ export class ContentSectionComponent implements OnInit {
       'top.px': top,
       'left.px': left
     };
-  }
+  } */
 
   changeState(){
     if (this.scene == 0) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/environment-whipple_creek_regional_park_04_1k.hdr';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/scene-casino.png';
       this.scene = 1;
     } if (this.scene == 1) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/environment-kloppenheim_02_4k.hdr';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/scene-gallery.png';
       this.scene = 2;
     } else {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/environment-spruit_sunrise_1k_HDR.hdr';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/scene-concert.png';
       this.scene = 0;
     }
   }
@@ -107,10 +147,9 @@ export class ContentSectionComponent implements OnInit {
     this.section3text2 = false;
     this.section3text3 = false;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 1m';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 0m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.autoRotate = true;
-
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
     }, 1000);
@@ -121,9 +160,8 @@ export class ContentSectionComponent implements OnInit {
     this.section3text2 = false;
     this.section3text3 = false;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 3m';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 1m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
     }, 1000);
@@ -134,9 +172,8 @@ export class ContentSectionComponent implements OnInit {
     this.section3text2 = false;
     this.section3text3 = false;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 5m';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
     }, 1000);
@@ -149,12 +186,10 @@ export class ContentSectionComponent implements OnInit {
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 5m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
       this.section3text2 = true;
     }, 1000);
-
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
       this.section3text3 = true;
@@ -164,14 +199,29 @@ export class ContentSectionComponent implements OnInit {
   activeSection5(){
     this.pageState = 4;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 8m';
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/environment-spruit_sunrise_1k_HDR.hdr';
-    this.modelAvatarPrimary.nativeElement.exposure = 1;
-    this.modelAvatarPrimary.nativeElement.requestAnimationFrame(animate);
-
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 10m';
+    /* this.modelAvatarPrimary.nativeElement.requestAnimationFrame(animate); */
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
-      this.modelAvatarPrimary.nativeElement.exposure = 0;
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/scene-casino.png';
+    }, 1000);
+  }
+
+  activeSection6(){
+    this.pageState = 5;
+    this.modelAvatarCorner.nativeElement.animationName = 'Running';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    setTimeout(() => {
+      this.modelAvatarCorner.nativeElement.animationName = '';
+    }, 1000);
+  }
+
+  activeSection7(){
+    this.pageState = 6;
+    this.modelAvatarCorner.nativeElement.animationName = 'Running';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    setTimeout(() => {
+      this.modelAvatarCorner.nativeElement.animationName = 'Wave';
     }, 1000);
   }
 

@@ -12,6 +12,8 @@ const routes: Routes = [
       { path: 'news', loadChildren: () => import('./modules/news/news.module').then(m => m.NewsModule), data: { preload: true }},
       { path: 'team', loadChildren: () => import('./modules/team/team.module').then(m => m.TeamModule), data: { preload: true }},
       { path: 'partners', loadChildren: () => import('./modules/partners/partners.module').then(m => m.PartnersModule), data: { preload: true }},
+      { path: 'legals', loadChildren: () => import('./modules/legals/legals.module').then(m => m.LegalsModule) },
+      { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule) },
     ]
   },
   { path: 'page-not-found', loadChildren: () => import('./modules/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule), data: { preload: true }},

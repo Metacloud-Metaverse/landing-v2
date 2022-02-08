@@ -1,1 +1,24 @@
-<p>team works!</p>
+<div class="team-page">
+
+  <header>
+    <div class="container">
+      <h1 class="display2"><b>Team</b></h1>
+      <p>Our partners align with our vision to deliver a purely blockchain-driven metaverse that will change the way we think of gaming, entertainment and socioeconomic structures forever.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="team" @componentAnimation>
+        <div class="user component-animation" *ngFor="let user of team">
+          <div class="image-container">
+            <img src="{{ user.image }}" alt="{{ user.name }} image" />
+          </div>
+          <h2><b>{{ user.name }}</b></h2>
+          <p>{{ user.rol }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

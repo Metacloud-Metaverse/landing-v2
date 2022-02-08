@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TeamRoutingModule } from './team-routing.module';
 import { TeamComponent } from './team.component';
+import { McCoreModule } from '../mc-core/mc-core.module';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { TeamComponent } from './team.component';
   ],
   imports: [
     CommonModule,
-    TeamRoutingModule
+    TeamRoutingModule,
+    McCoreModule,
+
   ]
 })
 export class TeamModule { }

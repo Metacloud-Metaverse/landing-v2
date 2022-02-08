@@ -2,7 +2,6 @@ import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material/dialog';
 import { VideoModalComponent } from '../../modals/video-modal/video-modal.component';
-import { MenuModalComponent } from '../../modals/menu-modal/menu-modal.component';
 import { Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
@@ -49,16 +48,8 @@ export class MainLayoutComponent implements OnInit {
     });
   }
 
-  menuModal() {
-    if (this.isMenuOpen == false) {
-      this.dialog.open(MenuModalComponent, {
-        panelClass: 'menu-modal-container'
-      });
-      this.isMenuOpen = true;
-    } else {
-      this.isMenuOpen = false;
-      this.dialog.closeAll();
-    }
+  closeMenu(e: any){
+    this.isMenuOpen = false;
   }
 
   loadMusic(){

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-menu',
@@ -24,11 +25,71 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
 })
 export class NavMenuComponent implements OnInit {
 
+  activeBlink = false;
   @Input() isMenuOpen = false;
+  @Output() closeMenu = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(
+    public router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  sendCloseMenu() {
+    this.closeMenu.emit();
+    this.isMenuOpen = false;
+  }
+
+  routeHome(){
+    this.blinkEffect();
+
+    setTimeout(() => {
+      this.sendCloseMenu();
+      this.router.navigate(['/start']);
+    }, 800);
+  }
+
+  routeTeam(){
+    this.blinkEffect();
+
+    setTimeout(() => {
+      this.sendCloseMenu();
+      this.router.navigate(['/team']);
+    }, 800);
+  }
+
+  routeContact(){
+    this.blinkEffect();
+
+    setTimeout(() => {
+      this.sendCloseMenu();
+      this.router.navigate(['/contact']);
+    }, 800);
+  }
+
+  routeTerms(){
+    this.blinkEffect();
+
+    setTimeout(() => {
+      this.sendCloseMenu();
+      this.router.navigate(['/legals/terms-of-service']);
+    }, 800);
+  }
+
+  routePrivacy(){
+    this.blinkEffect();
+
+    setTimeout(() => {
+      this.sendCloseMenu();
+      this.router.navigate(['/legals/privacy-policy']);
+    }, 800);
+  }
+
+  blinkEffect(){
+    this.activeBlink = true;
+    setTimeout(() => {
+      this.activeBlink = false;
+    }, 2000);
+  }
 }

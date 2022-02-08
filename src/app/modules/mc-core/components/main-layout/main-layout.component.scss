@@ -161,8 +161,7 @@
     }
 
     .sound {
-      margin-right: 1em;
-      width: 40px;
+      width: 30px;
       height: 25px;
       display: flex;
       align-items: center;
@@ -176,25 +175,24 @@
     .sound span {
       display: block;
       width: 2px;
-      margin-right: 0.5px;
       background-color: $color_primary_500;
       animation: sound 0ms -0.8s linear infinite alternate;
       transition: height 0.8s, background 0.3s;
     }
     .sound span:nth-child(1) {
-      height: 1px;
+      height: 25px;
       animation-duration: 474ms;
     }
     .sound span:nth-child(2) {
-      height: 3px;
+      height: 25px;
       animation-duration: 433ms;
     }
     .sound span:nth-child(3) {
-      height: 5px;
+      height: 25px;
       animation-duration: 407ms;
     }
     .sound span:nth-child(4) {
-      height: 7px;
+      height: 25px;
       animation-duration: 458ms;
     }
 
