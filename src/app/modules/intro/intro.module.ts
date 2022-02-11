@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { IntroRoutingModule } from './intro-routing.module';
@@ -32,6 +32,9 @@ import { LineSpeedElementComponent } from './components/line-speed-element/line-
 
     // Angular Material
     MatButtonModule
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class IntroModule { }

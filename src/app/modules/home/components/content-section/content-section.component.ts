@@ -121,18 +121,47 @@ export class ContentSectionComponent implements OnInit {
     };
   } */
 
-  changeState(){
+  changeScene1() {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
+  }
+
+  changeScene2() {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfireHDRI.hdr';
+  }
+
+  changeScene3() {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieveHDRI.hdr';
+  }
+
+  changeScene4() {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casinoHDRI.hdr';
+  }
+
+  changeScene5() {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
+  }
+
+  /* changeState(){
     if (this.scene == 0) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/scene-casino.png';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
       this.scene = 1;
     } if (this.scene == 1) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/scene-gallery.png';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfireHDRI.hdr';
       this.scene = 2;
+    } if (this.scene == 2) {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieveHDRI.hdr';
+      this.scene = 3;
+    } if (this.scene == 3) {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casinoHDRI.hdr';
+      this.scene = 4;
+    } if (this.scene == 4) {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
+      this.scene = 5;
     } else {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/scene-concert.png';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
       this.scene = 0;
     }
-  }
+  } */
 
   avatarCornerHi(){
     this.modelAvatarCorner.nativeElement.animationName = 'Wave';
@@ -181,6 +210,26 @@ export class ContentSectionComponent implements OnInit {
 
   activeSection4(){
     this.pageState = 3;
+    this.modelAvatarCorner.nativeElement.animationName = 'Running';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    setTimeout(() => {
+      this.modelAvatarCorner.nativeElement.animationName = '';
+    }, 1000);
+  }
+
+  activeSection5(){
+    this.pageState = 4;
+    this.modelAvatarCorner.nativeElement.animationName = 'Running';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    setTimeout(() => {
+      this.modelAvatarCorner.nativeElement.animationName = '';
+    }, 1000);
+  }
+
+  activeSection6(){
+    this.pageState = 5;
     this.section3text2 = false;
     this.section3text3 = false;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
@@ -196,19 +245,20 @@ export class ContentSectionComponent implements OnInit {
     }, 2000);
   }
 
-  activeSection5(){
-    this.pageState = 4;
+  activeSection7(){
+    this.pageState = 6;
+    this.scene = 0;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 10m';
     /* this.modelAvatarPrimary.nativeElement.requestAnimationFrame(animate); */
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/scene-casino.png';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
     }, 1000);
   }
 
-  activeSection6(){
-    this.pageState = 5;
+  activeSection8(){
+    this.pageState = 7;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     setTimeout(() => {
@@ -216,8 +266,8 @@ export class ContentSectionComponent implements OnInit {
     }, 1000);
   }
 
-  activeSection7(){
-    this.pageState = 6;
+  activeSection9(){
+    this.pageState = 8;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     setTimeout(() => {

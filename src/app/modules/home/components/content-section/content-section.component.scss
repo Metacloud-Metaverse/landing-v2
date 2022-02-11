@@ -619,7 +619,50 @@ model-viewer {
   }
 }
 
-.texts6{
+.texts1{
+  top: 35%;
+  h2{
+    width: 1000px;
+  }
+}
+
+.texts3{
+
+}
+
+.texts4{
+  p{
+    position: relative;
+    margin-left: 14px;
+    padding-left: 8px;
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 14px;
+      left: -10px;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background-color: $color_primary_500;
+    }
+  }
+}
+
+.texts7{
+  pointer-events: all;
+  width: initial;
+  position: fixed;
+  width: initial;
+  z-index: 200;
+  top: initial;
+  height: 40px;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.texts9{
   p{
     margin-top: 2em;
   }
