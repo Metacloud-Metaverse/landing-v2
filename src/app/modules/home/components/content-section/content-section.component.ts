@@ -61,10 +61,96 @@ export class ContentSectionComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  @HostListener('window:mousewheel', ['$event'])
-  scrollHandler(event: any) {
-    console.log("Scroll Event");
+  @HostListener('mousewheel', ['$event']) onMousewheel(event:any){
+    if (event.wheelDelta > 0) {
+      console.log('Mouse Scroll Up');
+      switch (this.pageState) {
+        case 1:
+        this.activeSection1();
+        this.pageState = 0;
+        break;
 
+        case 2:
+        this.activeSection2();
+        this.pageState = 1;
+        break;
+
+        case 3:
+        this.activeSection3();
+        this.pageState = 2;
+        break;
+
+        case 4:
+        this.activeSection4();
+        this.pageState = 3;
+        break;
+
+        case 5:
+        this.activeSection5();
+        this.pageState = 4;
+        break;
+
+        case 6:
+        this.activeSection6();
+        this.pageState = 5;
+        break;
+
+        case 7:
+        this.activeSection7();
+        this.pageState = 6;
+        break;
+
+        default:
+        break;
+      }
+    }
+
+    if (event.wheelDelta < 0) {
+      console.log('Mouse Scroll Down');
+      switch (this.pageState) {
+        case 0:
+        this.activeSection1();
+        this.pageState = 1;
+        break;
+
+        case 1:
+        this.activeSection2();
+        this.pageState = 2;
+        break;
+
+        case 2:
+        this.activeSection3();
+        this.pageState = 3;
+        break;
+
+        case 3:
+        this.activeSection4();
+        this.pageState = 4;
+        break;
+
+        case 4:
+        this.activeSection5();
+        this.pageState = 5;
+        break;
+
+        case 5:
+        this.activeSection6();
+        this.pageState = 6;
+        break;
+
+        case 6:
+        this.activeSection7();
+        this.pageState = 7;
+        break;
+
+        default:
+        break;
+      }
+    }
+  }
+
+  /* @HostListener('window:mousewheel', ['$event'])
+  scrollHandler(event: any) {
     // Is Scroll Down
     if (this.pageState = 0) {
       this.activeSection1();
@@ -79,7 +165,7 @@ export class ContentSectionComponent implements OnInit {
     } if (this.pageState = 5) {
       this.activeSection6();
     } return
-  }
+  } */
 
   /* @HostListener('mouseenter')
   onMouseEnter() {
@@ -196,7 +282,7 @@ export class ContentSectionComponent implements OnInit {
     }, 1000);
   }
 
-  activeSection3(){
+  /* activeSection3(){
     this.pageState = 2;
     this.section3text2 = false;
     this.section3text3 = false;
@@ -206,10 +292,10 @@ export class ContentSectionComponent implements OnInit {
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
     }, 1000);
-  }
+  } */
 
-  activeSection4(){
-    this.pageState = 3;
+  activeSection3(){
+    this.pageState = 2;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
@@ -218,7 +304,7 @@ export class ContentSectionComponent implements OnInit {
     }, 1000);
   }
 
-  activeSection5(){
+  /* activeSection5(){
     this.pageState = 4;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
@@ -226,10 +312,10 @@ export class ContentSectionComponent implements OnInit {
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
     }, 1000);
-  }
+  } */
 
-  activeSection6(){
-    this.pageState = 5;
+  activeSection4(){
+    this.pageState = 3;
     this.section3text2 = false;
     this.section3text3 = false;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
@@ -245,8 +331,8 @@ export class ContentSectionComponent implements OnInit {
     }, 2000);
   }
 
-  activeSection7(){
-    this.pageState = 6;
+  activeSection5(){
+    this.pageState = 4;
     this.scene = 0;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 10m';
@@ -257,8 +343,8 @@ export class ContentSectionComponent implements OnInit {
     }, 1000);
   }
 
-  activeSection8(){
-    this.pageState = 7;
+  activeSection6(){
+    this.pageState = 5;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     setTimeout(() => {
@@ -266,8 +352,8 @@ export class ContentSectionComponent implements OnInit {
     }, 1000);
   }
 
-  activeSection9(){
-    this.pageState = 8;
+  activeSection7(){
+    this.pageState = 6;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     setTimeout(() => {

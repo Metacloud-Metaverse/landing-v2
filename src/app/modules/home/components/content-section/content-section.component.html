@@ -1,13 +1,13 @@
-<div class="indicators" (scroll)="scrollHandler($event)">
+<div class="indicators">
   <div [ngClass]="{'active': pageState == 0}" (click)="activeSection1()"><span>1</span><span class="figure"></span></div>
   <div [ngClass]="{'active': pageState == 1}" (click)="activeSection2()"><span>2</span><span class="figure"></span></div>
+  <!-- <div [ngClass]="{'active': pageState == 2}" (click)="activeSection3()"><span>3</span><span class="figure"></span></div> -->
   <div [ngClass]="{'active': pageState == 2}" (click)="activeSection3()"><span>3</span><span class="figure"></span></div>
+  <!-- <div [ngClass]="{'active': pageState == 4}" (click)="activeSection5()"><span>5</span><span class="figure"></span></div> -->
   <div [ngClass]="{'active': pageState == 3}" (click)="activeSection4()"><span>4</span><span class="figure"></span></div>
   <div [ngClass]="{'active': pageState == 4}" (click)="activeSection5()"><span>5</span><span class="figure"></span></div>
   <div [ngClass]="{'active': pageState == 5}" (click)="activeSection6()"><span>6</span><span class="figure"></span></div>
   <div [ngClass]="{'active': pageState == 6}" (click)="activeSection7()"><span>7</span><span class="figure"></span></div>
-  <div [ngClass]="{'active': pageState == 7}" (click)="activeSection8()"><span>8</span><span class="figure"></span></div>
-  <div [ngClass]="{'active': pageState == 8}" (click)="activeSection9()"><span>9</span><span class="figure"></span></div>
   <!-- <div [ngClass]="{'active': pageState == 9}" (click)="activeSection10()"><span>10</span><span class="figure"></span></div> -->
 </div>
 
@@ -32,13 +32,13 @@
   shadow-intensity="2"
   shadow-softness="1"
   exposure="1"
+  disable-zoom
   camera-controls
   camera-orbit="'-45deg 55deg'"
   interpolation-decay="200"
   class="avatar-primary"
-  [ngClass]="{'movement1': pageState == 0 || pageState == 7 || pageState == 8,
-              'movement2': pageState == 1 || pageState == 5,
-              'movement3': pageState == 2 || pageState == 4,
+  [ngClass]="{'movement1': pageState == 0 || pageState == 5 || pageState == 6,
+              'movement2': pageState == 1 || pageState == 2,
               'movement4': pageState == 3}">
 </model-viewer>
 
@@ -74,7 +74,7 @@
   autoplay
   animation-name=""
   class="model-spaceship intro-component-animation"
-  [ngClass]="{'model-spaceship-active': pageState == 5}">
+  [ngClass]="{'model-spaceship-active': pageState == 3}">
 </model-viewer>
 
 
@@ -110,32 +110,32 @@
 </section>
 
 <section *ngIf="pageState == 1" [@paragraphAnimation]="'state'" class="texts texts-left texts2">
-  <h2 class="display3"><b>Embody the freedom to be the REAL you and experience the world with heightened levels of richnes</b></h2>
+  <h2 class="display3"><b>Embody the freedom to be the REAL you and experience the world with heightened levels of richness</b></h2>
 </section>
 
-<section *ngIf="pageState == 2" [@paragraphAnimation]="'state'" class="texts texts-right texts3">
-  <h2 class="display2"><b>Work, play, learn, create, shop</b></h2>
-</section>
+<!-- <section *ngIf="pageState == 2" [@paragraphAnimation]="'state'" class="texts texts-right texts3">
+  <h2 class="display2"><b>work. play. learn. create. shop.</b></h2>
+</section> -->
 
-<section *ngIf="pageState == 3" [@paragraphAnimation]="'state'" class="texts texts-left texts4">
+<section *ngIf="pageState == 2" [@paragraphAnimation]="'state'" class="texts texts-left texts4">
   <h2 class="display2"><b>Enjoy every aspect of reality!</b></h2>
   <p>Feel present with loved ones from anywhere</p>
-  <p>Unlock new Experiences with anyone from anywhere</p>
-  <p>Distance is no obstacle with meta-cloud</p>
+  <p>Unlock new experiences with anyone from anywhere</p>
+  <p>Distance is no obstacle with metacloud</p>
 </section>
 
-<section *ngIf="pageState == 4" [@paragraphAnimation]="'state'" class="texts texts-right texts5">
+<!-- <section *ngIf="pageState == 4" [@paragraphAnimation]="'state'" class="texts texts-right texts5">
   <h2 class="display2" ><b>UNLOCK YOUR TALENT IN THE IMMERSIVE WORLD OF POSSIBILITY</b></h2>
   <p>A Metaverse virtual reality network prepared to boost your creativity. From static 3D scenes to dynamic systems like:</p>
-</section>
+</section> -->
 
-<section *ngIf="pageState == 5" class="texts texts-left texts6">
+<section *ngIf="pageState == 3" class="texts texts-left texts6">
   <h2 class="texts3 display2"><b>GAMES</b></h2>
   <h2 *ngIf="section3text2" class="texts3 display2"><b>MUSIC</b></h2>
   <h2 *ngIf="section3text3" class="texts3 display2"><b>CREATIVITY</b></h2>
 </section>
 
-<section *ngIf="pageState == 6" class="texts texts7">
+<section *ngIf="pageState == 4" class="texts texts7">
   <button mat-flat-button color="primary" (click)="changeScene1()">Scene 1</button>
   <button mat-flat-button color="primary" (click)="changeScene2()">Scene 2</button>
   <button mat-flat-button color="primary" (click)="changeScene3()">Scene 3</button>
@@ -143,11 +143,11 @@
   <button mat-flat-button color="primary" (click)="changeScene5()">Scene 5</button>
 </section>
 
-<section *ngIf="pageState == 7" class="texts texts-center texts8">
+<section *ngIf="pageState == 5" class="texts texts-center texts8">
   <h2 class="texts3">As you embark your journey on ownership through metacloud, you can monetize when people attend your galleries, live concerts, and private parties. The possibilities are endless.</h2>
 </section>
 
-<section *ngIf="pageState == 8" class="texts texts-center texts9">
+<section *ngIf="pageState == 6" class="texts texts-center texts9">
   <h2 class="texts3 display3">Harness The Freedom To Evolve</h2>
   <p>Lorem ipsum dolor sit amet consectetur, lorem ipsum, dolor sit amet consectetur.</p>
 </section>
