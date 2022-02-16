@@ -160,6 +160,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
+  @HostListener('touchmove', ['$event']) handleMove(event:any){
+
+    if (event < 0) {
+      console.log('Touch Up');
+    }
+    if (event > 0) {
+      console.log('Touch Down');
+    }
+  }
+
   /* @HostListener('window:mousewheel', ['$event'])
   scrollHandler(event: any) {
     // Is Scroll Down
@@ -218,7 +228,44 @@ export class HomeComponent implements OnInit, AfterViewInit {
     };
   } */
 
-  changeScene1() {
+  changeScene() {
+    switch (this.scene) {
+      case 0:
+      console.log(this.scene);
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
+      this.scene = 1;
+      break;
+
+      case 1:
+      console.log(this.scene);
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfireHDRI.hdr';
+      this.scene = 2;
+      break;
+
+      case 2:
+      console.log(this.scene);
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieveHDRI.hdr';
+      this.scene = 3;
+      break;
+
+      case 3:
+      console.log(this.scene);
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casinoHDRI.hdr';
+      this.scene = 4;
+      break;
+
+      case 4:
+      console.log(this.scene);
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
+      this.scene = 0;
+      break;
+
+      default:
+      break;
+    }
+  };
+
+  /* changeScene1() {
     this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
   }
 
@@ -236,7 +283,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   changeScene5() {
     this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
-  }
+  } */
 
   /* changeState(){
     if (this.scene == 0) {
@@ -279,11 +326,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.pageState = 0;
     this.section3text2 = false;
     this.section3text3 = false;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
+    /* this.modelAvatarCorner.nativeElement.animationName = 'Running'; */
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 0m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.autoRotate = true;
-    this.avatarCornerRun();
+    /* this.avatarCornerRun(); */
   }
 
   activeSection2(){
@@ -370,11 +417,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
     /* this.modelAvatarPrimary.nativeElement.requestAnimationFrame(animate); */
     this.avatarCornerRun();
-    setTimeout(() => { this.changeScene1(); }, 1000);
+    /* setTimeout(() => { this.changeScene1(); }, 1000);
     setTimeout(() => { this.changeScene2(); }, 2000);
     setTimeout(() => { this.changeScene3(); }, 3000);
     setTimeout(() => { this.changeScene4(); }, 4000);
-    setTimeout(() => { this.changeScene5(); }, 5000);
+    setTimeout(() => { this.changeScene5(); }, 5000); */
   }
 
   activeSection6(){
