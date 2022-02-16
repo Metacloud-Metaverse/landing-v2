@@ -42,7 +42,6 @@ export class ContentSectionComponent implements OnInit {
 
   introCircles = false;
   isLoading = false;
-  introAvatar = true;
 
   section3text2 = false;
   section3text3 = false;
@@ -257,6 +256,13 @@ export class ContentSectionComponent implements OnInit {
     }, 1500);
   }
 
+  avatarCornerRun(){
+    this.modelAvatarCorner.nativeElement.animationName = 'Running';
+    setTimeout(() => {
+      this.modelAvatarCorner.nativeElement.animationName = '';
+    }, 1000);
+  }
+
   activeSection1(){
     this.pageState = 0;
     this.section3text2 = false;
@@ -265,21 +271,16 @@ export class ContentSectionComponent implements OnInit {
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 0m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.autoRotate = true;
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-    }, 1000);
+    this.avatarCornerRun();
   }
 
   activeSection2(){
     this.pageState = 1;
     this.section3text2 = false;
     this.section3text3 = false;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 1m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-    }, 1000);
+    this.avatarCornerRun();
   }
 
   /* activeSection3(){
@@ -296,12 +297,9 @@ export class ContentSectionComponent implements OnInit {
 
   activeSection3(){
     this.pageState = 2;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-    }, 1000);
+    this.avatarCornerRun();
   }
 
   /* activeSection5(){
@@ -318,15 +316,13 @@ export class ContentSectionComponent implements OnInit {
     this.pageState = 3;
     this.section3text2 = false;
     this.section3text3 = false;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 5m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.avatarCornerRun();
     setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
       this.section3text2 = true;
     }, 1000);
     setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
       this.section3text3 = true;
     }, 2000);
   }
@@ -334,31 +330,29 @@ export class ContentSectionComponent implements OnInit {
   activeSection5(){
     this.pageState = 4;
     this.scene = 0;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 10m';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.interpolationDecay = '10000';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
     /* this.modelAvatarPrimary.nativeElement.requestAnimationFrame(animate); */
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
-    }, 1000);
+    this.avatarCornerRun();
+    setTimeout(() => { this.changeScene1(); }, 1000);
+    setTimeout(() => { this.changeScene2(); }, 2000);
+    setTimeout(() => { this.changeScene3(); }, 3000);
+    setTimeout(() => { this.changeScene4(); }, 4000);
+    setTimeout(() => { this.changeScene5(); }, 5000);
   }
 
   activeSection6(){
     this.pageState = 5;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-    }, 1000);
+    this.avatarCornerRun();
   }
 
   activeSection7(){
     this.pageState = 6;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = 'Wave';
-    }, 1000);
+    this.avatarCornerRun();
   }
 
 }

@@ -1,5 +1,18 @@
 @import "../../../../../assets/styles/vars";
 
+.background-video{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+  filter: blur(30px);
+  mix-blend-mode: color-dodge;
+}
+
 .content-section{
   height: 400px;
   overflow-y: auto;
@@ -662,8 +675,46 @@ model-viewer {
   transform: translateX(-50%);
 }
 
+.texts8{
+  top: 20vh;
+  h2{
+    width: 1200px;
+  }
+}
+
 .texts9{
   p{
     margin-top: 2em;
+  }
+}
+
+.social-media {
+  margin-left: auto;
+  a {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: $animation;
+      border-radius: 200px;
+      background-color: rgba($color: #ffffff, $alpha: 0.5);
+      z-index: 1;
+    }
+    img {
+      width: 22px;
+      position: relative;
+      z-index: 2;
+    }
+    &:hover {
+      &::before {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }

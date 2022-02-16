@@ -9,11 +9,11 @@ $font_title: 'Aristotelica Pro Display Trial', 'Mulish', sans-serif;
 $font_text: "Montserrat", sans-serif;
 
 // Colors
-$black_high_emphasis: rgba(29, 21, 45, 1);
-$black_medium_emphasis: rgba(29, 21, 45, 0.7);
-$black_inactive: rgba(29, 21, 45, 0.54);
-$black_disabled: rgba(29, 21, 45, 0.38);
-$black_focus_overlay: rgba(29, 21, 45, 0.38);
+$black_high_emphasis: rgb(0, 0, 39);
+$black_medium_emphasis: rgba(0, 0, 39, 0.7);
+$black_inactive: rgba(0, 21, 0, 39);
+$black_disabled: rgba(0, 21, 0, 39);
+$black_focus_overlay: rgba(0, 0, 39, 0.38);
 
 $white_high_emphasis: rgba(255, 255, 255, 1);
 $white_medium_emphasis: rgba(255, 255, 255, 0.7);

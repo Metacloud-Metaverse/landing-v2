@@ -1,12 +1,6 @@
 
 <div class="main-layout">
 
-  <div class="background-noise"></div>
-  <div class="background-lights light1"></div>
-  <div class="background-lights light2"></div>
-  <div class="background-lights light3"></div>
-  <div class="background-lights light4"></div>
-
   <nav [ngClass]="{'nav-white': router.url == '/' || router.url == '/contact', 'nav-open': isMenuOpen}">
     <div class="menu" (click)="isMenuOpen = !isMenuOpen;">
       <div id="hamburger" onclick="this.classList.toggle('open');" [ngClass]="{'open': isMenuOpen}">
@@ -19,36 +13,60 @@
     </div>
 
     <a [routerLink]="['/']" class="logo">
-      <img *ngIf="router.url != '/' && router.url != '/contact' || isMenuOpen" src="/assets/img/logos/logo-horiz.png" alt="Metacloud Logo" />
-      <img *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/logos/logo-horiz-white.png" alt="Metacloud Logo" />
+      <img *ngIf="router.url != '/' && router.url != '/contact' || isMenuOpen" src="/assets/img/logos/logo.png" alt="Metacloud Logo" />
+      <img *ngIf="router.url == '/'&& !isMenuOpen || router.url == '/contact'" src="/assets/img/logos/logo-white.png" alt="Metacloud Logo" />
     </a>
 
-    <div class="sound" [ngClass]="{'off': isMuted}" (click)="playAudio()" matTooltip="Stop / Play Music">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="social-media">
+      <a href="" target="_blank" mat-icon-button matTooltip="Medium">
+        <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/medium-icon-black.svg" alt="Medium" />
+        <img *ngIf="router.url == '/' && !isMenuOpen || router.url == '/contact'" src="/assets/img/icons/medium-icon.svg" alt="Medium" />
+      </a>
+      <a href="" target="_blank" mat-icon-button matTooltip="Discord">
+        <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/discord-icon-black.svg" alt="Discord" />
+        <img *ngIf="router.url == '/' && !isMenuOpen || router.url == '/contact'" src="/assets/img/icons/discord-icon.svg" alt="Discord" />
+      </a>
+      <a href="" target="_blank" mat-icon-button matTooltip="Telegram">
+        <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram" />
+        <img *ngIf="router.url == '/' && !isMenuOpen || router.url == '/contact'" src="/assets/img/icons/telegram-icon.svg" alt="Telegram" />
+      </a>
+      <a href="" target="_blank" mat-icon-button matTooltip="Reddit">
+        <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/reddit-icon-black.svg" alt="Reddit" />
+        <img *ngIf="router.url == '/' && !isMenuOpen || router.url == '/contact'" src="/assets/img/icons/reddit-icon.svg" alt="Reddit" />
+      </a>
+      <a href="" target="_blank" mat-icon-button matTooltip="Tiktok">
+        <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/tiktok-icon-black.svg" alt="Tiktok" />
+        <img *ngIf="router.url == '/' && !isMenuOpen || router.url == '/contact'" src="/assets/img/icons/tiktok-icon.svg" alt="Tiktok" />
+      </a>
+      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Twitter"><img src="/assets/img/icons/twitter-icon.svg" alt="Twitter"></a> -->
+      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Instagram"><img src="/assets/img/icons/instagram-icon.svg" alt="Instagram"></a> -->
+      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Facebook"><img src="/assets/img/icons/facebook-icon.svg" alt="Facebook"></a> -->
     </div>
-    <audio loop #audio>
-      <source src="/assets/music/swedish-house-mafia-save-the-world-optimized.mp3" type="audio/mp3">
-    </audio>
 
+    <div class="separate-line-vert"></div>
+    <div class="sound" [ngClass]="{'sound-off': isMuted}" (click)="playAudio()" matTooltip="Stop / Play Music"><span></span><span></span><span></span><span></span></div>
+    <audio loop #audio><source src="/assets/music/swedish-house-mafia-save-the-world-optimized.mp3" type="audio/mp3"></audio>
     <!-- <button mat-stroked-button class="btn-play">PLAY NOW <mat-icon>play_arrow</mat-icon></button> -->
   </nav>
 
-  <div *ngIf="isVideoOpen" class="video-container">
-    <iframe width="100%" height="100vh" src="https://www.youtube.com/embed/gElfIo6uw4g?start=74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div *ngIf="router.url == '/start'" class="video-text" (click)="isVideoOpen = true;">
+    <p>WATCH THE TRAILER</p>
+    <mat-icon>play_circle_outline</mat-icon>
   </div>
 
-  <!-- <div class="video-miniature" [ngClass]="{'video-miniature-active': isVideoOpen}">
+  <div *ngIf="router.url == '/'" class="video-miniature">
     <div class="contain">
-      <img (click)="isVideoOpen = true;" src="https://images.unsplash.com/photo-1618913001611-2054733f4aa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="Video Miniature" matTooltip="Play Hype video" />
+      <img (click)="isVideoOpen = true;" src="/assets/img/video-miniature.png" alt="Video Miniature" matTooltip="Play Hype video" />
       <button mat-icon-button class="btn-play" (click)="isVideoOpen = true;" matTooltip="Play Hype video"><mat-icon>play_arrow</mat-icon></button>
-      <button mat-icon-button mat-dialog-close class="btn-close" (click)="isVideoOpen = false;"><mat-icon>close</mat-icon></button>
     </div>
-  </div> -->
+  </div>
 
   <router-outlet></router-outlet>
 </div>
 
 <app-nav-menu [isMenuOpen]="isMenuOpen" (closeMenu)="closeMenu($event)"></app-nav-menu>
+
+<div class="video-container" [ngClass]="{'video-container-active': isVideoOpen}">
+  <iframe width="100%" height="100vh" src="https://www.youtube.com/embed/gElfIo6uw4g?start=74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <button mat-icon-button mat-dialog-close class="btn-close" (click)="isVideoOpen = false;"><mat-icon>close</mat-icon></button>
+</div>

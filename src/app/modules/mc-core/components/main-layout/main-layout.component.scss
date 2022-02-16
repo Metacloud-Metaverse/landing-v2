@@ -6,73 +6,6 @@
   position: relative;
   background-color: #fff2ea;
 
-  .background-lights {
-    border-radius: 50px;
-    filter: blur(80px);
-    position: fixed;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.3;
-  }
-
-  .light1 {
-    top: -300px;
-    left: -100px;
-    width: 250px;
-    height: 0px;
-    border-right: 200px solid transparent;
-    border-left: 200px solid transparent;
-    border-bottom: 1200px solid #fc097e;
-    transform: rotate(-20deg);
-  }
-
-  .light2 {
-    top: -550px;
-    left: 300px;
-    width: 250px;
-    height: 0px;
-    border-right: 200px solid transparent;
-    border-left: 200px solid transparent;
-    border-bottom: 1200px solid #594d9f;
-    transform: rotate(-10deg);
-  }
-
-  .light3 {
-    top: -550px;
-    right: 400px;
-    width: 250px;
-    height: 0px;
-    border-right: 200px solid transparent;
-    border-left: 200px solid transparent;
-    border-bottom: 1200px solid #328bcd;
-    transform: rotate(0deg);
-  }
-
-  .light4 {
-    top: -300px;
-    right: -200px;
-    width: 250px;
-    height: 0px;
-    border-right: 200px solid transparent;
-    border-left: 200px solid transparent;
-    border-bottom: 1200px solid #fc4409;
-    transform: rotate(0deg);
-  }
-
-  .background-noise {
-    background-image: url("/assets/img/patterns/pattern-noise.png");
-    background-repeat: repeat;
-    mix-blend-mode: soft-light;
-    opacity: 0.25;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-
   nav {
     position: fixed;
     top: 0;
@@ -83,12 +16,18 @@
     top: 0em;
     width: 100%;
     box-sizing: border-box;
+    @include xs {
+      padding: 1em;
+    }
 
     .logo {
-      width: 220px;
+      width: 230px;
       margin-right: auto;
       display: flex;
       align-items: center;
+      @include xs {
+        width: 170px;
+      }
       img {
         width: 100%;
         object-fit: contain;
@@ -168,52 +107,58 @@
       justify-content: space-around;
       cursor: pointer;
       transition: $animation;
-    }
-    .sound:hover span {
-      background-color: $color_primary_500;
-    }
-    .sound span {
-      display: block;
-      width: 2px;
-      background-color: $color_primary_500;
-      animation: sound 0ms -0.8s linear infinite alternate;
-      transition: height 0.8s, background 0.3s;
-    }
-    .sound span:nth-child(1) {
-      height: 25px;
-      animation-duration: 474ms;
-    }
-    .sound span:nth-child(2) {
-      height: 25px;
-      animation-duration: 433ms;
-    }
-    .sound span:nth-child(3) {
-      height: 25px;
-      animation-duration: 407ms;
-    }
-    .sound span:nth-child(4) {
-      height: 25px;
-      animation-duration: 458ms;
+
+      span {
+        display: block;
+        width: 2px;
+        background-color: $color_primary_500;
+        animation: sound 0ms -0.8s linear infinite alternate;
+        transition: height 0.8s, background 0.3s;
+        &:nth-child(1) {
+          height: 25px;
+          animation-duration: 474ms;
+        }
+        &:nth-child(2) {
+          height: 25px;
+          animation-duration: 433ms;
+        }
+        &:nth-child(3) {
+          height: 25px;
+          animation-duration: 407ms;
+        }
+        &:nth-child(4) {
+          height: 25px;
+          animation-duration: 458ms;
+        }
+      }
+
+      &:hover {
+        span {
+          background-color: $color_primary_500;
+        }
+      }
     }
 
-    .sound.off span {
-      animation-play-state: paused;
-    }
-    .sound.off span:nth-child(1) {
-      height: 25px;
-      animation-duration: 474ms;
-    }
-    .sound.off span:nth-child(2) {
-      height: 25px;
-      animation-duration: 433ms;
-    }
-    .sound.off span:nth-child(3) {
-      height: 25px;
-      animation-duration: 407ms;
-    }
-    .sound.off span:nth-child(4) {
-      height: 25px;
-      animation-duration: 458ms;
+    .sound-off {
+      span {
+        animation-play-state: paused;
+        &:nth-child(1) {
+          height: 25px;
+          animation-duration: 474ms;
+        }
+        &:nth-child(2) {
+          height: 25px;
+          animation-duration: 433ms;
+        }
+        &:nth-child(3) {
+          height: 25px;
+          animation-duration: 407ms;
+        }
+        &:nth-child(4) {
+          height: 25px;
+          animation-duration: 458ms;
+        }
+      }
     }
 
     @keyframes sound {
@@ -226,13 +171,56 @@
         height: 23px;
       }
     }
+
+    .social-media {
+      margin-left: auto;
+      @include xs {
+        display: none;
+      }
+      a {
+        position: relative;
+        opacity: 0.7;
+        transition: $animation;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: $animation;
+          border-radius: 200px;
+          background-color: rgba($color: #ffffff, $alpha: 0.5);
+          z-index: 1;
+        }
+        img {
+          width: 22px;
+          position: relative;
+          z-index: 2;
+        }
+        &:hover {
+          opacity: 1;
+          &::before {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .separate-line-vert {
+      @include xs {
+        display: none;
+      }
+    }
   }
 
   .nav-white {
     .menu {
       #hamburger {
         path {
-          stroke: white ;
+          stroke: white;
         }
       }
     }
@@ -242,10 +230,36 @@
     }
   }
 
-  .nav-open{
+  .nav-open {
     .btn-play {
       color: black !important;
       border-color: rgba($color: black, $alpha: 0.5) !important;
+    }
+  }
+
+  .video-text {
+    position: fixed;
+    bottom: 2em;
+    right: 3em;
+    z-index: 18;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    cursor: pointer;
+    @include xs{
+      right: 1em;
+      bottom: 1em;
+    }
+    &:hover {
+      color: $color_primary_500;
+    }
+    p {
+      margin: 0;
+      font-size: 0.8em;
+      font-weight: 600;
+      @include xs {
+        display: none;
+      }
     }
   }
 
@@ -305,36 +319,6 @@
           font-size: 32px;
         }
       }
-
-      .btn-close {
-        opacity: 0;
-        position: fixed;
-        top: 2em;
-        right: 2em;
-        border: 1px solid rgba($color: $color_primary_500, $alpha: 1);
-        z-index: 99999;
-        background-color: transparent;
-        border: 2px solid red;
-        transition: all 0.3s ease;
-        width: 70px;
-        height: 70px;
-        border-radius: 70px;
-
-        mat-icon {
-          color: red;
-          transition: all 0.3s ease;
-        }
-
-        &:hover {
-          transform: scale(0.9);
-          background-color: red;
-
-          mat-icon {
-            transform: scale(0.8);
-            color: white;
-          }
-        }
-      }
     }
 
     &:hover {
@@ -352,33 +336,66 @@
       }
     }
   }
+}
 
-  .video-miniature-active {
+.video-container {
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 31;
+
+  iframe {
+    transition: all 0.5s ease;
+    z-index: 31;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    bottom: 0em;
-    right: 0em;
-    z-index: 21;
-    .contain {
-      border-radius: 0;
-      iframe,
-      img {
-        width: 100%;
-        height: 100vh;
-      }
-      img {
-        opacity: 0 !important;
-        pointer-events: none;
-      }
-      iframe {
-        opacity: 1 !important;
-      }
-      .btn-play {
-        opacity: 0 !important;
-      }
-      .btn-close {
-        opacity: 1 !important;
+    object-fit: cover;
+    filter: blur(10px);
+  }
+
+  .btn-close {
+    z-index: 31;
+    position: fixed;
+    top: 2em;
+    right: 2em;
+    border: 1px solid rgba($color: $color_primary_500, $alpha: 1);
+    z-index: 99999;
+    background-color: transparent;
+    border: 2px solid red;
+    transition: all 0.3s ease;
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    @include xs{
+      transform: scale(0.7);
+    }
+
+    mat-icon {
+      color: red;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      transform: scale(0.9);
+      background-color: red;
+
+      mat-icon {
+        transform: scale(0.8);
+        color: white;
       }
     }
+  }
+}
+
+.video-container-active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 31;
+  iframe {
+    z-index: 31;
+    filter: blur(0px);
   }
 }

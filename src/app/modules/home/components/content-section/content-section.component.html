@@ -1,3 +1,6 @@
+<!-- <video src="/assets/videos/animated-background-metacloud.mp4" class="background-video" autoplay muted loop></video> -->
+
+
 <div class="indicators">
   <div [ngClass]="{'active': pageState == 0}" (click)="activeSection1()"><span>1</span><span class="figure"></span></div>
   <div [ngClass]="{'active': pageState == 1}" (click)="activeSection2()"><span>2</span><span class="figure"></span></div>
@@ -25,7 +28,6 @@
 
 
 <model-viewer
-  *ngIf="introAvatar"
   #modelAvatarPrimary
   alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
   src="assets/models/NeilArmstrong.glb"
@@ -35,7 +37,7 @@
   disable-zoom
   camera-controls
   camera-orbit="'-45deg 55deg'"
-  interpolation-decay="200"
+  interpolation-decay="300"
   class="avatar-primary"
   [ngClass]="{'movement1': pageState == 0 || pageState == 5 || pageState == 6,
               'movement2': pageState == 1 || pageState == 2,
@@ -43,7 +45,6 @@
 </model-viewer>
 
 <model-viewer
-  *ngIf="introAvatar"
   #modelAvatarCorner
   alt="An animate 3D model of a robot"
   src="assets/models/RobotExpressive.glb"
@@ -144,10 +145,30 @@
 </section>
 
 <section *ngIf="pageState == 5" class="texts texts-center texts8">
-  <h2 class="texts3">As you embark your journey on ownership through metacloud, you can monetize when people attend your galleries, live concerts, and private parties. The possibilities are endless.</h2>
+  <h2 class="texts3 display3">As you embark your journey on ownership through metacloud, you can monetize when people attend your galleries, live concerts, and private parties. The possibilities are endless.</h2>
 </section>
 
 <section *ngIf="pageState == 6" class="texts texts-center texts9">
   <h2 class="texts3 display3">Harness The Freedom To Evolve</h2>
-  <p>Lorem ipsum dolor sit amet consectetur, lorem ipsum, dolor sit amet consectetur.</p>
+  <div class="buttons">
+    <button mat-flat-button>
+      <span>PLAY NOW</span>
+      <mat-icon>arrow_right</mat-icon>
+    </button>
+    <button mat-stroked-button class="buttons">
+      <span>Visit White paper</span>
+      <mat-icon>arrow_right</mat-icon>
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="social-media component-animation">
+    <a href="" target="_blank" mat-icon-button matTooltip="Medium"><img src="/assets/img/icons/medium-icon-black.svg" alt="Medium"></a>
+    <a href="" target="_blank" mat-icon-button matTooltip="Discord"><img src="/assets/img/icons/discord-icon-black.svg" alt="Discord"></a>
+    <a href="" target="_blank" mat-icon-button matTooltip="Telegram"><img src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram"></a>
+    <a href="" target="_blank" mat-icon-button matTooltip="Reddit"><img src="/assets/img/icons/reddit-icon-black.svg" alt="Reddit"></a>
+    <a href="" target="_blank" mat-icon-button matTooltip="Tiktok"><img src="/assets/img/icons/tiktok-icon-black.svg" alt="Tiktok"></a>
+    <!-- <a href="" target="_blank" mat-icon-button matTooltip="Twitter"><img src="/assets/img/icons/twitter-icon.svg" alt="Twitter"></a> -->
+    <!-- <a href="" target="_blank" mat-icon-button matTooltip="Instagram"><img src="/assets/img/icons/instagram-icon.svg" alt="Instagram"></a> -->
+    <!-- <a href="" target="_blank" mat-icon-button matTooltip="Facebook"><img src="/assets/img/icons/facebook-icon.svg" alt="Facebook"></a> -->
+  </div>
 </section>

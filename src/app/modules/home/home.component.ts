@@ -1,4 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
@@ -6,12 +7,30 @@ import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild }
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
-    trigger('fade', [
-      state('inactive', style({ opacity: 0 })),
-      state('active', style({ opacity: 1 })),
-      transition('inactive <=> active', animate('500ms ease-in')),
-      transition('active <=> inactive', animate('500ms ease-in'))
-    ])
+
+    /* trigger('h2Animation', [
+      state('visible', style({ opacity: 1, lineHeight: 1.1 })),
+      state('enter', style({ opacity: 0, lineHeight: 4, transform: 'translateY(300)' })),
+      state('leave', style({ opacity: 0, lineHeight: 4, transform: 'translateY(-300)' })),
+      transition('enter => visible', animate('1000ms ease')),
+      transition('visible => leave', animate('500ms ease')),
+    ]), */
+
+    /* trigger('h2Animation', [
+      state('void', style({ opacity: 0, lineHeight: 4 })),
+      transition(':enter', [
+        animate('1000ms ease', style({ opacity: 1, lineHeight: 1.1, transform: 'translateY(0)' }))
+      ]),
+      transition(':leave', [
+        animate('1000ms ease', style({ opacity: 0, lineHeight: 4, transform: 'translateY(-300)' }))
+      ]),
+    ]), */
+
+    trigger('paragraphAnimation', [
+      transition(':leave', [
+        animate('700ms ease', style({ opacity: 0, transform: 'translateY(-200px)', filter: 'blur(30px)' }))
+      ]),
+    ]),
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit {
@@ -22,7 +41,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   introCircles = false;
   isLoading = false;
-  introAvatar = true;
 
   section3text2 = false;
   section3text3 = false;
@@ -37,38 +55,157 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('modelAvatarPrimary') modelAvatarPrimary: any;
   @ViewChild('modelAvatarCorner') modelAvatarCorner: any;
 
-  constructor(public el: ElementRef<HTMLElement>,) { }
+  constructor(
+    public el: ElementRef<HTMLElement>,
+    private breakpointObserver: BreakpointObserver,
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    /* this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          activeSection2Mobile(){
+            this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 10m';
+          }
+        }
+      }); */
+  }
 
-  @HostListener('mouseenter')
+  @HostListener('mousewheel', ['$event']) onMousewheel(event:any){
+    if (event.wheelDelta > 0) {
+      console.log('Mouse Scroll Up');
+      switch (this.pageState) {
+        case 1:
+        this.activeSection1();
+        this.pageState = 0;
+        break;
+
+        case 2:
+        this.activeSection2();
+        this.pageState = 1;
+        break;
+
+        case 3:
+        this.activeSection3();
+        this.pageState = 2;
+        break;
+
+        case 4:
+        this.activeSection4();
+        this.pageState = 3;
+        break;
+
+        case 5:
+        this.activeSection5();
+        this.pageState = 4;
+        break;
+
+        case 6:
+        this.activeSection6();
+        this.pageState = 5;
+        break;
+
+        case 7:
+        this.activeSection7();
+        this.pageState = 6;
+        break;
+
+        default:
+        break;
+      }
+    }
+
+    if (event.wheelDelta < 0) {
+      console.log('Mouse Scroll Down');
+      switch (this.pageState) {
+        case 0:
+        this.activeSection1();
+        this.pageState = 1;
+        break;
+
+        case 1:
+        this.activeSection2();
+        this.pageState = 2;
+        break;
+
+        case 2:
+        this.activeSection3();
+        this.pageState = 3;
+        break;
+
+        case 3:
+        this.activeSection4();
+        this.pageState = 4;
+        break;
+
+        case 4:
+        this.activeSection5();
+        this.pageState = 5;
+        break;
+
+        case 5:
+        this.activeSection6();
+        this.pageState = 6;
+        break;
+
+        case 6:
+        this.activeSection7();
+        this.pageState = 7;
+        break;
+
+        default:
+        break;
+      }
+    }
+  }
+
+  /* @HostListener('window:mousewheel', ['$event'])
+  scrollHandler(event: any) {
+    // Is Scroll Down
+    if (this.pageState = 0) {
+      this.activeSection1();
+    } if (this.pageState = 1) {
+      this.activeSection2();
+    } if (this.pageState = 2) {
+      this.activeSection3();
+    } if (this.pageState = 3) {
+      this.activeSection4();
+    } if (this.pageState = 4) {
+      this.activeSection5();
+    } if (this.pageState = 5) {
+      this.activeSection6();
+    } return
+  } */
+
+  /* @HostListener('mouseenter')
   onMouseEnter() {
     this.isGradientVisible = true;
-  }
+  } */
 
-  @HostListener('mouseleave')
+  /* @HostListener('mouseleave')
   onMouseLeave() {
     this.isGradientVisible = false;
-  }
+  } */
 
-  @HostListener('mousemove', ['$event'])
+  /* @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     this.gradientLeft = event.pageX - this.el.nativeElement.offsetLeft;
     this.gradientTop = event.pageY - this.el.nativeElement.offsetTop;
-  }
+  } */
 
   ngAfterViewInit() {
     /* this.gradientRadius = this.el.nativeElement.getBoundingClientRect().width; */
     this.activeSection1();
 
-    setTimeout(() => {
+    /* setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = 'Wave';
       console.log('Hola');
       console.log(this.modelAvatarCorner);
-    }, 5000);
+    }, 5000); */
   }
 
-  get gradientStyle() {
+  /* get gradientStyle() {
     const top = this.gradientTop;
     const left = this.gradientLeft;
     const gradientRadius = this.isGradientVisible ? this.gradientRadius : 0;
@@ -79,20 +216,49 @@ export class HomeComponent implements OnInit, AfterViewInit {
       'top.px': top,
       'left.px': left
     };
+  } */
+
+  changeScene1() {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
   }
 
-  changeState(){
+  changeScene2() {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfireHDRI.hdr';
+  }
+
+  changeScene3() {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieveHDRI.hdr';
+  }
+
+  changeScene4() {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casinoHDRI.hdr';
+  }
+
+  changeScene5() {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
+  }
+
+  /* changeState(){
     if (this.scene == 0) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/environment-whipple_creek_regional_park_04_1k.hdr';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
       this.scene = 1;
     } if (this.scene == 1) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/environment-kloppenheim_02_4k.hdr';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfireHDRI.hdr';
       this.scene = 2;
+    } if (this.scene == 2) {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieveHDRI.hdr';
+      this.scene = 3;
+    } if (this.scene == 3) {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casinoHDRI.hdr';
+      this.scene = 4;
+    } if (this.scene == 4) {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
+      this.scene = 5;
     } else {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/environment-spruit_sunrise_1k_HDR.hdr';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
       this.scene = 0;
     }
-  }
+  } */
 
   avatarCornerHi(){
     this.modelAvatarCorner.nativeElement.animationName = 'Wave';
@@ -102,76 +268,124 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, 1500);
   }
 
+  avatarCornerRun(){
+    this.modelAvatarCorner.nativeElement.animationName = 'Running';
+    setTimeout(() => {
+      this.modelAvatarCorner.nativeElement.animationName = '';
+    }, 1000);
+  }
+
   activeSection1(){
     this.pageState = 0;
     this.section3text2 = false;
     this.section3text3 = false;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 1m';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 0m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.autoRotate = true;
-
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-    }, 1000);
+    this.avatarCornerRun();
   }
 
   activeSection2(){
     this.pageState = 1;
     this.section3text2 = false;
     this.section3text3 = false;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 3m';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 1m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.avatarCornerRun();
 
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-    }, 1000);
+    this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 10m';
+        }
+    });
   }
 
-  activeSection3(){
+  /* activeSection3(){
     this.pageState = 2;
     this.section3text2 = false;
     this.section3text3 = false;
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 5m';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
     }, 1000);
+  } */
+
+  activeSection3(){
+    this.pageState = 2;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.avatarCornerRun();
+
+    this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 10m';
+        }
+    });
   }
+
+  /* activeSection5(){
+    this.pageState = 4;
+    this.modelAvatarCorner.nativeElement.animationName = 'Running';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    setTimeout(() => {
+      this.modelAvatarCorner.nativeElement.animationName = '';
+    }, 1000);
+  } */
 
   activeSection4(){
     this.pageState = 3;
     this.section3text2 = false;
     this.section3text3 = false;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 5m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-
+    this.avatarCornerRun();
     setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
       this.section3text2 = true;
     }, 1000);
-
     setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
       this.section3text3 = true;
     }, 2000);
+
+    this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 10m';
+        }
+    });
   }
 
   activeSection5(){
     this.pageState = 4;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 8m';
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/models/environment-spruit_sunrise_1k_HDR.hdr';
-    this.modelAvatarPrimary.nativeElement.exposure = 1;
-    this.modelAvatarPrimary.nativeElement.requestAnimationFrame(animate);
+    this.scene = 0;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
+    /* this.modelAvatarPrimary.nativeElement.requestAnimationFrame(animate); */
+    this.avatarCornerRun();
+    setTimeout(() => { this.changeScene1(); }, 1000);
+    setTimeout(() => { this.changeScene2(); }, 2000);
+    setTimeout(() => { this.changeScene3(); }, 3000);
+    setTimeout(() => { this.changeScene4(); }, 4000);
+    setTimeout(() => { this.changeScene5(); }, 5000);
+  }
 
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-      this.modelAvatarPrimary.nativeElement.exposure = 0;
-    }, 1000);
+  activeSection6(){
+    this.pageState = 5;
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.avatarCornerRun();
+  }
+
+  activeSection7(){
+    this.pageState = 6;
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.avatarCornerRun();
   }
 }
