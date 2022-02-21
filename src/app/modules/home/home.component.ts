@@ -307,6 +307,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   } */
 
+  activeMusic(){
+
+  }
+
   avatarCornerHi(){
     this.modelAvatarCorner.nativeElement.animationName = 'Wave';
     setTimeout(() => {
@@ -326,19 +330,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.pageState = 0;
     this.section3text2 = false;
     this.section3text3 = false;
-    /* this.modelAvatarCorner.nativeElement.animationName = 'Running'; */
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 0m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.autoRotate = true;
-    /* this.avatarCornerRun(); */
+    this.avatarCornerRun();
   }
 
   activeSection2(){
     this.pageState = 1;
     this.section3text2 = false;
     this.section3text3 = false;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 1m';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 55deg 80%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.modelAvatarCorner.nativeElement.animationName = 'run';
     this.avatarCornerRun();
 
     this.breakpointObserver

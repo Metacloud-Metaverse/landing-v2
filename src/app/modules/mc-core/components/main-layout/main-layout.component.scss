@@ -35,6 +35,7 @@
     }
 
     .menu {
+      transform: scale(0.85);
       #hamburger {
         $stroke-color: black;
         background-color: transparent;
@@ -79,7 +80,7 @@
         }
 
         &.open .line {
-          stroke: red;
+          stroke: black;
           &1 {
             stroke-dasharray: 90 207;
             stroke-dashoffset: -134;

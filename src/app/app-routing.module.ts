@@ -18,6 +18,7 @@ const routes: Routes = [
   },
   { path: 'page-not-found', loadChildren: () => import('./modules/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule), data: { preload: true }},
   { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: 'events', loadChildren: () => import('./modules/events/events.module').then(m => m.EventsModule) },
   { path: '**', redirectTo: 'page-not-found', pathMatch: 'full' },
 ];
 

@@ -37,13 +37,16 @@
   <model-viewer
     #modelAvatarPrimary
     alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-    src="assets/models/NeilArmstrong.glb"
+    src="assets/models/dj_scene_02.glb"
     shadow-intensity="2"
     shadow-softness="1"
     exposure="1"
     disable-zoom
     camera-controls
-    camera-orbit="'-45deg 55deg'"
+    camera-orbit="-45deg 55deg"
+    autoplay
+    loop="false"
+    animation-name="wave"
     interpolation-decay="300"
     class="avatar-primary"
     [ngClass]="{'movement1': pageState == 0 || pageState == 5 || pageState == 6,
@@ -54,7 +57,7 @@
   <model-viewer
     #modelAvatarCorner
     alt="An animate 3D model of a robot"
-    src="assets/models/avatar2.gltf"
+    src="assets/models/avatarmotions01.glb"
     shadow-intensity="1"
     shadow-softness="1"
     exposure="1"
@@ -63,7 +66,7 @@
     camera-controls="true"
     interpolation-decay="200"
     autoplay
-    animation-name="wave"
+    animation-name="dance"
     class="avatar-corner"
     (click)="avatarCornerHi()">
   </model-viewer>
@@ -114,7 +117,7 @@
   </section> -->
 
   <section *ngIf="pageState == 0" [@paragraphAnimation]="'state'" class="texts texts-center texts1">
-    <h2 class="display3"><b>Travel beyond the limitations of existence and escape to a Metaverse where you can release all inhibitions.</b></h2>
+    <h2 class="display3"><b>Escape to a Metaverse. Jump into a social world of creativity, discovery and exploration while connecting with people globally through the integration of trading, gaming and NFTs!</b></h2>
     <div class="scroll-down">
       <span></span>
       <span></span>
@@ -123,7 +126,7 @@
   </section>
 
   <section *ngIf="pageState == 1" [@paragraphAnimation]="'state'" class="texts texts-left texts2">
-    <h2 class="display3"><b>Embody the freedom to be the REAL you and experience the world with heightened levels of richness</b></h2>
+    <h2 class="display3"><b>Shop hundreds of live events and discover popular and up-and-coming artists, concerts, theater, games and more.</b></h2>
   </section>
 
   <!-- <section *ngIf="pageState == 2" [@paragraphAnimation]="'state'" class="texts texts-right texts3">
@@ -144,8 +147,10 @@
 
   <section *ngIf="pageState == 3" class="texts texts-left texts6">
     <h2 class="texts3 display2"><b>GAMES</b></h2>
-    <h2 *ngIf="section3text2" class="texts3 display2"><b>MUSIC</b></h2>
+    <h2 *ngIf="section3text2" class="texts3 display2" (click)="activeMusic()"><b>MUSIC</b></h2>
     <h2 *ngIf="section3text3" class="texts3 display2"><b>CREATIVITY</b></h2>
+
+    <img src="/assets/img/headphones.png" alt="Headphones" class="floating img-headphones" />
   </section>
 
   <section *ngIf="pageState == 4" class="texts texts7">
@@ -169,7 +174,7 @@
         <mat-icon>arrow_right</mat-icon>
       </button>
       <button mat-stroked-button class="buttons">
-        <span>Visit White paper</span>
+        <span>White paper</span>
         <mat-icon>arrow_right</mat-icon>
       </button>
     </div>
@@ -178,8 +183,8 @@
       <a href="" target="_blank" mat-icon-button matTooltip="Medium"><img src="/assets/img/icons/medium-icon-black.svg" alt="Medium"></a>
       <a href="" target="_blank" mat-icon-button matTooltip="Discord"><img src="/assets/img/icons/discord-icon-black.svg" alt="Discord"></a>
       <a href="" target="_blank" mat-icon-button matTooltip="Telegram"><img src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram"></a>
-      <a href="" target="_blank" mat-icon-button matTooltip="Reddit"><img src="/assets/img/icons/reddit-icon-black.svg" alt="Reddit"></a>
-      <a href="" target="_blank" mat-icon-button matTooltip="Tiktok"><img src="/assets/img/icons/tiktok-icon-black.svg" alt="Tiktok"></a>
+      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Reddit"><img src="/assets/img/icons/reddit-icon-black.svg" alt="Reddit"></a>
+      <a href="" target="_blank" mat-icon-button matTooltip="Tiktok"><img src="/assets/img/icons/tiktok-icon-black.svg" alt="Tiktok"></a> -->
       <!-- <a href="" target="_blank" mat-icon-button matTooltip="Twitter"><img src="/assets/img/icons/twitter-icon.svg" alt="Twitter"></a> -->
       <!-- <a href="" target="_blank" mat-icon-button matTooltip="Instagram"><img src="/assets/img/icons/instagram-icon.svg" alt="Instagram"></a> -->
       <!-- <a href="" target="_blank" mat-icon-button matTooltip="Facebook"><img src="/assets/img/icons/facebook-icon.svg" alt="Facebook"></a> -->

@@ -1,4 +1,4 @@
-<div class="intro-page">
+<div class="intro-page" (mousemove)="onMouseMove($event)">
 
   <!-- <div #cursor class="cursor">
     <span>CLICK START</span>
@@ -15,13 +15,28 @@
     <app-stars-element></app-stars-element> -->
     <!-- <div class="sketchfab-embed-wrapper"> <iframe title="World Manabu" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c5766d695255410b89cad51151cbb1ab/embed?autostart=1"> </iframe></div> -->
 
-    <div class="sketchfab-embed-wrapper" [ngClass]="{'start-animation-world': endAnimationMic}"> <iframe title="Cartoon Lowpoly Earth Planet 2 UVW textured" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/73dd3283bf6d45a3a62d4806f3044633/embed"> </iframe></div>
+    <!-- <div class="sketchfab-embed-wrapper" [ngClass]="{'start-animation-world': endAnimationMic}"> <iframe title="Cartoon Lowpoly Earth Planet 2 UVW textured" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/73dd3283bf6d45a3a62d4806f3044633/embed"> </iframe></div> -->
 
+    <img #backgroundStars src="/assets/img/background-stars.jpg" alt="Background Stars" class="background-stars" />
 
-    <div class="container">
-      <!-- <img src="/assets/img/logos/logo-v2.png" alt="Metacloud Logo" class="logo" /> -->
+    <model-viewer
+      #modelPlanet
+      alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
+      src="assets/models/planet_space.glb"
+      shadow-intensity="1"
+      shadow-softness="1"
+      exposure="1"
+      camera-orbit="0deg 90deg 20m"
+      autoplay
+      animation-name="clip"
+      interpolation-decay="300"
+      class="planet"
+      [ngClass]="{'planet-zoom': startZoom}">
+    </model-viewer>
+
+    <!-- <div class="container">
       <h1 class="display1" [ngClass]="{'end-animation-h1': endAnimationHeadline}"><b>REALITY RE-IMAGINED</b></h1>
-    </div>
+    </div> -->
 
     <button mat-stroked-button class="btn-into" (click)="startAnimation()">Into Metaverse</button>
 
