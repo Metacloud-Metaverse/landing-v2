@@ -69,12 +69,13 @@
     </div>
   </section>
 
-  <section *ngIf="pageState == 3" class="texts texts-left texts6">
-    <h2 class="texts3 display2"><b>GAMES</b></h2>
-    <h2 *ngIf="section3text2" class="texts3 display2" (click)="activeMusic()"><b>MUSIC</b></h2>
-    <h2 *ngIf="section3text3" class="texts3 display2"><b>CREATIVITY</b></h2>
+  <section *ngIf="pageState == 3" class="texts texts-left texts4">
+    <h2 class="texts3 display2"><span></span><b class="link hover-linear">GAMES</b></h2>
+    <h2 *ngIf="section3text2" class="texts3 display2" (click)="activeMusic()"><span></span> <b class="link hover-linear">MUSIC</b></h2>
+    <h2 *ngIf="section3text3" class="texts3 display2"><span></span><b class="link hover-linear">CREATIVITY</b></h2>
 
     <img src="/assets/img/headphones.png" alt="Headphones" class="floating img-headphones" />
+    <img src="/assets/img/microphone.png" alt="Microphone" class="floating img-microphone" />
   </section>
 
   <section *ngIf="pageState == 4" class="texts texts-center texts5">
@@ -141,65 +142,64 @@
   </div>
 
   <model-viewer
-  #modelAvatarPrimary
-  alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-  src="assets/models/dj_scene_02.glb"
-  shadow-intensity="2"
-  shadow-softness="1"
-  exposure="1"
-  disable-zoom
-  camera-controls
-  camera-orbit="-45deg 55deg"
-  autoplay
-  loop="false"
-  animation-name="wave"
-  interpolation-decay="300"
-  class="avatar-primary"
-  [ngClass]="{'movement1' : pageState == 0,
-              'movement2' : pageState == 1,
-              'movement3' : pageState == 2,
-              'movement4' : pageState == 3,
-              'movement5' : pageState == 4,
-              'movement6' : pageState == 5,
-              'movement7' : pageState == 6,
-              'movement8' : pageState == 7,
-              'movement9' : pageState == 8,
-              'movement10': pageState == 9}">
-</model-viewer>
+    #modelAvatarPrimary
+    alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
+    src="assets/models/dj_scene_02.glb"
+    shadow-intensity="2"
+    shadow-softness="1"
+    exposure="1"
+    disable-zoom
+    camera-controls
+    camera-orbit="-45deg 55deg"
+    autoplay
+    animation-name="wave"
+    interpolation-decay="300"
+    class="avatar-primary"
+    [ngClass]="{'movement1' : pageState == 0,
+                'movement2' : pageState == 1,
+                'movement3' : pageState == 2,
+                'movement4' : pageState == 3,
+                'movement5' : pageState == 4,
+                'movement6' : pageState == 5,
+                'movement7' : pageState == 6,
+                'movement8' : pageState == 7,
+                'movement9' : pageState == 8,
+                'movement10': pageState == 9}">
+  </model-viewer>
 
-<model-viewer
-  #modelAvatarCorner
-  alt="An animate 3D model of a robot"
-  src="assets/models/avatarmotions01.glb"
-  shadow-intensity="1"
-  shadow-softness="1"
-  exposure="1"
-  disable-zoom
-  camera-orbit="-45deg 55deg"
-  camera-controls="true"
-  interpolation-decay="200"
-  autoplay
-  animation-name="dance"
-  class="avatar-corner"
-  style="display: none !important;"
-  (click)="avatarCornerHi()">
-</model-viewer>
+  <model-viewer
+    #modelAvatarCorner
+    alt="An animate 3D model of a robot"
+    src="assets/models/avatarmotions01.glb"
+    shadow-intensity="1"
+    shadow-softness="1"
+    exposure="1"
+    disable-zoom
+    camera-orbit="-45deg 55deg"
+    camera-controls="true"
+    interpolation-decay="200"
+    autoplay
+    animation-name="dance"
+    class="avatar-corner"
+    style="display: none !important;"
+    (click)="avatarCornerHi()">
+  </model-viewer>
 
-<model-viewer
-  #modelSpaceship
-  alt="Intergalactic spaceship"
-  src="assets/models/intergalactic-spaceship.glb"
-  shadow-intensity="1"
-  shadow-softness="1"
-  exposure="1"
-  disable-zoom
-  camera-orbit="-45deg 55deg"
-  camera-controls
-  interpolation-decay="200"
-  autoplay
-  animation-name=""
-  class="model-spaceship intro-component-animation"
-  [ngClass]="{'model-spaceship-active': pageState == 3}">
-</model-viewer>
+  <model-viewer
+    #modelSpaceship
+    alt="Intergalactic spaceship"
+    src="assets/models/intergalactic-spaceship.glb"
+    shadow-intensity="1"
+    shadow-softness="1"
+    exposure="1"
+    disable-zoom
+    camera-orbit="-45deg 55deg"
+    camera-controls
+    interpolation-decay="200"
+    autoplay
+    animation-name=""
+    class="model-spaceship intro-component-animation"
+    [ngClass]="{'model-spaceship-active': pageState == 3}">
+  </model-viewer>
 
 </div>

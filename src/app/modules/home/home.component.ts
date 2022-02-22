@@ -7,25 +7,6 @@ import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild }
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
-
-    /* trigger('h2Animation', [
-      state('visible', style({ opacity: 1, lineHeight: 1.1 })),
-      state('enter', style({ opacity: 0, lineHeight: 4, transform: 'translateY(300)' })),
-      state('leave', style({ opacity: 0, lineHeight: 4, transform: 'translateY(-300)' })),
-      transition('enter => visible', animate('1000ms ease')),
-      transition('visible => leave', animate('500ms ease')),
-    ]), */
-
-    /* trigger('h2Animation', [
-      state('void', style({ opacity: 0, lineHeight: 4 })),
-      transition(':enter', [
-        animate('1000ms ease', style({ opacity: 1, lineHeight: 1.1, transform: 'translateY(0)' }))
-      ]),
-      transition(':leave', [
-        animate('1000ms ease', style({ opacity: 0, lineHeight: 4, transform: 'translateY(-300)' }))
-      ]),
-    ]), */
-
     trigger('paragraphAnimation', [
       transition(':leave', [
         animate('700ms ease', style({ opacity: 0, transform: 'translateY(-200px)', filter: 'blur(30px)' }))
@@ -37,18 +18,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   pageState = 0;
   scene = 0;
-  cameraOrbit = '-45deg 55deg'
 
-  introCircles = false;
   isLoading = false;
 
   section3text2 = false;
   section3text3 = false;
 
-  isGradientVisible = false;
-  gradientTop!: number;
-  gradientLeft!: number;
-  gradientRadius!: number;
   activeAnimation = 'inactive';
 
   events:any = [
@@ -87,18 +62,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     public el: ElementRef<HTMLElement>,
     private breakpointObserver: BreakpointObserver,
   ) { }
-
-  ngOnInit(): void {
-    /* this.breakpointObserver
-      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
-      .subscribe((state: BreakpointState) => {
-        if (state.matches) {
-          activeSection2Mobile(){
-            this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 10m';
-          }
-        }
-      }); */
-  }
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event:any){
     if (event.wheelDelta > 0) {
@@ -193,7 +156,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
-
+  ngOnInit(): void {
+    /* this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          activeSection2Mobile(){
+            this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 10m';
+          }
+        }
+      }); */
+  }
 
   ngAfterViewInit() {
     /* this.gradientRadius = this.el.nativeElement.getBoundingClientRect().width; */
@@ -243,9 +216,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   };
 
-
   activeMusic(){
-
+    this.modelAvatarPrimary.nativeElement.animationName = 'dancing';
   }
 
   avatarCornerHi(){
@@ -310,7 +282,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.pageState = 3;
     this.section3text2 = false;
     this.section3text3 = false;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 5m';
+    this.modelAvatarPrimary.nativeElement.cameraControls = false;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.avatarCornerRun();
     setTimeout(() => {
@@ -332,7 +305,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   activeSection5(){
     this.pageState = 4;
     this.scene = 0;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '10deg 10deg 1m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.avatarCornerRun();
   }
