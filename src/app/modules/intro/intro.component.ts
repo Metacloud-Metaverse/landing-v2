@@ -38,9 +38,9 @@ export class IntroComponent implements OnInit {
   } */
 
   @HostListener('mousemove', ['$event']) onMouseMove(event: any) {
-    /* this.cursor.nativeElement.style.left = event.pageX + 'px';
-    this.cursor.nativeElement.style.top = event.pageY + 'px'; */
     console.log('Mouse move' + event.pageX);
+    this.cursor.nativeElement.style.left = event.pageX + 'px';
+    this.cursor.nativeElement.style.top = event.pageY + 'px';
     this.mouse_x = -10 + (event.pageX / 100);
     this.mouse_y = 80 + (event.pageY / 100);
     this.modelPlanet.nativeElement.cameraOrbit = this.mouse_x + 'deg' + this.mouse_y + 'deg' + '20m';

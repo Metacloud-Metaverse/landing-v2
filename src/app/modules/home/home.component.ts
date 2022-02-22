@@ -51,6 +51,34 @@ export class HomeComponent implements OnInit, AfterViewInit {
   gradientRadius!: number;
   activeAnimation = 'inactive';
 
+  events:any = [
+    {
+      image: '/assets/img/event-concert.png',
+      title: 'Concert',
+      description: 'Edm, country, blues, jazz, raves, rock shows, rap, reggae and more',
+    },
+    {
+      image: '/assets/img/event-art.png',
+      title: 'Art & Theaters',
+      description: 'Attend Live NFT galleries, standup comedy, improv and theatricals',
+    },
+    {
+      image: '/assets/img/event-podcast.png',
+      title: 'Podcast',
+      description: 'Listen to your favorite podcast',
+    },
+    {
+      image: '/assets/img/event-casino.png',
+      title: 'Casino & Tournament',
+      description: 'Play Texas hold-em poker, live sports betting, blackjack, slots and tournaments',
+    },
+    {
+      image: '/assets/img/event-games.png',
+      title: 'Games',
+      description: 'Play chess, bingo, puzzles, trivia, sudoku and more',
+    },
+  ]
+
 
   @ViewChild('modelAvatarPrimary') modelAvatarPrimary: any;
   @ViewChild('modelAvatarCorner') modelAvatarCorner: any;
@@ -120,38 +148,33 @@ export class HomeComponent implements OnInit, AfterViewInit {
       console.log('Mouse Scroll Down');
       switch (this.pageState) {
         case 0:
-        this.activeSection1();
+        this.activeSection2();
         this.pageState = 1;
         break;
 
         case 1:
-        this.activeSection2();
+        this.activeSection3();
         this.pageState = 2;
         break;
 
         case 2:
-        this.activeSection3();
+        this.activeSection4();
         this.pageState = 3;
         break;
 
         case 3:
-        this.activeSection4();
+        this.activeSection5();
         this.pageState = 4;
         break;
 
         case 4:
-        this.activeSection5();
+        this.activeSection6();
         this.pageState = 5;
         break;
 
         case 5:
-        this.activeSection6();
-        this.pageState = 6;
-        break;
-
-        case 6:
         this.activeSection7();
-        this.pageState = 7;
+        this.pageState = 6;
         break;
 
         default:
@@ -170,39 +193,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
-  /* @HostListener('window:mousewheel', ['$event'])
-  scrollHandler(event: any) {
-    // Is Scroll Down
-    if (this.pageState = 0) {
-      this.activeSection1();
-    } if (this.pageState = 1) {
-      this.activeSection2();
-    } if (this.pageState = 2) {
-      this.activeSection3();
-    } if (this.pageState = 3) {
-      this.activeSection4();
-    } if (this.pageState = 4) {
-      this.activeSection5();
-    } if (this.pageState = 5) {
-      this.activeSection6();
-    } return
-  } */
 
-  /* @HostListener('mouseenter')
-  onMouseEnter() {
-    this.isGradientVisible = true;
-  } */
-
-  /* @HostListener('mouseleave')
-  onMouseLeave() {
-    this.isGradientVisible = false;
-  } */
-
-  /* @HostListener('mousemove', ['$event'])
-  onMouseMove(event: MouseEvent) {
-    this.gradientLeft = event.pageX - this.el.nativeElement.offsetLeft;
-    this.gradientTop = event.pageY - this.el.nativeElement.offsetTop;
-  } */
 
   ngAfterViewInit() {
     /* this.gradientRadius = this.el.nativeElement.getBoundingClientRect().width; */
@@ -214,19 +205,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       console.log(this.modelAvatarCorner);
     }, 5000); */
   }
-
-  /* get gradientStyle() {
-    const top = this.gradientTop;
-    const left = this.gradientLeft;
-    const gradientRadius = this.isGradientVisible ? this.gradientRadius : 0;
-
-    return {
-      'height.px': gradientRadius,
-      'width.px': gradientRadius,
-      'top.px': top,
-      'left.px': left
-    };
-  } */
 
   changeScene() {
     switch (this.scene) {
@@ -265,47 +243,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   };
 
-  /* changeScene1() {
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
-  }
-
-  changeScene2() {
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfireHDRI.hdr';
-  }
-
-  changeScene3() {
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieveHDRI.hdr';
-  }
-
-  changeScene4() {
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casinoHDRI.hdr';
-  }
-
-  changeScene5() {
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
-  } */
-
-  /* changeState(){
-    if (this.scene == 0) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
-      this.scene = 1;
-    } if (this.scene == 1) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfireHDRI.hdr';
-      this.scene = 2;
-    } if (this.scene == 2) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieveHDRI.hdr';
-      this.scene = 3;
-    } if (this.scene == 3) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casinoHDRI.hdr';
-      this.scene = 4;
-    } if (this.scene == 4) {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
-      this.scene = 5;
-    } else {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
-      this.scene = 0;
-    }
-  } */
 
   activeMusic(){
 
@@ -354,18 +291,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  /* activeSection3(){
-    this.pageState = 2;
-    this.section3text2 = false;
-    this.section3text3 = false;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-    }, 1000);
-  } */
-
   activeSection3(){
     this.pageState = 2;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
@@ -380,16 +305,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
     });
   }
-
-  /* activeSection5(){
-    this.pageState = 4;
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-    }, 1000);
-  } */
 
   activeSection4(){
     this.pageState = 3;
@@ -418,6 +333,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.pageState = 4;
     this.scene = 0;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.avatarCornerRun();
+  }
+
+  activeSection6(){
+    this.pageState = 5;
+    this.scene = 0;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
     /* this.modelAvatarPrimary.nativeElement.requestAnimationFrame(animate); */
     this.avatarCornerRun();
@@ -428,14 +351,30 @@ export class HomeComponent implements OnInit, AfterViewInit {
     setTimeout(() => { this.changeScene5(); }, 5000); */
   }
 
-  activeSection6(){
-    this.pageState = 5;
+  activeSection7(){
+    this.pageState = 6;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.avatarCornerRun();
   }
 
-  activeSection7(){
-    this.pageState = 6;
+  activeSection8(){
+    this.pageState = 7;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.avatarCornerRun();
+  }
+
+  activeSection9(){
+    this.pageState = 8;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.avatarCornerRun();
+  }
+
+  activeSection10(){
+    this.pageState = 9;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.avatarCornerRun();
   }

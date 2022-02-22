@@ -1,1 +1,22 @@
-<p>events works!</p>
+<div class="events-page">
+
+  <header>
+    <div class="container">
+      <h1 class="display2"><b>Events</b></h1>
+      <p>Our partners align with our vision to deliver a purely blockchain-driven metaverse that will change the way we think of gaming, entertainment and socioeconomic structures forever.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="events" @componentAnimation>
+        <div class="event component-animation" *ngFor="let event of events">
+          <img src="{{ event.image }}" alt="{{ event.name }} image" class="image" />
+          <h2><b>{{ event.title }}</b></h2>
+          <p>{{ event.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -10,17 +10,16 @@
   <div class="content intro-component-animation">
     <h1 (click)="routeHome();" class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Home</a></h1>
     <h1 class="component-animation coming-soon"><a routerLinkActive="router-link-active" class="link hover-linear">Marketplace</a> <div class="neon-effect"><b>Comin<span>g</span> So<span>o</span>n</b></div></h1>
-    <h1 class="component-animation coming-soon"><a routerLinkActive="router-link-active" class="link hover-linear">Events</a> <div class="neon-effect"><b>Comin<span>g</span> So<span>o</span>n</b></div></h1>
-    <h1 (click)="routeTeam();" class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Team</a></h1>
+    <h1 class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Events</a></h1>
+    <h1 class="component-animation" [matMenuTriggerFor]="docsMenu"><a class="link hover-linear">Docs <mat-icon>arrow_drop_down</mat-icon></a></h1>
     <h1 class="component-animation"><a href="https://medium.com/@themetacloud" target="_blank" class="link hover-linear">Announcements <mat-icon>logout</mat-icon></a></h1>
-    <h1 (click)="routeContact()" class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Contact Us</a></h1>
 
     <div class="more-link component-animation">
-      <h5>Docs</h5>
+      <h5>Links</h5>
       <div class="row">
-        <a class="link hover-linear"><small>WHITE PAPER</small></a>
-        <a class="link hover-linear"><small>PITCH DECK</small></a>
-        <a class="link hover-linear"><small>TOKENOMICS</small></a>
+        <a (click)="routeTeam();" class="link hover-linear"><small>TEAM</small></a>
+        <a (click)="routeContact()" class="link hover-linear"><small>CONTACT US</small></a>
+        <a href="" target="_blank" class="link hover-linear"><small>WHITEPAPER</small></a>
       </div>
     </div>
 
@@ -48,3 +47,10 @@
 
 
 <video *ngIf="activeBlink" src="/assets/videos/blink-video.mp4" autoplay muted class="blink-video"></video>
+
+
+<mat-menu #docsMenu="matMenu">
+  <a href="" target="_blank" mat-menu-item>Whitepaper</a>
+  <a href="" target="_blank" mat-menu-item>Pitch Deck</a>
+  <a href="" target="_blank" mat-menu-item>Tokenomics</a>
+</mat-menu>

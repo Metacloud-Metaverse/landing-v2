@@ -11,6 +11,7 @@ const routes: Routes = [
       { path: 'start', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule), data: { preload: true }},
       { path: 'news', loadChildren: () => import('./modules/news/news.module').then(m => m.NewsModule), data: { preload: true }},
       { path: 'team', loadChildren: () => import('./modules/team/team.module').then(m => m.TeamModule), data: { preload: true }},
+      { path: 'events', loadChildren: () => import('./modules/events/events.module').then(m => m.EventsModule), data: { preload: true }},
       { path: 'partners', loadChildren: () => import('./modules/partners/partners.module').then(m => m.PartnersModule), data: { preload: true }},
       { path: 'legals', loadChildren: () => import('./modules/legals/legals.module').then(m => m.LegalsModule) },
       { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule) },
@@ -18,7 +19,6 @@ const routes: Routes = [
   },
   { path: 'page-not-found', loadChildren: () => import('./modules/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule), data: { preload: true }},
   { path: '', redirectTo: '', pathMatch: 'full' },
-  { path: 'events', loadChildren: () => import('./modules/events/events.module').then(m => m.EventsModule) },
   { path: '**', redirectTo: 'page-not-found', pathMatch: 'full' },
 ];
 

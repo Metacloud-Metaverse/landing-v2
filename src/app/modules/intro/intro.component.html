@@ -1,8 +1,8 @@
 <div class="intro-page" (mousemove)="onMouseMove($event)">
 
-  <!-- <div #cursor class="cursor">
+  <div #cursor class="cursor" (click)="startAnimation()">
     <span>CLICK START</span>
-  </div> -->
+  </div>
 
 
   <div class="intro-page-container">
@@ -22,7 +22,7 @@
     <model-viewer
       #modelPlanet
       alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-      src="assets/models/planet_space.glb"
+      src="assets/models/planeta_estrellas.glb"
       shadow-intensity="1"
       shadow-softness="1"
       exposure="1"
@@ -38,7 +38,7 @@
       <h1 class="display1" [ngClass]="{'end-animation-h1': endAnimationHeadline}"><b>REALITY RE-IMAGINED</b></h1>
     </div> -->
 
-    <button mat-stroked-button class="btn-into" (click)="startAnimation()">Into Metaverse</button>
+    <!-- <button mat-stroked-button class="btn-into" (click)="startAnimation()">Into Metaverse</button> -->
 
   </div>
 </div>

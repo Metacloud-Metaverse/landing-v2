@@ -26,8 +26,11 @@ import { Router } from '@angular/router';
 export class NavMenuComponent implements OnInit {
 
   activeBlink = false;
+  timedOutCloser!:any;
   @Input() isMenuOpen = false;
   @Output() closeMenu = new EventEmitter<boolean>();
+
+  trigger:any;
 
   constructor(
     public router: Router,
@@ -92,4 +95,5 @@ export class NavMenuComponent implements OnInit {
       this.activeBlink = false;
     }, 2000);
   }
+
 }
