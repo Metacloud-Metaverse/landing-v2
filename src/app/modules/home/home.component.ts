@@ -28,8 +28,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   showChangeSceneButton = false;
 
 
-
-
   pageState = 0;
   scene = 0;
 

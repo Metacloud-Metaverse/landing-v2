@@ -1,11 +1,5 @@
 @import "../../../assets/styles/vars";
 
-@keyframes floating {
-  from { transform: translate(0,  0px); }
-  50%  { transform: translate(0, 30px); }
-  to   { transform: translate(0, -0px); }
-}
-
 @keyframes letterSpacingHeightH2 {
   0% {
     line-height: 3;
@@ -490,14 +484,6 @@ model-viewer {
     text-align: left;
     cursor: pointer;
   }
-  span{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: black;
-    margin-right: 10px;
-  }
   @include xs{
     height: initial;
     top: initial;
@@ -510,21 +496,7 @@ model-viewer {
     }
   }
 
-  .floating{
-    animation-name: floating;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    margin-left: 30px;
-    margin-top: 5px;
-    pointer-events: none;
-  }
 
-  .img-headphones{
-    position: fixed;
-    top: 20%;
-    right: 40%;
-  }
 }
 
 .texts5{

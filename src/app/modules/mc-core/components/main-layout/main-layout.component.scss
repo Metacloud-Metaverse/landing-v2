@@ -27,6 +27,7 @@
       align-items: center;
       @include xs {
         width: 170px;
+        margin: auto;
       }
       img {
         width: 100%;
@@ -108,6 +109,9 @@
       justify-content: space-around;
       cursor: pointer;
       transition: $animation;
+      @include xs{
+        width: 54.4px;
+      }
 
       span {
         display: block;
