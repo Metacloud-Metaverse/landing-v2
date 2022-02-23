@@ -55,7 +55,7 @@
 
   <app-step-e *ngIf="pageState == 4" @paragraphAnimation></app-step-e>
 
-  <app-step-f *ngIf="pageState == 5" @paragraphAnimation (changeScene)="changeScene($event)"></app-step-f>
+  <app-step-f #stepF *ngIf="pageState == 5" @paragraphAnimation [showChangeSceneButton]="showChangeSceneButton" (changeScene)="changeScene($event)"></app-step-f>
 
   <app-step-g *ngIf="pageState == 6" @paragraphAnimation></app-step-g>
 
