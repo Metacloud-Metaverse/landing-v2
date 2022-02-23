@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { StepFComponent } from './sections/step-f/step-f.component';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,19 @@ import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild }
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+
+  // StepF
+  currentAnimateSceneOrbit = 0;
+  animatedSceneOrbit = [
+    '1deg 70deg 1000%',
+    '90deg 70deg 1000%',
+    '180deg 70deg 1000%',
+    '270deg 70deg 1000%'
+  ];
+  showChangeSceneButton = false;
+
+
+
 
   pageState = 0;
   scene = 0;
@@ -171,6 +185,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     /* this.gradientRadius = this.el.nativeElement.getBoundingClientRect().width; */
+    this.loadConfigModelViewer();
     this.activeSection1();
 
     /* setTimeout(() => {
@@ -180,42 +195,34 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, 5000); */
   }
 
-  changeScene() {
-    switch (this.scene) {
-      case 0:
-      console.log(this.scene);
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
-      this.scene = 1;
-      break;
+  changeScene(asset: string) {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = asset;
+  }
 
-      case 1:
-      console.log(this.scene);
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfireHDRI.hdr';
-      this.scene = 2;
-      break;
+  animateScene(modelViewer: any) {
+    this.currentAnimateSceneOrbit = 0;
 
-      case 2:
-      console.log(this.scene);
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieveHDRI.hdr';
-      this.scene = 3;
-      break;
+    modelViewer.cameraOrbit = this.getAnimatedSceneOrbit();
+    modelViewer.timescale = '1';
 
-      case 3:
-      console.log(this.scene);
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casinoHDRI.hdr';
-      this.scene = 4;
-      break;
+    this.currentAnimateSceneOrbit++;
 
-      case 4:
-      console.log(this.scene);
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
-      this.scene = 0;
-      break;
+    setTimeout(() => {
+      modelViewer.cameraOrbit = this.getAnimatedSceneOrbit();
+      this.currentAnimateSceneOrbit++;
+    }, 1000);
+    setTimeout(() => {
+      modelViewer.cameraOrbit = this.getAnimatedSceneOrbit();
+      this.currentAnimateSceneOrbit++;
+    }, 2000);
+    setTimeout(() => {
+      modelViewer.cameraOrbit = this.getAnimatedSceneOrbit();
+      this.currentAnimateSceneOrbit = 0;
+      this.showChangeSceneButton = true;
+    }, 3000);
+  }
 
-      default:
-      break;
-    }
-  };
+
 
 
   avatarCornerHi(){
@@ -312,26 +319,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   activeSection6(){
     this.pageState = 5;
     this.scene = 0;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '1deg 70deg 1000%';
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
-    this.modelAvatarPrimary.nativeElement.timescale = '1';
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
-    setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '90deg 70deg 1000%';
-    }, 1000);
-    setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '180deg 70deg 1000%';
-    }, 2000);
-    setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '270deg 70deg 1000%';
-    }, 3000);
-    /* this.modelAvatarPrimary.nativeElement.requestAnimationFrame(animate); */
     this.avatarCornerRun();
-    /* setTimeout(() => { this.changeScene1(); }, 1000);
-    setTimeout(() => { this.changeScene2(); }, 2000);
-    setTimeout(() => { this.changeScene3(); }, 3000);
-    setTimeout(() => { this.changeScene4(); }, 4000);
-    setTimeout(() => { this.changeScene5(); }, 5000); */
   }
 
   activeSection7(){
@@ -360,5 +348,32 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.avatarCornerRun();
+  }
+
+
+  loadConfigModelViewer() {
+    /*this.modelAvatarPrimary.nativeElement.addEventListener('load', (event: any) => {
+      console.log('Loaded');
+    }, true);*/
+
+    /*this.modelAvatarPrimary.nativeElement.addEventListener('preload', (event: any) => {
+      console.log('PRE Loaded');
+    }, true);*/
+
+    this.modelAvatarPrimary.nativeElement.addEventListener('progress', (event: any) => {
+      if(this.pageState != 5){
+        return;
+      }
+
+      if(event.detail.totalProgress < 1){
+        return;
+      }
+
+      this.animateScene(this.modelAvatarPrimary.nativeElement);
+    }, true);
+  }
+
+  getAnimatedSceneOrbit(): string {
+    return this.animatedSceneOrbit[this.currentAnimateSceneOrbit];
   }
 }
