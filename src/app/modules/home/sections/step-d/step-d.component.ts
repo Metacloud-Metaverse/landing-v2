@@ -15,9 +15,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StepDComponent implements OnInit {
 
+  section3text2 = false;
+  section3text3 = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  activeMusic(){
+    /* this.modelAvatarPrimary.nativeElement.animationName = 'dancing'; */
+  }
 }

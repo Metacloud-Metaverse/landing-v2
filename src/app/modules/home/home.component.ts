@@ -187,9 +187,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   };
 
-  activeMusic(){
-    this.modelAvatarPrimary.nativeElement.animationName = 'dancing';
-  }
+
 
   avatarCornerHi(){
     this.modelAvatarCorner.nativeElement.animationName = 'Wave';
