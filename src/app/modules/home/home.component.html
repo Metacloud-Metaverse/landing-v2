@@ -67,9 +67,6 @@
 
 
 
-
-
-
   <div class="lines">
     <div class="line"></div>
     <div class="line"></div>
@@ -81,8 +78,8 @@
     #modelAvatarPrimary
     alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
     src="assets/models/daft_update.glb"
-    shadow-intensity="2"
-    shadow-softness="1"
+    shadow-intensity="0"
+    shadow-softness="0"
     exposure="1"
     disable-zoom
     camera-controls
@@ -122,7 +119,7 @@
     (click)="avatarCornerHi()">
   </model-viewer>
 
-  <model-viewer
+  <!-- <model-viewer
     #modelSpaceship
     alt="Intergalactic spaceship"
     src="assets/models/intergalactic-spaceship.glb"
@@ -137,6 +134,6 @@
     animation-name=""
     class="model-spaceship intro-component-animation"
     [ngClass]="{'model-spaceship-active': pageState == 3}">
-  </model-viewer>
+  </model-viewer> -->
 
 </div>

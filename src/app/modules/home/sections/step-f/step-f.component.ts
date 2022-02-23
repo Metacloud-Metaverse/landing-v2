@@ -8,7 +8,7 @@ import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@
 export class StepFComponent implements OnInit, AfterViewInit {
 
   @Output() changeScene = new EventEmitter<string>();
-  @Input() showChangeSceneButton = false;
+  @Input() showChangeSceneButton = true;
 
   currentScene = 0;
 
@@ -23,7 +23,7 @@ export class StepFComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
   ngAfterViewInit(): void {

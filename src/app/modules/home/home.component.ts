@@ -38,8 +38,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
 
 
-
-
   pageState = 0;
   scene = 0;
 
@@ -232,7 +230,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.showChangeSceneButton = true;
     }, 3000);
   }
-
 
 
 

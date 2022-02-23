@@ -9,14 +9,23 @@
     margin-bottom: 2em;
     .container {
       display: flex;
+      @include xs{
+        flex-direction: column;
+      }
       h1 {
         min-width: 300px;
         margin: 0;
+        @include xs{
+          text-align: center;
+        }
       }
       p {
         padding-left: 80px;
         position: relative;
         font-size: 1.1em;
+        @include xs{
+          padding-left: 50px;
+        }
         &::before {
           content: "";
           position: absolute;
@@ -26,6 +35,9 @@
           height: 3px;
           background-color: rgba($color: #000000, $alpha: 0.3);
           border-radius: 50px;
+          @include xs{
+            width: 30px;
+          }
         }
       }
     }
@@ -36,13 +48,20 @@
     flex-wrap: wrap;
     gap: 3em;
 
+    @include xs{
+      gap: 1em;
+    }
+
     .user {
       width: calc(33.3% - 2em);
       text-align: center;
       margin-bottom: 2em;
 
+      @include xs{
+        width: calc(50% - 1em);
+      }
+
       .image-container {
-        opacity: 0.8;
         overflow: hidden;
         border-radius: 8px;
         margin-bottom: 1em;

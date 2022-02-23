@@ -62,6 +62,15 @@ export class NavMenuComponent implements OnInit {
     }, 800);
   }
 
+  routeEvents(){
+    this.blinkEffect();
+
+    setTimeout(() => {
+      this.sendCloseMenu();
+      this.router.navigate(['/events']);
+    }, 800);
+  }
+
   routeContact(){
     this.blinkEffect();
 
