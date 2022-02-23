@@ -60,9 +60,7 @@
     <img src="/assets/img/microphone.png" alt="Microphone" class="floating img-microphone" />
   </section>
 
-  <section *ngIf="pageState == 4" class="texts texts-center texts5">
-    <h2 class="texts3 display3"><b>Artists, influencers, musicians and YOU can own a piece of land in Metacloud and live stream events or shows, publish content, and request monetary patronage from fans for exlusive access</b></h2>
-  </section>
+  <app-step-e *ngIf="pageState == 4"></app-step-e>
 
   <section *ngIf="pageState == 5" class="texts texts6">
     <button mat-stroked-button color="primary" (click)="changeScene()">Change scene</button>

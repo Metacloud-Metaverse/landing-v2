@@ -27,6 +27,7 @@ import { ContentSectionComponent } from './components/content-section/content-se
 import { StepAComponent } from './sections/step-a/step-a.component';
 import { StepBComponent } from './sections/step-b/step-b.component';
 import { StepCComponent } from './sections/step-c/step-c.component';
+import { StepEComponent } from './sections/step-e/step-e.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { StepCComponent } from './sections/step-c/step-c.component';
     StepAComponent,
     StepBComponent,
     StepCComponent,
+    StepEComponent,
   ],
   imports: [
     CommonModule,
