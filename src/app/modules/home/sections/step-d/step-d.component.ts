@@ -1,10 +1,10 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-step-a',
-  templateUrl: './step-a.component.html',
-  styleUrls: ['./step-a.component.scss'],
+  selector: 'app-step-d',
+  templateUrl: './step-d.component.html',
+  styleUrls: ['./step-d.component.scss'],
   animations: [
     trigger('paragraphAnimation', [
       transition(':leave', [
@@ -13,7 +13,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
     ]),
   ]
 })
-export class StepAComponent implements OnInit {
+export class StepDComponent implements OnInit {
 
   constructor() { }
 
