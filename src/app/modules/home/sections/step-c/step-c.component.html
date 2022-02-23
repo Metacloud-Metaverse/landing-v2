@@ -1,0 +1,10 @@
+<section class="texts texts-left texts3">
+    <h2 class="display2"><b>Events</b></h2>
+    <div class="events">
+      <div class="event" *ngFor="let event of events">
+        <img src="{{ event.image }}" alt="{{ event.name }} image" class="image" />
+        <h3><b>{{ event.title }}</b></h3>
+        <p>{{ event.description }}</p>
+      </div>
+    </div>
+</section>
