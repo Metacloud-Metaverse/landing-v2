@@ -53,58 +53,19 @@
 
   <app-step-d *ngIf="pageState == 3" @paragraphAnimation></app-step-d>
 
-  <app-step-e *ngIf="pageState == 4"></app-step-e>
-
-  <section *ngIf="pageState == 4" class="texts texts-center texts5">
-    <h2 class="texts3 display3"><b>Artists, influencers, musicians and YOU can own a piece of land in Metacloud and live stream events or shows, publish content, and request monetary patronage from fans for exlusive access</b></h2>
-  </section>
+  <app-step-e *ngIf="pageState == 4" @paragraphAnimation></app-step-e>
 
   <section *ngIf="pageState == 5" class="texts texts6">
     <button mat-stroked-button color="primary" (click)="changeScene()">Change scene</button>
   </section>
 
-  <section *ngIf="pageState == 6" class="texts texts-center texts7">
-    <h2 class="display3">As you embark your journey on ownership through metacloud, you can monetize when people attend your galleries, live concerts, and private parties. The possibilities are endless.</h2>
-  </section>
+  <app-step-g *ngIf="pageState == 6" @paragraphAnimation></app-step-g>
 
-  <section *ngIf="pageState == 7" class="texts texts-center texts8">
-    <h2 class="display3">Unlock new experiences with anyone from anywhere - Share moments with eachother at a beachside campfire or learn how to sculpt with family from different parts of the world. Distance is no obstacle with metacloud</h2>
-  </section>
+  <app-step-h *ngIf="pageState == 7" @paragraphAnimation></app-step-h>
 
-  <section *ngIf="pageState == 8" class="texts texts-left texts9">
-    <h2 class="display3">Buy, sell, trade your own piece of land in Metacloud!</h2>
-    <p>*(Include image for land plots from pitch deck)</p>
-  </section>
+  <app-step-i *ngIf="pageState == 8" @paragraphAnimation></app-step-i>
 
-  <section *ngIf="pageState == 9" class="texts texts-center texts10">
-    <h2 class="display3">Harness The Freedom To Evolve</h2>
-    <div class="buttons">
-      <button mat-flat-button>
-        <span>PLAY NOW</span>
-        <mat-icon>arrow_right</mat-icon>
-      </button>
-      <button mat-stroked-button class="buttons">
-        <span>White paper</span>
-        <mat-icon>arrow_right</mat-icon>
-      </button>
-    </div>
-    <mat-divider></mat-divider>
-    <div class="social-media component-animation">
-      <a href="" target="_blank" mat-icon-button matTooltip="Medium"><img src="/assets/img/icons/medium-icon-black.svg" alt="Medium"></a>
-      <a href="" target="_blank" mat-icon-button matTooltip="Discord"><img src="/assets/img/icons/discord-icon-black.svg" alt="Discord"></a>
-      <a href="" target="_blank" mat-icon-button matTooltip="Telegram"><img src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram"></a>
-      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Reddit"><img src="/assets/img/icons/reddit-icon-black.svg" alt="Reddit"></a>
-      <a href="" target="_blank" mat-icon-button matTooltip="Tiktok"><img src="/assets/img/icons/tiktok-icon-black.svg" alt="Tiktok"></a> -->
-      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Twitter"><img src="/assets/img/icons/twitter-icon.svg" alt="Twitter"></a> -->
-      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Instagram"><img src="/assets/img/icons/instagram-icon.svg" alt="Instagram"></a> -->
-      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Facebook"><img src="/assets/img/icons/facebook-icon.svg" alt="Facebook"></a> -->
-    </div>
-  </section>
-
-
-
-
-
+  <app-step-j *ngIf="pageState == 9" @paragraphAnimation></app-step-j>
 
 
 

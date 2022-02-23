@@ -73,6 +73,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.pageState = 6;
         break;
 
+        case 8:
+        this.activeSection8();
+        this.pageState = 7;
+        break;
+
+        case 9:
+        this.activeSection9();
+        this.pageState = 8;
+        break;
+
+        case 10:
+        this.activeSection10();
+        this.pageState = 9;
+        break;
+
         default:
         break;
       }
@@ -109,6 +124,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
         case 5:
         this.activeSection7();
         this.pageState = 6;
+        break;
+
+        case 6:
+        this.activeSection8();
+        this.pageState = 7;
+        break;
+
+        case 7:
+        this.activeSection9();
+        this.pageState = 8;
+        break;
+
+        case 8:
+        this.activeSection10();
+        this.pageState = 9;
         break;
 
         default:
