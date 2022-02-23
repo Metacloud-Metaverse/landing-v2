@@ -282,9 +282,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.pageState = 3;
     this.section3text2 = false;
     this.section3text3 = false;
-    this.modelAvatarPrimary.nativeElement.cameraControls = false;
+    /* this.modelAvatarPrimary.nativeElement.cameraControls = false; */
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.modelAvatarPrimary.nativeElement.autoRotate = false;
     this.avatarCornerRun();
     setTimeout(() => {
       this.section3text2 = true;
@@ -313,8 +314,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   activeSection6(){
     this.pageState = 5;
     this.scene = 0;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '1deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
+    this.modelAvatarPrimary.nativeElement.timescale = '1';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '90deg 70deg 1000%';
+    }, 1000);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '180deg 70deg 1000%';
+    }, 2000);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '270deg 70deg 1000%';
+    }, 3000);
     /* this.modelAvatarPrimary.nativeElement.requestAnimationFrame(animate); */
     this.avatarCornerRun();
     /* setTimeout(() => { this.changeScene1(); }, 1000);
