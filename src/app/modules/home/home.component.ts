@@ -27,6 +27,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
   showChangeSceneButton = false;
 
+  preloadState = 0; // 0 = Preload, 1 = In Progress, 2 = Completed
+  preloadBackgroundNumber = 0;
+  assets = [
+    '/assets/hdr/concertHDRI.hdr',
+    '/assets/hdr/bonfireHDRI.hdr',
+    '/assets/hdr/nieveHDRI.hdr',
+    '/assets/hdr/casinoHDRI.hdr',
+    '/assets/hdr/museoHDRI.hdr'
+  ];
+
 
 
 
@@ -197,6 +207,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   changeScene(asset: string) {
     this.modelAvatarPrimary.nativeElement.skyboxImage = asset;
+    //this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/sceneback.png';
   }
 
   animateScene(modelViewer: any) {
@@ -353,9 +364,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
   loadConfigModelViewer() {
-    /*this.modelAvatarPrimary.nativeElement.addEventListener('load', (event: any) => {
+    this.modelAvatarPrimary.nativeElement.addEventListener('load', (event: any) => {
       console.log('Loaded');
-    }, true);*/
+      this.loadBackgroundScenes();
+    }, true);
 
     /*this.modelAvatarPrimary.nativeElement.addEventListener('preload', (event: any) => {
       console.log('PRE Loaded');
@@ -372,6 +384,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
       this.animateScene(this.modelAvatarPrimary.nativeElement);
     }, true);
+  }
+
+  loadBackgroundScenes() {
+    if(this.preloadBackgroundNumber >= (this.assets.length-1)){
+      return;
+    }
+
+    
   }
 
   getAnimatedSceneOrbit(): string {
