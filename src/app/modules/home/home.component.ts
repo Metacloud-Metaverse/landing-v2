@@ -218,7 +218,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   };
 
 
-
   avatarCornerHi(){
     this.modelAvatarCorner.nativeElement.animationName = 'Wave';
     setTimeout(() => {
