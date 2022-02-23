@@ -47,20 +47,9 @@
 
   <app-step-a *ngIf="pageState == 0" @paragraphAnimation></app-step-a>
 
-  <section *ngIf="pageState == 1" [@paragraphAnimation]="'state'" class="texts texts-left texts2">
-    <h2 class="display3"><b>Shop hundreds of live events! Discover your favorite artists, concerts, theater events, games and more.</b></h2>
-  </section>
+  <app-step-b *ngIf="pageState == 1" @paragraphAnimation></app-step-b>
 
-  <section *ngIf="pageState == 2" [@paragraphAnimation]="'state'" class="texts texts-left texts3">
-    <h2 class="display2"><b>Events</b></h2>
-    <div class="events">
-      <div class="event" *ngFor="let event of events">
-        <img src="{{ event.image }}" alt="{{ event.name }} image" class="image" />
-        <h3><b>{{ event.title }}</b></h3>
-        <p>{{ event.description }}</p>
-      </div>
-    </div>
-  </section>
+  <app-step-c *ngIf="pageState == 2" @paragraphAnimation></app-step-c>
 
   <section *ngIf="pageState == 3" class="texts texts-left texts4">
     <h2 class="texts3 display2"><span></span><b class="link hover-linear">GAMES</b></h2>

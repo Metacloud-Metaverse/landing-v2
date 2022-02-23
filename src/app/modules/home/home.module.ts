@@ -25,6 +25,8 @@ import { IntroSectionComponent } from './components/intro-section/intro-section.
 import { ScrollAnimationDirective } from './directives/scroll-animation.directive';
 import { ContentSectionComponent } from './components/content-section/content-section.component';
 import { StepAComponent } from './sections/step-a/step-a.component';
+import { StepBComponent } from './sections/step-b/step-b.component';
+import { StepCComponent } from './sections/step-c/step-c.component';
 import { StepDComponent } from './sections/step-d/step-d.component';
 
 
@@ -36,6 +38,8 @@ import { StepDComponent } from './sections/step-d/step-d.component';
     ScrollAnimationDirective,
     ContentSectionComponent,
     StepAComponent,
+    StepBComponent,
+    StepCComponent,
     StepDComponent,
   ],
   imports: [
