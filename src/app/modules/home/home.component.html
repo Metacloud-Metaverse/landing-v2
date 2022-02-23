@@ -60,7 +60,13 @@
     <img src="/assets/img/microphone.png" alt="Microphone" class="floating img-microphone" />
   </section>
 
+  <app-step-d *ngIf="pageState == 4" @paragraphAnimation></app-step-d>
+
   <app-step-e *ngIf="pageState == 4"></app-step-e>
+
+  <section *ngIf="pageState == 4" class="texts texts-center texts5">
+    <h2 class="texts3 display3"><b>Artists, influencers, musicians and YOU can own a piece of land in Metacloud and live stream events or shows, publish content, and request monetary patronage from fans for exlusive access</b></h2>
+  </section>
 
   <section *ngIf="pageState == 5" class="texts texts6">
     <button mat-stroked-button color="primary" (click)="changeScene()">Change scene</button>
@@ -124,13 +130,14 @@
   <model-viewer
     #modelAvatarPrimary
     alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-    src="assets/models/dj_scene_02.glb"
+    src="assets/models/daft_update.glb"
     shadow-intensity="2"
     shadow-softness="1"
     exposure="1"
     disable-zoom
     camera-controls
     camera-orbit="-45deg 55deg"
+    orbit-sensivity="20"
     autoplay
     animation-name="wave"
     interpolation-decay="300"

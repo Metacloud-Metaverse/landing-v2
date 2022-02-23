@@ -28,6 +28,7 @@ import { StepAComponent } from './sections/step-a/step-a.component';
 import { StepBComponent } from './sections/step-b/step-b.component';
 import { StepCComponent } from './sections/step-c/step-c.component';
 import { StepEComponent } from './sections/step-e/step-e.component';
+import { StepDComponent } from './sections/step-d/step-d.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { StepEComponent } from './sections/step-e/step-e.component';
     StepBComponent,
     StepCComponent,
     StepEComponent,
+    StepDComponent,
   ],
   imports: [
     CommonModule,
