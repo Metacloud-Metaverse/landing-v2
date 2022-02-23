@@ -180,41 +180,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, 5000); */
   }
 
-  changeScene() {
-    switch (this.scene) {
-      case 0:
-      console.log(this.scene);
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
-      this.scene = 1;
-      break;
-
-      case 1:
-      console.log(this.scene);
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfireHDRI.hdr';
-      this.scene = 2;
-      break;
-
-      case 2:
-      console.log(this.scene);
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieveHDRI.hdr';
-      this.scene = 3;
-      break;
-
-      case 3:
-      console.log(this.scene);
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casinoHDRI.hdr';
-      this.scene = 4;
-      break;
-
-      case 4:
-      console.log(this.scene);
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
-      this.scene = 0;
-      break;
-
-      default:
-      break;
-    }
+  changeScene(asset: string) {
+    this.modelAvatarPrimary.nativeElement.skyboxImage = asset;
   };
 
 
@@ -316,7 +283,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '1deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
     this.modelAvatarPrimary.nativeElement.timescale = '1';
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
     setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '90deg 70deg 1000%';
     }, 1000);
