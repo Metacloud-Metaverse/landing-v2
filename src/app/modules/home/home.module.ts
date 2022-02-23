@@ -24,6 +24,7 @@ import { IntroSectionComponent } from './components/intro-section/intro-section.
 // Directives
 import { ScrollAnimationDirective } from './directives/scroll-animation.directive';
 import { ContentSectionComponent } from './components/content-section/content-section.component';
+import { StepAComponent } from './sections/step-a/step-a.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ContentSectionComponent } from './components/content-section/content-se
     IntroSectionComponent,
     ScrollAnimationDirective,
     ContentSectionComponent,
+    StepAComponent,
   ],
   imports: [
     CommonModule,
