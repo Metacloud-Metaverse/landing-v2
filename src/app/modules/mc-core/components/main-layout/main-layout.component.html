@@ -54,7 +54,14 @@
     <mat-icon>play_circle_outline</mat-icon>
   </div>
 
-  <div *ngIf="router.url == '/'" class="video-miniature">
+  <div *ngIf="router.url == '/'" class="video-miniature video-miniature1">
+    <div class="contain">
+      <img (click)="isVideoOpen = true;" src="/assets/img/video-miniature.png" alt="Video Miniature" matTooltip="Play Hype video" />
+      <button mat-icon-button class="btn-play" (click)="isVideoOpen = true;" matTooltip="Play Hype video"><mat-icon>play_arrow</mat-icon></button>
+    </div>
+  </div>
+
+  <div *ngIf="router.url == '/'" class="video-miniature video-miniature2">
     <div class="contain">
       <img (click)="isVideoOpen = true;" src="/assets/img/video-miniature.png" alt="Video Miniature" matTooltip="Play Hype video" />
       <button mat-icon-button class="btn-play" (click)="isVideoOpen = true;" matTooltip="Play Hype video"><mat-icon>play_arrow</mat-icon></button>
@@ -65,6 +72,11 @@
 </div>
 
 <app-nav-menu [isMenuOpen]="isMenuOpen" (closeMenu)="closeMenu($event)"></app-nav-menu>
+
+<div class="video-container" [ngClass]="{'video-container-active': isVideoOpen}">
+  <iframe width="100%" height="100vh" src="https://www.youtube.com/embed/gElfIo6uw4g?start=74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <button mat-icon-button mat-dialog-close class="btn-close" (click)="isVideoOpen = false;"><mat-icon>close</mat-icon></button>
+</div>
 
 <div class="video-container" [ngClass]="{'video-container-active': isVideoOpen}">
   <iframe width="100%" height="100vh" src="https://www.youtube.com/embed/gElfIo6uw4g?start=74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

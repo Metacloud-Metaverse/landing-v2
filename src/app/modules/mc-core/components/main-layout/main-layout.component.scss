@@ -274,7 +274,7 @@
     right: 2em;
     width: 250px;
     height: 140px;
-    z-index: 18;
+    z-index: 20;
     cursor: pointer;
     transition: $animation;
     box-shadow: 0 16px 30px -12px rgba($color: black, $alpha: 0.7);
@@ -340,6 +340,10 @@
         }
       }
     }
+  }
+
+  .video-miniature1{
+    right: 300px;
   }
 }
 
