@@ -357,6 +357,7 @@ model-viewer {
 }
 
 .movement6 {
+  z-index: 8;
 }
 
 .movement7{
@@ -527,6 +528,8 @@ model-viewer {
     background-position: 0%;
     -webkit-transition: background 300ms ease-in-out;
     transition: background 300ms ease-in-out;
+    z-index: 30;
+    position: fixed;
   }
   button:hover {
     background-position: 100%;

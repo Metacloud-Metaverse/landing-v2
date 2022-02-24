@@ -55,7 +55,7 @@
 
   <app-step-e *ngIf="pageState == 4" @paragraphAnimation></app-step-e>
 
-  <app-step-f #stepF *ngIf="pageState == 5" @paragraphAnimation [showChangeSceneButton]="showChangeSceneButton" (changeScene)="changeScene($event)"></app-step-f>
+  <app-step-f style="pointer-events: none; z-index: 300;" #stepF *ngIf="pageState == 5" @paragraphAnimation [showChangeSceneButton]="showChangeSceneButton" (changeScene)="changeScene($event)"></app-step-f>
 
   <app-step-g *ngIf="pageState == 6" @paragraphAnimation></app-step-g>
 
@@ -82,7 +82,7 @@
     shadow-softness="0"
     exposure="1"
     disable-zoom
-    camera-controls
+    camera-controls="true"
     camera-orbit="-45deg 55deg"
     orbit-sensivity="2"
     autoplay
