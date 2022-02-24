@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-step-d',
@@ -14,6 +14,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
   ]
 })
 export class StepDComponent implements OnInit {
+
+  @Input() modelViewer: any;
 
   section3text2 = true;
   section3text3 = true;
@@ -39,16 +41,16 @@ export class StepDComponent implements OnInit {
 
   activeGames(){
     this.sectionActive = 1;
-    /* this.modelAvatarPrimary.nativeElement.animationName = 'dancing'; */
+    this.modelViewer.animationName = 'dancing';
   }
 
   activeMusic(){
     this.sectionActive = 2;
-    /* this.modelAvatarPrimary.nativeElement.animationName = 'dancing'; */
+    this.modelViewer.animationName = 'wave';
   }
 
   activeCreativity(){
     this.sectionActive = 3;
-    /* this.modelAvatarPrimary.nativeElement.animationName = 'dancing'; */
+    this.modelViewer.animationName = 'dancing';
   }
 }
