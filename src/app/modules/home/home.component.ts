@@ -23,10 +23,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     '1deg 70deg 1000%',
     '90deg 70deg 1000%',
     '180deg 70deg 1000%',
-    '270deg 70deg 1000%'
+    '270deg 70deg 1000%',
+    '359deg 70deg 1000%',
   ];
   showChangeSceneButton = false;
 
+  currentAnimateBackground = 0;
   preloadState = 0; // 0 = Preload, 1 = In Progress, 2 = Completed
   preloadBackgroundNumber = 0;
   assets = [
@@ -231,6 +233,43 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, 3000);
   }
 
+  avatarBackgroundScene() {
+    this.currentAnimateSceneOrbit = 0;
+    this.currentAnimateBackground = 0;
+
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = this.getAnimatedSceneOrbit();
+    this.modelAvatarPrimary.nativeElement.timescale = '1';
+
+    this.currentAnimateBackground++;
+    this.currentAnimateSceneOrbit++;
+
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = this.getAnimatedSceneOrbit();
+      this.modelAvatarPrimary.nativeElement.skyboxImage = this.getAnimatedBackgrund();
+      this.currentAnimateSceneOrbit++;
+      this.currentAnimateBackground++;
+    }, 3000);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = this.getAnimatedSceneOrbit();
+      this.modelAvatarPrimary.nativeElement.skyboxImage = this.getAnimatedBackgrund();
+      this.currentAnimateSceneOrbit++;
+      this.currentAnimateBackground++;
+    }, 4000);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = this.getAnimatedSceneOrbit();
+      this.modelAvatarPrimary.nativeElement.skyboxImage = this.getAnimatedBackgrund();
+      this.currentAnimateSceneOrbit++;
+      this.currentAnimateBackground++;
+    }, 6000);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = this.getAnimatedSceneOrbit();
+      this.modelAvatarPrimary.nativeElement.skyboxImage = this.getAnimatedBackgrund();
+      this.currentAnimateSceneOrbit = 0;
+      this.currentAnimateSceneOrbit = 0;
+      this.showChangeSceneButton = true;
+    }, 8000);
+  }
+
 
 
 
@@ -329,6 +368,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.pageState = 5;
     this.scene = 0;
     this.avatarCornerRun();
+    this.avatarBackgroundScene();
   }
 
   activeSection7(){
@@ -370,8 +410,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
       console.log('PRE Loaded');
     }, true);*/
 
-    this.modelAvatarPrimary.nativeElement.addEventListener('progress', (event: any) => {
+    this.modelAvatarPrimary.nativeElement.addEventListener('environment-change', (event: any) => {
       if(this.pageState != 5){
+        return;
+      }
+
+      //this.animateScene(this.modelAvatarPrimary.nativeElement);
+    }, true);
+
+    this.modelAvatarPrimary.nativeElement.addEventListener('progress', (event: any) => {
+      if(this.preloadState == 2){
         return;
       }
 
@@ -379,19 +427,43 @@ export class HomeComponent implements OnInit, AfterViewInit {
         return;
       }
 
-      this.animateScene(this.modelAvatarPrimary.nativeElement);
+      this.preloadBackgroundNumber++;
+      this.loadBackgroundScenes();
+      /*if(this.pageState != 5){
+        return;
+      }
+
+      if(event.detail.totalProgress < 1){
+        return;
+      }
+
+      this.animateScene(this.modelAvatarPrimary.nativeElement);*/
     }, true);
   }
 
   loadBackgroundScenes() {
-    if(this.preloadBackgroundNumber >= (this.assets.length-1)){
+    if(this.preloadState == 2){
       return;
     }
 
-    
+    if(this.preloadBackgroundNumber >= (this.assets.length-1)){
+      this.preloadState = 2;
+      alert('Cargado todos los backgrounds');
+      return;
+    }
+
+    this.modelAvatarPrimary.nativeElement.skyboxImage = this.getSceneAsset();
   }
 
   getAnimatedSceneOrbit(): string {
     return this.animatedSceneOrbit[this.currentAnimateSceneOrbit];
+  }
+
+  getAnimatedBackgrund(): string {
+    return this.assets[this.currentAnimateBackground];
+  }
+
+  getSceneAsset(): string {
+    return this.assets[this.preloadBackgroundNumber];
   }
 }
