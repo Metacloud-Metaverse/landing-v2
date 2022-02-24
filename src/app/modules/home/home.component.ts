@@ -32,11 +32,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   preloadState = 0; // 0 = Preload, 1 = In Progress, 2 = Completed
   preloadBackgroundNumber = 0;
   assets = [
-    '/assets/hdr/concertHDRI.hdr',
-    '/assets/hdr/bonfireHDRI.hdr',
-    '/assets/hdr/nieveHDRI.hdr',
-    '/assets/hdr/casinoHDRI.hdr',
-    '/assets/hdr/museoHDRI.hdr'
+    '/assets/hdr/concertHDRI.jpg',
+    '/assets/hdr/bonfireHDRI.jpg',
+    '/assets/hdr/nieveHDRI.jpg',
+    '/assets/hdr/casinoHDRI.jpg',
+    '/assets/hdr/museoHDRI.jpg'
   ];
 
 
