@@ -23,6 +23,9 @@ import { StepFComponent } from './sections/step-f/step-f.component';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
+  // Scroll
+  mouseScrollExecuting = false;
+
   // StepF
   currentAnimateSceneOrbit = 0;
   animatedSceneOrbit = [
@@ -69,6 +72,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) { }
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event:any){
+    if(this.mouseScrollExecuting){
+      return;
+    }
+
+    this.mouseScrollExecuting = true;
+
     if (event.wheelDelta > 0) {
       console.log('Mouse Scroll Up');
       switch (this.pageState) {
@@ -179,6 +188,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
         break;
       }
     }
+
+    setTimeout(() => {
+        this.mouseScrollExecuting = false;
+    }, 1000);
   }
 
   @HostListener('touchmove', ['$event']) handleMove(event:any){
