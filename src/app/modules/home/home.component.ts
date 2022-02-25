@@ -23,6 +23,12 @@ import { StepFComponent } from './sections/step-f/step-f.component';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
+  // Scroll
+  mouseScrollExecuting = false;
+
+  // Touch
+  touchY = 0;
+
   // StepF
   currentAnimateSceneOrbit = 0;
   animatedSceneOrbit = [
@@ -69,6 +75,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) { }
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event:any){
+    if(this.mouseScrollExecuting){
+      return;
+    }
+
+    this.mouseScrollExecuting = true;
+
     if (event.wheelDelta > 0) {
       console.log('Mouse Scroll Up');
       switch (this.pageState) {
@@ -179,16 +191,129 @@ export class HomeComponent implements OnInit, AfterViewInit {
         break;
       }
     }
+
+    setTimeout(() => {
+        this.mouseScrollExecuting = false;
+    }, 1000);
   }
 
-  @HostListener('touchmove', ['$event']) handleMove(event:any){
+  @HostListener('touchstart', ['$event']) handleTouchStart(event:any){
+    this.touchY = event.touches[0].clientY;
+  }
 
-    if (event < 0) {
-      console.log('Touch Up');
+  @HostListener('touchend', ['$event']) handleTouchEnd(event:any){
+    let te = event.changedTouches[0].clientY;
+   if(this.touchY > te+5){
+
+    switch (this.pageState) {
+      case 0:
+      this.activeSection2();
+      this.pageState = 1;
+      break;
+
+      case 1:
+      this.activeSection3();
+      this.pageState = 2;
+      break;
+
+      case 2:
+      this.activeSection4();
+      this.pageState = 3;
+      break;
+
+      case 3:
+      this.activeSection5();
+      this.pageState = 4;
+      break;
+
+      case 4:
+      this.activeSection6();
+      this.pageState = 5;
+      break;
+
+      case 5:
+      this.activeSection7();
+      this.pageState = 6;
+      break;
+
+      case 6:
+      this.activeSection8();
+      this.pageState = 7;
+      break;
+
+      case 7:
+      this.activeSection9();
+      this.pageState = 8;
+      break;
+
+      case 8:
+      this.activeSection10();
+      this.pageState = 9;
+      break;
+
+      default:
+      break;
     }
-    if (event > 0) {
-      console.log('Touch Down');
+
+      
+   }else if(this.touchY < te-5){
+      
+    switch (this.pageState) {
+      case 1:
+      this.activeSection1();
+      this.pageState = 0;
+      break;
+
+      case 2:
+      this.activeSection2();
+      this.pageState = 1;
+      break;
+
+      case 3:
+      this.activeSection3();
+      this.pageState = 2;
+      break;
+
+      case 4:
+      this.activeSection4();
+      this.pageState = 3;
+      break;
+
+      case 5:
+      this.activeSection5();
+      this.pageState = 4;
+      break;
+
+      case 6:
+      this.activeSection6();
+      this.pageState = 5;
+      break;
+
+      case 7:
+      this.activeSection7();
+      this.pageState = 6;
+      break;
+
+      case 8:
+      this.activeSection8();
+      this.pageState = 7;
+      break;
+
+      case 9:
+      this.activeSection9();
+      this.pageState = 8;
+      break;
+
+      case 10:
+      this.activeSection10();
+      this.pageState = 9;
+      break;
+
+      default:
+      break;
     }
+
+   }
   }
 
   ngOnInit(): void {
