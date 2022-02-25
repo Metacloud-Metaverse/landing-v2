@@ -14,6 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 // Components
 import { StarsElementComponent } from './components/stars-element/stars-element.component';
@@ -31,7 +33,8 @@ import { LineSpeedElementComponent } from './components/line-speed-element/line-
     IntroRoutingModule,
 
     // Angular Material
-    MatButtonModule
+    MatButtonModule,
+    MatProgressBarModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

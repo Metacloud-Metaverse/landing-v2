@@ -15,6 +15,7 @@ export class IntroComponent implements OnInit {
   startZoom = false;
   startLines = true;
   startEndScene = false;
+  isLoading = true;
   mouse_x = 0;
   mouse_y = 0;
   count = 0;
@@ -27,10 +28,16 @@ export class IntroComponent implements OnInit {
     protected navigator: Router,
     public el: ElementRef<HTMLElement>,
     protected mainService: MainService,
-    ) { }
+  ) { }
 
-    ngOnInit(): void {
-    }
+  ngOnInit(): void {
+  }
+
+  ngAfterViewInit(){
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1500);
+  }
 
 
   /* @HostListener('mouseover', ['$event']) mouseover(event:any){

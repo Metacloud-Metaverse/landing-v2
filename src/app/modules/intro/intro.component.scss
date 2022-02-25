@@ -1,3 +1,107 @@
+.loading-page{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #191919;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+
+  .background-texture{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    background-image: url('/assets/img/space-texture.jpg');
+    background-repeat: repeat;
+    background-size: 700px;
+    z-index: 0;
+    opacity: 0.1;
+    filter: blur(0px);
+    mix-blend-mode: color-dodge;
+  }
+
+  mat-progress-bar{
+    height: 1px;
+    width: 200px;
+    margin: 2em 0;
+
+    &::ng-deep .mat-progress-bar-buffer{
+      background-color: #2c2a2e;
+    }
+  }
+
+  img{
+    opacity: 0.1;
+    width: 100px;
+  }
+
+  .separate-line{
+    width: 200px;
+    height: 0px;
+    border: 1px dashed white;
+    opacity: 0.1;
+    margin: 2em 0;
+  }
+
+  p{
+    margin-top: 0;
+    margin-left: 10px;
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 1em;
+    text-align: center;
+    opacity: 0.2;
+  }
+
+  /* .loading {
+    width: 8vmax;
+    height: 8vmax;
+    border-right: 4px solid #ffffff;
+    border-radius: 100%;
+    animation: spinRight 800ms linear infinite;
+
+    &:before, &:after {
+      content: '';
+      width: 6vmax;
+      height: 6vmax;
+      display: block;
+      position: absolute;
+      top: calc(50% - 3vmax);
+      left: calc(50% - 3vmax);
+      border-left: 3px solid #ffffff;
+      border-radius: 100%;
+      animation: spinLeft 800ms linear infinite;
+    }
+
+    &:after {
+      width: 4vmax;
+      height: 4vmax;
+      top: calc(50% - 2vmax);
+      left: calc(50% - 2vmax);
+      border: 0;
+      border-right: 2px solid #ffffff;
+      animation: none;
+    }
+  }
+
+  @keyframes spinLeft {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(720deg);}
+  }
+
+  @keyframes spinRight {
+    from {transform:rotate(360deg);}
+    to {transform:rotate(0deg);}
+  } */
+}
+
 .intro-page {
   width: 100%;
   height: 100vh;

@@ -1,6 +1,6 @@
 @import "../../../../../assets/styles/vars";
 
-@keyframes introVideo {
+@keyframes introVideoHome {
   from { opacity: 0; filter: blur(30px); }
   to   { opacity: 1; filter: blur(0px); }
 }
@@ -21,6 +21,7 @@
     top: 0em;
     width: 100%;
     box-sizing: border-box;
+    animation: introVideoHome 2s ease;
     @include xs {
       padding: 1em;
     }
@@ -281,9 +282,9 @@
     height: 140px;
     z-index: 20;
     cursor: pointer;
-    transition: $animation;
+    /* transition: $animation; */
     box-shadow: 0 16px 30px -12px rgba($color: black, $alpha: 0.7);
-    animation: introVideo 0.5s ease;
+    animation: introVideoHome 1s ease;
     border-radius: 12px;
     overflow: hidden;
 
@@ -291,11 +292,11 @@
       cursor: pointer;
       overflow: hidden;
       border-radius: 8px;
-      position: relative;
-      width: 100%;
-      height: 100%;
+      position: fixed;
+      width: 250px;
+      height: 140px;
       box-shadow: 0 0 0 8px rgba($color: white, $alpha: 0.15);
-      transition: $animation;
+      /* transition: $animation; */
       background-color: $color_primary_900;
 
       img,
@@ -304,10 +305,10 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 250px;
+        height: 140px;
         object-fit: cover;
-        transition: $animation;
+        /* transition: boxShadow 0.5s ease; */
         z-index: 2;
       }
 
@@ -353,12 +354,16 @@
   .video-miniature1{
     right: 310px;
   }
+
+  .video-miniature2{
+    animation: introVideoHome 2s ease;
+  }
 }
 
 .video-container {
   transition: all 0.5s ease;
   z-index: 29;
-  animation: introVideo 0.5s ease;
+  animation: introVideoHome 0.5s ease;
   position: fixed;
   top: 0;
   left: 0;

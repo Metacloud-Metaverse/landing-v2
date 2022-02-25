@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
   overflow-y: auto;
 
   .content {
@@ -19,15 +20,16 @@
     padding: 8em 3em;
     position: relative;
     z-index: 6;
-    border: 1px solid rgba($color: white, $alpha: 0.5);
+    /* border: 1px solid rgba($color: white, $alpha: 0.5); */
     border-radius: 8px;
     width: 70vw;
     margin: auto;
     transition: $animation;
-    background: radial-gradient(
+    background-color: transparent;
+    /* background: radial-gradient(
       rgba($color: white, $alpha: 0),
       rgba($color: white, $alpha: 0.5)
-    );
+    ); */
 
     h1 {
       display: flex;

@@ -1,4 +1,13 @@
-<div class="intro-page" (mousemove)="onMouseMove($event)">
+<div *ngIf="isLoading" class="loading-page">
+  <div class="background-texture"></div>
+  <!-- <div class="loading"></div> -->
+  <img src="/assets/img/logos/icon-total-white.svg" alt="Metacloud icon">
+  <!-- <div class="separate-line"></div> -->
+  <mat-progress-bar mode="indeterminate" value="40"></mat-progress-bar>
+  <p>LOADING</p>
+</div>
+
+<div *ngIf="!isLoading" class="intro-page" (mousemove)="onMouseMove($event)">
 
   <div #cursor class="cursor" (click)="startAnimation()">
     <span>CLICK START</span>

@@ -32,7 +32,7 @@ export class EventsComponent implements OnInit {
     },
     {
       image: '/assets/img/event-games.png',
-      name: 'Games',
+      title: 'Games',
       description: 'Play chess, bingo, puzzles, trivia, sudoku and more',
     },
   ]

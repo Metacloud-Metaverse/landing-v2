@@ -4,4 +4,11 @@
   width: 800px;
   padding-top: 8em;
   padding-bottom: 8em;
+
+  h2{
+    font-family: $font_text !important;
+    font-size: 2em;
+    margin-top: 2em;
+    font-weight: 600;
+  }
 }
