@@ -369,8 +369,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 200%;
-  height: 200%;
+  width: 250%;
+  height: 250%;
   z-index: 1;
   transition: all 1.5s ease-in;
 }
@@ -416,8 +416,8 @@
   object-fit: cover;
   pointer-events: none;
   z-index: 1;
-  perspective: 300;
-  transform-style: preserve-3d;
+  /* perspective: 300; */
+  /* transform-style: preserve-3d; */
   transition: all 0.3s ease;
-  mix-blend-mode: multiply;
+  opacity: 1;
 }

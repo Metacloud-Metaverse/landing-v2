@@ -51,6 +51,6 @@ export class StepDComponent implements OnInit {
 
   activeCreativity(){
     this.sectionActive = 3;
-    this.modelViewer.animationName = 'dancing';
+    this.modelViewer.animationName = 'looking';
   }
 }

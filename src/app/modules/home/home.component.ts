@@ -13,6 +13,12 @@ import { StepFComponent } from './sections/step-f/step-f.component';
         animate('700ms ease', style({ opacity: 0, transform: 'translateY(-200px)', filter: 'blur(30px)' }))
       ]),
     ]),
+
+    trigger('leaveElements', [
+      transition(':leave', [
+        animate('700ms ease', style({ opacity: 0, filter: 'blur(30px)' }))
+      ]),
+    ]),
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit {
@@ -45,8 +51,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   isLoading = false;
 
+  section2Text1 = false;
+  section2AvatarAnimation = 0;
   section3text2 = false;
   section3text3 = false;
+
+  sectionActive = 0;
 
   activeAnimation = 'inactive';
 
@@ -194,8 +204,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    /* this.gradientRadius = this.el.nativeElement.getBoundingClientRect().width; */
-    this.loadConfigModelViewer();
+    /* this.loadConfigModelViewer(); */
     this.activeSection1();
 
     /* setTimeout(() => {
@@ -210,7 +219,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     //this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/sceneback.png';
   }
 
-  animateScene(modelViewer: any) {
+  /* animateScene(modelViewer: any) {
     this.currentAnimateSceneOrbit = 0;
 
     modelViewer.cameraOrbit = this.getAnimatedSceneOrbit();
@@ -268,7 +277,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.currentAnimateSceneOrbit = 0;
       this.showChangeSceneButton = true;
     }, 8000);
-  }
+  } */
 
 
 
@@ -292,20 +301,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.pageState = 0;
     this.section3text2 = false;
     this.section3text3 = false;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 0m';
+    this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.autoRotate = true;
-    this.avatarCornerRun();
+    /* this.avatarCornerRun(); */
   }
 
   activeSection2(){
+    this.section2Text1 = false;
     this.pageState = 1;
-    this.section3text2 = false;
-    this.section3text3 = false;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 55deg 80%';
+    this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '55deg 65deg 80%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    this.modelAvatarCorner.nativeElement.animationName = 'run';
-    this.avatarCornerRun();
+    /* this.avatarCornerRun(); */
+    this.section2Text1 = true;
+    this.modelAvatarPrimary.nativeElement.animationName = 'waving';
 
     this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
@@ -314,13 +325,42 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 10m';
         }
     });
+    return
+  }
+
+  section2FirstText(){
+    switch (this.section2AvatarAnimation) {
+      case 0:
+      this.modelAvatarPrimary.nativeElement.animationName = 'dancing';
+      this.section2AvatarAnimation = 1;
+      break;
+
+      case 1:
+      this.modelAvatarPrimary.nativeElement.animationName = 'run';
+      this.section2AvatarAnimation = 2;
+      break;
+
+      case 2:
+      this.modelAvatarPrimary.nativeElement.animationName = 'looking';
+      this.section2AvatarAnimation = 3;
+      break;
+
+      case 3:
+      this.modelAvatarPrimary.nativeElement.animationName = 'waving';
+      this.section2AvatarAnimation = 0;
+      break;
+
+      default:
+      break;
+    }
   }
 
   activeSection3(){
     this.pageState = 2;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '45deg 80deg 2m';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    this.avatarCornerRun();
+    this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
+    /* this.avatarCornerRun(); */
 
     this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
@@ -338,8 +378,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     /* this.modelAvatarPrimary.nativeElement.cameraControls = false; */
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.modelAvatarPrimary.nativeElement.cameraControls = false;
     this.modelAvatarPrimary.nativeElement.autoRotate = false;
-    this.avatarCornerRun();
+    /* this.avatarCornerRun(); */
     setTimeout(() => {
       this.section3text2 = true;
     }, 1000);
@@ -358,64 +399,64 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   activeSection5(){
     this.pageState = 4;
-    this.scene = 0;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '10deg 10deg 1m';
+    /* this.scene = 0; */
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    this.avatarCornerRun();
+    this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
+    this.modelAvatarPrimary.nativeElement.autoRotate = true;
+    /* this.avatarCornerRun(); */
   }
 
   activeSection6(){
     this.pageState = 5;
     this.scene = 0;
-    this.avatarCornerRun();
-    this.avatarBackgroundScene();
+    /* this.avatarCornerRun(); */
+    /* this.avatarBackgroundScene(); */
   }
 
   activeSection7(){
     this.pageState = 6;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    this.avatarCornerRun();
+    this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
+    this.modelAvatarPrimary.nativeElement.autoRotate = true;
+    /* this.avatarCornerRun(); */
   }
 
   activeSection8(){
     this.pageState = 7;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    this.avatarCornerRun();
+    this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
+    this.modelAvatarPrimary.nativeElement.autoRotate = true;
+    /* this.avatarCornerRun(); */
   }
 
   activeSection9(){
     this.pageState = 8;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    this.avatarCornerRun();
+    /* this.avatarCornerRun(); */
   }
 
   activeSection10(){
     this.pageState = 9;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    this.avatarCornerRun();
+    /* this.avatarCornerRun(); */
   }
 
 
-  loadConfigModelViewer() {
+  /* loadConfigModelViewer() {
     this.modelAvatarPrimary.nativeElement.addEventListener('load', (event: any) => {
       console.log('Loaded');
       this.loadBackgroundScenes();
     }, true);
 
-    /*this.modelAvatarPrimary.nativeElement.addEventListener('preload', (event: any) => {
-      console.log('PRE Loaded');
-    }, true);*/
-
     this.modelAvatarPrimary.nativeElement.addEventListener('environment-change', (event: any) => {
       if(this.pageState != 5){
         return;
       }
-
-      //this.animateScene(this.modelAvatarPrimary.nativeElement);
     }, true);
 
     this.modelAvatarPrimary.nativeElement.addEventListener('progress', (event: any) => {
@@ -429,15 +470,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
       this.preloadBackgroundNumber++;
       this.loadBackgroundScenes();
-      /*if(this.pageState != 5){
-        return;
-      }
-
-      if(event.detail.totalProgress < 1){
-        return;
-      }
-
-      this.animateScene(this.modelAvatarPrimary.nativeElement);*/
     }, true);
   }
 
@@ -448,7 +480,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     if(this.preloadBackgroundNumber >= (this.assets.length-1)){
       this.preloadState = 2;
-      alert('Cargado todos los backgrounds');
       return;
     }
 
@@ -465,5 +496,46 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   getSceneAsset(): string {
     return this.assets[this.preloadBackgroundNumber];
+  } */
+
+
+
+
+
+
+
+
+
+  @HostListener('mouseover', ['$event']) onMouseOverGames(event: any) {
+    if (this.pageState == 3) {
+      this.activeGames();
+    } return
+  }
+
+  @HostListener('mouseover', ['$event']) onMouseOverMusic(event: any) {
+    if (this.pageState == 3) {
+      this.activeMusic();
+    } return
+  }
+
+  @HostListener('mouseover', ['$event']) onMouseOverCreativity(event: any) {
+    if (this.pageState == 3) {
+      this.activeCreativity();
+    } return
+  }
+
+  activeGames(){
+    this.sectionActive = 1;
+    this.modelAvatarPrimary.nativeElement.animationName = 'sitting';
+  }
+
+  activeMusic(){
+    this.sectionActive = 2;
+    this.modelAvatarPrimary.nativeElement.animationName = 'dancing';
+  }
+
+  activeCreativity(){
+    this.sectionActive = 3;
+    this.modelAvatarPrimary.nativeElement.animationName = 'looking';
   }
 }

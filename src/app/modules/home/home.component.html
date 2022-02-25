@@ -18,6 +18,8 @@
     <div [ngClass]="{'active': pageState == 9}" (click)="activeSection10()"><span>10</span><span class="figure"></span></div>
   </div>
 
+
+
   <!-- <section *ngIf="pageState == 0" class="header-section">
     <div class="container">
       <h1 class="display2">
@@ -47,15 +49,36 @@
 
   <app-step-a *ngIf="pageState == 0" @paragraphAnimation></app-step-a>
 
-  <app-step-b *ngIf="pageState == 1" @paragraphAnimation></app-step-b>
+  <!-- <app-step-b></app-step-b> -->
+
+  <section *ngIf="pageState == 1" @paragraphAnimation class="texts texts-left texts2">
+    <h2 class="display3"><b>Shop hundreds of live events! Discover your favorite artists, concerts, theater events, games and more.</b></h2>
+    <p *ngIf="section2Text1" (click)="section2FirstText()">Hi internaut! <br> Click here!</p>
+  </section>
 
   <app-step-c *ngIf="pageState == 2" @paragraphAnimation></app-step-c>
 
-  <app-step-d *ngIf="pageState == 3" @paragraphAnimation [modelViewer]="modelAvatarPrimary"></app-step-d>
+  <section *ngIf="pageState == 3" @paragraphAnimation class="texts texts-left texts4">
+    <h2 class="texts3 display2" (click)="activeGames()"><span></span><b (mousemove)="onMouseOverGames($event)" class="link hover-linear">GAMES</b></h2>
+    <h2 *ngIf="section3text2" class="texts3 display2" (click)="activeMusic()"><span></span> <b (mousemove)="onMouseOverMusic($event)" class="link hover-linear">MUSIC</b></h2>
+    <h2 *ngIf="section3text3" class="texts3 display2" (click)="activeCreativity()"><span></span><b (mousemove)="onMouseOverCreativity($event)" class="link hover-linear">CREATIVITY</b></h2>
+
+    <img @leaveElements *ngIf="sectionActive == 1" src="/assets/img/poker-table.png" alt="Table Poker" class="floating img-table-poker" />
+    <img @leaveElements *ngIf="sectionActive == 1" src="/assets/img/joker.png" alt="Joker" class="floating img-joker" />
+
+    <img @leaveElements *ngIf="sectionActive == 2" src="/assets/img/headphones.png" alt="Headphones" class="floating img-headphones" />
+    <img @leaveElements *ngIf="sectionActive == 2" src="/assets/img/microphone.png" alt="Microphone" class="floating img-microphone" />
+
+    <p class="caption">Hover the mouse cursor over "Games", "Music" or "Creativity" and watch...</p>
+  </section>
+  <video @leaveElements *ngIf="pageState == 3 && sectionActive == 1" src="/assets/videos/cards-float.mp4" class="video-cards-float" autoplay muted loop></video>
+  <video @leaveElements *ngIf="pageState == 3 && sectionActive == 2" src="/assets/videos/wave-music-5.mp4" class="video-music-wave" autoplay muted loop></video>
+
+  <!-- <app-step-d *ngIf="pageState == 3" @paragraphAnimation [modelViewer]="modelAvatarPrimary"></app-step-d> -->
 
   <app-step-e *ngIf="pageState == 4" @paragraphAnimation></app-step-e>
 
-  <app-step-f style="pointer-events: none; z-index: 300;" #stepF *ngIf="pageState == 5" @paragraphAnimation [showChangeSceneButton]="showChangeSceneButton" (changeScene)="changeScene($event)"></app-step-f>
+  <!-- <app-step-f style="pointer-events: none; z-index: 300;" #stepF *ngIf="pageState == 5" @paragraphAnimation [showChangeSceneButton]="showChangeSceneButton" (changeScene)="changeScene($event)"></app-step-f> -->
 
   <app-step-g *ngIf="pageState == 6" @paragraphAnimation></app-step-g>
 
@@ -86,7 +109,7 @@
     camera-orbit="-45deg 55deg"
     orbit-sensivity="2"
     autoplay
-    animation-name="wave"
+    animation-name=""
     interpolation-decay="300"
     class="avatar-primary"
     [ngClass]="{'movement1' : pageState == 0,
@@ -101,7 +124,7 @@
                 'movement10': pageState == 9}">
   </model-viewer>
 
-  <model-viewer
+  <!-- <model-viewer
     #modelAvatarCorner
     alt="An animate 3D model of a robot"
     src="assets/models/avatarmotions01.glb"
@@ -117,7 +140,7 @@
     class="avatar-corner"
     style="display: none !important;"
     (click)="avatarCornerHi()">
-  </model-viewer>
+  </model-viewer> -->
 
   <!-- <model-viewer
     #modelSpaceship

@@ -29,8 +29,8 @@ export class IntroComponent implements OnInit {
     protected mainService: MainService,
     ) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 
   /* @HostListener('mouseover', ['$event']) mouseover(event:any){
@@ -43,8 +43,8 @@ export class IntroComponent implements OnInit {
     this.cursor.nativeElement.style.top = event.pageY + 'px';
     this.mouse_x = -10 + (event.pageX / 100);
     this.mouse_y = 80 + (event.pageY / 100);
-    this.modelPlanet.nativeElement.cameraOrbit = this.mouse_x + 'deg' + this.mouse_y + 'deg' + '20m';
-    this.backgroundStars.nativeElement.style.transform = 'scale(' + this.mouse_y / 50 + ')';
+    this.modelPlanet.nativeElement.cameraOrbit = this.mouse_x + 'deg' + this.mouse_y + 'deg' + '1m';
+    /* this.backgroundStars.nativeElement.style.transform = 'scale(' + this.mouse_y / 50 + ')'; */
   }
 
   /* @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
