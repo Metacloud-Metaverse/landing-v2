@@ -1,4 +1,4 @@
-<div *ngIf="isLoading" class="loading-page">
+<div *ngIf="isLoading" class="loading-page" [ngClass]="{'loading-page-show': isLoading}">
   <div class="background-texture"></div>
   <!-- <div class="loading"></div> -->
   <img src="/assets/img/logos/icon-total-white.svg" alt="Metacloud icon">
@@ -7,7 +7,7 @@
   <p>LOADING</p>
 </div>
 
-<div *ngIf="!isLoading" class="intro-page" (mousemove)="onMouseMove($event)">
+<div class="intro-page" [ngClass]="{'intro-page-show': !isLoading}" (mousemove)="onMouseMove($event)">
 
   <div #cursor class="cursor" (click)="startAnimation()">
     <span>CLICK START</span>

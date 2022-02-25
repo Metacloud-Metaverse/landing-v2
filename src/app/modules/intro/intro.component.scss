@@ -10,6 +10,7 @@
   justify-content: center;
   align-items: center;
   pointer-events: none;
+  z-index: 1;
 
   .background-texture{
     position: fixed;
@@ -107,6 +108,9 @@
   height: 100vh;
   background-color: #191919;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
+  display: none;
 
   .cursor {
     position: fixed;
@@ -365,6 +369,10 @@
     50% { transform: translate(-50%, -50%) scale(0.5); }
     100%{ transform: translate(-50%, -50%) scale(8);   }
   }
+}
+
+.intro-page-show{
+  display: block;
 }
 
 

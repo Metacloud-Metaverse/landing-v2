@@ -16,8 +16,8 @@ export class TeamComponent implements OnInit {
       rol: 'Co-Founder',
     },
     {
-      image: '/assets/img/team/team.png',
-      name: ' Placeholder Madi´s team',
+      image: '/assets/img/team/team-sam.png',
+      name: ' Samuel Sullivan',
       rol: 'CO-FOUNDER',
     },
     {
