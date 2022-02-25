@@ -4,15 +4,24 @@ import { MatDialog } from '@angular/material/dialog';
 import { VideoModalComponent } from '../../modals/video-modal/video-modal.component';
 import { Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
-  styleUrls: ['./main-layout.component.scss']
+  styleUrls: ['./main-layout.component.scss'],
+  animations: [
+    trigger('leaveElements', [
+      transition(':leave', [
+        animate('700ms ease', style({ opacity: 0, filter: 'blur(30px)' }))
+      ]),
+    ]),
+  ]
 })
 export class MainLayoutComponent implements OnInit {
 
-  isVideoOpen = false;
+  isHypeVideoOpen = false;
+  isTrailerVideoOpen = false;
   isMenuOpen = false;
   isMuted = true;
   @ViewChild('audio') audio!: ElementRef;

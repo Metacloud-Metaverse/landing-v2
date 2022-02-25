@@ -309,11 +309,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   activeSection2(){
-    this.section2Text1 = false;
     this.pageState = 1;
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '55deg 65deg 80%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.modelAvatarPrimary.nativeElement.cameraControls = true;
+    this.modelAvatarPrimary.nativeElement.autoRotate = true;
     /* this.avatarCornerRun(); */
     this.section2Text1 = true;
     this.modelAvatarPrimary.nativeElement.animationName = 'waving';
@@ -325,7 +326,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 10m';
         }
     });
-    return
   }
 
   section2FirstText(){

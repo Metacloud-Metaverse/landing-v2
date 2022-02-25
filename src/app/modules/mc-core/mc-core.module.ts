@@ -18,6 +18,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 // Components
 import { LoadingComponent } from './components/loading/loading.component';
@@ -53,6 +55,7 @@ import { VideoElementComponent } from './components/video-element/video-element.
     MatListModule,
     MatIconModule,
     MatTooltipModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     MainLayoutComponent,

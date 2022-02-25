@@ -1,5 +1,10 @@
 @import "../../../../../assets/styles/vars";
 
+@keyframes introVideo {
+  from { opacity: 0; filter: blur(30px); }
+  to   { opacity: 1; filter: blur(0px); }
+}
+
 .main-layout {
   overflow: hidden;
   min-height: 100vh;
@@ -278,6 +283,9 @@
     cursor: pointer;
     transition: $animation;
     box-shadow: 0 16px 30px -12px rgba($color: black, $alpha: 0.7);
+    animation: introVideo 0.5s ease;
+    border-radius: 12px;
+    overflow: hidden;
 
     .contain {
       cursor: pointer;
@@ -343,18 +351,22 @@
   }
 
   .video-miniature1{
-    right: 300px;
+    right: 310px;
   }
 }
 
 .video-container {
-  pointer-events: none;
-  opacity: 0;
   transition: all 0.5s ease;
-  z-index: 31;
+  z-index: 29;
+  animation: introVideo 0.5s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
 
   iframe {
-    transition: all 0.5s ease;
     z-index: 31;
     position: fixed;
     top: 0;
@@ -362,7 +374,6 @@
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    filter: blur(10px);
   }
 
   .btn-close {
@@ -397,14 +408,12 @@
       }
     }
   }
-}
 
-.video-container-active {
-  opacity: 1;
-  pointer-events: all;
-  z-index: 31;
-  iframe {
-    z-index: 31;
-    filter: blur(0px);
+  mat-spinner{
+    position: fixed;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    transform: translate(-50% -50%);
+    z-index: 30;
   }
 }
