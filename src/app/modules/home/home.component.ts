@@ -255,9 +255,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       break;
     }
 
-      
+
    }else if(this.touchY < te-5){
-      
+
     switch (this.pageState) {
       case 1:
       this.activeSection1();
@@ -429,7 +429,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    this.modelAvatarPrimary.nativeElement.autoRotate = true;
+    this.modelAvatarPrimary.nativeElement.autoRotate = false;
     /* this.avatarCornerRun(); */
   }
 
@@ -439,7 +439,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '55deg 65deg 80%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.cameraControls = true;
-    this.modelAvatarPrimary.nativeElement.autoRotate = true;
+    this.modelAvatarPrimary.nativeElement.autoRotate = false;
     /* this.avatarCornerRun(); */
     this.section2Text1 = true;
     this.modelAvatarPrimary.nativeElement.animationName = 'waving';
@@ -501,7 +501,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.section3text2 = false;
     this.section3text3 = false;
     /* this.modelAvatarPrimary.nativeElement.cameraControls = false; */
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '25deg 70deg 1000%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.cameraControls = false;
     this.modelAvatarPrimary.nativeElement.autoRotate = false;
@@ -528,7 +528,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
-    this.modelAvatarPrimary.nativeElement.autoRotate = true;
+    this.modelAvatarPrimary.nativeElement.autoRotate = false;
     /* this.avatarCornerRun(); */
   }
 
@@ -544,7 +544,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
-    this.modelAvatarPrimary.nativeElement.autoRotate = true;
+    this.modelAvatarPrimary.nativeElement.autoRotate = false;
     /* this.avatarCornerRun(); */
   }
 
