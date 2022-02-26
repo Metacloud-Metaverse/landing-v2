@@ -44,57 +44,12 @@ export class NavMenuComponent implements OnInit {
     this.isMenuOpen = false;
   }
 
-  routeHome(){
+  routeWithEffect(path: string) {
     this.blinkEffect();
 
     setTimeout(() => {
       this.sendCloseMenu();
-      this.router.navigate(['/home']);
-    }, 800);
-  }
-
-  routeTeam(){
-    this.blinkEffect();
-
-    setTimeout(() => {
-      this.sendCloseMenu();
-      this.router.navigate(['/team']);
-    }, 800);
-  }
-
-  routeEvents(){
-    this.blinkEffect();
-
-    setTimeout(() => {
-      this.sendCloseMenu();
-      this.router.navigate(['/events']);
-    }, 800);
-  }
-
-  routeContact(){
-    this.blinkEffect();
-
-    setTimeout(() => {
-      this.sendCloseMenu();
-      this.router.navigate(['/contact']);
-    }, 800);
-  }
-
-  routeTerms(){
-    this.blinkEffect();
-
-    setTimeout(() => {
-      this.sendCloseMenu();
-      this.router.navigate(['/legals/terms-of-service']);
-    }, 800);
-  }
-
-  routePrivacy(){
-    this.blinkEffect();
-
-    setTimeout(() => {
-      this.sendCloseMenu();
-      this.router.navigate(['/legals/privacy-policy']);
+      this.router.navigate([path]);
     }, 800);
   }
 

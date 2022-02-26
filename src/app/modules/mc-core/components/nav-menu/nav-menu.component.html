@@ -8,17 +8,17 @@
   <div class="background-lights light4"></div> -->
 
   <div class="content intro-component-animation">
-    <h1 (click)="routeHome();" class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Home</a></h1>
+    <h1 (click)="routeWithEffect('/start')" class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Home</a></h1>
     <h1 class="component-animation coming-soon"><a routerLinkActive="router-link-active" class="link hover-linear">Marketplace</a> <div class="neon-effect"><b>Comin<span>g</span> So<span>o</span>n</b></div></h1>
-    <h1 (click)="routeEvents()" class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Events</a></h1>
+    <h1 (click)="routeWithEffect('/events')" class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Events</a></h1>
     <h1 class="component-animation" [matMenuTriggerFor]="docsMenu"><a class="link hover-linear">Docs <mat-icon>arrow_drop_down</mat-icon></a></h1>
     <h1 class="component-animation"><a href="https://medium.com/@themetacloud" target="_blank" class="link hover-linear">Announcements <mat-icon>logout</mat-icon></a></h1>
 
     <div class="more-link component-animation">
       <h5>Links</h5>
       <div class="row">
-        <a (click)="routeTeam();" class="link hover-linear"><small>TEAM</small></a>
-        <a (click)="routeContact()" class="link hover-linear"><small>CONTACT US</small></a>
+        <a (click)="routeWithEffect('/team')" class="link hover-linear"><small>TEAM</small></a>
+        <a (click)="routeWithEffect('/contact')" class="link hover-linear"><small>CONTACT US</small></a>
         <a href="https://drive.google.com/file/d/1Hf4j5tY7dLO8KHVM0QEm_2vBnerlmUSS/view?usp=sharing" target="_blank" class="link hover-linear"><small>WHITEPAPER</small></a>
       </div>
     </div>
@@ -26,8 +26,8 @@
     <div class="more-link component-animation">
       <h5>Legals</h5>
       <div class="row">
-        <a (click)="routeTerms();" class="link hover-linear component-animation"><small>TERMS OF USE</small></a>
-        <a (click)="routePrivacy();" class="link hover-linear component-animation"><small>PRIVACY POLICY</small></a>
+        <a (click)="routeWithEffect('/legals/terms-of-service')" class="link hover-linear component-animation"><small>TERMS OF USE</small></a>
+        <a (click)="routeWithEffect('/legals/privacy-policy')" class="link hover-linear component-animation"><small>PRIVACY POLICY</small></a>
       </div>
     </div>
 
