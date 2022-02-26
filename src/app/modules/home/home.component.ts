@@ -411,7 +411,34 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, 8000);
   }
 
+  changeAnimationAvatarPrimary(){
+    if (this.pageState == 1) {
+      switch (this.section2AvatarAnimation) {
+        case 0:
+        this.modelAvatarPrimary.nativeElement.animationName = 'dancing';
+        this.section2AvatarAnimation = 1;
+        break;
 
+        case 1:
+        this.modelAvatarPrimary.nativeElement.animationName = 'run';
+        this.section2AvatarAnimation = 2;
+        break;
+
+        case 2:
+        this.modelAvatarPrimary.nativeElement.animationName = 'looking';
+        this.section2AvatarAnimation = 3;
+        break;
+
+        case 3:
+        this.modelAvatarPrimary.nativeElement.animationName = 'waving';
+        this.section2AvatarAnimation = 0;
+        break;
+
+        default:
+        break;
+      }
+    } return
+  }
 
 
   avatarCornerHi(){
@@ -455,36 +482,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
-          this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 10m';
+          this.modelAvatarPrimary.nativeElement.cameraOrbit = '-30deg 65deg 10000%';
         }
     });
-  }
-
-  section2FirstText(){
-    switch (this.section2AvatarAnimation) {
-      case 0:
-      this.modelAvatarPrimary.nativeElement.animationName = 'dancing';
-      this.section2AvatarAnimation = 1;
-      break;
-
-      case 1:
-      this.modelAvatarPrimary.nativeElement.animationName = 'run';
-      this.section2AvatarAnimation = 2;
-      break;
-
-      case 2:
-      this.modelAvatarPrimary.nativeElement.animationName = 'looking';
-      this.section2AvatarAnimation = 3;
-      break;
-
-      case 3:
-      this.modelAvatarPrimary.nativeElement.animationName = 'waving';
-      this.section2AvatarAnimation = 0;
-      break;
-
-      default:
-      break;
-    }
   }
 
   activeSection3(){
@@ -526,7 +526,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
-          this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 70deg 10m';
+          this.modelAvatarPrimary.nativeElement.cameraOrbit = '25deg 70deg 1000%';
         }
     });
   }
@@ -568,14 +568,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   activeSection9(){
     this.pageState = 8;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     /* this.avatarCornerRun(); */
   }
 
   activeSection10(){
     this.pageState = 9;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '359deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     /* this.avatarCornerRun(); */
   }
@@ -655,6 +655,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @HostListener('mouseover', ['$event']) onMouseOverCreativity(event: any) {
     if (this.pageState == 3) {
       this.activeCreativity();
+    } return
+  }
+
+  @HostListener('mouseover', ['$event']) onMouse(event: any) {
+    if (this.pageState == 3) {
+      this.sectionActive = 0;
+      this.modelAvatarPrimary.nativeElement.animationName = 'idle';
     } return
   }
 
