@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { StepFComponent } from './sections/step-f/step-f.component';
 
 @Component({
@@ -44,11 +45,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   preloadState = 0; // 0 = Preload, 1 = In Progress, 2 = Completed
   preloadBackgroundNumber = 0;
   assets = [
-    '/assets/hdr/concertHDRI.jpg',
-    '/assets/hdr/bonfireHDRI.jpg',
-    '/assets/hdr/nieveHDRI.jpg',
-    '/assets/hdr/casinoHDRI.jpg',
-    '/assets/hdr/museoHDRI.jpg'
+    '/assets/hdr/concert.jpg',
+    '/assets/hdr/bonfire.jpg',
+    '/assets/hdr/nieve.jpg',
+    '/assets/hdr/casino.jpg',
+    '/assets/hdr/museo.jpg'
   ];
 
 
@@ -72,6 +73,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(
     public el: ElementRef<HTMLElement>,
     private breakpointObserver: BreakpointObserver,
+    private titleService: Title,
+    private metaTagService: Meta
   ) { }
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event:any){
@@ -317,6 +320,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Welcome to the metacloud metaverse | metacloud');
+    this.metaTagService.updateTag(
+      { name: 'description', content: 'Metacloud is a Metaverse that connects you with anyone, anywhere in a VR world. Move over Meta. Theres a new sheriff in town.' }
+    );
     /* this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
       .subscribe((state: BreakpointState) => {
@@ -344,7 +351,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     //this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/sceneback.png';
   }
 
-  /* animateScene(modelViewer: any) {
+  animateScene(modelViewer: any) {
     this.currentAnimateSceneOrbit = 0;
 
     modelViewer.cameraOrbit = this.getAnimatedSceneOrbit();
@@ -402,7 +409,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.currentAnimateSceneOrbit = 0;
       this.showChangeSceneButton = true;
     }, 8000);
-  } */
+  }
 
 
 
@@ -436,7 +443,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   activeSection2(){
     this.pageState = 1;
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '55deg 65deg 80%';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '30deg 65deg 80%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.cameraControls = true;
     this.modelAvatarPrimary.nativeElement.autoRotate = false;
@@ -498,10 +505,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   activeSection4(){
     this.pageState = 3;
+    this.sectionActive = 0;
     this.section3text2 = false;
     this.section3text3 = false;
     /* this.modelAvatarPrimary.nativeElement.cameraControls = false; */
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '25deg 70deg 1000%';
+    this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.cameraControls = false;
     this.modelAvatarPrimary.nativeElement.autoRotate = false;
@@ -572,7 +581,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
 
-  /* loadConfigModelViewer() {
+  loadConfigModelViewer() {
     this.modelAvatarPrimary.nativeElement.addEventListener('load', (event: any) => {
       console.log('Loaded');
       this.loadBackgroundScenes();
@@ -621,7 +630,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   getSceneAsset(): string {
     return this.assets[this.preloadBackgroundNumber];
-  } */
+  }
 
 
 

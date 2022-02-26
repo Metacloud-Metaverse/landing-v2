@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
@@ -28,15 +29,21 @@ export class IntroComponent implements OnInit {
     protected navigator: Router,
     public el: ElementRef<HTMLElement>,
     protected mainService: MainService,
+    private titleService: Title,
+    private metaTagService: Meta
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Welcome to the metacloud metaverse | metacloud');
+    this.metaTagService.updateTag(
+      { name: 'description', content: 'Escape to a new reality with metacloud.' }
+    );
   }
 
   ngAfterViewInit(){
     setTimeout(() => {
       this.isLoading = false;
-    }, 1500);
+    }, 5000);
   }
 
 
@@ -76,7 +83,7 @@ export class IntroComponent implements OnInit {
       this.startEndScene = true;
     }, 11400);
     setTimeout(() => {
-      this.navigator.navigateByUrl('/start');
+      this.navigator.navigateByUrl('/home');
     }, 11700);
   }
 

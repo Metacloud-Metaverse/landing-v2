@@ -805,3 +805,30 @@ model-viewer {
   mix-blend-mode: difference;
   animation: introFloatElements 0.5s ease-out,;
 }
+
+.img-idea {
+  mix-blend-mode: multiply;
+  position: fixed;
+  top: 0%;
+  right: 17%;
+  width: 500px;
+  animation: imgIdeaAnimation 4s linear infinite;
+}
+
+@keyframes imgIdeaAnimation {
+  from, 60%{
+    top: 0%;
+    transform: scale(0);
+    opacity: 0;
+  }
+  80%,90%{
+    top: -8%;
+    transform: scale(1);
+    opacity: 1;
+  }
+  to{
+    top: -9%;
+    transform: scale(0);
+    opacity: 0;
+  }
+}

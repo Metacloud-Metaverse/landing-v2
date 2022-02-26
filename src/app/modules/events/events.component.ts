@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ComponentAnimation } from '../mc-core/animations/component.animation';
 
 @Component({
@@ -12,8 +13,8 @@ export class EventsComponent implements OnInit {
   events:any = [
     {
       image: '/assets/img/event-concert.png',
-      title: 'Concert',
-      description: 'Edm, country, blues, jazz, raves, rock shows, rap, reggae and more',
+      title: 'Concerts',
+      description: 'Techno, hip-hop, edm, rock shows, rap, country, blues, jazz, reggae and more.',
     },
     {
       image: '/assets/img/event-art.png',
@@ -22,12 +23,12 @@ export class EventsComponent implements OnInit {
     },
     {
       image: '/assets/img/event-podcast.png',
-      title: 'Podcast',
+      title: 'Podcasts',
       description: 'Listen to your favorite podcast',
     },
     {
       image: '/assets/img/event-casino.png',
-      title: 'Casino & Tournament',
+      title: 'Casino & Tournaments',
       description: 'Play Texas hold-em poker, live sports betting, blackjack, slots and tournaments',
     },
     {
@@ -37,9 +38,16 @@ export class EventsComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Events | metacloud');
+    this.metaTagService.updateTag(
+      { name: 'description', content: 'Enjoy live concerts, venues, games and more with friends in the Metaverse!' }
+    );
   }
 
 }

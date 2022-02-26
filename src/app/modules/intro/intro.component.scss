@@ -110,7 +110,9 @@
   overflow: hidden;
   position: relative;
   z-index: 2;
-  display: none;
+  opacity: 0;
+  filter: blur(30px);
+  transition: all 1s ease;
 
   .cursor {
     position: fixed;
@@ -372,7 +374,8 @@
 }
 
 .intro-page-show{
-  display: block;
+  opacity: 1;
+  filter: blur(0px);
 }
 
 

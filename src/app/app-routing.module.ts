@@ -8,7 +8,7 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: '', loadChildren: () => import('./modules/intro/intro.module').then(m => m.IntroModule), data: { preload: true }},
-      { path: 'start', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule), data: { preload: true }},
+      { path: 'home', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule), data: { preload: true }},
       { path: 'news', loadChildren: () => import('./modules/news/news.module').then(m => m.NewsModule), data: { preload: true }},
       { path: 'team', loadChildren: () => import('./modules/team/team.module').then(m => m.TeamModule), data: { preload: true }},
       { path: 'events', loadChildren: () => import('./modules/events/events.module').then(m => m.EventsModule), data: { preload: true }},
@@ -17,8 +17,8 @@ const routes: Routes = [
       { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule) },
     ]
   },
+  /* { path: '', redirectTo: '', pathMatch: 'full' }, */
   { path: 'page-not-found', loadChildren: () => import('./modules/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule), data: { preload: true }},
-  { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '**', redirectTo: 'page-not-found', pathMatch: 'full' },
 ];
 

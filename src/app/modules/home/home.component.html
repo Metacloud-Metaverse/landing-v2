@@ -59,9 +59,9 @@
   <app-step-c *ngIf="pageState == 2" @paragraphAnimation></app-step-c>
 
   <section *ngIf="pageState == 3" @paragraphAnimation class="texts texts-left texts4">
-    <h2 class="texts3 display2" (click)="activeGames()"><span></span><b (mousemove)="onMouseOverGames($event)" class="link hover-linear">GAMES</b></h2>
-    <h2 *ngIf="section3text2" class="texts3 display2" (click)="activeMusic()"><span></span> <b (mousemove)="onMouseOverMusic($event)" class="link hover-linear">MUSIC</b></h2>
-    <h2 *ngIf="section3text3" class="texts3 display2" (click)="activeCreativity()"><span></span><b (mousemove)="onMouseOverCreativity($event)" class="link hover-linear">CREATIVITY</b></h2>
+    <h2 class="texts3 display2"><span></span><b (mousemove)="onMouseOverGames($event)" class="link hover-linear">GAMES</b></h2>
+    <h2 *ngIf="section3text2" class="texts3 display2"><span></span> <b (mousemove)="onMouseOverMusic($event)" class="link hover-linear">MUSIC</b></h2>
+    <h2 *ngIf="section3text3" class="texts3 display2"><span></span><b (mousemove)="onMouseOverCreativity($event)" class="link hover-linear">CREATIVITY</b></h2>
 
     <img @leaveElements *ngIf="sectionActive == 1" src="/assets/img/poker-table.png" alt="Table Poker" class="floating img-table-poker" />
     <img @leaveElements *ngIf="sectionActive == 1" src="/assets/img/joker.png" alt="Joker" class="floating img-joker" />
@@ -69,8 +69,10 @@
     <img @leaveElements *ngIf="sectionActive == 2" src="/assets/img/headphones.png" alt="Headphones" class="floating img-headphones" />
     <img @leaveElements *ngIf="sectionActive == 2" src="/assets/img/microphone.png" alt="Microphone" class="floating img-microphone" />
 
+
     <p class="caption">Hover the mouse cursor over "Games", "Music" or "Creativity" and watch...</p>
   </section>
+  <img @leaveElements *ngIf="pageState == 3 && sectionActive == 3" src="/assets/img/idea-animation.gif" alt="Idea" class="floating img-idea" />
   <video @leaveElements *ngIf="pageState == 3 && sectionActive == 1" src="/assets/videos/cards-float.mp4" class="video-cards-float" autoplay muted loop></video>
   <video @leaveElements *ngIf="pageState == 3 && sectionActive == 2" src="/assets/videos/wave-music-5.mp4" class="video-music-wave" autoplay muted loop></video>
 
@@ -78,7 +80,7 @@
 
   <app-step-e *ngIf="pageState == 4" @paragraphAnimation></app-step-e>
 
-  <!-- <app-step-f style="pointer-events: none; z-index: 300;" #stepF *ngIf="pageState == 5" @paragraphAnimation [showChangeSceneButton]="showChangeSceneButton" (changeScene)="changeScene($event)"></app-step-f> -->
+  <app-step-f style="pointer-events: none; z-index: 300;" #stepF *ngIf="pageState == 5" @paragraphAnimation [showChangeSceneButton]="showChangeSceneButton" (changeScene)="changeScene($event)"></app-step-f>
 
   <app-step-g *ngIf="pageState == 6" @paragraphAnimation></app-step-g>
 

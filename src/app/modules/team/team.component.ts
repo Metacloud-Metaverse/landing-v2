@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ComponentAnimation } from '../mc-core/animations/component.animation';
 
 @Component({
@@ -52,9 +53,16 @@ export class TeamComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Team | metacloud');
+    this.metaTagService.updateTag(
+      { name: 'description', content: 'Meet the team at the metacaloud metaverse!' }
+    );
   }
 
 }

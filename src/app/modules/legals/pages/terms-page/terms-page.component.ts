@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-terms-page',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TermsPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Terms and Conditions | metacloud');
+    this.metaTagService.updateTag(
+      { name: 'description', content: 'Read the terms and conditions for metacloud.' }
+    );
   }
 
 }

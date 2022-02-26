@@ -49,7 +49,7 @@ export class NavMenuComponent implements OnInit {
 
     setTimeout(() => {
       this.sendCloseMenu();
-      this.router.navigate(['/start']);
+      this.router.navigate(['/home']);
     }, 800);
   }
 

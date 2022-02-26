@@ -13,11 +13,11 @@ export class StepFComponent implements OnInit, AfterViewInit {
   currentScene = 0;
 
   assets = [
-    '/assets/hdr/concertHDRI.jpg',
-    '/assets/hdr/bonfireHDRI.jpg',
-    '/assets/hdr/nieveHDRI.jpg',
-    '/assets/hdr/casinoHDRI.jpg',
-    '/assets/hdr/museoHDRI.jpg'
+    '/assets/hdr/concert.jpg',
+    '/assets/hdr/bonfire.jpg',
+    '/assets/hdr/nieve.jpg',
+    '/assets/hdr/casino.jpg',
+    '/assets/hdr/museo.jpg'
   ];
 
   constructor() { }

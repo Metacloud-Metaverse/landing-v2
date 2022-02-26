@@ -207,23 +207,23 @@ export class ContentSectionComponent implements OnInit {
   } */
 
   changeScene1() {
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concertHDRI.hdr';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert.hdr';
   }
 
   changeScene2() {
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfireHDRI.hdr';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfire.hdr';
   }
 
   changeScene3() {
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieveHDRI.hdr';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieve.hdr';
   }
 
   changeScene4() {
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casinoHDRI.hdr';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casino.hdr';
   }
 
   changeScene5() {
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museoHDRI.hdr';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museo.hdr';
   }
 
   /* changeState(){
