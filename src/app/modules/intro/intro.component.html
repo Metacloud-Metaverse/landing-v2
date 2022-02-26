@@ -1,11 +1,11 @@
-<div *ngIf="isLoading" class="loading-page" [ngClass]="{'loading-page-show': isLoading}">
+<div class="loading-page" [ngClass]="{'loading-page-show': isLoading}">
   <div class="background-texture"></div>
   <img src="/assets/img/logos/icon-total-white.svg" alt="Metacloud icon">
   <mat-progress-bar mode="indeterminate" value="40"></mat-progress-bar>
   <p>LOADING</p>
 </div>
 
-<div class="intro-page" [ngClass]="{'intro-page-show': !isLoading}" (mousemove)="onMouseMove($event)">
+<div *ngIf="!isLoadingPlanet" class="intro-page" [ngClass]="{'intro-page-show': !isLoading}" (mousemove)="onMouseMove($event)">
 
   <div #cursor class="cursor" (click)="startAnimation()">
     <span>CLICK START</span>
@@ -24,9 +24,9 @@
 
     <!-- <div class="sketchfab-embed-wrapper" [ngClass]="{'start-animation-world': endAnimationMic}"> <iframe title="Cartoon Lowpoly Earth Planet 2 UVW textured" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/73dd3283bf6d45a3a62d4806f3044633/embed"> </iframe></div> -->
 
-    <img #backgroundStars src="/assets/hdr/background-space.png" alt="Background Stars" class="background-stars" />
+    <img #backgroundStars src="/assets/hdr/background-space.png" alt="Background Stars" class="background-stars background-starts-intro" [ngClass]="{'background-starts-intro': isLoading}" />
 
-    <model-viewer
+    <!-- <model-viewer
       #modelPlanet
       alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
       src="assets/models/planeta_aislado.glb"
@@ -40,6 +40,22 @@
       skybox-image=''
       class="planet"
       [ngClass]="{'planet-zoom': startZoom}">
+    </model-viewer> -->
+
+    <model-viewer
+      #modelPlanet
+      alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
+      src="assets/models/Planet.glb"
+      environment-image="assets/hdr/background-space.png"
+      shadow-intensity="3"
+      shadow-softness="3"
+      exposure="3"
+      camera-orbit="0deg 90deg 100%"
+      autoplay
+      animation-name=""
+      interpolation-decay="300"
+      class="planet"
+      [ngClass]="{'planet-zoom': startZoom, 'planet-intro' : !isLoading}">
     </model-viewer>
 
     <!-- <div class="container">
@@ -59,8 +75,8 @@
 <div *ngIf="startEndScene" class="end-scene"></div>
 
 
-<model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/bonfire.jpg'></model-viewer>
+<!-- <model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/bonfire.jpg'></model-viewer>
 <model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/casino.jpg'></model-viewer>
 <model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/concert.jpg'></model-viewer>
 <model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/museo.jpg'></model-viewer>
-<model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/nieve.jpg'></model-viewer>
+<model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/nieve.jpg'></model-viewer> -->

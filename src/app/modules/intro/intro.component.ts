@@ -17,6 +17,7 @@ export class IntroComponent implements OnInit {
   startLines = true;
   startEndScene = false;
   isLoading = true;
+  isLoadingPlanet = true;
   mouse_x = 0;
   mouse_y = 0;
   count = 0;
@@ -42,8 +43,11 @@ export class IntroComponent implements OnInit {
 
   ngAfterViewInit(){
     setTimeout(() => {
+      this.isLoadingPlanet = false;
+    }, 1500);
+    setTimeout(() => {
       this.isLoading = false;
-    }, 5000);
+    }, 2500);
   }
 
 
@@ -57,8 +61,11 @@ export class IntroComponent implements OnInit {
     this.cursor.nativeElement.style.top = event.pageY + 'px';
     this.mouse_x = -10 + (event.pageX / 100);
     this.mouse_y = 80 + (event.pageY / 100);
-    this.modelPlanet.nativeElement.cameraOrbit = this.mouse_x + 'deg' + this.mouse_y + 'deg' + '1m';
-    /* this.backgroundStars.nativeElement.style.transform = 'scale(' + this.mouse_y / 50 + ')'; */
+    if (this.startZoom == false) {
+      this.modelPlanet.nativeElement.cameraOrbit = this.mouse_x + 'deg' + this.mouse_y + 'deg' + '10m';
+    }
+    this.backgroundStars.nativeElement.style.top = (2 * event.pageY) / 20 + 'px';
+    this.backgroundStars.nativeElement.style.left = (2 * event.pageX) / 20 + 'px';
   }
 
   /* @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
@@ -75,18 +82,18 @@ export class IntroComponent implements OnInit {
     this.endAnimationHeadline = true;
     this.mainService.audioMain.next(true);
     this.endAnimationMic = true;
-    this.modelPlanet.nativeElement.cameraOrbit = '10deg 80deg 20m';
+    this.modelPlanet.nativeElement.cameraOrbit = '40deg 80deg 3m';
+    setTimeout(() => {
+      this.modelPlanet.nativeElement.cameraOrbit = '60deg 70deg 2m';
+    }, 700);
     setTimeout(() => {
       this.startVideo = true;
-    }, 2000);
+    }, 1700);
     setTimeout(() => {
       this.startEndScene = true;
     }, 11400);
     setTimeout(() => {
       this.navigator.navigateByUrl('/home');
-    }, 11700);
+    }, 12000);
   }
-
-
-
 }
