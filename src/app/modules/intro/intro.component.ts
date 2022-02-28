@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -31,7 +32,8 @@ export class IntroComponent implements OnInit {
     public el: ElementRef<HTMLElement>,
     protected mainService: MainService,
     private titleService: Title,
-    private metaTagService: Meta
+    private metaTagService: Meta,
+    private breakpointObserver: BreakpointObserver,
   ) { }
 
   ngOnInit(): void {
@@ -66,6 +68,15 @@ export class IntroComponent implements OnInit {
     }
     this.backgroundStars.nativeElement.style.top = (2 * event.pageY) / 20 + 'px';
     this.backgroundStars.nativeElement.style.left = (2 * event.pageX) / 20 + 'px';
+
+    this.breakpointObserver
+      .observe([Breakpoints.Small])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.cursor.nativeElement.style.left = 50 + '%';
+          this.cursor.nativeElement.style.top = 50 + '%';
+        }
+    });
   }
 
   /* @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {

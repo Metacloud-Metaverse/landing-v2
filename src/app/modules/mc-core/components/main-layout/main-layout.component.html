@@ -54,7 +54,7 @@
     <mat-icon>play_circle_outline</mat-icon>
   </div>
 
-  <div *ngIf="router.url == '/' || isMenuOpen" class="video-miniature video-miniature2" @leaveElements>
+  <div *ngIf="router.url == '/' || isMenuOpen" class="video-miniature video-miniature2" @leaveElements [ngClass]="{'d-none-mobile': router.url == '/'}">
     <div class="contain">
       <img (click)="isHypeVideoOpen = true;" src="/assets/img/video-miniature.png" alt="Hype Video Miniature" matTooltip="Play Hype video" />
       <button mat-icon-button class="btn-play" (click)="isHypeVideoOpen = true;" matTooltip="Play Hype video"><mat-icon>play_arrow</mat-icon></button>

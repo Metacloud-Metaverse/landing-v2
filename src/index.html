@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link crossorigin href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"> -->
-  <link crossorigin href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- <link crossorigin href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
 
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
@@ -31,10 +31,7 @@
   <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="preload" href="/assets/models/daftpunk04.glb" />
-  <link rel="preload" href="/assets/models/avatarmotions01.glb" />
-  <link rel="preload" href="/assets/models/intergalactic-spaceship.glb" />
-  <link rel="preload" href="/assets/videos/intro-hype-video-muted.mp4" />
+  <link rel="preload" href="/assets/videos/intro-hype-video-muted-optimized.mp4" />
 
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
@@ -48,7 +45,7 @@
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
-  
+
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
@@ -60,7 +57,7 @@
       appId: "1:204460687755:web:51e5e3d84dda09c460af8e",
       measurementId: "G-Q515Z3M1EK"
     };
-  
+
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);

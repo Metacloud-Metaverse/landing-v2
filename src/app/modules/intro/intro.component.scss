@@ -1,3 +1,5 @@
+@import "../../../assets/styles/vars";
+
 model-viewer {
   --poster-color: transparent !important;
 }
@@ -123,6 +125,11 @@ model-viewer {
     z-index: 6;
     white-space: nowrap;
     cursor: none;
+    top: 50%;
+    left: 50%;
+    @include lt-md{
+      top: 80%;
+    }
 
     &:active{
       &::before{

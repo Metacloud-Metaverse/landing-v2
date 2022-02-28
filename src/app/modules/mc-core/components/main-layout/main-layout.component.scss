@@ -358,6 +358,12 @@
   .video-miniature2{
     animation: introVideoHome 2s ease;
   }
+
+  .d-none-mobile{
+    @include lt-md{
+      display: none;
+    }
+  }
 }
 
 .video-container {
