@@ -25,6 +25,9 @@
     @include xs {
       padding: 1em;
     }
+    @include sm {
+      padding: 1em 1.5em;
+    }
 
     .logo {
       width: 230px;
@@ -34,6 +37,9 @@
       @include xs {
         width: 170px;
         margin: auto;
+      }
+      @include sm {
+        width: 190px;
       }
       img {
         width: 100%;

@@ -6,20 +6,32 @@
   flex-wrap: wrap;
   gap: 1em;
   width: 1200px;
-  max-width: 100%;
+  max-width: calc(100% - 14em);
   margin: auto;
   margin-top: 3em;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
 
-  @include xs {
+  @include lt-lg {
     width: calc(100% - 4em);
     transform: translateX(0%);
     left: 4em;
     overflow-x: auto;
     flex-wrap: nowrap;
     gap: 0;
+    max-width: 100%;
+  }
+
+  @include sm {
+    width: calc(100% - 6em);
+    left: 6em;
+  }
+
+  @include md {
+    width: calc(100% - 7em);
+    left: 7em;
+    gap: 1em;
   }
 
   .event {
@@ -42,7 +54,7 @@
     top: 0;
     box-shadow: 0 0px 0px 0px rgba($color: #000000, $alpha: 0);
 
-    @include xs {
+    @include lt-md {
       min-height: 360px;
       min-width: 200px;
       margin-right: 1.5em;

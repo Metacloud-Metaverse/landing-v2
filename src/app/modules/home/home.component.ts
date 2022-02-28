@@ -527,6 +527,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
           this.modelAvatarPrimary.nativeElement.cameraOrbit = '25deg 70deg 1000%';
+          this.section3text2 = true;
+          this.section3text3 = true;
         }
     });
   }

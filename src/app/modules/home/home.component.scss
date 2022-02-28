@@ -152,6 +152,10 @@
       left: 0em;
       transform: translateY(-50%) scale(0.8);
     }
+    @include sm{
+      left: 1em;
+      transform: translateY(-50%) scale(0.9);
+    }
 
     /* &:hover{
       div{
@@ -391,7 +395,20 @@ model-viewer {
   width: 100%;
   height: 100vh;
   z-index: 3;
+  box-sizing: border-box;
+  padding: 0 8em;
   /* pointer-events: none; */
+
+  @include xs{
+    padding: 0 1em;
+  }
+
+  @include sm{
+    box-sizing: border-box;
+    padding-right: 1em;
+    padding-left: 6em;
+    left: 0 !important;
+  }
 
   h2 {
     animation: letterSpacingHeightH2 1.5s ease;
@@ -403,6 +420,9 @@ model-viewer {
     transition: all 0.3s ease;
     @include xs{
       font-size: 3em;
+    }
+    @include sm{
+      font-size: 2.3em !important;
     }
   }
 
@@ -428,7 +448,7 @@ model-viewer {
 
 .texts-left {
   top: 20vh;
-  left: 20vw;
+  left: 10vw;
 }
 
 .texts-right {
@@ -473,6 +493,7 @@ model-viewer {
   z-index: 9;
   h2{
     font-size: 3em;
+    pointer-events: all;
   }
   p{
     padding: 0.8em 2em;
@@ -497,10 +518,6 @@ model-viewer {
     to { opacity: 1; filter: blur(0px); }
   }
 
-  h2{
-    pointer-events: all;
-  }
-
   @include xs{
     height: initial;
     top: initial;
@@ -512,6 +529,11 @@ model-viewer {
       z-index: 8;
       text-shadow: 0 0 9px #fa9898;
     }
+  }
+
+  @include sm{
+    top: 13vh;
+    left: 4em;
   }
 }
 
@@ -525,18 +547,6 @@ model-viewer {
     margin: auto;
     z-index: 8;
   }
-
-
-  /* @include xs{
-    height: initial;
-    top: initial;
-    bottom: 1em;
-    left: 4em;
-    h2{
-      font-size: 2em;
-      width: calc(100% - 4em);
-    }
-  } */
 }
 
 .texts4{
@@ -576,17 +586,6 @@ model-viewer {
         }
       }
     }
-    /* span{
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      border-radius: 12px;
-      border: 1px solid black;
-      background-color: transparent;
-      margin-right: 20px;
-      position: relative;
-      top: -14px;
-    } */
   }
 
   .caption{
@@ -625,7 +624,13 @@ model-viewer {
     position: fixed;
     top: 52%;
     right: 20%;
-    animation: introFloatElements 0.5s ease-out,;
+    animation: introFloatElements 0.5s ease-out;
+    @include xs{
+      right: initial;
+      left: calc(50% - 160px);
+      width: 90px;
+      display: none;
+    }
   }
 
   .img-joker {
@@ -633,6 +638,12 @@ model-viewer {
     top: 40%;
     right: 15%;
     animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
+    @include xs{
+      right: initial;
+      left: 10%;
+      top: 22%;
+      width: 80px;
+    }
   }
 
   .img-headphones {
@@ -660,9 +671,22 @@ model-viewer {
 }
 
 .texts5{
+  @include xs{
+    top: 50%;
+    left: 10%;
+    width: 90%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+  }
   h2{
     width: 1050px;
     font-size: 3em;
+    @include xs{
+      font-size: 2em;
+      width: calc(100% - 1em);
+      z-index: 8;
+    }
   }
 }
 
@@ -698,35 +722,72 @@ model-viewer {
 }
 
 .texts7{
-  h2{
-    width: 1050px;
-    font-size: 3em;
-  }
-}
-
-.texts8{
   @include xs{
-    height: initial;
-    top: initial;
-    bottom: 1em;
-    left: 4em;
-    text-align: left;
+    top: 50%;
+    left: 10%;
+    width: 90%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
   }
   h2{
     width: 1050px;
     font-size: 3em;
     @include xs{
-      margin-left: 0;
       font-size: 2em;
-      left: 0;
-      width: calc(100% - 4em);
+      width: calc(100% - 1em);
+      z-index: 8;
+    }
+  }
+}
+
+.texts8{
+  @include xs{
+    top: 50%;
+    left: 10%;
+    width: 90%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+  }
+  h2{
+    width: 1050px;
+    font-size: 3em;
+    @include xs{
+      font-size: 2em;
+      width: calc(100% - 1em);
+      z-index: 8;
     }
   }
 }
 
 .texts9{
+  @include xs{
+    height: initial;
+    top: initial;
+    bottom: 1em;
+    left: 4em;
+    h2{
+      font-size: 2em;
+      width: calc(100% - 4em);
+      z-index: 8;
+      text-shadow: 0 0 9px #fa9898;
+    }
+  }
   p{
     margin-top: 2em;
+  }
+}
+
+.texts10{
+  @include xs{
+    top: 20%;
+    padding-left: 3em;
+    box-sizing: border-box;
+    h2{
+      font-size: 2em;
+      width: calc(100% - 1em);
+    }
   }
 }
 
@@ -813,6 +874,13 @@ model-viewer {
   right: 28%;
   mix-blend-mode: difference;
   animation: introFloatElements 0.5s ease-out;
+  @include xs{
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    right: initial;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .img-idea {
@@ -822,4 +890,10 @@ model-viewer {
   right: 30%;
   width: 500px;
   animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
+  @include xs{
+    width: 400px;
+    top: calc(50% - 300px);
+    left: calc(50% - 100px);
+    right: initial;
+  }
 }
