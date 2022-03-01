@@ -12,12 +12,12 @@ export class TeamComponent implements OnInit {
 
   team:any = [
     {
-      image: '/assets/img/team/team-madi.png',
+      image: '/assets/img/team/team-madi-3d.png',
       name: 'Madi Sayeed',
       rol: 'Co-Founder',
     },
     {
-      image: '/assets/img/team/team-sam.png',
+      image: '/assets/img/team/team-sam-3d.png',
       name: ' Samuel Sullivan',
       rol: 'CO-FOUNDER',
     },
@@ -42,7 +42,7 @@ export class TeamComponent implements OnInit {
       rol: 'Lead Developer',
     },
     {
-      image: '/assets/img/team/team-axel.png',
+      image: '/assets/img/team/team-axel-3d.png',
       name: 'Axel Camiletti',
       rol: 'UX/UI Art Director',
     },

@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     '359deg 70deg 1000%',
   ];
   showChangeSceneButton = false;
+  activeScenes = false;
 
   currentAnimateBackground = 0;
   preloadState = 0; // 0 = Preload, 1 = In Progress, 2 = Completed
@@ -546,6 +547,40 @@ export class HomeComponent implements OnInit, AfterViewInit {
   activeSection6(){
     this.pageState = 5;
     this.scene = 0;
+    this.activeScenes = true;
+    this.modelAvatarPrimary.nativeElement.cameraControls = false;
+    this.modelAvatarPrimary.nativeElement.autoRotate = false;
+    /* this.modelAvatarPrimary.nativeElement.exposure = 0; */
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
+    this.modelAvatarPrimary.nativeElement.interpolationDecay = 600;
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert.jpg';
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 90deg 100%';
+      /* this.modelAvatarPrimary.nativeElement.exposure = 1; */
+    }, 500);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.interpolationDecay = 400;
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert.jpg';
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
+    }, 4000);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casino.jpg';
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-270deg 80deg 100%';
+    }, 5500);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfire.jpg';
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-359deg 80deg 100%';
+    }, 7000);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieve.jpg';
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 80deg 100%';
+    }, 8500);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museo.jpg';
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
+      this.modelAvatarPrimary.nativeElement.cameraControls = true;
+      this.modelAvatarPrimary.nativeElement.autoRotate = true;
+    }, 10000);
     /* this.avatarCornerRun(); */
     /* this.avatarBackgroundScene(); */
   }
