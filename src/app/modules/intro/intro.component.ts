@@ -12,16 +12,12 @@ import { MainService } from 'src/app/services/main.service';
 export class IntroComponent implements OnInit {
 
   startVideo = false;
-  endAnimationHeadline = false;
-  endAnimationMic = false;
   startZoom = false;
-  startLines = true;
   startEndScene = false;
   isLoading = true;
   isLoadingPlanet = true;
   mouse_x = 0;
   mouse_y = 0;
-  count = 0;
 
   @ViewChild('cursor') cursor:any;
   @ViewChild('modelPlanet') modelPlanet: any;
@@ -52,13 +48,8 @@ export class IntroComponent implements OnInit {
     }, 2500);
   }
 
-
-  /* @HostListener('mouseover', ['$event']) mouseover(event:any){
-    console.log('mouseover' +event);
-  } */
-
   @HostListener('mousemove', ['$event']) onMouseMove(event: any) {
-    console.log('Mouse move' + event.pageX);
+    /* console.log('Mouse move' + event.pageX); */
     this.cursor.nativeElement.style.left = event.pageX + 'px';
     this.cursor.nativeElement.style.top = event.pageY + 'px';
     this.mouse_x = -10 + (event.pageX / 100);
@@ -79,20 +70,9 @@ export class IntroComponent implements OnInit {
     });
   }
 
-  /* @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
-    this.gradientLeft = event.pageX - this.el.nativeElement.offsetLeft;
-    this.gradientTop = event.pageY - this.el.nativeElement.offsetTop;
-  } */
-
-  moveElements(){
-    console.log('asd');
-  }
-
   startAnimation(){
     this.startZoom = true;
-    this.endAnimationHeadline = true;
     this.mainService.audioMain.next(true);
-    this.endAnimationMic = true;
     this.modelPlanet.nativeElement.cameraOrbit = '40deg 80deg 3m';
     setTimeout(() => {
       this.modelPlanet.nativeElement.cameraOrbit = '60deg 70deg 2m';

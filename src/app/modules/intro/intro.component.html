@@ -11,36 +11,8 @@
     <span>CLICK START</span>
   </div>
 
-
   <div class="intro-page-container">
-    <!-- <img src="https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Background Space" class="background-space" /> -->
-
-    <!-- <div class="mic" [ngClass]="{'end-animation-mic': endAnimationMic}">
-      <div class="mic-shadow"></div>
-    </div> -->
-    <!-- <app-line-speed-element *ngIf="startLines"></app-line-speed-element>
-    <app-stars-element></app-stars-element> -->
-    <!-- <div class="sketchfab-embed-wrapper"> <iframe title="World Manabu" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c5766d695255410b89cad51151cbb1ab/embed?autostart=1"> </iframe></div> -->
-
-    <!-- <div class="sketchfab-embed-wrapper" [ngClass]="{'start-animation-world': endAnimationMic}"> <iframe title="Cartoon Lowpoly Earth Planet 2 UVW textured" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/73dd3283bf6d45a3a62d4806f3044633/embed"> </iframe></div> -->
-
-    <img #backgroundStars src="/assets/hdr/background-space.png" alt="Background Stars" class="background-stars background-starts-intro" [ngClass]="{'background-starts-intro': isLoading}" />
-
-    <!-- <model-viewer
-      #modelPlanet
-      alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-      src="assets/models/planeta_aislado.glb"
-      shadow-intensity="1"
-      shadow-softness="1"
-      exposure="1"
-      camera-orbit="0deg 75deg 1m"
-      autoplay
-      animation-name="clip"
-      interpolation-decay="300"
-      skybox-image=''
-      class="planet"
-      [ngClass]="{'planet-zoom': startZoom}">
-    </model-viewer> -->
+    <img #backgroundStars src="/assets/hdr/background-space.jpg" alt="Background Stars" class="background-stars background-starts-intro" [ngClass]="{'background-starts-intro': isLoading}" />
 
     <model-viewer
       #modelPlanet
@@ -60,12 +32,6 @@
       [ngClass]="{'planet-zoom': startZoom, 'planet-intro' : !isLoading}">
     </model-viewer>
 
-    <!-- <div class="container">
-      <h1 class="display1" [ngClass]="{'end-animation-h1': endAnimationHeadline}"><b>REALITY RE-IMAGINED</b></h1>
-    </div> -->
-
-    <!-- <button mat-stroked-button class="btn-into" (click)="startAnimation()">Into Metaverse</button> -->
-
   </div>
 </div>
 
@@ -75,10 +41,3 @@
 </div>
 
 <div *ngIf="startEndScene" class="end-scene"></div>
-
-
-<!-- <model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/bonfire.jpg'></model-viewer>
-<model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/casino.jpg'></model-viewer>
-<model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/concert.jpg'></model-viewer>
-<model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/museo.jpg'></model-viewer>
-<model-viewer style="pointer-events: none; opacity: 0; width: 1px;" src="assets/models/daft_update.glb" skybox-image='assets/hdr/nieve.jpg'></model-viewer> -->

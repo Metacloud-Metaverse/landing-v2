@@ -46,11 +46,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   preloadState = 0; // 0 = Preload, 1 = In Progress, 2 = Completed
   preloadBackgroundNumber = 0;
   assets = [
-    '/assets/hdr/concert.jpg',
-    '/assets/hdr/bonfire.jpg',
-    '/assets/hdr/nieve.jpg',
-    '/assets/hdr/casino.jpg',
-    '/assets/hdr/museo.jpg'
+    '/assets/hdr/concert-optimized.jpg',
+    '/assets/hdr/bonfire-optimized.jpg',
+    '/assets/hdr/nieve-optimized.jpg',
+    '/assets/hdr/casino-optimized.jpg',
+    '/assets/hdr/museo-optimized.jpg'
   ];
 
 
@@ -553,30 +553,30 @@ export class HomeComponent implements OnInit, AfterViewInit {
     /* this.modelAvatarPrimary.nativeElement.exposure = 0; */
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.interpolationDecay = 600;
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert.jpg';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
     setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 90deg 100%';
       /* this.modelAvatarPrimary.nativeElement.exposure = 1; */
     }, 500);
     setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.interpolationDecay = 400;
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert.jpg';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
     }, 4000);
     setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casino.jpg';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casino-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-270deg 80deg 100%';
     }, 5500);
     setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfire.jpg';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfire-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-359deg 80deg 100%';
     }, 7000);
     setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieve.jpg';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieve-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 80deg 100%';
     }, 8500);
     setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museo.jpg';
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museo-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
       this.modelAvatarPrimary.nativeElement.cameraControls = true;
       this.modelAvatarPrimary.nativeElement.autoRotate = true;

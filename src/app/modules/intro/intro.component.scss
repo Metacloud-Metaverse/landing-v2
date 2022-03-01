@@ -4,8 +4,38 @@ model-viewer {
   --poster-color: transparent !important;
 }
 
+@keyframes endScene {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-.loading-page{
+@keyframes introAnimationWorld {
+  from {
+    transform: translate(-50%, -53%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -53%) scale(1);
+  }
+}
+
+@keyframes startAnimationWorld {
+  0% {
+    transform: translate(-50%, -53%) scale(1);
+  }
+  10% {
+    filter: blur(0px);
+  }
+  100% {
+    transform: translate(-50%, -53%) scale(1.6);
+    filter: blur(40px);
+  }
+}
+
+.loading-page {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,14 +49,14 @@ model-viewer {
   pointer-events: none;
   z-index: 1;
 
-  .background-texture{
+  .background-texture {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     pointer-events: none;
-    background-image: url('/assets/img/space-texture.jpg');
+    background-image: url("/assets/img/space-texture.jpg");
     background-repeat: repeat;
     background-size: 700px;
     z-index: 0;
@@ -35,22 +65,22 @@ model-viewer {
     mix-blend-mode: color-dodge;
   }
 
-  mat-progress-bar{
+  mat-progress-bar {
     height: 1px;
     width: 200px;
     margin: 2em 0;
 
-    &::ng-deep .mat-progress-bar-buffer{
+    &::ng-deep .mat-progress-bar-buffer {
       background-color: #2c2a2e;
     }
   }
 
-  img{
+  img {
     opacity: 0.1;
     width: 100px;
   }
 
-  .separate-line{
+  .separate-line {
     width: 200px;
     height: 0px;
     border: 1px dashed white;
@@ -58,7 +88,7 @@ model-viewer {
     margin: 2em 0;
   }
 
-  p{
+  p {
     margin-top: 0;
     margin-left: 10px;
     color: white;
@@ -127,12 +157,12 @@ model-viewer {
     cursor: none;
     top: 50%;
     left: 50%;
-    @include lt-md{
+    @include lt-md {
       top: 80%;
     }
 
-    &:active{
-      &::before{
+    &:active {
+      &::before {
         top: -22px;
         left: -22px;
         width: 44px;
@@ -154,7 +184,7 @@ model-viewer {
     }
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       width: 39px;
       height: 39px;
@@ -165,7 +195,7 @@ model-viewer {
       transition: all 0.3s ease;
     }
 
-    span{
+    span {
       position: relative;
       top: -13px;
       left: -56px;
@@ -182,6 +212,7 @@ model-viewer {
   .intro-page-container {
     background-color: #191919;
     position: relative;
+
     &::before {
       content: "";
       position: absolute;
@@ -195,228 +226,53 @@ model-viewer {
       pointer-events: none;
       z-index: 1;
     }
-  }
 
-  .background-space {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    mix-blend-mode: soft-light;
-    opacity: 0.5;
-    z-index: 2;
-  }
-
-  .container {
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    box-sizing: border-box;
-    z-index: 3;
-    position: relative;
-    pointer-events: none;
-  }
-
-  .logo {
-    width: 180px;
-    opacity: 1;
-  }
-
-  h1 {
-    white-space: nowrap;
-    margin: 0;
-    color: white;
-    animation: neon1 2s ease-in-out infinite alternate, h1Intro 2s ease;
-    transition: all 0.3s ease;
-  }
-
-  .end-animation-h1 {
-    animation: neon1 2s ease-in-out infinite alternate, h1Leave 3s ease;
-    opacity: 0;
-  }
-
-  $color_hue: rgba( $color: #fd2885, $alpha: 1,);
-  @keyframes neon1 {
-    from {
-      text-shadow: 0 0 10px rgba($color: #ffffff, $alpha: 0.5),
-        0 0 20px rgba($color: #ffffff, $alpha: 0.5),
-        0 0 30px rgba($color: #ffffff, $alpha: 0.5), 0 0 40px $color_hue,
-        0 0 70px $color_hue;
-    }
-    to {
-      text-shadow: 0 0 5px rgba($color: #ffffff, $alpha: 0.5),
-        0 0 10px rgba($color: #ffffff, $alpha: 0.5),
-        0 0 15px rgba($color: #ffffff, $alpha: 0.5), 0 0 20px $color_hue,
-        0 0 45px $color_hue, 0 0 50px $color_hue, 0 0 75px $color_hue,
-        0 0 100px $color_hue;
-    }
-  }
-
-  @keyframes h1Intro {
-    from{
-      letter-spacing: 20px;
-      filter: blur(40px);
-      opacity: 0;
-    }
-    to{
-      letter-spacing: 0;
-      filter: blur(0px);
-      opacity: 1;
-    }
-  }
-
-  @keyframes h1Leave {
-    0%{
-      letter-spacing: 0px;
-      filter: blur(0px);
-      opacity: 1;
-    }
-    100%{
-      letter-spacing: 20px;
-      filter: blur(40px);
-      opacity: 0;
-    }
-  }
-
-  /* button {
-    position: relative;
-    z-index: 200000;
-    color: white;
-    border-color: white;
-  } */
-
-  .mic {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.6);
-    color: #fff;
-    animation: introsShere 3s ease;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 100%;
-      z-index: 2;
-      box-shadow: 0 0 20px 20px #1c084f;
-    }
-
-    &::before {
-      width: 400px;
-      height: 400px;
-      background-color: #1a084e;
-      transition: all 0.7s ease;
-    }
-
-    /* &::after {
-        width: 250px;
-        height: 250px;
-        background-color: #2f1e5f;
-        animation: circle-size 0.8s linear infinite alternate;
-    } */
-
-    &-shadow {
-      width: 400px;
-      height: 400px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      //transform: translate(-50%, -50%);
-      border-radius: 100%;
-      z-index: 1;
-      box-shadow: 10px -55px 30px 15px #823ca6, 24px -10px 47px 10px #aab3d2,
-        -21px -25px 97px 10px #5acee3, 51px 5px 17px 10px #1b7d8f,
-        3px 2px 77px 10px #f30bf5;
-      animation: shadow-rotate 1.5s linear infinite;
+    .background-stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: scale(1.2);
       transform-origin: center;
-      transition: all 0.7s ease;
+      object-fit: cover;
+      pointer-events: none;
+      z-index: 1;
+      transition: all 0.7s linear, filter 2s ease 1.5s, opacity 2s ease 1.5s;
+      opacity: 0.7;
+      filter: blur(0px);
     }
-  }
 
-  .end-animation-mic{
-    transform: translate(-50%, -50%) scale(8);
-    animation: introsShere 3s ease, micLeave 3s ease;
-  }
-
-  /* @keyframes circle-size {
-    from {
-        width: 250px;
-        height: 250px;
-    }
-    to {
-        width: 300px;
-        height: 300px;
-    }
-  } */
-
-  @keyframes shadow-rotate {
-    from {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
-
-  @keyframes introsShere {
-    from {
-      transform: translate(-50%, -50%) scale(0);
+    .background-starts-intro {
       opacity: 0;
+      filter: blur(30px);
     }
-    to {
-      transform: translate(-50%, -50%) scale(0.6);
-      opacity: 1;
-    }
-  }
 
-  @keyframes micLeave{
-    0%  { transform: translate(-50%, -50%) scale(0.6); }
-    50% { transform: translate(-50%, -50%) scale(0.5); }
-    100%{ transform: translate(-50%, -50%) scale(8);   }
+    .planet {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -53%);
+      width: 85%;
+      height: 85%;
+      z-index: 1;
+      transition: all 1.5s ease-in;
+    }
+
+    .planet-intro {
+      animation: introAnimationWorld 3s ease;
+    }
+
+    .planet-zoom {
+      animation: startAnimationWorld 3.5s linear;
+    }
   }
 }
 
-.intro-page-show{
+.intro-page-show {
   opacity: 1;
   filter: blur(0px);
 }
-
-
-/* .start-animation-intro-page {
-  h1{
-    animation: neon1 2s ease-in-out infinite alternate, h1Leave 3s ease;
-    opacity: 0;
-  }
-  .mic {
-    animation: introsShere 3s ease, micLeave 3s ease;
-  }
-} */
-
-/* @keyframes startZoom{
-  0%{
-    top: 0;
-    left: 0;
-    transform: scale(1);
-  }
-  50%{
-    top: 153px;
-    left: 0;
-    transform: scale(1.5);
-  }
-  to{
-    top: 340px;
-    left: 0;
-    transform: scale(2.5);
-  }
-} */
 
 .video-container {
   position: fixed;
@@ -451,7 +307,7 @@ model-viewer {
     }
   }
 
-  button{
+  button {
     position: absolute;
     bottom: 2em;
     left: 50%;
@@ -461,7 +317,7 @@ model-viewer {
     color: white;
     border-color: rgba($color: white, $alpha: 0.5);
     transition: all 0.3s ease;
-    &:hover{
+    &:hover {
       color: black;
       background-color: white;
     }
@@ -478,86 +334,4 @@ model-viewer {
   z-index: 30;
   opacity: 1;
   animation: endScene 300ms linear;
-}
-
-@keyframes endScene {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-
-.planet{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -53%);
-  width: 85%;
-  height: 85%;
-  z-index: 1;
-  transition: all 1.5s ease-in;
-}
-
-.planet-intro{
-  animation: introAnimationWorld 3s ease
-}
-
-.planet-zoom{
-  animation: startAnimationWorld 3.5s linear;
-}
-
-@keyframes introAnimationWorld {
-  from{
-    transform: translate(-50%, -53%) scale(0);
-  }
-  to{
-    transform: translate(-50%, -53%) scale(1);
-  }
-}
-
-@keyframes startAnimationWorld {
-  0%{
-    transform: translate(-50%, -53%) scale(1);
-  }
-  10%{
-    filter: blur(0px);
-  }
-  100%{
-    transform: translate(-50%, -53%) scale(1.6);
-    filter: blur(40px);
-  }
-}
-
-.btn-into{
-  position: fixed;
-  bottom: 5em;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  border-color: rgba($color: white, $alpha: 0.5);
-  z-index: 3;
-}
-
-.background-stars{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: scale(1.2);
-  transform-origin: center;
-  object-fit: cover;
-  pointer-events: none;
-  z-index: 1;
-  transition: all 0.7s linear, filter 2s ease 1.5s, opacity 2s ease 1.5s;
-  opacity: 0.7;
-  filter: blur(0px);
-}
-
-.background-starts-intro{
-  opacity: 0;
-  filter: blur(30px);
 }
