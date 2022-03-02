@@ -20,9 +20,6 @@ import { MatIconModule } from '@angular/material/icon';
 // Components
 import { ContactSectionComponent } from './components/contact-section/contact-section.component';
 import { IntroSectionComponent } from './components/intro-section/intro-section.component';
-
-// Directives
-import { ScrollAnimationDirective } from './directives/scroll-animation.directive';
 import { ContentSectionComponent } from './components/content-section/content-section.component';
 import { StepAComponent } from './sections/step-a/step-a.component';
 import { StepBComponent } from './sections/step-b/step-b.component';
@@ -41,7 +38,6 @@ import { StepJComponent } from './sections/step-j/step-j.component';
     HomeComponent,
     ContactSectionComponent,
     IntroSectionComponent,
-    ScrollAnimationDirective,
     ContentSectionComponent,
     StepAComponent,
     StepBComponent,
