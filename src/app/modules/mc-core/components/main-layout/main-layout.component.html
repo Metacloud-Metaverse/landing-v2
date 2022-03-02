@@ -12,22 +12,22 @@
     </div>
 
     <a [routerLink]="['/']" class="logo">
-      <img *ngIf="router.url != '/' && router.url != '/contact' || isMenuOpen" src="/assets/img/logos/logo.png" alt="Metacloud Logo" />
-      <img *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/logos/logo-white.png" alt="Metacloud Logo" />
+      <img width="230px" height="47px" *ngIf="router.url != '/' && router.url != '/contact' || isMenuOpen" src="/assets/img/logos/logo.png" alt="Metacloud Logo" />
+      <img width="230px" height="47px" *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/logos/logo-white.png" alt="Metacloud Logo" />
     </a>
 
     <div class="social-media">
       <a href="" target="_blank" mat-icon-button matTooltip="Medium">
-        <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/medium-icon-black.svg" alt="Medium" />
-        <img *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/medium-icon.svg" alt="Medium" />
+        <img width="22px" height="22px" *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/medium-icon-black.svg" alt="Medium" />
+        <img width="22px" height="22px" *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/medium-icon.svg" alt="Medium" />
       </a>
       <a href="" target="_blank" mat-icon-button matTooltip="Discord">
-        <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/discord-icon-black.svg" alt="Discord" />
-        <img *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/discord-icon.svg" alt="Discord" />
+        <img width="22px" height="22px" *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/discord-icon-black.svg" alt="Discord" />
+        <img width="22px" height="22px" *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/discord-icon.svg" alt="Discord" />
       </a>
       <a href="" target="_blank" mat-icon-button matTooltip="Telegram">
-        <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram" />
-        <img *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/telegram-icon.svg" alt="Telegram" />
+        <img width="22px" height="22px" *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram" />
+        <img width="22px" height="22px" *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/telegram-icon.svg" alt="Telegram" />
       </a>
       <!-- <a href="" target="_blank" mat-icon-button matTooltip="Reddit">
         <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/reddit-icon-black.svg" alt="Reddit" />
