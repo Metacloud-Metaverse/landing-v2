@@ -15,41 +15,57 @@ export class TeamComponent implements OnInit {
       image: '/assets/img/team/team-madi-3d.png',
       name: 'Madi Sayeed',
       rol: 'Co-Founder',
+      linkedin: 'jh',
+      twitter: ''
     },
     {
       image: '/assets/img/team/team-sam-3d.png',
       name: ' Samuel Sullivan',
       rol: 'CO-FOUNDER',
+      linkedin: '',
+      twitter: ''
     },
     {
       image: '/assets/img/team/team-francisco-3d.png',
       name: ' Francisco Michelich',
       rol: 'General Manager (COO)',
+      linkedin: '',
+      twitter: ''
     },
     {
       image: '/assets/img/team/team-juan-3d.png',
       name: 'Juan Bidondo',
       rol: 'Project Lead',
+      linkedin: '',
+      twitter: ''
     },
     {
       image: '/assets/img/team/team-matias-3d.png',
       name: 'Matias Camiletti',
       rol: 'Lead Blockchain Developer',
+      linkedin: '',
+      twitter: ''
     },
     {
       image: '/assets/img/team/team-alejandro-3d.png',
       name: 'Alejandro Romero',
       rol: 'Lead Developer',
+      linkedin: '',
+      twitter: ''
     },
     {
       image: '/assets/img/team/team-axel-3d.png',
       name: 'Axel Camiletti',
       rol: 'UX/UI Art Director',
+      linkedin: '',
+      twitter: ''
     },
     {
       image: '/assets/img/team/team-rosario-3d.png',
       name: 'Rosario Cainzo',
       rol: 'UX/UI Designer',
+      linkedin: '',
+      twitter: ''
     },
   ]
 

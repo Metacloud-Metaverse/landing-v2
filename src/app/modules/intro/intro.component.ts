@@ -15,6 +15,7 @@ export class IntroComponent implements OnInit {
   startZoom = false;
   startEndScene = false;
   isLoadingPlanet = true;
+  isMuted = true;
   mouse_x = 0;
   mouse_y = 0;
 

@@ -1,1 +1,26 @@
 @import "../../home.component.scss";
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  @include xs{
+    flex-direction: column;
+    margin-bottom: auto;
+    gap: 0;
+    width: 100%;
+  }
+
+  button{
+    padding: 0.6em 1.5em;
+    width: 240px;
+    margin-top: 2em;
+    @include xs{
+      width: 100%;
+    }
+  }
+
+  .neon-effect{
+    transform: scale(0.8);
+  }
+}

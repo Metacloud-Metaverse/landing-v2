@@ -5,6 +5,9 @@ import { TeamRoutingModule } from './team-routing.module';
 import { TeamComponent } from './team.component';
 import { McCoreModule } from '../mc-core/mc-core.module';
 
+// Angular Material
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +18,8 @@ import { McCoreModule } from '../mc-core/mc-core.module';
     TeamRoutingModule,
     McCoreModule,
 
+    // Angular Material
+    MatTooltipModule
   ]
 })
 export class TeamModule { }

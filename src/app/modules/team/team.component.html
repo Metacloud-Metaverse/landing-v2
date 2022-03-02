@@ -16,6 +16,10 @@
           </div>
           <h2><b>{{ user.name }}</b></h2>
           <p>{{ user.rol }}</p>
+          <div class="social-media">
+            <a *ngIf="user.linkedin" href="{{user.linkedin}}" target="_blank" mat-icon-button matTooltip="Linkedin"><img src="/assets/img/icons/linkedin-icon-black.svg" alt="Linkedin"></a>
+            <a *ngIf="user.twitter" href="{{user.twitter}}" target="_blank" mat-icon-button matTooltip="Twitter"><img src="/assets/img/icons/twitter-icon-black.svg" alt="Twitter"></a>
+          </div>
         </div>
       </div>
     </div>

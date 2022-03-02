@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Meta, Title } from '@angular/platform-browser';
 import { ComponentAnimation } from '../mc-core/animations/component.animation';
+import { ConcertsModalComponent } from './modals/concerts-modal/concerts-modal.component';
 
 @Component({
   selector: 'app-events',
@@ -40,7 +42,8 @@ export class EventsComponent implements OnInit {
 
   constructor(
     private titleService: Title,
-    private metaTagService: Meta
+    private metaTagService: Meta,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -50,4 +53,9 @@ export class EventsComponent implements OnInit {
     );
   }
 
+  openConcertsModal(){
+    this.dialog.open(ConcertsModalComponent, {
+      width: '500px'
+    });
+  }
 }
