@@ -31,6 +31,12 @@
       rgba($color: white, $alpha: 0.5)
     ); */
 
+    @include xs{
+      padding-left: 2em;
+      padding-right: 2em;
+      width: 90vw;
+    }
+
     h1 {
       display: flex;
       gap: 0.4em;
@@ -74,7 +80,7 @@
       align-items: center;
       gap: 2em;
       @include xs{
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: flex-start;
         justify-content: flex-start;
       }
@@ -220,9 +226,6 @@
 .nav-menu-active {
   opacity: 1;
   pointer-events: all;
-
-  .content {
-  }
 }
 
 .blink-video {
@@ -237,12 +240,16 @@
   pointer-events: none;
 }
 
-
-
 .neon-effect {
   font-weight: 400;
   position: relative;
   top: -6px;
+  white-space: nowrap;
+
+  @include xs{
+    transform: scale(0.8);
+    top: -2px;
+  }
 
   b{
     font-weight: 400;

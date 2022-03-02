@@ -40,32 +40,38 @@
 }
 
 @keyframes introEvents {
-  from{
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
 
 @keyframes floating {
-  from { transform: translate(0,  0px); }
-  50%  { transform: translate(0, 30px); }
-  to   { transform: translate(0, -0px); }
+  from {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 30px);
+  }
+  to {
+    transform: translate(0, -0px);
+  }
 }
 
 @keyframes introFloatElements {
-  from{
+  from {
     opacity: 0;
     filter: blur(30px);
   }
-  to{
+  to {
     opacity: 1;
     filter: blur(0px);
   }
 }
 
-.home-page{
+.home-page {
   overflow: hidden;
   min-height: 100vh;
   position: relative;
@@ -148,11 +154,11 @@
     left: 2.8em;
     transform: translateY(-50%);
     z-index: 10;
-    @include xs{
+    @include xs {
       left: 0em;
       transform: translateY(-50%) scale(0.8);
     }
-    @include sm{
+    @include sm {
       left: 1em;
       transform: translateY(-50%) scale(0.9);
     }
@@ -187,7 +193,7 @@
         font-weight: 600;
       }
 
-      .figure{
+      .figure {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -228,7 +234,7 @@
     }
 
     .active {
-      .figure{
+      .figure {
         width: 34px;
         height: 34px;
         opacity: 0.3;
@@ -335,21 +341,13 @@ model-viewer {
   transition: all 1s ease;
 }
 
-/* .model-spaceship {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  top: 6vh;
-  left: 40%;
-  z-index: 10;
-  display: none;
-} */
-
-.model-spaceship-active {
-  display: inherit;
-}
-
-.movement1,.movement3,.movement5,.movement7,.movement8,.movement9, .movement10 {
+.movement1,
+.movement3,
+.movement5,
+.movement7,
+.movement8,
+.movement9,
+.movement10 {
   filter: blur(40px);
   opacity: 0.5;
   pointer-events: none;
@@ -359,18 +357,18 @@ model-viewer {
   left: 20%;
   top: 5%;
   z-index: 3;
-  @include xs{
+  @include xs {
     left: 0%;
     top: -10%;
   }
 }
 
-.movement3{
+.movement3 {
 }
 
 .movement4 {
   left: 20%;
-  @include xs{
+  @include xs {
     left: 0%;
   }
 }
@@ -382,13 +380,23 @@ model-viewer {
   z-index: 8;
 }
 
-.movement7{
+.movement7 {
 }
 
-.movement8{
+.movement8 {
 }
 
-.texts, app-step-a, app-step-b, app-step-c, app-step-d, app-step-e, app-step-f, app-step-g, app-step-h, app-step-i, app-step-j {
+.section,
+app-step-a,
+app-step-b,
+app-step-c,
+app-step-d,
+app-step-e,
+app-step-f,
+app-step-g,
+app-step-h,
+app-step-i,
+app-step-j {
   position: absolute;
   top: 0;
   left: 0;
@@ -399,11 +407,11 @@ model-viewer {
   padding: 0 8em;
   /* pointer-events: none; */
 
-  @include xs{
+  @include xs {
     padding: 0 1em;
   }
 
-  @include sm{
+  @include sm {
     box-sizing: border-box;
     padding-right: 1em;
     padding-left: 6em;
@@ -413,15 +421,16 @@ model-viewer {
   h2 {
     animation: letterSpacingHeightH2 1.5s ease;
     line-height: 1.3;
+    font-size: 3em;
     width: 700px;
     max-width: 90%;
     pointer-events: all;
     position: relative;
     transition: all 0.3s ease;
-    @include xs{
-      font-size: 3em;
+    @include xs {
+      font-size: 2em;
     }
-    @include sm{
+    @include sm {
       font-size: 2.3em !important;
     }
   }
@@ -446,7 +455,7 @@ model-viewer {
   }
 }
 
-app-step-f{
+app-step-f {
   z-index: 30;
   pointer-events: none;
 }
@@ -464,17 +473,17 @@ app-step-f{
 .texts-center {
   text-align: center;
   top: 33%;
-  h2{
+  h2 {
     margin: auto;
   }
-  p{
+  p {
     margin: auto;
   }
 }
 
-.texts1{
+.texts1 {
   top: 35%;
-  @include xs{
+  @include xs {
     top: 50%;
     left: 10%;
     width: 90%;
@@ -482,71 +491,45 @@ app-step-f{
     display: flex;
     align-items: center;
   }
-  h2{
+  h2 {
     width: 1000px;
-    font-size: 3em;
-    @include xs{
-      font-size: 2em;
+    @include xs {
       width: calc(100% - 1em);
       z-index: 8;
     }
   }
 }
 
-.texts2{
+.texts2 {
   pointer-events: none;
   z-index: 9;
-  h2{
-    font-size: 3em;
+  h2 {
     pointer-events: all;
   }
-  p{
-    padding: 0.8em 2em;
-    background-color: rgba($color: #000000, $alpha: 0.9);
-    border-radius: 8px;
-    color: white;
-    position: fixed;
-    right: 15%;
-    top: 20%;
-    width: initial;
-    max-width: initial;
-    z-index: 10;
-    display: inline-block;
-    font-size: 0.9em;
-    cursor: pointer;
-    pointer-events: all;
-    animation: introChat 1s ease, floating 5s infinite ease-in-out;
-  }
 
-  @keyframes introChat {
-    from { opacity: 0; filter: blur(30px); }
-    to { opacity: 1; filter: blur(0px); }
-  }
-
-  @include xs{
+  @include xs {
     height: initial;
     top: initial;
     bottom: 1em;
     left: 4em;
-    h2{
-      font-size: 2em;
+    h2 {
       width: calc(100% - 4em);
       z-index: 8;
       text-shadow: 0 0 9px #fa9898;
     }
   }
 
-  @include sm{
+  @include sm {
     top: 13vh;
     left: 4em;
   }
 }
 
-.texts3{
+.texts3 {
   text-align: center;
   left: 0;
 
-  h2{
+  h2 {
     text-align: center;
     width: 90%;
     margin: auto;
@@ -554,38 +537,37 @@ app-step-f{
   }
 }
 
-.texts4{
+.texts4 {
   top: 15%;
-  h2{
+  h2 {
     text-align: left;
   }
-  @include xs{
+  @include xs {
     height: initial;
     top: initial;
     bottom: 1em;
     left: 4em;
-    h2{
+    h2 {
       left: 0;
-      font-size: 2em;
       width: calc(100% - 4em);
     }
   }
 
-  h2{
-    b{
+  h2 {
+    b {
       cursor: pointer;
       color: $black_high_emphasis;
-      &:hover{
+      &:hover {
         color: $color_primary_500;
       }
     }
-    .hover-linear{
-      &:after{
+    .hover-linear {
+      &:after {
         transform: scaleX(0.2);
         transform-origin: bottom left;
       }
-      &:hover{
-        &:after{
+      &:hover {
+        &:after {
           transform: scaleX(1);
           transform-origin: bottom left;
         }
@@ -593,7 +575,7 @@ app-step-f{
     }
   }
 
-  .caption{
+  .caption {
     width: 100%;
     position: fixed;
     bottom: 2em;
@@ -601,16 +583,22 @@ app-step-f{
     transform: translateX(-50%);
     text-align: center;
     font-size: 0.9em;
-    @include xs{
+    @include xs {
       bottom: initial;
       top: 5em;
       width: 70%;
     }
-    span{
-      &:last-of-type{display: none;}
-      @include xs{
-        &:first-of-type{display: none;}
-        &:last-of-type{display: inline-block;}
+    span {
+      &:last-of-type {
+        display: none;
+      }
+      @include xs {
+        &:first-of-type {
+          display: none;
+        }
+        &:last-of-type {
+          display: inline-block;
+        }
       }
     }
   }
@@ -630,7 +618,7 @@ app-step-f{
     top: 52%;
     right: 20%;
     animation: introFloatElements 0.5s ease-out;
-    @include xs{
+    @include xs {
       right: initial;
       left: calc(50% - 160px);
       width: 90px;
@@ -643,7 +631,7 @@ app-step-f{
     top: 40%;
     right: 15%;
     animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
-    @include xs{
+    @include xs {
       right: initial;
       left: 10%;
       top: 22%;
@@ -656,7 +644,7 @@ app-step-f{
     top: 20%;
     right: 40%;
     animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
-    @include xs{
+    @include xs {
       right: initial;
       left: 6%;
       width: 90px;
@@ -668,15 +656,15 @@ app-step-f{
     top: 40%;
     right: 15%;
     animation: introFloatElements 0.6s ease-out, floating 5s infinite ease-in-out;
-    @include xs{
+    @include xs {
       right: 10%;
       width: 80px;
     }
   }
 }
 
-.texts5{
-  @include xs{
+.texts5 {
+  @include xs {
     top: 50%;
     left: 10%;
     width: 90%;
@@ -684,18 +672,16 @@ app-step-f{
     display: flex;
     align-items: center;
   }
-  h2{
+  h2 {
     width: 1050px;
-    font-size: 3em;
-    @include xs{
-      font-size: 2em;
+    @include xs {
       width: calc(100% - 1em);
       z-index: 8;
     }
   }
 }
 
-.texts6{
+.texts6 {
   pointer-events: all;
   width: initial;
   position: fixed;
@@ -710,7 +696,7 @@ app-step-f{
   button {
     color: #fff;
     border: 3px solid #c266d3;
-    background-image: -webkit-linear-gradient(30deg, #c266d3 50%, transparent 50%);
+    background-image: -webkit-linear-gradient( 30deg, #c266d3 50%, transparent 50%);
     background-image: linear-gradient(30deg, #c266d3 50%, transparent 50%);
     background-size: 500px;
     background-repeat: no-repeat;
@@ -728,8 +714,8 @@ app-step-f{
   }
 }
 
-.texts7{
-  @include xs{
+.texts7 {
+  @include xs {
     top: 50%;
     left: 10%;
     width: 90%;
@@ -737,19 +723,17 @@ app-step-f{
     display: flex;
     align-items: center;
   }
-  h2{
+  h2 {
     width: 1050px;
-    font-size: 3em;
-    @include xs{
-      font-size: 2em;
+    @include xs {
       width: calc(100% - 1em);
       z-index: 8;
     }
   }
 }
 
-.texts8{
-  @include xs{
+.texts8 {
+  @include xs {
     top: 50%;
     left: 10%;
     width: 90%;
@@ -757,115 +741,50 @@ app-step-f{
     display: flex;
     align-items: center;
   }
-  h2{
+  h2 {
     width: 1050px;
-    font-size: 3em;
-    @include xs{
-      font-size: 2em;
+    @include xs {
       width: calc(100% - 1em);
       z-index: 8;
     }
   }
 }
 
-.texts9{
-  @include xs{
+.texts9 {
+  @include xs {
     height: initial;
     top: initial;
     bottom: 1em;
     left: 4em;
-    h2{
-      font-size: 2em;
+    h2 {
       width: calc(100% - 4em);
       z-index: 8;
       text-shadow: 0 0 9px #fa9898;
     }
   }
-  p{
+  p {
     margin-top: 2em;
   }
 }
 
-.texts10{
-  @include xs{
+.texts10 {
+  @include xs {
     top: 20%;
     padding-left: 3em;
     box-sizing: border-box;
-    h2{
-      font-size: 2em;
+    h2 {
       width: calc(100% - 1em);
     }
   }
 }
 
-
-
-
-
-
-
-
-/* .background-video{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.4;
-  filter: blur(30px);
-  mix-blend-mode: color-dodge;
-} */
-
-
-
-/* .scroll-down {
-  margin-top: 4em;
-  span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-bottom: 2px solid $color_accent_500;
-    border-right: 2px solid $color_accent_500;
-    transform: rotate(45deg);
-    margin: -10px;
-    animation: animate 2s infinite;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  span:nth-child(2) {
-    animation-delay: -0.2s;
-  }
-
-  span:nth-child(3) {
-    animation-delay: -0.4s;
-  }
-
-  @keyframes animate {
-    0% {
-      opacity: 0;
-      transform: rotate(45deg) translate(-20px, -20px);
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      transform: rotate(45deg) translate(20px, 20px);
-    }
-  }
-} */
-
-
-.video-music-wave{
+.video-music-wave {
   position: fixed;
   top: 15%;
   right: 11%;
   mix-blend-mode: color-dodge;
   animation: introFloatElements 0.5s ease-out;
-  @include xs{
+  @include xs {
     width: 300px;
     top: 50%;
     left: 50%;
@@ -874,14 +793,14 @@ app-step-f{
   }
 }
 
-.video-cards-float{
+.video-cards-float {
   width: 600px;
   position: fixed;
   top: 25%;
   right: 28%;
   mix-blend-mode: difference;
   animation: introFloatElements 0.5s ease-out;
-  @include xs{
+  @include xs {
     width: 500px;
     top: 50%;
     left: 50%;
@@ -896,8 +815,9 @@ app-step-f{
   top: 0%;
   right: 30%;
   width: 500px;
-  animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
-  @include xs{
+  animation: introFloatElements 0.4s ease-out,
+    floating 5.5s infinite ease-in-out;
+  @include xs {
     width: 400px;
     top: calc(50% - 300px);
     left: calc(50% - 100px);

@@ -1,18 +1,18 @@
-<div class="loading-page" [ngClass]="{'loading-page-show': isLoading}">
+<div class="loading-page" [ngClass]="{'loading-page-show': isLoadingPlanet}">
   <div class="background-texture"></div>
   <img src="/assets/img/logos/icon-total-white.svg" alt="Metacloud icon">
   <mat-progress-bar mode="indeterminate" value="40"></mat-progress-bar>
   <p>LOADING</p>
 </div>
 
-<div *ngIf="!isLoadingPlanet" class="intro-page" [ngClass]="{'intro-page-show': !isLoading}" (mousemove)="onMouseMove($event)">
+<div class="intro-page" [ngClass]="{'intro-page-show': !isLoadingPlanet}" (mousemove)="onMouseMove($event)">
 
   <div #cursor class="cursor" (click)="startAnimation()">
     <span>CLICK START</span>
   </div>
 
   <div class="intro-page-container">
-    <img #backgroundStars src="/assets/hdr/background-space.jpg" alt="Background Stars" class="background-stars background-starts-intro" [ngClass]="{'background-starts-intro': isLoading}" />
+    <img #backgroundStars src="/assets/hdr/background-space.jpg" alt="Background Stars" class="background-stars background-starts-intro" [ngClass]="{'background-starts-intro': isLoadingPlanet}" />
 
     <model-viewer
       #modelPlanet
@@ -27,9 +27,9 @@
       disable-zoom
       autoplay
       animation-name=""
-      interpolation-decay="300"
+      interpolation-decay="500"
       class="planet"
-      [ngClass]="{'planet-zoom': startZoom, 'planet-intro' : !isLoading}">
+      [ngClass]="{'planet-zoom': startZoom, 'planet-intro' : !isLoadingPlanet}">
     </model-viewer>
 
   </div>

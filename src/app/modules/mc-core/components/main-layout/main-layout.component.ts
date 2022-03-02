@@ -24,16 +24,30 @@ export class MainLayoutComponent implements OnInit {
   isTrailerVideoOpen = false;
   isMenuOpen = false;
   isMuted = true;
+  scrolled: boolean = false;
+  showMobile: boolean = true;
   @ViewChild('audio') audio!: ElementRef;
 
   constructor(
     public dialog: MatDialog,
     public router: Router,
     protected mainService: MainService,
+    private breakpointObserver: BreakpointObserver,
   ) { }
+
+  @HostListener("window:scroll", []) onWindowScroll() {
+    this.scrolled = window.scrollY > 0;
+  }
 
   ngOnInit(): void {
     this.loadMusic();
+    this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.showMobile = false;
+        }
+    });
   }
 
   playAudio() {

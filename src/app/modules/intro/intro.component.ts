@@ -14,7 +14,6 @@ export class IntroComponent implements OnInit {
   startVideo = false;
   startZoom = false;
   startEndScene = false;
-  isLoading = true;
   isLoadingPlanet = true;
   mouse_x = 0;
   mouse_y = 0;
@@ -40,12 +39,7 @@ export class IntroComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    setTimeout(() => {
-      this.isLoadingPlanet = false;
-    }, 1500);
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 2500);
+    this.loadPlanet();
   }
 
   @HostListener('mousemove', ['$event']) onMouseMove(event: any) {
@@ -68,6 +62,17 @@ export class IntroComponent implements OnInit {
           this.cursor.nativeElement.style.top = 50 + '%';
         }
     });
+  }
+
+  loadPlanet(){
+    /* this.modelPlanet.nativeElement.addEventListener('load', (event: any) => {
+      this.isLoadingPlanet = false;
+      console.log('Loaded');
+      console.log(this.modelPlanet);
+    }, true); */
+    this.modelPlanet.nativeElement.addEventListener('model-visibility', (event: any) => {
+      this.isLoadingPlanet = false;
+    }, true);
   }
 
   startAnimation(){

@@ -20,16 +20,15 @@
 
   <app-step-a *ngIf="pageState == 0" @paragraphAnimation></app-step-a>
 
-  <!-- <app-step-b></app-step-b> -->
+  <!-- <app-step-b *ngIf="pageState == 1" @paragraphAnimation></app-step-b> -->
 
-  <section *ngIf="pageState == 1" @paragraphAnimation class="texts texts-left texts2">
+  <section *ngIf="pageState == 1" @paragraphAnimation class="section texts-left texts2">
     <h2 class="display3"><b>Shop hundreds of live events! Discover your favorite artists, concerts, theater events, games and more.</b></h2>
-    <!-- <p *ngIf="section2Text1" (click)="section2FirstText()">Hi internaut! <br> Click here!</p> -->
   </section>
 
   <app-step-c *ngIf="pageState == 2" @paragraphAnimation></app-step-c>
 
-  <section *ngIf="pageState == 3" @paragraphAnimation class="texts texts-left texts4">
+  <section *ngIf="pageState == 3" @paragraphAnimation class="section texts-left texts4">
     <h2 class="texts3 display2"><span></span><b (mousemove)="onMouseOverGames($event)" class="link hover-linear">GAMES</b></h2>
     <h2 *ngIf="section3text2" class="texts3 display2"><span></span> <b (mousemove)="onMouseOverMusic($event)" class="link hover-linear">MUSIC</b></h2>
     <h2 *ngIf="section3text3" class="texts3 display2"><span></span><b (mousemove)="onMouseOverCreativity($event)" class="link hover-linear">CREATIVITY</b></h2>
@@ -59,7 +58,6 @@
   <app-step-i *ngIf="pageState == 8" @paragraphAnimation></app-step-i>
 
   <app-step-j *ngIf="pageState == 9" @paragraphAnimation></app-step-j>
-
 
 
   <div class="lines">

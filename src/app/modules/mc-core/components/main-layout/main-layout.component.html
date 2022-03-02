@@ -1,7 +1,6 @@
 
 <div class="main-layout">
-
-  <nav [ngClass]="{'nav-white': router.url == '/' || router.url == '/contact', 'nav-open': isMenuOpen}">
+  <nav [ngClass]="{'nav-scrolled': scrolled, 'nav-white': router.url == '/' || router.url == '/contact', 'nav-open': isMenuOpen}">
     <div class="menu" (click)="isMenuOpen = !isMenuOpen;">
       <div id="hamburger" onclick="this.classList.toggle('open');" [ngClass]="{'open': isMenuOpen}">
         <svg width="50" height="50" viewBox="0 0 100 100">
@@ -14,21 +13,21 @@
 
     <a [routerLink]="['/']" class="logo">
       <img *ngIf="router.url != '/' && router.url != '/contact' || isMenuOpen" src="/assets/img/logos/logo.png" alt="Metacloud Logo" />
-      <img *ngIf="router.url == '/'&& !isMenuOpen || router.url == '/contact'" src="/assets/img/logos/logo-white.png" alt="Metacloud Logo" />
+      <img *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/logos/logo-white.png" alt="Metacloud Logo" />
     </a>
 
     <div class="social-media">
       <a href="" target="_blank" mat-icon-button matTooltip="Medium">
         <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/medium-icon-black.svg" alt="Medium" />
-        <img *ngIf="router.url == '/' && !isMenuOpen || router.url == '/contact'" src="/assets/img/icons/medium-icon.svg" alt="Medium" />
+        <img *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/medium-icon.svg" alt="Medium" />
       </a>
       <a href="" target="_blank" mat-icon-button matTooltip="Discord">
         <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/discord-icon-black.svg" alt="Discord" />
-        <img *ngIf="router.url == '/' && !isMenuOpen || router.url == '/contact'" src="/assets/img/icons/discord-icon.svg" alt="Discord" />
+        <img *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/discord-icon.svg" alt="Discord" />
       </a>
       <a href="" target="_blank" mat-icon-button matTooltip="Telegram">
         <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram" />
-        <img *ngIf="router.url == '/' && !isMenuOpen || router.url == '/contact'" src="/assets/img/icons/telegram-icon.svg" alt="Telegram" />
+        <img *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/telegram-icon.svg" alt="Telegram" />
       </a>
       <!-- <a href="" target="_blank" mat-icon-button matTooltip="Reddit">
         <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/reddit-icon-black.svg" alt="Reddit" />
@@ -54,18 +53,14 @@
     <mat-icon>play_circle_outline</mat-icon>
   </div>
 
-  <div *ngIf="router.url == '/' || isMenuOpen" class="video-miniature video-miniature2" @leaveElements [ngClass]="{'d-none-mobile': router.url == '/'}">
-    <div class="contain">
-      <img (click)="isHypeVideoOpen = true;" src="/assets/img/video-miniature.png" alt="Hype Video Miniature" matTooltip="Play Hype video" />
-      <button mat-icon-button class="btn-play" (click)="isHypeVideoOpen = true;" matTooltip="Play Hype video"><mat-icon>play_arrow</mat-icon></button>
-    </div>
+  <div *ngIf="router.url == '/' && showMobile || isMenuOpen" class="video-miniature video-miniature2" @leaveElements>
+    <img (click)="isHypeVideoOpen = true;" src="/assets/img/video-miniature.png" alt="Hype Video Miniature" matTooltip="Play Hype video" />
+    <button mat-icon-button class="btn-play" (click)="isHypeVideoOpen = true;" matTooltip="Play Hype video"><mat-icon>play_arrow</mat-icon></button>
   </div>
 
   <div *ngIf="isMenuOpen" class="video-miniature video-miniature1" @leaveElements>
-    <div class="contain">
-      <img (click)="isTrailerVideoOpen = true;" src="/assets/img/trailer-video-miniature.png" alt="Trailer Miniature" matTooltip="Play Trailer video" />
-      <button mat-icon-button class="btn-play" (click)="isTrailerVideoOpen = true;" matTooltip="Play Trailer video"><mat-icon>play_arrow</mat-icon></button>
-    </div>
+    <img (click)="isTrailerVideoOpen = true;" src="/assets/img/trailer-video-miniature.png" alt="Trailer Miniature" matTooltip="Play Trailer video" />
+    <button mat-icon-button class="btn-play" (click)="isTrailerVideoOpen = true;" matTooltip="Play Trailer video"><mat-icon>play_arrow</mat-icon></button>
   </div>
 
   <router-outlet></router-outlet>

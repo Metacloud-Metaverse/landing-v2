@@ -1,8 +1,14 @@
 @import "../../../../../assets/styles/vars";
 
 @keyframes introVideoHome {
-  from { opacity: 0; filter: blur(30px); }
-  to   { opacity: 1; filter: blur(0px); }
+  from {
+    opacity: 0;
+    filter: blur(30px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
 }
 
 .main-layout {
@@ -22,6 +28,7 @@
     width: 100%;
     box-sizing: border-box;
     animation: introVideoHome 2s ease;
+    transition: all 0.3s ease;
     @include xs {
       padding: 1em;
     }
@@ -121,7 +128,7 @@
       justify-content: space-around;
       cursor: pointer;
       transition: $animation;
-      @include xs{
+      @include xs {
         width: 54.4px;
       }
 
@@ -247,7 +254,12 @@
     }
   }
 
+  .nav-scrolled {
+    background-color: white !important;
+  }
+
   .nav-open {
+    background-color: transparent !important;
     .btn-play {
       color: black !important;
       border-color: rgba($color: black, $alpha: 0.5) !important;
@@ -263,7 +275,7 @@
     align-items: center;
     gap: 0.5em;
     cursor: pointer;
-    @include xs{
+    @include xs {
       right: 1em;
       bottom: 1em;
     }
@@ -281,94 +293,84 @@
   }
 
   .video-miniature {
-    position: fixed;
+    position: absolute;
     bottom: 2em;
     right: 2em;
     width: 250px;
     height: 140px;
     z-index: 20;
     cursor: pointer;
-    /* transition: $animation; */
     box-shadow: 0 16px 30px -12px rgba($color: black, $alpha: 0.7);
     animation: introVideoHome 1s ease;
     border-radius: 12px;
     overflow: hidden;
+    background-color: $color_primary_900;
+    transition: boxShadow 0.3s ease;
+    @include xs {
+      width: calc(50% - 1em);
+      right: 1em;
+    }
 
-    .contain {
+    img {
       cursor: pointer;
-      overflow: hidden;
-      border-radius: 8px;
-      position: fixed;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 250px;
       height: 140px;
-      box-shadow: 0 0 0 8px rgba($color: white, $alpha: 0.15);
-      /* transition: $animation; */
-      background-color: $color_primary_900;
-
-      img,
-      iframe {
-        cursor: pointer;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 250px;
-        height: 140px;
-        object-fit: cover;
-        /* transition: boxShadow 0.5s ease; */
-        z-index: 2;
+      object-fit: cover;
+      z-index: 2;
+      @include xs {
+        width: calc(50% - 1em);
       }
+    }
 
-      iframe {
-        opacity: 0;
-      }
-
-      .btn-play {
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        transform: translate(50%, -50%);
+    .btn-play {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      transition: $animation;
+      z-index: 3;
+      color: white;
+      pointer-events: none;
+      mat-icon {
         transition: $animation;
-        z-index: 3;
-        color: white;
-        pointer-events: none;
-        mat-icon {
-          transition: $animation;
-          width: 32px;
-          height: 32px;
-          line-height: 32px;
-          font-size: 32px;
-        }
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 32px;
       }
     }
 
     &:hover {
       box-shadow: 0 16px 40px -12px rgba($color: black, $alpha: 0.9);
-      .contain {
-        box-shadow: 0 0 0 10px rgba($color: white, $alpha: 0.3);
-        img {
-          opacity: 0.5;
-        }
-        .btn-play {
-          mat-icon {
-            transform: scale(1.5);
-          }
+      img {
+        opacity: 0.5;
+      }
+      .btn-play {
+        mat-icon {
+          transform: scale(1.5);
         }
       }
     }
   }
 
-  .video-miniature1{
+  .video-miniature1 {
     right: 310px;
+    /* @include xs{
+      display: block !important;
+      right: initial;
+      left: 1em;
+    } */
   }
 
-  .video-miniature2{
+  .video-miniature2 {
     animation: introVideoHome 2s ease;
-  }
-
-  .d-none-mobile{
-    @include lt-md{
-      display: none;
-    }
+    /* @include xs{
+      display: block !important;
+      right: 1em;
+    } */
   }
 }
 
@@ -406,7 +408,7 @@
     width: 70px;
     height: 70px;
     border-radius: 70px;
-    @include xs{
+    @include xs {
       transform: scale(0.7);
     }
 
@@ -426,7 +428,7 @@
     }
   }
 
-  mat-spinner{
+  mat-spinner {
     position: fixed;
     top: calc(50% - 50px);
     left: calc(50% - 50px);
