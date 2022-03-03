@@ -40,7 +40,7 @@
 </div>
 
 <div *ngIf="startVideo" class="video-container">
-  <video [src]="videoBlobSrc" type="mp4" autoplay muted></video>
+  <video #videoIntro [src]="videoBlobSrc" type="mp4" autoplay muted></video>
   <button mat-stroked-button [routerLink]="['/home']" >SKIP</button>
   <!-- <div class="sound" [ngClass]="{'sound-off': isMuted}" matTooltip="Stop / Play Music"><span></span><span></span><span></span><span></span></div> -->
 </div>
