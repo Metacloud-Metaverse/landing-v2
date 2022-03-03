@@ -1,0 +1,26 @@
+@import "../../../../../assets/styles/vars";
+
+.was-this-article-useful-component{
+  text-align: center;
+  margin-top: 3em;
+
+  button{
+    width: 100px;
+    &:first-of-type { margin-right: 1em; }
+    &:hover{
+      background-color: $color_primary_500;
+      color: white;
+    }
+  }
+
+  .active{
+    background-color: $color_primary_500;
+    color: white;
+  }
+
+  .alert{
+    background-color: $color_background;
+    align-items: center;
+    p { margin: 0; }
+  }
+}

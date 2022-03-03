@@ -63,6 +63,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   section2AvatarAnimation = 0;
   section3text2 = false;
   section3text3 = false;
+  section6Timeout1 = false;
+  section6Timeout2 = false;
+  section6Timeout3 = false;
+  section6Timeout4 = false;
+  section6Timeout5 = false;
+  section6Timeout6 = false;
 
   sectionActive = 0;
 
@@ -542,6 +548,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
     this.modelAvatarPrimary.nativeElement.autoRotate = false;
     /* this.avatarCornerRun(); */
+    this.section6Timeout1 == false;
   }
 
   activeSection6(){
@@ -550,13 +557,56 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.activeScenes = true;
     this.modelAvatarPrimary.nativeElement.cameraControls = false;
     this.modelAvatarPrimary.nativeElement.autoRotate = false;
-    /* this.modelAvatarPrimary.nativeElement.exposure = 0; */
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
+    this.modelAvatarPrimary.nativeElement.interpolationDecay = 600;
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
+    this.section6Timeout1 == true;
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 90deg 100%';
+      if (this.section6Timeout1 == true) {
+        setTimeout(() => {
+          this.section6Timeout2 == true;
+          this.modelAvatarPrimary.nativeElement.interpolationDecay = 400;
+          this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
+          this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
+          if (this.section6Timeout2 == true) {
+            setTimeout(() => {
+              this.section6Timeout1 == false;
+              this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casino-optimized.jpg';
+              this.modelAvatarPrimary.nativeElement.cameraOrbit = '-270deg 80deg 100%';
+            }, 1500);
+          }
+        }, 3500);
+      }
+    }, 500);
+
+    /* setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfire-optimized.jpg';
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-359deg 80deg 100%';
+    }, 7000);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieve-optimized.jpg';
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 80deg 100%';
+    }, 8500);
+    setTimeout(() => {
+      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museo-optimized.jpg';
+      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
+      this.modelAvatarPrimary.nativeElement.cameraControls = true;
+      this.modelAvatarPrimary.nativeElement.autoRotate = true;
+    }, 10000); */
+  }
+
+  /* activeSection6(){
+    this.pageState = 5;
+    this.scene = 0;
+    this.activeScenes = true;
+    this.modelAvatarPrimary.nativeElement.cameraControls = false;
+    this.modelAvatarPrimary.nativeElement.autoRotate = false;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.interpolationDecay = 600;
     this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
     setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 90deg 100%';
-      /* this.modelAvatarPrimary.nativeElement.exposure = 1; */
     }, 500);
     setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.interpolationDecay = 400;
@@ -581,9 +631,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.modelAvatarPrimary.nativeElement.cameraControls = true;
       this.modelAvatarPrimary.nativeElement.autoRotate = true;
     }, 10000);
-    /* this.avatarCornerRun(); */
-    /* this.avatarBackgroundScene(); */
-  }
+  } */
 
   activeSection7(){
     this.pageState = 6;
@@ -591,6 +639,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
     this.modelAvatarPrimary.nativeElement.autoRotate = false;
+    this.section6Timeout1 == false;
     /* this.avatarCornerRun(); */
   }
 
