@@ -1,6 +1,26 @@
 @import "../../home.component.scss";
 
-.buttons{
+.texts5 {
+  @include xs {
+    top: 50%;
+    left: 10%;
+    width: 90%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  h2 {
+    width: 1050px;
+    @include xs {
+      width: calc(100% - 1em);
+      z-index: 8;
+      /* margin-bottom: 0; */
+    }
+  }
+}
+
+/* .buttons{
   display: flex;
   justify-content: center;
   gap: 1em;
@@ -23,4 +43,4 @@
   .neon-effect{
     transform: scale(0.8);
   }
-}
+} */

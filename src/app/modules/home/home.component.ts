@@ -63,12 +63,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   section2AvatarAnimation = 0;
   section3text2 = false;
   section3text3 = false;
-  section6Timeout1 = false;
-  section6Timeout2 = false;
-  section6Timeout3 = false;
-  section6Timeout4 = false;
-  section6Timeout5 = false;
-  section6Timeout6 = false;
 
   sectionActive = 0;
 
@@ -561,7 +555,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
     this.modelAvatarPrimary.nativeElement.autoRotate = false;
     /* this.avatarCornerRun(); */
-    this.section6Timeout1 == false;
   }
 
   activeSection6(){
@@ -579,7 +572,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 90deg 100%';
     }, 500));
-    
+
     this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.interpolationDecay = 400;
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
@@ -594,19 +587,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfire-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-359deg 80deg 100%';
-    }, 7000));
+    }, 8000));
 
     this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieve-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 80deg 100%';
-    }, 8500));
+    }, 10500));
 
     this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museo-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
       this.modelAvatarPrimary.nativeElement.cameraControls = true;
       this.modelAvatarPrimary.nativeElement.autoRotate = true;
-    }, 10000));
+    }, 13000));
   }
 
   clearTimeouts() {
@@ -618,19 +611,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   activeSection7(){
     this.clearTimeouts();
-
     this.pageState = 6;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
     this.modelAvatarPrimary.nativeElement.autoRotate = false;
-    this.section6Timeout1 == false;
     /* this.avatarCornerRun(); */
   }
 
   activeSection8(){
     this.clearTimeouts();
-
     this.pageState = 7;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
@@ -641,7 +631,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   activeSection9(){
     this.clearTimeouts();
-
     this.pageState = 8;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
@@ -650,7 +639,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   activeSection10(){
     this.clearTimeouts();
-
     this.pageState = 9;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';

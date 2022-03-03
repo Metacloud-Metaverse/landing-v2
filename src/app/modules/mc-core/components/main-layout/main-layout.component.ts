@@ -96,7 +96,7 @@ export class MainLayoutComponent implements OnInit {
   }
 
   onClickPlayHypeVideo() {
-    this.videoManager.startVideo.next('https://www.youtube.com/embed/gElfIo6uw4g?start=74');
+    this.videoManager.startVideo.next('https://www.youtube.com/watch?v=h1-0NZAqz4o');
   }
 
   getUrlVideo() {

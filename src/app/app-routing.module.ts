@@ -13,9 +13,9 @@ const routes: Routes = [
       { path: 'team', loadChildren: () => import('./modules/team/team.module').then(m => m.TeamModule), data: { preload: true }},
       { path: 'events', loadChildren: () => import('./modules/events/events.module').then(m => m.EventsModule), data: { preload: true }},
       { path: 'partners', loadChildren: () => import('./modules/partners/partners.module').then(m => m.PartnersModule), data: { preload: true }},
-      { path: 'legals', loadChildren: () => import('./modules/legals/legals.module').then(m => m.LegalsModule) },
-      { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule) },
-      { path: 'docs', loadChildren: () => import('./modules/docs/docs.module').then(m => m.DocsModule) },
+      { path: 'legals', loadChildren: () => import('./modules/legals/legals.module').then(m => m.LegalsModule), data: { preload: true } },
+      { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule), data: { preload: true } },
+      /* { path: 'docs', loadChildren: () => import('./modules/docs/docs.module').then(m => m.DocsModule), data: { preload: true } }, */
     ]
   },
   /* { path: '', redirectTo: '', pathMatch: 'full' }, */

@@ -337,11 +337,19 @@ model-viewer {
   animation: endScene 300ms linear;
 }
 
+app-video-element{
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 6;
+  @include lt-md{
+    display: none;
+  }
+}
 
 
 
-
-.sound {
+/* .sound {
   position: absolute;
   top: 1.5em;
   right: 3em;
@@ -418,4 +426,4 @@ model-viewer {
     opacity: 1;
     height: 23px;
   }
-}
+} */
