@@ -1,6 +1,6 @@
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
@@ -11,6 +11,10 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class IntroComponent implements OnInit {
 
+  @ViewChild('cursor') cursor:any;
+  @ViewChild('modelPlanet') modelPlanet: any;
+  @ViewChild('backgroundStars') backgroundStars: any;
+
   startVideo = false;
   startZoom = false;
   startEndScene = false;
@@ -19,11 +23,12 @@ export class IntroComponent implements OnInit {
   mouse_x = 0;
   mouse_y = 0;
 
-  @ViewChild('cursor') cursor:any;
-  @ViewChild('modelPlanet') modelPlanet: any;
-  @ViewChild('backgroundStars') backgroundStars: any;
+  isLoadingVideo = true;
+  videoBlobSrc: any;
 
   constructor(
+    protected sanitizer: DomSanitizer,
+
     protected navigator: Router,
     public el: ElementRef<HTMLElement>,
     protected mainService: MainService,
@@ -41,6 +46,7 @@ export class IntroComponent implements OnInit {
 
   ngAfterViewInit(){
     this.loadPlanet();
+    this.preloadVideo();
   }
 
   @HostListener('mousemove', ['$event']) onMouseMove(event: any) {
@@ -72,8 +78,18 @@ export class IntroComponent implements OnInit {
       console.log(this.modelPlanet);
     }, true); */
     this.modelPlanet.nativeElement.addEventListener('model-visibility', (event: any) => {
-      this.isLoadingPlanet = false;
+        this.isLoadingPlanet = false;
     }, true);
+  }
+
+  preloadVideo() {
+    fetch('/assets/videos/intro-hype-video-muted.mp4')
+    .then(res => {
+      res.blob().then(data => {
+        this.videoBlobSrc = this.sanitizer.bypassSecurityTrustResourceUrl(URL.createObjectURL(data));
+      });
+      
+    });
   }
 
   startAnimation(){
