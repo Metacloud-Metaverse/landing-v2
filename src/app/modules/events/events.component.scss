@@ -58,8 +58,9 @@
     }
 
     .event {
-      height: 430px;
-      min-height: 430px;
+      height: 400px;
+      min-height: 400px;
+      max-height: 400px;
       border-radius: 1em;
       overflow: hidden;
       width: calc(33.3% - 1.33em);
@@ -127,7 +128,7 @@
 
       h2 {
         margin: 0;
-        margin-top: 100%;
+        margin-top: auto;
         font-size: 2em;
         position: relative;
         z-index: 3;
