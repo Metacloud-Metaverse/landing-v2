@@ -1,7 +1,6 @@
 import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material/dialog';
-import { VideoModalComponent } from '../../modals/video-modal/video-modal.component';
 import { Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 import { animate, style, transition, trigger } from '@angular/animations';
@@ -70,12 +69,6 @@ export class MainLayoutComponent implements OnInit {
       this.audio.nativeElement.pause();
       this.isMuted = true;
     }
-  }
-
-  openVideoModal() {
-    this.dialog.open(VideoModalComponent, {
-      panelClass: 'video-modal-container'
-    });
   }
 
   closeMenu(e: any){
