@@ -108,6 +108,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "metacloud-landing-v2:build:production",
+            "firebaseProject": "daring-pilot-342219",
+            "firebaseHostingSite": "daring-pilot-342219"
+          }
         }
       }
     }
