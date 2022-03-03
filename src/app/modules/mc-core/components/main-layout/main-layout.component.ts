@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { VideoManagerService } from 'src/app/services/video-manager.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main-layout',
@@ -23,7 +23,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class MainLayoutComponent implements OnInit {
 
   isVideoOpen = false;
-  videoUrlIframe = '';
+  videoUrlIframe?: SafeResourceUrl;
 
   isMenuOpen = false;
   isMuted = true;
@@ -90,17 +90,13 @@ export class MainLayoutComponent implements OnInit {
 
   loadVideoManageer() {
     this.videoManager.startVideo.subscribe(urlIframe => {
-      this.videoUrlIframe = urlIframe;
+      this.videoUrlIframe = this.sanitizer.bypassSecurityTrustResourceUrl(urlIframe);
       this.isVideoOpen = true;
     });
   }
 
   onClickPlayHypeVideo() {
     this.videoManager.startVideo.next('https://www.youtube.com/embed/h1-0NZAqz4o');
-  }
-
-  getUrlVideo() {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrlIframe);
   }
 
   closeVideo() {
