@@ -331,11 +331,20 @@ model-viewer {
       width: 100%;
       height: 100%;
       transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      -moz-transform: scale(1.2);
       transform-origin: center;
+      -webkit-transform-origin: center;
+      -o-transform-origin: center;
+      -moz-transform-origin: center;
       object-fit: cover;
       pointer-events: none;
       z-index: 1;
       transition: all 0.7s linear, filter 2s ease 1.5s, opacity 2s ease 1.5s;
+      -webkit-transition: all 0.7s linear, filter 2s ease 1.5s, opacity 2s ease 1.5s;
+      -o-transition: all 0.7s linear, filter 2s ease 1.5s, opacity 2s ease 1.5s;
+      -moz-transition: all 0.7s linear, filter 2s ease 1.5s, opacity 2s ease 1.5s;
       opacity: 0.7;
       filter: blur(0px);
     }
@@ -381,6 +390,9 @@ model-viewer {
 .intro-page-show {
   opacity: 1;
   filter: blur(0px);
+  -webkit-filter: blur(0px);
+  -o-filter: blur(0px);
+  -moz-filter: blur(0px);
 }
 
 .video-container {
@@ -432,6 +444,10 @@ model-viewer {
     color: white;
     border-color: rgba($color: white, $alpha: 0.5);
     transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+
     &:hover {
       color: black;
       background-color: white;
@@ -449,6 +465,9 @@ model-viewer {
   z-index: 30;
   opacity: 1;
   animation: endScene 300ms linear;
+  -webkit-animation: endScene 300ms linear;
+  -o-animation: endScene 300ms linear;
+  -moz-animation: endScene 300ms linear;
 }
 
 app-video-element {

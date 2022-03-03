@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export interface WebContact {
   email: string;
@@ -31,6 +32,7 @@ export class ContactComponent implements OnInit {
   constructor(
     private titleService: Title,
     private metaTagService: Meta,
+    private _snackBar: MatSnackBar,
     //protected readonly firestore: AngularFirestore
   ) { }
 
@@ -46,6 +48,14 @@ export class ContactComponent implements OnInit {
   }
 
   onClickSubmit() {
+    this.contactForm.reset();
+
+    this._snackBar.open("Your message has been sent successfully", '', {
+      duration: 4000,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      panelClass: 'snackbar_success'
+    });
     //let item: WebContact = {
 
     //}
