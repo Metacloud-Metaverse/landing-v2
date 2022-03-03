@@ -28,7 +28,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 
 // Modals
-import { VideoModalComponent } from './modals/video-modal/video-modal.component';
 import { VideoElementComponent } from './components/video-element/video-element.component';
 
 // Pages
@@ -39,7 +38,6 @@ import { VideoElementComponent } from './components/video-element/video-element.
     MainLayoutComponent,
     LoadingComponent,
     FooterComponent,
-    VideoModalComponent,
     NavMenuComponent,
     VideoElementComponent,
   ],
