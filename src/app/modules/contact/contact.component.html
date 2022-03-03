@@ -7,28 +7,28 @@
         <p>Share your proposals, ideas and comments with us. We are looking forward for them.</p>
       </div>
 
-      <div class="form">
+      <form class="form" [formGroup]="contactForm">
         <div class="row">
           <div class="input">
             <label>Email adress</label>
-            <input placeholder="steve@meta-cloud.io" type="text" required />
+            <input formControlName="email" placeholder="steve@meta-cloud.io" type="text" required />
           </div>
           <div class="input">
             <label>Subject</label>
-            <input placeholder="Marketing" type="text" required />
+            <input formControlName="subject" placeholder="Marketing" type="text" required />
           </div>
         </div>
 
         <div class="input textarea">
-          <label>Subject</label>
-          <textarea name="" id="" rows="10" required placeholder="Write your message..."></textarea>
+          <label>Message</label>
+          <textarea formControlName="message" rows="10" required placeholder="Write your message..."></textarea>
         </div>
 
         <div class="row">
           <mat-checkbox><small>I accept subscribe to Newsletter</small></mat-checkbox>
           <button mat-button class="btn-send">SEND <mat-icon>shortcut</mat-icon></button>
         </div>
-      </div>
+      </form>
     </div>
 
   </div>
