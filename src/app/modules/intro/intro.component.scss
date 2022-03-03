@@ -342,6 +342,9 @@ app-video-element{
   bottom: 2em;
   right: 2em;
   z-index: 6;
+  @include lt-md{
+    display: none;
+  }
 }
 
 

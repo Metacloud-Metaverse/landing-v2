@@ -38,13 +38,12 @@
     <div class="videos component-animation">
       <h5>Videos</h5>
       <div class="videos-row">
-        <app-video-element [title]="'Play Trailer video'" [miniature]="'/assets/img/trailer-video-miniature.png'" [url]="'https://www.youtube.com/watch?v=WXN5C-Kqkis'"></app-video-element>
+        <app-video-element [title]="'Play Trailer video'" [miniature]="'/assets/img/trailer-video-miniature.png'" [url]="'https://www.youtube.com/embed/WXN5C-Kqkis'"></app-video-element>
         <app-video-element [title]="'Play Hype video'" [miniature]="'/assets/img/video-miniature.png'" [url]="'https://www.youtube.com/watch?v=h1-0NZAqz4o'"></app-video-element>
       </div>
     </div>
   </div>
 </div>
-
 
 <video *ngIf="activeBlink" src="/assets/videos/blink-video.mp4" autoplay muted class="blink-video"></video>
 

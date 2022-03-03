@@ -25,7 +25,7 @@ export class StepFComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.showChangeSceneButton = true;
-    }, 10000);
+    }, 13000);
   }
 
   ngAfterViewInit(): void {
