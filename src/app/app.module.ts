@@ -11,6 +11,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -27,8 +31,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatMenuModule,
     MatTooltipModule,
     MatSnackBarModule,
+    
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAnalytics(() => getAnalytics()),
+    provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [
+    ScreenTrackingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

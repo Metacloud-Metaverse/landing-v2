@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "daring-pilot-342219"
+  },
+  "targets": {
+    "daring-pilot-342219": {
+      "hosting": {
+        "metacloud-landing-v2": [
+          "daring-pilot-342219"
+        ]
+      }
+    }
   }
 }
