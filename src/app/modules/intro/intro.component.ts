@@ -1,4 +1,5 @@
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { Platform } from '@angular/cdk/platform';
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -26,9 +27,11 @@ export class IntroComponent implements OnInit {
 
   isLoadingVideo = true;
   videoBlobSrc: any;
+  isIosPlatform = false;
 
   constructor(
     protected sanitizer: DomSanitizer,
+    protected platform: Platform,
 
     protected navigator: Router,
     public el: ElementRef<HTMLElement>,
@@ -84,6 +87,12 @@ export class IntroComponent implements OnInit {
   }
 
   preloadVideo() {
+    if(this.platform.IOS){
+      fetch('/assets/videos/intro-hype-video-muted-optimized.gif').then();
+      this.isIosPlatform = true;
+      return;
+    }
+
     fetch('/assets/videos/intro-hype-video-muted.mp4')
     .then(res => {
       res.blob().then(data => {
@@ -102,9 +111,11 @@ export class IntroComponent implements OnInit {
     setTimeout(() => {
       this.startVideo = true;
 
-      setTimeout(() => {
-        this.videoIntro?.nativeElement.play();
-      }, 50);
+      if(!this.isIosPlatform){
+        setTimeout(() => {
+          this.videoIntro?.nativeElement.play();
+        }, 70);
+      }      
 
     }, 1700);
     setTimeout(() => {
