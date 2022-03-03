@@ -12,6 +12,30 @@ model-viewer {
     opacity: 1;
   }
 }
+@-o-keyframes endScene {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes endScene {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes endScene {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 @keyframes introAnimationWorld {
   from {
@@ -21,8 +45,68 @@ model-viewer {
     transform: translate(-50%, -53%) scale(1);
   }
 }
+@-o-keyframes introAnimationWorld {
+  from {
+    transform: translate(-50%, -53%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -53%) scale(1);
+  }
+}
+@-moz-keyframes introAnimationWorld {
+  from {
+    transform: translate(-50%, -53%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -53%) scale(1);
+  }
+}
+@-webkit-keyframes introAnimationWorld {
+  from {
+    transform: translate(-50%, -53%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -53%) scale(1);
+  }
+}
 
 @keyframes startAnimationWorld {
+  0% {
+    transform: translate(-50%, -53%) scale(1);
+  }
+  10% {
+    filter: blur(0px);
+  }
+  100% {
+    transform: translate(-50%, -53%) scale(1.6);
+    filter: blur(80px);
+  }
+}
+@-o-keyframes startAnimationWorld {
+  0% {
+    transform: translate(-50%, -53%) scale(1);
+  }
+  10% {
+    filter: blur(0px);
+  }
+  100% {
+    transform: translate(-50%, -53%) scale(1.6);
+    filter: blur(80px);
+  }
+}
+@-moz-keyframes startAnimationWorld {
+  0% {
+    transform: translate(-50%, -53%) scale(1);
+  }
+  10% {
+    filter: blur(0px);
+  }
+  100% {
+    transform: translate(-50%, -53%) scale(1.6);
+    filter: blur(80px);
+  }
+}
+@-webkit-keyframes startAnimationWorld {
   0% {
     transform: translate(-50%, -53%) scale(1);
   }
@@ -150,6 +234,9 @@ model-viewer {
   opacity: 0;
   filter: blur(30px);
   transition: all 2s ease;
+  -webkit-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  -moz-transition: all 2s ease;
 
   .cursor {
     position: fixed;
@@ -182,6 +269,9 @@ model-viewer {
       top: -2.5px;
       left: -2.5px;
       transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
     }
 
     &::after {
@@ -194,6 +284,9 @@ model-viewer {
       top: -20px;
       left: -20px;
       transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
     }
 
     span {
@@ -224,6 +317,9 @@ model-viewer {
       background: radial-gradient(white, black);
       mix-blend-mode: multiply;
       filter: blur(150px);
+      -webkit-filter: blur(150px);
+      -o-filter: blur(150px);
+      -moz-filter: blur(150px);
       pointer-events: none;
       z-index: 1;
     }
@@ -254,18 +350,30 @@ model-viewer {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -53%);
+      -webkit-transform: translate(-50%, -53%);
+      -o-transform: translate(-50%, -53%);
+      -moz-transform: translate(-50%, -53%);
       width: 85%;
       height: 85%;
       z-index: 1;
       transition: all 1.5s ease-in;
+      -webkit-transition: all 1.5s ease-in;
+      -o-transition: all 1.5s ease-in;
+      -moz-transition: all 1.5s ease-in;
     }
 
     .planet-intro {
       animation: introAnimationWorld 3s ease;
+      -webkit-animation: introAnimationWorld 3s ease;
+      -o-animation: introAnimationWorld 3s ease;
+      -moz-animation: introAnimationWorld 3s ease;
     }
 
     .planet-zoom {
       animation: startAnimationWorld 3.5s linear;
+      -webkit-animation: startAnimationWorld 3.5s linear;
+      -o-animation: startAnimationWorld 3.5s linear;
+      -moz-animation: startAnimationWorld 3.5s linear;
     }
   }
 }
@@ -289,10 +397,16 @@ model-viewer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
     object-fit: cover;
     width: 100%;
     height: 100%;
     animation: introVideo 1s ease;
+    -webkit-animation: introVideo 1s ease;
+    -o-animation: introVideo 1s ease;
+    -moz-animation: introVideo 1s ease;
   }
 
   @keyframes introVideo {
@@ -337,17 +451,15 @@ model-viewer {
   animation: endScene 300ms linear;
 }
 
-app-video-element{
+app-video-element {
   position: fixed;
   bottom: 2em;
   right: 2em;
   z-index: 6;
-  @include lt-md{
+  @include lt-md {
     display: none;
   }
 }
-
-
 
 /* .sound {
   position: absolute;
