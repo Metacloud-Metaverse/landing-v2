@@ -33,7 +33,11 @@ export class StepCComponent implements OnInit {
       title: 'Games',
       description: 'Play chess, bingo, puzzles, trivia, sudoku and more',
     },
-  ]
+  ];
+
+  // Touch
+  touchY = 0;
+  touchX = 0;
 
   constructor() { }
 
@@ -46,8 +50,15 @@ export class StepCComponent implements OnInit {
     }
   }
 
+  touchStartConfig(event: any) {
+    this.touchY = event.touches[0].clientY;
+    this.touchX = event.touches[0].clientX;
+  }
+
   touchEndConfig(event: any) {
-    if(Math.abs(event.deltaY) <= 3){
+    let tx = event.changedTouches[0].clientX;
+    let dif = Math.abs(this.touchX - tx);
+    if(dif > 8){
       event.stopPropagation();
     }
   }
