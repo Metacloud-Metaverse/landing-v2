@@ -40,4 +40,16 @@ export class StepCComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mouseWheelConfig(event: any) {
+    if(Math.abs(event.deltaY) <= 3){
+      event.stopPropagation();
+    }
+  }
+
+  touchEndConfig(event: any) {
+    if(Math.abs(event.deltaY) <= 3){
+      event.stopPropagation();
+    }
+  }
+  
 }

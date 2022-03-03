@@ -705,19 +705,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
 
-  @HostListener('mouseover', ['$event']) onMouseOverGames(event: any) {
+  onMouseOverGames(event: any) {
     if (this.pageState == 3) {
       this.activeGames();
     } return
   }
 
-  @HostListener('mouseover', ['$event']) onMouseOverMusic(event: any) {
+  onMouseOverMusic(event: any) {
     if (this.pageState == 3) {
       this.activeMusic();
     } return
   }
 
-  @HostListener('mouseover', ['$event']) onMouseOverCreativity(event: any) {
+  onMouseOverCreativity(event: any) {
     if (this.pageState == 3) {
       this.activeCreativity();
     } return
