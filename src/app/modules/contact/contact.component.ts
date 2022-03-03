@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Timestamp } from "firebase/firestore";
@@ -25,11 +25,13 @@ export class ContactComponent implements OnInit {
   itemsCollection?: AngularFirestoreCollection<WebContact>;
 
   contactForm = new FormGroup({
-    email: new FormControl(''),
-    subject: new FormControl(''),
-    message: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    subject: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    message: new FormControl('', [Validators.required, Validators.minLength(3)]),
     is_add_newsletter: new FormControl(false)
   });
+
+  errors = new Array<any>();
 
   constructor(
     private titleService: Title,
@@ -48,14 +50,20 @@ export class ContactComponent implements OnInit {
 
   loadDatabase() {
     this.itemsCollection = this.firestore.collection<WebContact>('web_contact');
+
+    this.contactForm.valueChanges.subscribe(res => {
+      this.processValidationErrors();
+    });
   }
 
   onClickSubmit() {
+    if(this.contactForm.invalid){
+      return;
+    }
+
     let item = this.contactForm.value;
     item.created_at = Timestamp.fromDate(new Date());
     item.updated_at = Timestamp.fromDate(new Date());
-
-    console.log(item);
 
     this.itemsCollection!.add(item);
 
@@ -67,5 +75,23 @@ export class ContactComponent implements OnInit {
       verticalPosition: 'bottom',
       panelClass: 'snackbar_success'
     }); 
+  }
+
+  processValidationErrors() {
+
+    this.errors = new Array<any>();
+
+    Object.keys(this.contactForm.controls).forEach(key => {
+  
+      let elementErrors: ValidationErrors|null = this.contactForm.get(key)!.errors;
+      if (elementErrors) {
+        Object.keys(elementErrors).forEach(keyError => {
+          this.errors.push({
+            'control': key,
+            'error': keyError
+          });
+        });
+      }
+    });
   }
 }
