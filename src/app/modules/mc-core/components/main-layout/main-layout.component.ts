@@ -5,6 +5,8 @@ import { VideoModalComponent } from '../../modals/video-modal/video-modal.compon
 import { Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { VideoManagerService } from 'src/app/services/video-manager.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main-layout',
@@ -20,8 +22,9 @@ import { animate, style, transition, trigger } from '@angular/animations';
 })
 export class MainLayoutComponent implements OnInit {
 
-  isHypeVideoOpen = false;
-  isTrailerVideoOpen = false;
+  isVideoOpen = false;
+  videoUrlIframe = '';
+
   isMenuOpen = false;
   isMuted = true;
   scrolled: boolean = false;
@@ -29,6 +32,9 @@ export class MainLayoutComponent implements OnInit {
   @ViewChild('audio') audio!: ElementRef;
 
   constructor(
+    protected videoManager: VideoManagerService,
+    protected sanitizer: DomSanitizer,
+
     public dialog: MatDialog,
     public router: Router,
     protected mainService: MainService,
@@ -40,6 +46,7 @@ export class MainLayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadVideoManageer();
     this.loadMusic();
     this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
@@ -79,5 +86,24 @@ export class MainLayoutComponent implements OnInit {
     this.mainService.audioMain.subscribe(res=>{
       this.playAudio();
     });
+  }
+
+  loadVideoManageer() {
+    this.videoManager.startVideo.subscribe(urlIframe => {
+      this.videoUrlIframe = urlIframe;
+      this.isVideoOpen = true;
+    });
+  }
+
+  onClickPlayHypeVideo() {
+    this.videoManager.startVideo.next('https://www.youtube.com/embed/gElfIo6uw4g?start=74');
+  }
+
+  getUrlVideo() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrlIframe);
+  }
+
+  closeVideo() {
+    this.isVideoOpen = false;
   }
 }

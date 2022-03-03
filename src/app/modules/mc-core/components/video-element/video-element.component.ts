@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { VideoManagerService } from 'src/app/services/video-manager.service';
 
 @Component({
   selector: 'app-video-element',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoElementComponent implements OnInit {
 
-  isVideoOpen = false;
+  @Input() title!: string;
+  @Input() miniature!: string;
+  @Input() url!: string;
 
-  constructor() { }
+  constructor(
+    protected videoManager: VideoManagerService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onClickPlay() {
+    this.videoManager.startVideo.next(this.url);
+  }
 }

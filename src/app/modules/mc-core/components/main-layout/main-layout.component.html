@@ -50,34 +50,22 @@
     <button mat-flat-button color="primary" class="btn-exploring">START EXPLORING <mat-icon>play_arrow</mat-icon></button>
   </nav>
 
-  <div *ngIf="router.url == '/home'" class="video-text" (click)="isHypeVideoOpen = true;">
+  <div *ngIf="router.url == '/home'" class="video-text" (click)="onClickPlayHypeVideo()">
     <p>WATCH THE HYPE VIDEO</p>
     <mat-icon>play_circle_outline</mat-icon>
   </div>
 
-  <div *ngIf="router.url == '/' && showMobile || isMenuOpen" class="video-miniature video-miniature2" @leaveElements>
-    <img (click)="isHypeVideoOpen = true;" src="/assets/img/video-miniature.png" alt="Hype Video Miniature" matTooltip="Play Hype video" />
-    <button mat-icon-button class="btn-play" (click)="isHypeVideoOpen = true;" matTooltip="Play Hype video"><mat-icon>play_arrow</mat-icon></button>
-  </div>
+  <app-video-element *ngIf="router.url == '/' && showMobile || isMenuOpen" [title]="'Play Hype video'" [miniature]="'/assets/img/video-miniature.png'" [url]="'https://www.youtube.com/embed/gElfIo6uw4g?start=74'" @leaveElements></app-video-element>
 
-  <div *ngIf="isMenuOpen" class="video-miniature video-miniature1" @leaveElements>
-    <img (click)="isTrailerVideoOpen = true;" src="/assets/img/trailer-video-miniature.png" alt="Trailer Miniature" matTooltip="Play Trailer video" />
-    <button mat-icon-button class="btn-play" (click)="isTrailerVideoOpen = true;" matTooltip="Play Trailer video"><mat-icon>play_arrow</mat-icon></button>
-  </div>
+  <app-video-element *ngIf="isMenuOpen" [title]="'Play Trailer video'" [miniature]="'/assets/img/trailer-video-miniature.png'" [url]="'https://www.youtube.com/embed/afdnbXXbBTg'" @leaveElements></app-video-element>
 
   <router-outlet></router-outlet>
 </div>
 
 <app-nav-menu [isMenuOpen]="isMenuOpen" (closeMenu)="closeMenu($event)"></app-nav-menu>
 
-<div *ngIf="isHypeVideoOpen" class="video-container" @leaveElements>
-  <iframe width="100%" height="100vh" src="https://www.youtube.com/embed/gElfIo6uw4g?start=74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <button mat-icon-button mat-dialog-close class="btn-close" (click)="isHypeVideoOpen = false;"><mat-icon>close</mat-icon></button>
-  <mat-spinner></mat-spinner>
-</div>
-
-<div *ngIf="isTrailerVideoOpen" class="video-container" @leaveElements>
-  <iframe width="100%" height="100vh" src="https://www.youtube.com/embed/afdnbXXbBTg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <button mat-icon-button mat-dialog-close class="btn-close" (click)="isTrailerVideoOpen = false;"><mat-icon>close</mat-icon></button>
+<div *ngIf="isVideoOpen" class="video-container" @leaveElements>
+  <iframe width="100%" height="100vh" [src]="getUrlVideo()" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <button mat-icon-button class="btn-close" (click)="closeVideo()"><mat-icon>close</mat-icon></button>
   <mat-spinner></mat-spinner>
 </div>
