@@ -97,10 +97,10 @@
       }
     }
 
-    mat-divider{
+    mat-divider {
       display: none;
       margin-bottom: 2em;
-      @include xs{
+      @include xs {
         display: block;
       }
     }
@@ -171,32 +171,35 @@
 
     .videos {
       margin-top: 2.2em;
-      h5{
+      position: fixed;
+      bottom: 2em;
+      right: 2em;
+      @include xs {
+        bottom: 0;
+        left: 0;
+        position: relative;
+      }
+
+      h5 {
         display: none;
-        @include lt-md{
+        @include lt-md {
           display: block;
         }
       }
 
-      .videos-row{
+      .videos-row {
         display: flex;
         gap: 1.5em;
-        position: fixed;
-        bottom: 2em;
-        right: 2em;
         @include xs {
           margin-top: 1em;
-          position: relative;
           flex-direction: column;
-          bottom: 0;
-          left: 0;
         }
         @include sm {
           margin-top: 1em;
           position: relative;
           bottom: 0;
           left: 0;
-          app-video-element{
+          app-video-element {
             max-width: 50%;
           }
         }
