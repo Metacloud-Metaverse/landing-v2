@@ -1,6 +1,7 @@
 
 <div class="main-layout">
   <nav [ngClass]="{'nav-scrolled': scrolled, 'nav-white': router.url == '/' || router.url == '/contact', 'nav-open': isMenuOpen}">
+
     <div class="menu" (click)="isMenuOpen = !isMenuOpen;">
       <div id="hamburger" onclick="this.classList.toggle('open');" [ngClass]="{'open': isMenuOpen}">
         <svg width="50" height="50" viewBox="0 0 100 100">
@@ -18,46 +19,35 @@
 
     <div class="social-media">
       <a href="https://medium.com/@themetacloud" target="_blank" mat-icon-button matTooltip="Medium">
-        <img width="22px" height="22px" *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/medium-icon-black.svg" alt="Medium" />
-        <img width="22px" height="22px" *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/medium-icon.svg" alt="Medium" />
+        <img width="22px" height="22px" src="/assets/img/icons/medium-icon-black.svg" alt="Medium" />
+        <img width="22px" height="22px" src="/assets/img/icons/medium-icon.svg" alt="Medium" />
       </a>
       <a href="" target="_blank" mat-icon-button matTooltip="Discord">
-        <img width="22px" height="22px" *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/discord-icon-black.svg" alt="Discord" />
-        <img width="22px" height="22px" *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/discord-icon.svg" alt="Discord" />
+        <img width="22px" height="22px" src="/assets/img/icons/discord-icon-black.svg" alt="Discord" />
+        <img width="22px" height="22px" src="/assets/img/icons/discord-icon.svg" alt="Discord" />
       </a>
       <a href="https://t.me/themetacloud" target="_blank" mat-icon-button matTooltip="Telegram">
-        <img width="22px" height="22px" *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram" />
-        <img width="22px" height="22px" *ngIf="router.url == '/' || router.url == '/contact' && !isMenuOpen" src="/assets/img/icons/telegram-icon.svg" alt="Telegram" />
+        <img width="22px" height="22px" src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram" />
+        <img width="22px" height="22px" src="/assets/img/icons/telegram-icon.svg" alt="Telegram" />
       </a>
-      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Reddit">
-        <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/reddit-icon-black.svg" alt="Reddit" />
-        <img *ngIf="router.url == '/' && !isMenuOpen || router.url == '/contact'" src="/assets/img/icons/reddit-icon.svg" alt="Reddit" />
+      <a href="https://twitter.com/themetacloud" target="_blank" mat-icon-button matTooltip="Twitter">
+        <img width="22px" height="22px" src="/assets/img/icons/twitter-icon-black.svg" alt="Twitter" />
+        <img width="22px" height="22px" src="/assets/img/icons/twitter-icon.svg" alt="Twitter" />
       </a>
-      <a href="" target="_blank" mat-icon-button matTooltip="Tiktok">
-        <img *ngIf="router.url != '/' || isMenuOpen" src="/assets/img/icons/tiktok-icon-black.svg" alt="Tiktok" />
-        <img *ngIf="router.url == '/' && !isMenuOpen || router.url == '/contact'" src="/assets/img/icons/tiktok-icon.svg" alt="Tiktok" />
-      </a> -->
-      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Twitter"><img src="/assets/img/icons/twitter-icon.svg" alt="Twitter"></a> -->
-      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Instagram"><img src="/assets/img/icons/instagram-icon.svg" alt="Instagram"></a> -->
-      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Facebook"><img src="/assets/img/icons/facebook-icon.svg" alt="Facebook"></a> -->
     </div>
 
     <div class="separate-line-vert"></div>
     <div class="sound" [ngClass]="{'sound-off': isMuted}" (click)="playAudio()" matTooltip="Stop / Play Music"><span></span><span></span><span></span><span></span></div>
     <audio loop #audio><source src="/assets/music/swedish-house-mafia-save-the-world-optimized.mp3" type="audio/mp3"></audio>
-    <div class="separate-line-vert"></div>
+    <!-- <div class="separate-line-vert"></div>
     <button mat-button>Join our Discord</button>
-    <button mat-flat-button color="primary" class="btn-exploring">START EXPLORING <mat-icon>play_arrow</mat-icon></button>
+    <button mat-flat-button color="primary" class="btn-exploring">START EXPLORING <mat-icon>play_arrow</mat-icon></button> -->
   </nav>
 
   <div *ngIf="router.url == '/home'" class="video-text" (click)="onClickPlayHypeVideo()">
     <p>WATCH THE HYPE VIDEO</p>
     <mat-icon>play_circle_outline</mat-icon>
   </div>
-
-  <app-video-element *ngIf="router.url == '/' && showMobile || isMenuOpen" [title]="'Play Hype video'" [miniature]="'/assets/img/video-miniature.png'" [url]="'https://www.youtube.com/embed/gElfIo6uw4g?start=74'" @leaveElements></app-video-element>
-
-  <app-video-element *ngIf="isMenuOpen" [title]="'Play Trailer video'" [miniature]="'/assets/img/trailer-video-miniature.png'" [url]="'https://www.youtube.com/embed/afdnbXXbBTg'" @leaveElements></app-video-element>
 
   <router-outlet></router-outlet>
 </div>

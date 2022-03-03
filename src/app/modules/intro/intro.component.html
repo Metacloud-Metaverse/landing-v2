@@ -1,3 +1,5 @@
+
+
 <div class="loading-page" [ngClass]="{'loading-page-show': isLoadingPlanet}">
   <div class="background-texture"></div>
   <img src="/assets/img/logos/icon-total-white.svg" alt="Metacloud icon">
@@ -18,7 +20,7 @@
       #modelPlanet
       alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
       src="assets/models/Planet.glb"
-      environment-image="assets/hdr/background-space.jpg"
+      environment-image="assets/hdr/background-space-pattern.png"
       shadow-intensity="3"
       shadow-softness="3"
       exposure="3"
@@ -32,13 +34,16 @@
       [ngClass]="{'planet-zoom': startZoom, 'planet-intro' : !isLoadingPlanet}">
     </model-viewer>
 
+    <app-video-element [title]="'Play Hype video'" [miniature]="'/assets/img/video-miniature.png'" [url]="'https://www.youtube.com/watch?v=h1-0NZAqz4o'"></app-video-element>
   </div>
+
 </div>
 
 <div *ngIf="startVideo" class="video-container">
   <video [src]="videoBlobSrc" type="mp4" autoplay muted></video>
   <button mat-stroked-button [routerLink]="['/home']" >SKIP</button>
-  <div class="sound" [ngClass]="{'sound-off': isMuted}" matTooltip="Stop / Play Music"><span></span><span></span><span></span><span></span></div>
+  <!-- <div class="sound" [ngClass]="{'sound-off': isMuted}" matTooltip="Stop / Play Music"><span></span><span></span><span></span><span></span></div> -->
 </div>
 
 <div *ngIf="startEndScene" class="end-scene"></div>
+

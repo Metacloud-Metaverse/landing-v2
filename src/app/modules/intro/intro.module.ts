@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { IntroRoutingModule } from './intro-routing.module';
 import { IntroComponent } from './intro.component';
+import { McCoreModule } from '../mc-core/mc-core.module';
 
 // Angular Material
 import { MatButtonModule } from '@angular/material/button';
@@ -19,6 +20,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   imports: [
     CommonModule,
     IntroRoutingModule,
+    McCoreModule,
 
     // Angular Material
     MatButtonModule,

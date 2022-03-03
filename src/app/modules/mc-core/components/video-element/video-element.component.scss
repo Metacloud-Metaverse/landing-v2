@@ -1,134 +1,56 @@
 @import "../../../../../assets/styles/vars";
 
 .video-miniature {
-  position: fixed;
-  bottom: 2em;
-  right: 2em;
   width: 250px;
   height: 140px;
-  z-index: 18;
+  max-width: 100%;
   cursor: pointer;
+  position: relative;
   transition: $animation;
   box-shadow: 0 16px 30px -12px rgba($color: black, $alpha: 0.7);
+  border-radius: 0.7em;
+  overflow: hidden;
+  background-color: $color_primary_900;
 
-  .contain {
+  img {
     cursor: pointer;
-    overflow: hidden;
-    border-radius: 8px;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: 0 0 0 8px rgba($color: white, $alpha: 0.15);
+    object-fit: cover;
     transition: $animation;
-    background-color: $color_primary_900;
+    z-index: 2;
+  }
 
-    img,
-    iframe {
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+  .btn-play {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    transition: $animation;
+    z-index: 3;
+    color: white;
+    pointer-events: none;
+    mat-icon {
       transition: $animation;
-      z-index: 2;
-    }
-
-    iframe {
-      opacity: 0;
-    }
-
-    .btn-play {
-      position: absolute;
-      top: 50%;
-      right: 50%;
-      transform: translate(50%, -50%);
-      transition: $animation;
-      z-index: 3;
-      color: white;
-      pointer-events: none;
-      mat-icon {
-        transition: $animation;
-        width: 32px;
-        height: 32px;
-        line-height: 32px;
-        font-size: 32px;
-      }
-    }
-
-    .btn-close {
-      opacity: 0;
-      position: fixed;
-      top: 2em;
-      right: 2em;
-      border: 1px solid rgba($color: $color_primary_500, $alpha: 1);
-      z-index: 99999;
-      background-color: transparent;
-      border: 2px solid red;
-      transition: all 0.3s ease;
-      width: 70px;
-      height: 70px;
-      border-radius: 70px;
-
-      mat-icon {
-        color: red;
-        transition: all 0.3s ease;
-      }
-
-      &:hover {
-        transform: scale(0.9);
-        background-color: red;
-
-        mat-icon {
-          transform: scale(0.8);
-          color: white;
-        }
-      }
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 32px;
     }
   }
 
   &:hover {
     box-shadow: 0 16px 40px -12px rgba($color: black, $alpha: 0.9);
-    .contain {
-      box-shadow: 0 0 0 10px rgba($color: white, $alpha: 0.3);
-      img {
-        opacity: 0.5;
-      }
-      .btn-play {
-        mat-icon {
-          transform: scale(1.5);
-        }
-      }
-    }
-  }
-}
-
-.video-miniature-active {
-  width: 100%;
-  height: 100vh;
-  bottom: 0em;
-  right: 0em;
-  z-index: 21;
-  .contain {
-    border-radius: 0;
-    iframe,
     img {
-      width: 100%;
-      height: 100vh;
-    }
-    img {
-      opacity: 0 !important;
-      pointer-events: none;
-    }
-    iframe {
-      opacity: 1 !important;
+      opacity: 0.5;
     }
     .btn-play {
-      opacity: 0 !important;
-    }
-    .btn-close {
-      opacity: 1 !important;
+      mat-icon {
+        transform: scale(1.5);
+      }
     }
   }
 }

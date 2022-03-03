@@ -1,12 +1,6 @@
 <div *ngIf="isMenuOpen" class="nav-menu" [ngClass]="{'nav-menu-active': isMenuOpen}" @componentAnimation @closeMenu>
   <div class="background"></div>
 
-  <!-- <div class="background-noise"></div> -->
-  <!-- <div class="background-lights light1"></div>
-  <div class="background-lights light2"></div>
-  <div class="background-lights light3"></div>
-  <div class="background-lights light4"></div> -->
-
   <div class="content intro-component-animation">
     <h1 (click)="routeWithEffect('/home')" class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Home</a></h1>
     <h1 class="component-animation coming-soon"><a routerLinkActive="router-link-active" class="link hover-linear">Marketplace</a> <div class="neon-effect"><b>Comin<span>g</span> So<span>o</span>n</b></div></h1>
@@ -14,12 +8,14 @@
     <h1 class="component-animation" [matMenuTriggerFor]="docsMenu"><a class="link hover-linear">Docs <mat-icon>arrow_drop_down</mat-icon></a></h1>
     <h1 class="component-animation"><a href="https://medium.com/@themetacloud" target="_blank" class="link hover-linear">Announcements <mat-icon>logout</mat-icon></a></h1>
 
+    <mat-divider class="component-animation"></mat-divider>
+
     <div class="more-link component-animation">
       <h5>Links</h5>
       <div class="row">
         <a (click)="routeWithEffect('/team')" class="link hover-linear"><small>TEAM</small></a>
         <a (click)="routeWithEffect('/contact')" class="link hover-linear"><small>CONTACT US</small></a>
-        <a href="https://drive.google.com/file/d/1Hf4j5tY7dLO8KHVM0QEm_2vBnerlmUSS/view?usp=sharing" target="_blank" class="link hover-linear"><small>WHITEPAPER</small></a>
+        <a href="https://drive.google.com/file/d/1SrG4Nsis_o887eaMamZdmW77_ZHKfwYh/view?usp=sharing" target="_blank" class="link hover-linear"><small>WHITEPAPER</small></a>
       </div>
     </div>
 
@@ -32,16 +28,20 @@
     </div>
 
     <div class="social-media component-animation">
+      <h5>Social media</h5>
       <a href="https://medium.com/@themetacloud" target="_blank" mat-icon-button matTooltip="Medium"><img src="/assets/img/icons/medium-icon-black.svg" alt="Medium"></a>
       <a href="" target="_blank" mat-icon-button matTooltip="Discord"><img src="/assets/img/icons/discord-icon-black.svg" alt="Discord"></a>
       <a href="https://t.me/themetacloud" target="_blank" mat-icon-button matTooltip="Telegram Main"><img src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram"></a>
-      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Reddit"><img src="/assets/img/icons/reddit-icon-black.svg" alt="Reddit"></a>
-      <a href="" target="_blank" mat-icon-button matTooltip="Tiktok"><img src="/assets/img/icons/tiktok-icon-black.svg" alt="Tiktok"></a> -->
-      <!-- <a href="" target="_blank" mat-icon-button matTooltip="Twitter"><img src="/assets/img/icons/twitter-icon.svg" alt="Twitter"></a>
-      <a href="" target="_blank" mat-icon-button matTooltip="Instagram"><img src="/assets/img/icons/instagram-icon.svg" alt="Instagram"></a>
-      <a href="" target="_blank" mat-icon-button matTooltip="Facebook"><img src="/assets/img/icons/facebook-icon.svg" alt="Facebook"></a> -->
+      <a href="https://twitter.com/themetacloud" target="_blank" mat-icon-button matTooltip="Twitter"><img src="/assets/img/icons/twitter-icon-black.svg" alt="Twitter"></a>
     </div>
 
+    <div class="videos component-animation">
+      <h5>Videos</h5>
+      <div class="videos-row">
+        <app-video-element [title]="'Play Trailer video'" [miniature]="'/assets/img/trailer-video-miniature.png'" [url]="'https://www.youtube.com/watch?v=WXN5C-Kqkis'"></app-video-element>
+        <app-video-element [title]="'Play Hype video'" [miniature]="'/assets/img/video-miniature.png'" [url]="'https://www.youtube.com/watch?v=h1-0NZAqz4o'"></app-video-element>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -50,7 +50,7 @@
 
 
 <mat-menu #docsMenu="matMenu">
-  <a href="https://drive.google.com/file/d/1Hf4j5tY7dLO8KHVM0QEm_2vBnerlmUSS/view?usp=sharing" target="_blank" mat-menu-item>Whitepaper</a>
-  <a href="https://drive.google.com/file/d/1cTsNJvRGLVkyRkZKZ_oZQ7CJLYNG391r/view?usp=sharing" target="_blank" mat-menu-item>Pitch Deck</a>
-  <a href="" target="_blank" mat-menu-item>Tokenomics</a>
+  <a href="https://drive.google.com/file/d/1SrG4Nsis_o887eaMamZdmW77_ZHKfwYh/view?usp=sharing" target="_blank" mat-menu-item>Whitepaper</a>
+  <a href="https://drive.google.com/file/d/1iSk-KuUwaD0LhlnemNfw-EiZsvm7c_eI/view?usp=sharing" target="_blank" mat-menu-item>Pitch Deck</a>
+  <a href="https://drive.google.com/file/d/1lpY6AV5NWRddOO86qWSA-DGSh_Bs2dSz/view?usp=sharing" target="_blank" mat-menu-item>Tokenomics</a>
 </mat-menu>

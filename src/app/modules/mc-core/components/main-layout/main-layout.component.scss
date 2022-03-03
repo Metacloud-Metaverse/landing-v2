@@ -31,7 +31,7 @@
     transition: all 0.3s ease;
     gap: 0.5em;
     @include xs {
-      padding: 1em;
+      padding: 0.2em 1em;
     }
     @include sm {
       padding: 1em 1.5em;
@@ -56,6 +56,12 @@
         width: 230px;
         height: 47px;
         object-fit: contain;
+        &:nth-of-type(1){
+          display: block;
+        }
+        &:nth-of-type(2){
+          display: none;
+        }
         @include xs {
           width: 170px;
           height: 35.5px;
@@ -211,6 +217,7 @@
 
     .social-media {
       margin-left: auto;
+      display: flex;
       @include xs {
         display: none;
       }
@@ -218,6 +225,9 @@
         position: relative;
         opacity: 0.7;
         transition: $animation;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         &::before {
           content: "";
           position: absolute;
@@ -236,6 +246,12 @@
           height: 22px;
           position: relative;
           z-index: 2;
+          &:nth-of-type(1){
+            display: block;
+          }
+          &:nth-of-type(2){
+            display: none;
+          }
         }
         &:hover {
           opacity: 1;
@@ -282,14 +298,66 @@
     button{
       color: white;
     }
+    .separate-line-vert{
+      background-color: rgba($color: white, $alpha: 0.3);
+    }
+    .social-media {
+      a {
+        img {
+          &:nth-of-type(1){
+            display: none;
+          }
+          &:nth-of-type(2){
+            display: block;
+          }
+        }
+      }
+    }
   }
 
   .nav-scrolled {
     background-color: white !important;
+    .social-media {
+      a {
+        img {
+          &:nth-of-type(1){
+            display: block;
+          }
+          &:nth-of-type(2){
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   .nav-open {
     background-color: transparent !important;
+    .logo{
+      img{
+        &:nth-of-type(1){
+          display: block !important;
+        }
+        &:nth-of-type(2){
+          display: none !important;
+        }
+      }
+    }
+    .separate-line-vert{
+      background-color: rgba($color: black, $alpha: 0.3) !important;
+    }
+    .social-media {
+      a {
+        img {
+          &:nth-of-type(1){
+            display: block;
+          }
+          &:nth-of-type(2){
+            display: none;
+          }
+        }
+      }
+    }
     .btn-play {
       color: black !important;
       border-color: rgba($color: black, $alpha: 0.5) !important;
@@ -322,86 +390,6 @@
     }
   }
 
-  .video-miniature {
-    position: absolute;
-    bottom: 2em;
-    right: 2em;
-    width: 250px;
-    height: 140px;
-    z-index: 20;
-    cursor: pointer;
-    box-shadow: 0 16px 30px -12px rgba($color: black, $alpha: 0.7);
-    animation: introVideoHome 1s ease;
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: $color_primary_900;
-    transition: boxShadow 0.3s ease;
-    @include xs {
-      width: calc(50% - 1em);
-      right: 1em;
-    }
-
-    img {
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 140px;
-      object-fit: cover;
-      z-index: 2;
-      @include xs {
-        width: calc(50% - 1em);
-      }
-    }
-
-    .btn-play {
-      position: absolute;
-      top: 50%;
-      right: 50%;
-      transform: translate(50%, -50%);
-      transition: $animation;
-      z-index: 3;
-      color: white;
-      pointer-events: none;
-      mat-icon {
-        transition: $animation;
-        width: 32px;
-        height: 32px;
-        line-height: 32px;
-        font-size: 32px;
-      }
-    }
-
-    &:hover {
-      box-shadow: 0 16px 40px -12px rgba($color: black, $alpha: 0.9);
-      img {
-        opacity: 0.5;
-      }
-      .btn-play {
-        mat-icon {
-          transform: scale(1.5);
-        }
-      }
-    }
-  }
-
-  .video-miniature1 {
-    right: 310px;
-    /* @include xs{
-      display: block !important;
-      right: initial;
-      left: 1em;
-    } */
-  }
-
-  .video-miniature2 {
-    animation: introVideoHome 2s ease;
-    /* @include xs{
-      display: block !important;
-      right: 1em;
-    } */
-  }
 }
 
 .video-container {

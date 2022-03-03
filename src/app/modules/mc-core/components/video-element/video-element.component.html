@@ -1,4 +1,4 @@
-<div class="video-miniature video-miniature2">
-  <img (click)="onClickPlay()" [src]="miniature" [alt]="title" [matTooltip]="title" />
-  <button mat-icon-button class="btn-play" (click)="onClickPlay()" [matTooltip]="title"><mat-icon>play_arrow</mat-icon></button>
+<div class="video-miniature" (click)="onClickPlay()">
+  <img [src]="miniature" [alt]="title" [matTooltip]="title" />
+  <button mat-icon-button class="btn-play"><mat-icon>play_arrow</mat-icon></button>
 </div>
