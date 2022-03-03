@@ -14,7 +14,7 @@ export class IntroComponent implements OnInit {
   @ViewChild('cursor') cursor:any;
   @ViewChild('modelPlanet') modelPlanet: any;
   @ViewChild('backgroundStars') backgroundStars: any;
-  @ViewChild('videoIntro') videoIntro: any;
+  @ViewChild('videoIntro') videoIntro?: ElementRef<HTMLVideoElement>;
 
   startVideo = false;
   startZoom = false;
@@ -101,7 +101,11 @@ export class IntroComponent implements OnInit {
     }, 700);
     setTimeout(() => {
       this.startVideo = true;
-      this.videoIntro.nativeElement.play();
+
+      setTimeout(() => {
+        this.videoIntro?.nativeElement.play();
+      }, 50);
+
     }, 1700);
     setTimeout(() => {
       this.startEndScene = true;
