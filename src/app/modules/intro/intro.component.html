@@ -40,8 +40,7 @@
 </div>
 
 <div *ngIf="startVideo" class="video-container">
-  <video *ngIf="!isIosPlatform" #videoIntro [src]="videoBlobSrc" type="mp4" muted></video>
-  <img *ngIf="isIosPlatform" [src]="'/assets/videos/intro-hype-video-muted-optimized.gif'" type="mp4" />
+  <video *ngIf="!isIosPlatform" #videoIntro [src]="videoBlobSrc" type="mp4" autoplay playsinline muted></video>
   <button mat-stroked-button [routerLink]="['/home']" >SKIP</button>
   <!-- <div class="sound" [ngClass]="{'sound-off': isMuted}" matTooltip="Stop / Play Music"><span></span><span></span><span></span><span></span></div> -->
 </div>
