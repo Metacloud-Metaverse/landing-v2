@@ -77,6 +77,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('modelAvatarPrimary') modelAvatarPrimary: any;
   @ViewChild('modelAvatarCorner') modelAvatarCorner: any;
 
+  // Timeouts
+  listTimeouts = new Array<any>();
+
   constructor(
     public el: ElementRef<HTMLElement>,
     private breakpointObserver: BreakpointObserver,
@@ -464,6 +467,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   activeSection1(){
+    this.clearTimeouts();
+
     this.pageState = 0;
     this.section3text2 = false;
     this.section3text3 = false;
@@ -475,6 +480,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   activeSection2(){
+    this.clearTimeouts();
+
     this.pageState = 1;
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '30deg 65deg 80%';
@@ -495,6 +502,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   activeSection3(){
+    this.clearTimeouts();
+
     this.pageState = 2;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
@@ -511,6 +520,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   activeSection4(){
+    this.clearTimeouts();
+
     this.pageState = 3;
     this.sectionActive = 0;
     this.section3text2 = false;
@@ -541,6 +552,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   activeSection5(){
+    this.clearTimeouts();
+
     this.pageState = 4;
     /* this.scene = 0; */
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
@@ -552,6 +565,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   activeSection6(){
+    this.clearTimeouts();
+
     this.pageState = 5;
     this.scene = 0;
     this.activeScenes = true;
@@ -560,80 +575,50 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.interpolationDecay = 600;
     this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
-    this.section6Timeout1 == true;
-    setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 90deg 100%';
-      if (this.section6Timeout1 == true) {
-        setTimeout(() => {
-          this.section6Timeout2 == true;
-          this.modelAvatarPrimary.nativeElement.interpolationDecay = 400;
-          this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
-          this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
-          if (this.section6Timeout2 == true) {
-            setTimeout(() => {
-              this.section6Timeout1 == false;
-              this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casino-optimized.jpg';
-              this.modelAvatarPrimary.nativeElement.cameraOrbit = '-270deg 80deg 100%';
-            }, 1500);
-          }
-        }, 3500);
-      }
-    }, 500);
 
-    /* setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfire-optimized.jpg';
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-359deg 80deg 100%';
-    }, 7000);
-    setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieve-optimized.jpg';
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 80deg 100%';
-    }, 8500);
-    setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museo-optimized.jpg';
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
-      this.modelAvatarPrimary.nativeElement.cameraControls = true;
-      this.modelAvatarPrimary.nativeElement.autoRotate = true;
-    }, 10000); */
-  }
-
-  /* activeSection6(){
-    this.pageState = 5;
-    this.scene = 0;
-    this.activeScenes = true;
-    this.modelAvatarPrimary.nativeElement.cameraControls = false;
-    this.modelAvatarPrimary.nativeElement.autoRotate = false;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
-    this.modelAvatarPrimary.nativeElement.interpolationDecay = 600;
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
-    setTimeout(() => {
+    this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 90deg 100%';
-    }, 500);
-    setTimeout(() => {
+    }, 500));
+    
+    this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.interpolationDecay = 400;
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
-    }, 4000);
-    setTimeout(() => {
+    }, 4000));
+
+    this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casino-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-270deg 80deg 100%';
-    }, 5500);
-    setTimeout(() => {
+    }, 5500));
+
+    this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfire-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-359deg 80deg 100%';
-    }, 7000);
-    setTimeout(() => {
+    }, 7000));
+
+    this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieve-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 80deg 100%';
-    }, 8500);
-    setTimeout(() => {
+    }, 8500));
+
+    this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museo-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
       this.modelAvatarPrimary.nativeElement.cameraControls = true;
       this.modelAvatarPrimary.nativeElement.autoRotate = true;
-    }, 10000);
-  } */
+    }, 10000));
+  }
+
+  clearTimeouts() {
+    for (const time of this.listTimeouts) {
+      clearTimeout(time);
+    }
+    this.listTimeouts = [];
+  }
 
   activeSection7(){
+    this.clearTimeouts();
+
     this.pageState = 6;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
@@ -644,6 +629,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   activeSection8(){
+    this.clearTimeouts();
+
     this.pageState = 7;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
@@ -653,6 +640,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   activeSection9(){
+    this.clearTimeouts();
+
     this.pageState = 8;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
@@ -660,6 +649,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   activeSection10(){
+    this.clearTimeouts();
+
     this.pageState = 9;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
