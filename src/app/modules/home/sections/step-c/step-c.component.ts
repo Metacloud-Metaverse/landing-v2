@@ -58,7 +58,7 @@ export class StepCComponent implements OnInit {
   touchEndConfig(event: any) {
     let tx = event.changedTouches[0].clientX;
     let dif = Math.abs(this.touchX - tx);
-    if(dif > 8){
+    if(dif > 16){
       event.stopPropagation();
     }
   }
