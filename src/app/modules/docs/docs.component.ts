@@ -9,21 +9,45 @@ import { Router } from '@angular/router';
 })
 export class DocsComponent implements OnInit {
 
-  breadcrumb:any = [
-    {route: 'Codacoin'},
-    {route: 'Interfac de Codacion'},
-    {route: 'Transacción'}
-  ]
+  /* breadcrumb:any = [
+    {route: 'Documentation'},
+    {route: 'Marketplace'}
+  ] */
 
-  sidebar:any = [
-    {route: 'Write press releases'},
-    {route: 'Optimize newsroom'},
-    {route: 'Manage contacts'},
-    {route: 'Send emial putches'},
-    {route: 'Find new media contacts'},
-    {route: 'Analyze PR performance'},
-    {route: 'Manage your account'},
-  ]
+  docs: any[] = [
+    {
+      name: 'home',
+      pokemon: [
+        {value: 'bulbasaur-0', viewValue: 'Bulbasaur'},
+        {value: 'oddish-1', viewValue: 'Oddish'},
+        {value: 'bellsprout-2', viewValue: 'Bellsprout'},
+      ],
+    },
+    {
+      name: 'Water',
+      pokemon: [
+        {value: 'squirtle-3', viewValue: 'Squirtle'},
+        {value: 'psyduck-4', viewValue: 'Psyduck'},
+        {value: 'horsea-5', viewValue: 'Horsea'},
+      ],
+    },
+    {
+      name: 'Fire',
+      disabled: true,
+      pokemon: [
+        {value: 'charmander-6', viewValue: 'Charmander'},
+        {value: 'vulpix-7', viewValue: 'Vulpix'},
+        {value: 'flareon-8', viewValue: 'Flareon'},
+      ],
+    },
+    {
+      name: 'Psychic',
+      pokemon: [
+        {value: 'mew-9', viewValue: 'Mew'},
+        {value: 'mewtwo-10', viewValue: 'Mewtwo'},
+      ],
+    },
+  ];
 
   @Input() isSidebarOpen:boolean = true;
 

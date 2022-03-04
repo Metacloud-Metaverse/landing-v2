@@ -1,0 +1,35 @@
+@import "../../../../../assets/styles/vars";
+
+.home-page{
+  h1{
+    margin: 0;
+  }
+
+  mat-divider{
+    margin: 2em 0;
+  }
+}
+
+.cards{
+  display: flex;
+  gap: 1em;
+
+  .card{
+    background: linear-gradient($color_primary_500, $color_primary_800);
+    /* width: calc(25% - 1em); */
+    color: white;
+    font-weight: 400;
+    padding: 1em;
+    height: 300px;
+    box-sizing: border-box;
+
+    h4{
+      margin: 0;
+    }
+
+    p{
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+}

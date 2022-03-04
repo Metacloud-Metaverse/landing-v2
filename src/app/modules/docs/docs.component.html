@@ -1,7 +1,7 @@
-<main class="main_layout">
-  <div class="container_page">
+<main class="docs_layout">
+  <div class="container">
 
-    <div class="topbar d-flex">
+    <!-- <div class="topbar d-flex">
       <nav class="breadcrumb">
         <ol>
           <li routerLinkActive="router-link-active" *ngFor="let item of breadcrumb">
@@ -14,19 +14,65 @@
         <input type="text" placeholder="Buscar" />
         <mat-icon>search</mat-icon>
       </div>
-    </div>
+    </div> -->
 
     <div class="content_layout">
-      <nav *ngIf="router.url !== '/search'" class="sidebar animated" [ngClass]="{'sidebar_open': isSidebarOpen}">
-        <div class="title">Getting Started</div>
-        <ul>
-          <li routerLinkActive="router-link-active" *ngFor="let item of sidebar">
-            <a [routerLink]="['/routePath']">{{item.route}}</a>
-          </li>
-          <li routerLinkActive="router-link-active">
-            <a [routerLink]="['/routePath']" class="is-active">[item_nav_active]</a>
-          </li>
-        </ul>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Pokemon</mat-label>
+        <mat-select>
+          <mat-option>-- None --</mat-option>
+          <mat-optgroup *ngFor="let group of docs" [label]="group.name"
+                        [disabled]="group.disabled">
+            <mat-option *ngFor="let pokemon of group.pokemon" [value]="pokemon.value">
+              {{pokemon.viewValue}}
+            </mat-option>
+          </mat-optgroup>
+        </mat-select>
+      </mat-form-field>
+
+      <nav class="sidebar animated" [ngClass]="{'sidebar_open': isSidebarOpen}">
+
+        <a [routerLink]="['home']" routerLinkActive="active"><mat-icon>home</mat-icon> Home</a>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title><mat-icon>store</mat-icon> World</mat-panel-title>
+          </mat-expansion-panel-header>
+          <a [routerLink]="['world/introduction']" routerLinkActive="active">Introduction</a>
+          <a [routerLink]="['world/faq']" routerLinkActive="active">FAQ</a>
+          <a [routerLink]="['/routePath']" routerLinkActive="active">DAO</a>
+          <a [routerLink]="['/routePath']" routerLinkActive="active">Whitepaper</a>
+          <a [routerLink]="['/routePath']" routerLinkActive="active">Hardware Acceleration</a>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title><mat-icon>store</mat-icon> Market</mat-panel-title>
+          </mat-expansion-panel-header>
+          <a [routerLink]="['/routePath']" routerLinkActive="active">Marketplace</a>
+          <a [routerLink]="['/routePath']" class="active" routerLinkActive="active">LAND Manager</a>
+          <a [routerLink]="['/routePath']" routerLinkActive="active">LAND Manager</a>
+          <a [routerLink]="['/routePath']" routerLinkActive="active">LAND Mortgages (Deprecated)</a>
+          <a [routerLink]="['/routePath']" routerLinkActive="active">Get Parcel Info</a>
+          <a [routerLink]="['/routePath']" routerLinkActive="active">LAND API Reference</a>
+          <a [routerLink]="['/routePath']" routerLinkActive="active">LAND API 2.0 Migration Guide</a>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title><mat-icon>store</mat-icon> Create</mat-panel-title>
+          </mat-expansion-panel-header>
+          <a [routerLink]="['/routePath']" routerLinkActive="active">Marketplace</a>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title><mat-icon>store</mat-icon> Ethereum Essentials</mat-panel-title>
+          </mat-expansion-panel-header>
+          <a [routerLink]="['/routePath']" routerLinkActive="router-link-active">Marketplace</a>
+        </mat-expansion-panel>
+
       </nav>
 
       <section class="container_pages">

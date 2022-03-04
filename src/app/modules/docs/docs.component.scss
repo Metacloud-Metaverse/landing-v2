@@ -1,18 +1,16 @@
 @import "../../../assets/styles/vars";
 
-.main_layout {
+.docs_layout {
 	display: flex;
 	align-items: flex-start;
 	overflow: hidden;
+  padding: 4em 0;
 
   .container_page{
     padding-top: 1em;
   }
 
 	.container_pages {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
 	}
 }
 
@@ -21,7 +19,14 @@
 	align-items: flex-start;
 }
 
-.topbar {
+mat-form-field{
+  display: none;
+  @include xs{
+    display: block;
+  }
+}
+
+/* .topbar {
   @include xs{
     display: block;
   }
@@ -93,7 +98,7 @@
 			color: $black_medium_emphasis;
 		}
 	}
-}
+} */
 
 .sidebar {
 	display: inline-block;
@@ -101,43 +106,55 @@
 	min-width: 220px;
 	max-width: 220px;
 	margin-right: 70px;
+  @include xs{
+    display: none;
+  }
 
 	&::-webkit-scrollbar { display: none; }
 
-	@include xs {
-		z-index: 4;
-		position: fixed;
-		left: -100%;
-		top: 70px;
-		background-color: white;
-		padding-top: 1em;
-	}
-
-  .title {
-    font-size: 1.4em;
-    margin-top: 1em;
+  mat-icon{
+    margin-right: 8px;
   }
 
-  ul{
-    list-style: none;
-    padding: 0;
+  a{
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 0.5em 0.8em;
+    border-radius: 0.3em;
+    box-sizing: border-box;
+    display: flex;
+    &:hover{
+      background: rgba($color: #000000, $alpha: 0.1);
+    }
+  }
 
-    li{
-      margin-bottom: 1em;
-      a{
-        font-size: 1em;
-        padding: 0.5em 0;
-        color: $black_medium_emphasis;
-        text-decoration: none;
-        &:hover{
-          text-decoration: underline;
-        }
-      }
-      .is-active{
-        color: $color_accent_500;
-        pointer-events: none;
+  .active{
+    font-weight: 600;
+    color: $color_primary_500;
+  }
 
+  mat-expansion-panel{
+    background-color: transparent;
+    box-shadow: none;
+    box-sizing: border-box;
+
+    mat-expansion-panel-header{
+      height: initial;
+      border-radius: 0.3em;
+      padding: 0.5em 0.8em;
+      padding-right: 1em;
+      box-sizing: border-box;
+      display: flex;
+      &:hover{
+        background: rgba($color: #000000, $alpha: 0.1);
       }
+    }
+
+    &::ng-deep .mat-expansion-panel-body{
+      padding-left: 2em;
+      padding-right: 0;
     }
   }
 }

@@ -4,6 +4,10 @@
   text-align: center;
   margin-top: 3em;
 
+  mat-divider{
+    margin: 2em 0;
+  }
+
   button{
     width: 100px;
     &:first-of-type { margin-right: 1em; }
