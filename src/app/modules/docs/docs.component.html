@@ -1,35 +1,13 @@
 <main class="docs_layout">
   <div class="container">
 
-    <!-- <div class="topbar d-flex">
-      <nav class="breadcrumb">
-        <ol>
-          <li routerLinkActive="router-link-active" *ngFor="let item of breadcrumb">
-            <a [routerLink]="['/routePath']" class="link">{{item.route}}</a>
-          </li>
-        </ol>
-      </nav>
-
-      <div class="search-field">
-        <input type="text" placeholder="Buscar" />
-        <mat-icon>search</mat-icon>
-      </div>
-    </div> -->
+    <button mat-stroked-button class="btn-nav" (click)="isSidebarOpen = !isSidebarOpen">
+      <mat-icon>home</mat-icon>
+      <span>World introduction</span>
+      <button mat-icon-button color="warn" (click)="isSidebarOpen = true;"><mat-icon *ngIf="isSidebarOpen">close</mat-icon></button>
+    </button>
 
     <div class="content_layout">
-
-      <mat-form-field appearance="fill">
-        <mat-label>Pokemon</mat-label>
-        <mat-select>
-          <mat-option>-- None --</mat-option>
-          <mat-optgroup *ngFor="let group of docs" [label]="group.name"
-                        [disabled]="group.disabled">
-            <mat-option *ngFor="let pokemon of group.pokemon" [value]="pokemon.value">
-              {{pokemon.viewValue}}
-            </mat-option>
-          </mat-optgroup>
-        </mat-select>
-      </mat-form-field>
 
       <nav class="sidebar animated" [ngClass]="{'sidebar_open': isSidebarOpen}">
 
@@ -39,9 +17,9 @@
           <mat-expansion-panel-header>
             <mat-panel-title><mat-icon>store</mat-icon> World</mat-panel-title>
           </mat-expansion-panel-header>
-          <a [routerLink]="['world/introduction']" routerLinkActive="active">Introduction</a>
-          <a [routerLink]="['world/faq']" routerLinkActive="active">FAQ</a>
-          <a [routerLink]="['/routePath']" routerLinkActive="active">DAO</a>
+          <a [routerLink]="['world-introduction']" routerLinkActive="active">Introduction</a>
+          <a [routerLink]="['world-faq']" routerLinkActive="active">FAQ</a>
+          <a [routerLink]="['world-dao']" routerLinkActive="active">DAO</a>
           <a [routerLink]="['/routePath']" routerLinkActive="active">Whitepaper</a>
           <a [routerLink]="['/routePath']" routerLinkActive="active">Hardware Acceleration</a>
         </mat-expansion-panel>

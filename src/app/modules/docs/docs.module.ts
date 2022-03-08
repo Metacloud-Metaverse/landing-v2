@@ -18,18 +18,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { ThisIsUsefulComponentComponent } from './components/this-is-useful-component/this-is-useful-component.component';
 
 // Pages
-import { WorldIntroductionPageComponent } from './pages/world-introduction-page/world-introduction-page.component';
-import { WorldFaqPageComponent } from './pages/world-faq-page/world-faq-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { DocPageComponent } from './pages/doc-page/doc-page.component';
 
 
 @NgModule({
   declarations: [
     DocsComponent,
-    WorldIntroductionPageComponent,
     ThisIsUsefulComponentComponent,
-    WorldFaqPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    DocPageComponent
   ],
   imports: [
     CommonModule,

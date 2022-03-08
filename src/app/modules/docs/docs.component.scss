@@ -26,79 +26,20 @@ mat-form-field{
   }
 }
 
-/* .topbar {
-  @include xs{
-    display: block;
-  }
+.btn-nav{
+  width: 100%;
+  &::ng-deep .mat-button-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-	.breadcrumb {
-		ol {
-			list-style: none;
-			padding: 0;
-			li {
-				font-size: 0.8em;
-				display: inline-block;
-				&::after {
-					content: ">";
-					opacity: 0.7;
-					margin: 0 0.5em;
-					margin-left: 0.5em;
-					margin-right: 0.5em;
-				}
-				&:last-of-type {
-					&::after {
-						display: none;
-					}
-					a {
-						pointer-events: none;
-						cursor: text;
-						color: $black_medium_emphasis;
-					}
-				}
-				a {
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-			}
-		}
-	}
-
-	.search-field {
-		width: 300px;
-		max-width: 100%;
-		margin-left: auto;
-		position: relative;
-    @include xs{
-      margin-left: 0;
-      width: 100%;
+    button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
-		input {
-			width: 100%;
-			height: 42px;
-			border-radius: 200px;
-			background-color: white;
-			border: $borderLight;
-			padding-left: 50px;
-			transition: $animation;
-			-o-transition: $animation;
-			-moz-transition: $animation;
-			-webkit-transition: $animation;
-			box-sizing: border-box;
-			&:hover {
-				border: 2px solid color_accent_500;
-			}
-		}
-
-		mat-icon {
-			position: absolute;
-			top: 10px;
-			left: 16px;
-			color: $black_medium_emphasis;
-		}
-	}
-} */
+  }
+}
 
 .sidebar {
 	display: inline-block;
@@ -107,7 +48,16 @@ mat-form-field{
 	max-width: 220px;
 	margin-right: 70px;
   @include xs{
-    display: none;
+    position: absolute;
+    top: 124px;
+    left: 1.2em;
+    height: 0;
+    overflow-y: auto;
+    background-color: white;
+    width: calc(100% - 2.4em);
+    min-width: calc(100% - 2.4em);
+    max-width: calc(100% - 2.4em);
+    z-index: 9;
   }
 
 	&::-webkit-scrollbar { display: none; }
@@ -160,13 +110,9 @@ mat-form-field{
 }
 
 .sidebar_open {
-	width: 260px;
-	min-width: 260px;
-	max-width: 260px;
 	@include xs {
-		left: 0;
-		width: 100%;
-		min-width: 100%;
-		max-width: 100%;
+    padding: 1em 0;
+		height: auto;
+    max-height: calc(100vh - 115px);
 	}
 }

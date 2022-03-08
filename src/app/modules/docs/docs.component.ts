@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
+import { Doc } from 'src/app/modules/docs/entities/doc';
 
 @Component({
   selector: 'app-docs',
@@ -9,12 +11,14 @@ import { Router } from '@angular/router';
 })
 export class DocsComponent implements OnInit {
 
+  title = 'Documentation | metacloud'
+
   /* breadcrumb:any = [
     {route: 'Documentation'},
     {route: 'Marketplace'}
   ] */
 
-  docs: any[] = [
+  docsNav: any[] = [
     {
       name: 'home',
       pokemon: [
@@ -53,10 +57,17 @@ export class DocsComponent implements OnInit {
 
   constructor(
     public breakpointObserver: BreakpointObserver,
-    public router: Router
+    public router: Router,
+    private route: ActivatedRoute,
+    protected titleService: Title,
+    protected metaTagService: Meta
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Documentation | metacloud');
+    this.metaTagService.updateTag(
+      { name: 'description', content: 'Lorem ipsum dolor sit amet' }
+    );
     this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
       .subscribe((state: BreakpointState) => {
@@ -71,5 +82,4 @@ export class DocsComponent implements OnInit {
       this.isSidebarOpen = false;
     }
   }
-
 }
