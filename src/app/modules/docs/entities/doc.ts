@@ -2,70 +2,108 @@
 export class Doc {
 
   id: number = 0;
-  title: string = '';
-  caption: string = '';
-  photo_header: string = '';
   category_id: number = 0;
-  subcategory_id: number = 0;
-  publish_date: string = '';
   content: string = '';
-
-  creator_id: number = 0;
-  creator: string = '';
-  creator_photo: string = '';
-
-  seo_title = '';
-  seo_keywords = '';
-  seo_description = '';
 
   static DOCS = [
     {
-      slug: 'home',
-      date: '15 October, 2021',
-      content_html: `<p>Los smartphones han llegado a nuestra vida para quedarse y están ocupando gran parte de nuestro tiempo. Así lo demostró un estudio realizado por WhistleOut que asegura que las personas <b>pasamos un promedio de casi nueve años mirando la pantalla de nuestro smartphone</b>.</p>
-      <p>Una persona pasa en promedio un poco <b>más de 76,500 horas en su celular a lo largo de su vida</b>, lo que equivale a 8.74 años, según el estudio. Esto se ve impulsado por el hecho de que la edad promedio de un usuario para adquirir un teléfono móvil es de 10 años, dándole un uso promedio de 3.07 horas diariamente.</p>
-      <p>Los millennials pasan la mayor parte del tiempo en sus teléfonos, <b>registrando un promedio de 3.7 horas diarias</b>. Este tiempo promedio diario frente a la pantalla disminuye a medida que aumenta la edad de los usuarios; la <b>Generación X reporta 3 horas</b> de uso diario del teléfono y <b>los boomers pasan solo 2.5 horas</b> por día mirando sus pantallas.</p>
-      <p>Efectos negativos: Demasiado tiempo en la pantalla en la mayoría de los casos genera, depresión y/o ansiedad, obesidad, dificultad para dormir, problemas crónicos del cuello y la espalda. A su vez, algunos de estos como por ejemplo la dificultad para dormir, generan otros efectos devastadores en el cuerpo, impactando en órganos y células incluidos el cerebro y la capacidad cognitiva, memoria y neurogénesis (generación de nuevas neuronas).</p>
-      <p>Algunas recomendaciones útiles para reducir los malos efectos del uso de pantallas son:</p>
-      <ul>
-        <li>Dejar de usar tu teléfono (y otras pantallas también!) por al menos 2 hs antes de acostarte a dormir. (Esto permitirá la generación de melatonina, hormona fundamental para el sueño y poder dormirse a una hora razonable).</li>
-        <li>Utilizar el modo nocturno en las apps, redes, etc. para que la pantalla sea menos dañina y ayude a mejorar el sueño. Además, se pueden usar lentes color amarillo o rojo que bloquean la luz blanca, impidiendo aún más su efecto negativo sobre la producción de melatonina.</li>
-        <li>Cada 20 minutos de trabajo en una pantalla, mirar 20 segundos a lo lejos a modo de descanso. Esto tiene implicancias no sólo en el descanso de la vista, sino también en el descanso del cerebro y sus procesos, algo necesario para la salud mental.</li>
-        <li>Ajustar el brillo y contraste de las pantallas para que emitan únicamente la luz necesaria para ver sin forzar la vista: ¡Mucha luz puede dañar tus ojos y tu cerebro!</li>
-        <li>Se recomienda que la pantalla se encuentre a unos 50/60 centímetros de distancia de los ojos para cuidarlos.</li>
-        <li>El borde superior debe quedar ubicado ligeramente debajo de los ojos (para no lastimar la espalda o el cuello además de generar mala postura).</li>
-      </ul>
-      <p>También existen algunos ejercicios oculares y mentales que se recomiendan hacer al menos una vez al día para no cansar la vista al usar pantallas:</p>
-      <ul>
-        <li><b>Cambiá la perspectiva</b>: Al menos cinco minutos cada hora de uso de una pantalla, asomate a la ventana y enfocá objetos lejanos durante 10 minutos. Si es posible, dejá el celular en casa y sal a dar un paseo de media hora. Cuando camines por la calle no mires al suelo. Mirá al frente o a los edificios, y enfocá objetos lejanos. Intentá leer rótulos que estén muy lejos.</li>
-        <li><b>Vista cansada</b>: Mirá hacia un lado, donde no haya pantallas ni luces fuertes, y abrí los ojos lo máximo que puedas durante cinco segundos. Después cerralos lo más fuerte que puedas durante el mismo tiempo.</li>
-        <li><b>Ojos secos</b>: realizar 10 parpadeos lentos, abriendo y cerrando los ojos por completo. A continuación 5 parpadeos rápidos, y de nuevo 10 lentos. Finalizamos cerrando los ojos durante un minuto.</li>
-        <li><b>Relación muscular</b>: realizá un pestañeo muy fuerte, apretando los ojos y los músculos de las mandíbulas y la boca. Seguidamente, abrir los ojos y la boca lo máximo posible. Repetir 5 veces.</li>
-        <li><b>Ejercicio de convergencia</b>: Agarrá un lápiz y estirá el brazo para situarlo frente a los ojos, lo más lejos que puedas. Enfocalo y acercalo lentamente a los ojos, sin dejar de mirarlo, hasta situarlo lo más cerca que puedas sin perder el enfoque. Repetí 5 veces.</li>
-        <li><b>Ejercicio de refuerzo</b>: mové los ojos en círculo, como si estuviesen sobre una rueda. Primero en una dirección y luego en otra, durante un minuto.</li>
-        <li><b>Masaje ocular</b>: Cerrá los ojos y, con los pulgares, realizá suaves masajes en la zona que hay desde los párpados hasta las cejas.</li>
-        <li><b>Cambio de enfoque</b>: Colocá el dedo pulgar de la mano derecha a unos 30 centímetros de los ojos. Situá el índice de la mano izquierda unos 20 centímetros por detrás del pulgar. Enfocá al pulgar durante 2 o 3 segundos, y luego al dedo índice. Repetí 10 veces.</li>
-        <li></li>
-      </ul>
-      <p>Recordá que los ojos son una extensión del cerebro. Por lo tanto, realizar estos ejercicios y tener la vista descansada te va a ayudar no solo a entrenar los músculos de los mismos, mejorar la visión y prevenir problemas visuales; sino también a conocer nuestra forma de mirar de una manera más profunda, lo cual ayuda a evitar y saber qué situaciones nos producen más estrés y así ayudar poderosamente a nuestra mente.</p>`,
+      slug: 'introduction',
+      content_html: `
+      <div class="intro-component-animation">
+        <h1>​​Introducing the <b>metacloud</b></h1>
+        <p>The metacloud is a decentralized virtual reality platform that allows users to create and participate through multiple amazing experiences.</p>
+        <p>The 3D virtual space within Metacloud is called LAND, a non-fungible digital asset maintained in an BSC (Binance Smart Chain) smart contract which is divided into parcels that are identified by cartesian coordinates (x,y). The parcels are permanently owned by members of the community and are purchased using $CLOUD, Metacloud’s cryptocurrency token. This gives users full control over the environments and applications that they create, which can range from anything like static 3D scenes to more interactive applications or games.</p>
+      </div>
+      `,
     },
     {
-      slug: 'world-introduction',
-      date: '15 October, 2021',
-      content_html: `<p>Los smartphones han llegado a nuestra vida para quedarse y están ocupando gran parte de nuestro tiempo. Así lo demostró un estudio realizado por WhistleOut que asegura que las personas <b>pasamos un promedio de casi nueve años mirando la pantalla de nuestro smartphone</b>.</p>
-      <p>Una persona pasa en promedio un poco <b>más de 76,500 horas en su celular a lo largo de su vida</b>, lo que equivale a 8.74 años, según el estudio. Esto se ve impulsado por el hecho de que la edad promedio de un usuario para adquirir un teléfono móvil es de 10 años, dándole un uso promedio de 3.07 horas diariamente.</p>
-      <p>Los millennials pasan la mayor parte del tiempo en sus teléfonos, <b>registrando un promedio de 3.7 horas diarias</b>. Este tiempo promedio diario frente a la pantalla disminuye a medida que aumenta la edad de los usuarios; la <b>Generación X reporta 3 horas</b> de uso diario del teléfono y <b>los boomers pasan solo 2.5 horas</b> por día mirando sus pantallas.</p>
-      <p>Efectos negativos: Demasiado tiempo en la pantalla en la mayoría de los casos genera, depresión y/o ansiedad, obesidad, dificultad para dormir, problemas crónicos del cuello y la espalda. A su vez, algunos de estos como por ejemplo la dificultad para dormir, generan otros efectos devastadores en el cuerpo, impactando en órganos y células incluidos el cerebro y la capacidad cognitiva, memoria y neurogénesis (generación de nuevas neuronas).</p>
-      <p>Algunas recomendaciones útiles para reducir los malos efectos del uso de pantallas son:</p>
-      <p>Recordá que los ojos son una extensión del cerebro. Por lo tanto, realizar estos ejercicios y tener la vista descansada te va a ayudar no solo a entrenar los músculos de los mismos, mejorar la visión y prevenir problemas visuales; sino también a conocer nuestra forma de mirar de una manera más profunda, lo cual ayuda a evitar y saber qué situaciones nos producen más estrés y así ayudar poderosamente a nuestra mente.</p>`,
+      slug: 'faq',
+      content_html: `
+      <div class="intro-component-animation">
+        <h1>​​FAQ</h1>
+        <h5>What software do I need to play on the Metacloud?</h5>
+        <p>A PC or Mac running Chrome, Firefox, Brave. .</p>
+
+        <h5>Can I log in from multiple computers?</h5>
+        <p>Yes, you can run Metacloud from multiple computers as long as you have your digital wallet installed on each machine.</p>
+
+        <h5>Is this mobile responsive?</h5>
+        <p>Mobile devices are not supported on the metacloud (yet).</p>
+
+        <h5>Do I need a wallet to play in metacloud?</h5>
+        <p>In order to live the full Metacloud experience, you’ll need  a digital wallet to serve you as an account that keeps all your digital assets and in-world progress absolutely safe..</p>
+        <p>The metacloud experience without a digital wallet will have your information stored locally. Events, rewards or multiple device log in will not be possible.</p>
+
+        <h5>What is $CLOUD?</h5>
+        <p>$CLOUD is metacloud ’s fungible, BEP20 cryptocurrency token. $CLOUD is burned, or spent, in exchange for LAND parcels.</p>
+
+        <h5>Will I be able to buy things other than LAND with $CLOUD?</h5>
+        <p>Exactly, users will be able to trade $CLOUD with other users in exchange for goods and services hosted within Metacloud.</p>
+
+        <h5>How can I get new wearables?</h5>
+        <p>Exclusive wearables in the Metacloud will be available. But the free of charge avatar editor counts with an interesting selection of wearables and accessories.</p>
+
+        <h5>Can I claim my Avatar name later?</h5>
+        <p>You can visit the Names page in the Builder to claim it. All you need is an installed digital wallet and at least 100 $CLOUD to burn. Another alternative is to buy a name in the Metacloud Marketplace.</p>
+
+        <h5>What is LAND?</h5>
+        <p>LAND is a non-fungible digital asset maintained in an BSC smart contract. It’s divided into parcels that are referenced using unique x,y cartesian coordinates. Each LAND token includes a record of its coordinates, its owner, and a reference to a content description file or parcel manifest that describes and encodes the content the owner wishes to serve on his or her land.</p>
+
+        <h5>What is an Estate?</h5>
+        <p>Like LAND, an estate is a non-fungible digital asset. An estate is an association of two or more directly adjacent parcels of LAND. These parcels must be directly adjacent and cannot be separated by a road, plaza or any other parcel. By connecting parcels to form Estates, you can more easily manage your larger LAND holdings. Estates are especially useful when building larger scenes that span more than one parcel.</p>
+
+        <h5>How can I buy LAND or Estates in Metacloud?</h5>
+        <p>You will be able to visit  the Metacloud  Marketplace to browse through all of the available LANDs or Estates of LAND that are currently for sale.</p>
+
+        <h5>What does ‘owning’ virtual LAND mean and how does it work?</h5>
+        <p>LAND within Metacloud  is represented by non-fungible LAND tokens (meaning that each is unique and cannot be replicated) that track ownership on the BSC blockchain. Owning LAND within Metacloud  is akin to owning any other unique, crypto asset like <a href="https://www.cryptokitties.co/" target="_blank">CryptoKitties</a> or <a href="https://www.larvalabs.com/cryptopunks" target="_blank">CryptoPunks</a>, however you will be able to use your LAND within Metacloud  to build three dimensional spaces and applications. LAND is built on our BEP721 standard, making it a digital asset that can be traded with other users, like other digital assets.</p>
+
+        <h5>Why is LAND scarce?</h5>
+        <p>Like CryptoKitties and CryptoPunks, LAND is a non-fungible digital asset. To ensure that the value of LAND parcels remains stable, the amount of land in Metacloud  corresponds to the fixed, total amount of $CLOUD.</p>
+        <p>Without LAND scarcity, many parcels would likely be left abandoned, negatively impacting the quality of content in Metacloud  and the user experience.</p>
+
+        <h5>Is metacloud running on top of its own blockchain?</h5>
+        <p>Metacloud uses the BSC blockchain to store and verify information about LAND ownership and LAND content. It does not run on its own independent blockchain. Content within Metacloud  is hosted and served to users via a network of community-owned content servers.</p>
+
+        <h5>How are transactions validated?</h5>
+        <p>The BSC LAND smart contract registers any changes to the state of a parcel of LAND, such as a change in the contents of the LAND or a transfer of ownership. These changes are recorded and verified by the BSC blockchain.</p>
+
+        <h5>What if I lose my wallet?</h5>
+        <p>It’s very important to keep your wallet recovery pass phrases safe. If those are lost, your name, avatar and wearables or NFT items will be lost.</p>
+
+        <h5>How is content distributed?</h5>
+        <p>The visual, audio and three dimensional content of Metacloud  will be stored in a network of content servers. Anyone can submit a server to join this network, but it must be voted on by the community. This is handled by a Decentralized Autonomous Organization (DAO). When you visit Metacloud , the content needed to render your location will be pulled from the content servers. Each LAND token, stored on the BSC blockchain, is associated with an x,y location within the world and links to the content for that location.</p>
+
+        <h5>What’s the way to start creating at metacloud?</h5>
+        <ul>
+          <li>The Builder will provide you with sufficient pre-made items to build your experiences the way you prefer. You can also import and use your own custom 3D models.</li>
+          <li>An SDK will be provided for writing code. The community will add amazing development to the metaverse.</li>
+        </ul>
+        <p>Both tools can also be combined. You can create a scene visually with the Builder, then export it and work with its code to add interactive functionality. You can also use the SDK to create <a href="https://docs.decentraland.org/development-guide/smart-items/" target="_blank">custom smart items</a> and place these using the Builder.</p>
+        <p>You will be able to use tools like SketchUp, Blender, and Maya to create 3D models that you can then import into Metacloud , these models must be in .gltf or .glb format.</p>
+
+        <h5>Am I able to control the content on my parcels?</h5>
+        <p>Metacloud will present you with tools to control how content on your parcel is presented to other users within the platform. However, you should consider that whenever you upload content to the metacloud servers you are essentially making it publicly available since they are a distributed file system.</p>
+        <p>Specifications on which other users can access your art gallery, your house or event can be managed. However, you need to consider that public content as 3D models will be always available to see for other users. They will notice your creations on the metacloud.</p>
+
+        <h5>Am I able to report another user?</h5>
+        <p>Click on another’s Avatar to see their profile, then click on the tab report. If you report a player, you will be able to bring a player’s conduct to the attention of Metacloud ’s Community.</p>
+
+        <h5>Am I able to block another user/player?</h5>
+        <p>Though you will still see them, those blocked players  won’t be able to address  you by chat.</p>
+      </div>
+      `,
     },
     {
-      slug: 'world-faq',
-      date: '15 October, 2021',
-      content_html: `<p><b>registrando un promedio de 3.7 horas diarias</b>. Este tiempo promedio diario frente a la pantalla disminuye a medida que aumenta la edad de los usuarios; la <b>Generación X reporta 3 horas</b> de uso diario del teléfono y <b>los boomers pasan solo 2.5 horas</b> por día mirando sus pantallas.</p>
-      <p>Efectos negativos: Demasiado tiempo en la pantalla en la mayoría de los casos genera, depresión y/o ansiedad, obesidad, dificultad para dormir, problemas crónicos del cuello y la espalda. A su vez, algunos de estos como por ejemplo la dificultad para dormir, generan otros efectos devastadores en el cuerpo, impactando en órganos y células incluidos el cerebro y la capacidad cognitiva, memoria y neurogénesis (generación de nuevas neuronas).</p>
-      <p>Algunas recomendaciones útiles para reducir los malos efectos del uso de pantallas son:</p>
-      <p>Recordá que los ojos son una extensión del cerebro. Por lo tanto, realizar estos ejercicios y tener la vista descansada te va a ayudar no solo a entrenar los músculos de los mismos, mejorar la visión y prevenir problemas visuales; sino también a conocer nuestra forma de mirar de una manera más profunda, lo cual ayuda a evitar y saber qué situaciones nos producen más estrés y así ayudar poderosamente a nuestra mente.</p>`,
+      slug: 'dao',
+      content_html: `
+      <div class="intro-component-animation">
+        <h1>What is Metacloud´s DAO?</b></h1>
+        <p>Metacloud's decentralized autonomous organization (DAO) is a decision-making tool for $CLOUD and LAND holders in Metacloud's virtual environment. The community can award grants and amend the lists of prohibited names, POIs, and catalyst nodes via DAO votes. Additionally, the Metacloud´s DAO manages the LAND and Estate smart contracts.</p>
+        <p>All of these proposals, as well as the votes cast, are kept in IPFS using Snapshot, a gas-free voting client. A committee uses a multi-sig wallet to adopt approved proposals with binding actions on the BSC blockchain. The Advisory Board Security (ABS), another multisig with trusted key holders, oversees this committee.</p>
+        <p>The remainder of this document describes the DAO in further detail, including how it operates and what it can be used for.</p>
+      </div>
+      `,
     },
   ];
 }

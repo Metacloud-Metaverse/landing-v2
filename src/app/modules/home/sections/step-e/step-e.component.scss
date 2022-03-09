@@ -1,6 +1,7 @@
 @import "../../home.component.scss";
 
 .texts5 {
+  top: 28%;
   @include xs {
     top: 50%;
     left: 10%;
@@ -15,15 +16,16 @@
     @include xs {
       width: calc(100% - 1em);
       z-index: 8;
-      /* margin-bottom: 0; */
+      margin-bottom: 0;
     }
   }
 }
 
-/* .buttons{
+.buttons{
   display: flex;
   justify-content: center;
   gap: 1em;
+  pointer-events: none;
   @include xs{
     flex-direction: column;
     margin-bottom: auto;
@@ -38,9 +40,20 @@
     @include xs{
       width: 100%;
     }
+
+    app-coming-soon-element{
+      &::ng-deep .neon-effect{
+        transform: scale(0.7);
+      }
+    }
   }
 
-  .neon-effect{
-    transform: scale(0.8);
+  .btn-building{
+    app-coming-soon-element{
+      &::ng-deep b{
+        color: #e9c338;
+        text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2, 0 0 0.5em #bd00f2, 0 2px 3px #49005e, 0px 0px 7px #fff;
+      }
+    }
   }
-} */
+}

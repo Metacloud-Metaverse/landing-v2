@@ -20,37 +20,48 @@ export class DocsComponent implements OnInit {
 
   docsNav: any[] = [
     {
-      name: 'home',
-      pokemon: [
-        {value: 'bulbasaur-0', viewValue: 'Bulbasaur'},
-        {value: 'oddish-1', viewValue: 'Oddish'},
-        {value: 'bellsprout-2', viewValue: 'Bellsprout'},
+      title: 'World',
+      icon: 'home',
+      links: [
+        { title: 'Introduction', url: 'introduction', type: 0 },
+        { title: 'FAQ', url: 'faq', type: 0 },
+        {
+          title: 'DAO',
+          type: 1,
+          links: [
+            {
+              title: 'Overview',
+              type: 1,
+              links: [
+                { title: 'What Is The DAO?', url: 'what-is-the-dao', type: 0 },
+                { title: 'DAO Uses', url: 'dao-uses', type: 0 },
+                { title: 'How The DAO Works', url: 'how-the-dao-works', type: 0 },
+                { title: "The DAO's Smart Contracts", url: 'the-dao-smart-contracts', type: 0 },
+                { title: 'The DAO Fund', url: '', type: 0 },
+                { title: 'DAO Limitations', url: '', type: 0 },
+                { title: 'Participation Requirements', url: '', type: 0 },
+              ]
+            },
+            {
+              title: 'Grants',
+              type: 1,
+              links: [
+                { title: 'Community Grants', url: 'community-grants', type: 0 },
+                { title: 'Requesting Grants', url: 'requesting-grants', type: 0 },
+                { title: 'Receiving Grants', url: 'receiving-grants', type: 0 },
+              ]
+            },
+            { title: 'DAO User Guide', url: 'dao-user-guide', type: 0 },
+          ]
+        },
+        { title: 'Whitepaper', url: 'whitepaper', type: 0 },
+        { title: 'Hardware Acceleration', url: 'hardware-acceleration', type: 0 },
       ],
     },
     {
-      name: 'Water',
-      pokemon: [
-        {value: 'squirtle-3', viewValue: 'Squirtle'},
-        {value: 'psyduck-4', viewValue: 'Psyduck'},
-        {value: 'horsea-5', viewValue: 'Horsea'},
-      ],
-    },
-    {
-      name: 'Fire',
-      disabled: true,
-      pokemon: [
-        {value: 'charmander-6', viewValue: 'Charmander'},
-        {value: 'vulpix-7', viewValue: 'Vulpix'},
-        {value: 'flareon-8', viewValue: 'Flareon'},
-      ],
-    },
-    {
-      name: 'Psychic',
-      pokemon: [
-        {value: 'mew-9', viewValue: 'Mew'},
-        {value: 'mewtwo-10', viewValue: 'Mewtwo'},
-      ],
-    },
+      title: 'Market',
+      icon: 'home',
+    }
   ];
 
   @Input() isSidebarOpen:boolean = true;

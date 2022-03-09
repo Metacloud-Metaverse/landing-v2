@@ -17,35 +17,19 @@
       <img width="230px" height="47px" src="/assets/img/logos/logo-white.png" alt="Metacloud Logo" />
     </a>
 
+    <div class="sound" [ngClass]="{'sound-off': isMuted}" (click)="playAudio()" matTooltip="Stop / Play Music"><span></span><span></span><span></span><span></span></div>
+    <audio loop #audio><source src="/assets/music/swedish-house-mafia-save-the-world-optimized.mp3" type="audio/mp3"></audio>
+
     <div class="social-media">
-      <a href="https://medium.com/@themetacloud" target="_blank" mat-icon-button matTooltip="Medium">
-        <img width="22px" height="22px" src="/assets/img/icons/medium-icon-black.svg" alt="Medium" />
-        <img width="22px" height="22px" src="/assets/img/icons/medium-icon.svg" alt="Medium" />
-      </a>
-      <a href="https://discord.gg/rcXGufW4zA" target="_blank" mat-icon-button matTooltip="Discord">
-        <img width="22px" height="22px" src="/assets/img/icons/discord-icon-black.svg" alt="Discord" />
-        <img width="22px" height="22px" src="/assets/img/icons/discord-icon.svg" alt="Discord" />
-      </a>
-      <a href="https://t.me/themetacloudANN" target="_blank" mat-icon-button matTooltip="Announcements Telegram">
-        <img width="22px" height="22px" src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram" />
-        <img width="22px" height="22px" src="/assets/img/icons/telegram-icon.svg" alt="Telegram" />
-      </a>
-      <a href="https://t.me/themetacloud" target="_blank" mat-icon-button matTooltip="Main chat Telegram">
-        <img width="22px" height="22px" src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram" />
-        <img width="22px" height="22px" src="/assets/img/icons/telegram-icon.svg" alt="Telegram" />
-      </a>
-      <a href="https://twitter.com/themetacloud" target="_blank" mat-icon-button matTooltip="Twitter">
-        <img width="22px" height="22px" src="/assets/img/icons/twitter-icon-black.svg" alt="Twitter" />
-        <img width="22px" height="22px" src="/assets/img/icons/twitter-icon.svg" alt="Twitter" />
-      </a>
+      <button mat-icon-button [matMenuTriggerFor]="socialMedia" target="_blank" matTooltip="Social Media">
+        <img width="22px" height="22px" src="/assets/img/icons/social-media-black.svg" alt="Social Media Black" />
+        <img width="22px" height="22px" src="/assets/img/icons/social-media.svg" alt="Social Media White" />
+      </button>
     </div>
 
     <div class="separate-line-vert"></div>
-    <div class="sound" [ngClass]="{'sound-off': isMuted}" (click)="playAudio()" matTooltip="Stop / Play Music"><span></span><span></span><span></span><span></span></div>
-    <audio loop #audio><source src="/assets/music/swedish-house-mafia-save-the-world-optimized.mp3" type="audio/mp3"></audio>
-    <!-- <div class="separate-line-vert"></div>
-    <button mat-button>Join our Discord</button>
-    <button mat-flat-button color="primary" class="btn-exploring">START EXPLORING <mat-icon>play_arrow</mat-icon></button> -->
+    <a href="https://discord.gg/rcXGufW4zA" target="_blank" class="btn-discord" mat-button>Join our Discord</a>
+    <button mat-flat-button color="primary" class="btn-exploring">START EXPLORING <app-coming-soon-element></app-coming-soon-element></button>
   </nav>
 
   <div *ngIf="router.url == '/home'" class="video-text" (click)="onClickPlayHypeVideo()">
@@ -63,3 +47,26 @@
   <button mat-icon-button class="btn-close" (click)="closeVideo()"><mat-icon>close</mat-icon></button>
   <mat-spinner></mat-spinner>
 </div>
+
+<mat-menu #socialMedia="matMenu">
+  <a mat-menu-item href="https://medium.com/@themetacloud" target="_blank">
+    <img style="position: relative; top: 5px; margin-right: 10px;" width="22px" height="22px" src="/assets/img/icons/medium-icon-black.svg" alt="Medium" />
+    <b><span>Medium</span></b>
+  </a>
+  <a mat-menu-item href="https://discord.gg/rcXGufW4zA" target="_blank">
+    <img style="position: relative; top: 5px; margin-right: 10px;" width="22px" height="22px" src="/assets/img/icons/discord-icon-black.svg" alt="Discord" />
+    <b><span>Discord</span></b>
+  </a>
+  <a mat-menu-item href="https://t.me/themetacloudANN" target="_blank">
+    <img style="position: relative; top: 5px; margin-right: 10px;" width="22px" height="22px" src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram" />
+    <b><span>Telegram Announcements</span></b>
+  </a>
+  <a mat-menu-item href="https://t.me/themetacloud" target="_blank">
+    <img style="position: relative; top: 5px; margin-right: 10px;" width="22px" height="22px" src="/assets/img/icons/telegram-icon-black.svg" alt="Telegram" />
+    <b><span>Telegram Main chat</span></b>
+  </a>
+  <a mat-menu-item href="https://twitter.com/themetacloud" target="_blank">
+    <img style="position: relative; top: 5px; margin-right: 10px;" width="22px" height="22px" src="/assets/img/icons/twitter-icon-black.svg" alt="Twitter" />
+    <b><span>Twitter</span></b>
+  </a>
+</mat-menu>

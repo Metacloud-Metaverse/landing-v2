@@ -1,5 +1,9 @@
 @import "../../../assets/styles/vars";
 
+h2,h3,h4,h5,h6{
+  font-family: $font_text !important;
+}
+
 .docs_layout {
 	display: flex;
 	align-items: flex-start;
@@ -27,6 +31,7 @@ mat-form-field{
 }
 
 .btn-nav{
+  display: none;
   width: 100%;
   &::ng-deep .mat-button-wrapper{
     display: flex;
@@ -38,6 +43,9 @@ mat-form-field{
       align-items: center;
       justify-content: center;
     }
+  }
+  @include xs{
+    display: block;
   }
 }
 

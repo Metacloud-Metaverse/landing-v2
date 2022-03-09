@@ -436,21 +436,21 @@ model-viewer {
 
   button {
     position: absolute;
-    bottom: 2em;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 4em;
+    right: 4em;
     z-index: 21;
     width: 150px;
     color: white;
-    border-color: rgba($color: white, $alpha: 0.5);
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
+    background-color: white;
+    color: black;
 
     &:hover {
-      color: black;
-      background-color: white;
+      background-color: $color_primary_500;
+      color: white;
     }
   }
 }

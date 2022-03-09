@@ -148,7 +148,7 @@
       cursor: pointer;
       transition: $animation;
       @include xs {
-        width: 54.4px;
+        margin-left: 24px;
       }
 
       span {
@@ -216,12 +216,12 @@
     }
 
     .social-media {
-      margin-left: auto;
+      /* margin-left: auto; */
       display: flex;
       @include xs {
         display: none;
       }
-      a {
+      a,button {
         position: relative;
         opacity: 0.7;
         transition: $animation;
@@ -264,13 +264,36 @@
     }
 
     .separate-line-vert {
-      @include xs {
+      @include lt-md {
+        display: none;
+      }
+    }
+
+    .btn-discord{
+      font-weight: 600;
+      @include lt-md{
         display: none;
       }
     }
 
     .btn-exploring{
+      width: 190px;
       transition: $animation;
+      pointer-events: none;
+      padding-bottom: 10px;
+      app-coming-soon-element{
+        position: absolute;
+        bottom: -12px;
+        left: 13px;
+        transform: scale(0.6);
+        &::ng-deep b{
+          color: #e9c338;
+          text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2, 0 0 0.5em #bd00f2, 0 2px 3px #49005e, 0px 0px 7px #fff;
+        }
+      }
+      @include xs{
+        display: none;
+      }
       &:hover{
         background-color: $color_primary_700;
       }
@@ -278,6 +301,9 @@
   }
 
   .nav-white {
+    .btn-discord{
+      color: white;
+    }
     .menu {
       #hamburger {
         path {
@@ -302,7 +328,7 @@
       background-color: rgba($color: white, $alpha: 0.3);
     }
     .social-media {
-      a {
+      a,button {
         img {
           &:nth-of-type(1){
             display: none;
@@ -338,7 +364,7 @@
       }
     }
     .social-media {
-      a {
+      a,button {
         img {
           &:nth-of-type(1){
             display: block;
@@ -353,6 +379,9 @@
 
   .nav-open {
     background-color: transparent !important;
+    .btn-discord{
+      color: black !important;
+    }
     .logo{
       img{
         &:nth-of-type(1){
@@ -367,7 +396,7 @@
       background-color: rgba($color: black, $alpha: 0.3) !important;
     }
     .social-media {
-      a {
+      a,button {
         img {
           &:nth-of-type(1){
             display: block;

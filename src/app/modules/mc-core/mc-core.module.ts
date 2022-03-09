@@ -26,6 +26,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { ComingSoonElementComponent } from './components/coming-soon-element/coming-soon-element.component';
 
 // Modals
 import { VideoElementComponent } from './components/video-element/video-element.component';
@@ -40,6 +41,7 @@ import { VideoElementComponent } from './components/video-element/video-element.
     FooterComponent,
     NavMenuComponent,
     VideoElementComponent,
+    ComingSoonElementComponent,
   ],
   imports: [
     CommonModule,
@@ -60,6 +62,7 @@ import { VideoElementComponent } from './components/video-element/video-element.
     LoadingComponent,
     FooterComponent,
     VideoElementComponent,
+    ComingSoonElementComponent,
   ]
 })
 export class McCoreModule { }
