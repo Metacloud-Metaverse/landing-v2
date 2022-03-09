@@ -44,7 +44,7 @@ export class TeamComponent implements OnInit {
       name: 'Matias Camiletti',
       rol: 'Lead Blockchain Developer',
       linkedin: '',
-      twitter: ''
+      twitter: 'https://twitter.com/matiascamiletti'
     },
     {
       image: '/assets/img/team/team-alejandro-3d.png',
