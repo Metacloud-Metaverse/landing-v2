@@ -25,6 +25,7 @@ import { StepGComponent } from './sections/step-g/step-g.component';
 import { StepHComponent } from './sections/step-h/step-h.component';
 import { StepIComponent } from './sections/step-i/step-i.component';
 import { StepJComponent } from './sections/step-j/step-j.component';
+import { StepKComponent } from './sections/step-k/step-k.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { StepJComponent } from './sections/step-j/step-j.component';
     StepHComponent,
     StepIComponent,
     StepJComponent,
+    StepKComponent,
   ],
   imports: [
     CommonModule,

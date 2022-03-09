@@ -17,15 +17,16 @@ export class StepFComponent implements OnInit, AfterViewInit {
     '/assets/hdr/bonfire-optimized.jpg',
     '/assets/hdr/nieve-optimized.jpg',
     '/assets/hdr/casino-optimized.jpg',
-    '/assets/hdr/museo-optimized.jpg'
+    '/assets/hdr/museo-optimized.jpg',
+    '/assets/hdr/museo-optimized.jpg',
   ];
 
   constructor() { }
 
   ngOnInit(): void {
-    setTimeout(() => {
+    /* setTimeout(() => {
       this.showChangeSceneButton = true;
-    }, 13000);
+    }, 13000); */
   }
 
   ngAfterViewInit(): void {

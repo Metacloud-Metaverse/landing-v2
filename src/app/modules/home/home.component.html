@@ -16,6 +16,7 @@
     <div [ngClass]="{'active': pageState == 7}" (click)="activeSection8()"><span>8</span><span class="figure"></span></div>
     <div [ngClass]="{'active': pageState == 8}" (click)="activeSection9()"><span>9</span><span class="figure"></span></div>
     <div [ngClass]="{'active': pageState == 9}" (click)="activeSection10()"><span>10</span><span class="figure"></span></div>
+    <div [ngClass]="{'active': pageState == 10}" (click)="activeSection11()"><span>11</span><span class="figure"></span></div>
   </div>
 
   <app-step-a *ngIf="pageState == 0" @paragraphAnimation></app-step-a>
@@ -53,11 +54,13 @@
 
   <app-step-g *ngIf="pageState == 6" @paragraphAnimation></app-step-g>
 
-  <app-step-h *ngIf="pageState == 7" @paragraphAnimation></app-step-h>
+  <app-step-k *ngIf="pageState == 7" @paragraphAnimation></app-step-k>
 
-  <app-step-i *ngIf="pageState == 8" @paragraphAnimation></app-step-i>
+  <app-step-h *ngIf="pageState == 8" @paragraphAnimation></app-step-h>
 
-  <app-step-j *ngIf="pageState == 9" @paragraphAnimation></app-step-j>
+  <app-step-i *ngIf="pageState == 9" @paragraphAnimation></app-step-i>
+
+  <app-step-j *ngIf="pageState == 10" @paragraphAnimation></app-step-j>
 
 
   <div class="lines">
@@ -92,7 +95,8 @@
                 'movement7' : pageState == 6,
                 'movement8' : pageState == 7,
                 'movement9' : pageState == 8,
-                'movement10': pageState == 9}">
+                'movement10': pageState == 9,
+                'movement11': pageState == 10}">
   </model-viewer>
 
   <!-- <model-viewer
