@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
 
-  @include xs{
+  @include lt-md{
     padding: 6em 0;
   }
 
@@ -18,7 +18,7 @@
   .row{
     display: flex;
     gap: 5em;
-    @include xs{
+    @include lt-md{
       flex-direction: column;
       gap: 3em;
     }
@@ -45,14 +45,14 @@
 
   .form{
     margin-top: 3em;
-    @include xs{
+    @include lt-md{
       margin-top: 0em;
     }
 
     .input{
       width: 50%;
       box-sizing: border-box;
-      @include xs{
+      @include lt-md{
         width: 100%;
       }
       label{
