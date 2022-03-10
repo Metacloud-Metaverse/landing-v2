@@ -15,7 +15,7 @@ const routes: Routes = [
       { path: 'partners', loadChildren: () => import('./modules/partners/partners.module').then(m => m.PartnersModule), data: { preload: true }},
       { path: 'legals', loadChildren: () => import('./modules/legals/legals.module').then(m => m.LegalsModule), data: { preload: true } },
       { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule), data: { preload: true } },
-      { path: 'docs', loadChildren: () => import('./modules/docs/docs.module').then(m => m.DocsModule), data: { preload: true } },
+      /* { path: 'docs', loadChildren: () => import('./modules/docs/docs.module').then(m => m.DocsModule), data: { preload: true } }, */
     ]
   },
   /* { path: '', redirectTo: '', pathMatch: 'full' }, */

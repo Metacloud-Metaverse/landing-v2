@@ -11,7 +11,7 @@
 
       <nav class="sidebar animated" [ngClass]="{'sidebar_open': isSidebarOpen}">
 
-        <a [routerLink]="['home']" routerLinkActive="active"><mat-icon>home</mat-icon> Home</a>
+        <a (click)="isSidebarOpen = false;" [routerLink]="['home']" routerLinkActive="active"><mat-icon>home</mat-icon> Home</a>
 
         <mat-expansion-panel *ngFor="let category of docsNav">
 
@@ -21,16 +21,16 @@
 
           <ng-container *ngFor="let link of category.links">
 
-            <a *ngIf="link.type == 0" [routerLink]="link.url" routerLinkActive="active">{{ link.title }}</a>
+            <a (click)="isSidebarOpen = false;" *ngIf="link.type == 0" [routerLink]="link.url" routerLinkActive="active">{{ link.title }}</a>
             <a *ngIf="link.type == 2" class="link-disable">{{ link.title }} (Coming soon!)</a>
 
-            <mat-expansion-panel *ngIf="link.type == 1">
+            <mat-expansion-panel *ngIf="link.type == 1" class="expasion-two">
               <mat-expansion-panel-header>
                 <mat-panel-title>{{ link.title }}</mat-panel-title>
               </mat-expansion-panel-header>
 
               <ng-container *ngFor="let link2 of link.links">
-                <a *ngIf="link2.type == 0" [routerLink]="link2.url" routerLinkActive="active">{{ link2.title }}</a>
+                <a (click)="isSidebarOpen = false;" *ngIf="link2.type == 0" [routerLink]="link2.url" routerLinkActive="active">{{ link2.title }}</a>
                 <a *ngIf="link2.type == 2" class="link-disable">{{ link2.title }} (Coming soon!)</a>
 
                 <mat-expansion-panel *ngIf="link2.type == 1">
@@ -39,7 +39,7 @@
                   </mat-expansion-panel-header>
 
                   <ng-container *ngFor="let link3 of link2.links">
-                    <a *ngIf="link3.type == 0" [routerLink]="link3.url" routerLinkActive="active">{{ link3.title }}</a>
+                    <a (click)="isSidebarOpen = false;" *ngIf="link3.type == 0" [routerLink]="link3.url" routerLinkActive="active">{{ link3.title }}</a>
                     <a *ngIf="link3.type == 2" class="link-disable">{{ link3.title }} (Coming soon!)</a>
                   </ng-container>
                 </mat-expansion-panel>

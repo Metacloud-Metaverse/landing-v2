@@ -51,6 +51,7 @@ h2,h3,h4,h5,h6{
 	min-width: 260px;
 	max-width: 260px;
 	margin-right: 70px;
+  box-sizing: border-box;
   @include lt-md{
     position: absolute;
     top: 124px;
@@ -120,10 +121,14 @@ h2,h3,h4,h5,h6{
     }
 
     &::ng-deep .mat-expansion-panel-body{
-      padding-left: 2em;
+      padding-left: 1em;
       padding-right: 0;
     }
   }
+
+  /* .expasion-two{
+    padding-left: 2em;
+  } */
 
   mat-expansion-panel.mat-expanded{
     mat-expansion-panel-header{
@@ -159,7 +164,7 @@ h2,h3,h4,h5,h6{
 
 .sidebar_open {
 	@include lt-md {
-    padding: 1em 0;
+    padding: 1em;
 		height: auto;
     max-height: calc(100vh - 115px);
 	}

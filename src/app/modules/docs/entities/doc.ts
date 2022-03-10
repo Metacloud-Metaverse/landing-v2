@@ -120,6 +120,7 @@ export class Doc {
       content_html: `
       <div class="intro-component-animation">
         <h1><b></b></h1>
+        <p></p>
       </div>
       `,
     },
@@ -127,7 +128,8 @@ export class Doc {
       slug: 'hardware-acceleration',
       content_html: `
       <div class="intro-component-animation">
-
+        <h1><b></b></h1>
+        <p></p>
       </div>
       `,
     },

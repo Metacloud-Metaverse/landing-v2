@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class SoundElementComponent implements OnInit {
 
-  isMuted = true;
+  @Input() isMuted = true;
 
   constructor(
     protected mainService: MainService,
