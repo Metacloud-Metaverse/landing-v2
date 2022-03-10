@@ -13,9 +13,10 @@
 .cards{
   display: flex;
   gap: 1em;
+  margin-top: 2em;
 
   .card{
-    background-color: $color_primary_500;
+    background-color: $color_accent_700;
     width: calc(33.3% - 0.5em);
     color: white;
     font-weight: 400;
@@ -35,7 +36,7 @@
     }
 
     &:hover{
-      background-color: $color_primary_700;
+      background-color: $color_accent_800;
       box-shadow: 0 5px 15px 0 rgba($color: #000000, $alpha: 0.5);
     }
   }

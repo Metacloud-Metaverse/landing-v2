@@ -98,18 +98,28 @@ export class Doc {
       slug: 'dao',
       content_html: `
       <div class="intro-component-animation">
-        <h1>What is Metacloud´s DAO?</b></h1>
+        <h1><b>What is Metacloud´s DAO?</b></h1>
         <p>Metacloud's decentralized autonomous organization (DAO) is a decision-making tool for $CLOUD and LAND holders in Metacloud's virtual environment. The community can award grants and amend the lists of prohibited names, POIs, and catalyst nodes via DAO votes. Additionally, the Metacloud´s DAO manages the LAND and Estate smart contracts.</p>
         <p>All of these proposals, as well as the votes cast, are kept in IPFS using Snapshot, a gas-free voting client. A committee uses a multi-sig wallet to adopt approved proposals with binding actions on the BSC blockchain. The Advisory Board Security (ABS), another multisig with trusted key holders, oversees this committee.</p>
         <p>The remainder of this document describes the DAO in further detail, including how it operates and what it can be used for.</p>
-      </div>
+        </div>
+        `,
+      },
+      {
+        slug: 'smart-contracts-fuel-the-dao',
+        content_html: `
+        <div class="intro-component-animation">
+          <h1><b>Smart contracts fuel the DAO</b></h1>
+          <p>BSC expanded the capabilities of blockchains by enabling the decentralization of data management that goes beyond simple records of token ownership. BSC accomplished this by enabling individuals to create smart contracts and store them on a blockchain.</p>
+          <p>All DAOs, or decentralized autonomous organizations, are part of a new way of managing organizations and making decisions enabled by BSC.</p>
+        </div>
       `,
     },
     {
       slug: 'whitepaper',
       content_html: `
       <div class="intro-component-animation">
-
+        <h1><b></b></h1>
       </div>
       `,
     },
