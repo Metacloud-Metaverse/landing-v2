@@ -563,8 +563,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.pageState = 5;
     this.scene = 0;
     this.activeScenes = true;
-    this.modelAvatarPrimary.nativeElement.cameraControls = false;
-    this.modelAvatarPrimary.nativeElement.autoRotate = false;
+    this.modelAvatarPrimary.nativeElement.cameraControls = true;
+    this.modelAvatarPrimary.nativeElement.autoRotate = true;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.interpolationDecay = 600;
     this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
@@ -573,7 +573,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 90deg 100%';
     }, 500));
 
-    this.listTimeouts.push(setTimeout(() => {
+    /* this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.interpolationDecay = 400;
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
@@ -592,14 +592,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieve-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 80deg 100%';
-    }, 10500));
+    }, 10500)); */
 
-    this.listTimeouts.push(setTimeout(() => {
+    /* this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museo-optimized.jpg';
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
       this.modelAvatarPrimary.nativeElement.cameraControls = true;
       this.modelAvatarPrimary.nativeElement.autoRotate = true;
-    }, 13000));
+    }, 13000)); */
   }
 
   clearTimeouts() {
@@ -634,12 +634,30 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.pageState = 8;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
+    this.modelAvatarPrimary.nativeElement.autoRotate = true;
     /* this.avatarCornerRun(); */
   }
 
   activeSection10(){
     this.clearTimeouts();
     this.pageState = 9;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    /* this.avatarCornerRun(); */
+  }
+
+  activeSection11(){
+    this.clearTimeouts();
+    this.pageState = 10;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
+    /* this.avatarCornerRun(); */
+  }
+
+  activeSection12(){
+    this.clearTimeouts();
+    this.pageState = 11;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     /* this.avatarCornerRun(); */

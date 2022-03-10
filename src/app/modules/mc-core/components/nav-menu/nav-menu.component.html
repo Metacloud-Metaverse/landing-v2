@@ -5,6 +5,7 @@
   <div class="content intro-component-animation">
     <button mat-flat-button color="primary" class="btn-exploring component-animation">START EXPLORING <app-coming-soon-element></app-coming-soon-element></button>
     <h1 (click)="routeWithEffect('/home')" class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Home</a></h1>
+    <h1 class="component-animation coming-soon"><a routerLinkActive="router-link-active" class="link hover-linear">ICO <mat-icon>logout</mat-icon></a> <div class="neon-effect"><b>Comin<span>g</span> So<span>o</span>n</b></div></h1>
     <h1 class="component-animation coming-soon"><a routerLinkActive="router-link-active" class="link hover-linear">Marketplace</a> <div class="neon-effect"><b>Comin<span>g</span> So<span>o</span>n</b></div></h1>
     <h1 (click)="routeWithEffect('/events')" class="component-animation"><a routerLinkActive="router-link-active" class="link hover-linear">Events</a></h1>
     <h1 class="component-animation" [matMenuTriggerFor]="docsMenu"><a class="link hover-linear">Docs <mat-icon>arrow_drop_down</mat-icon></a></h1>
@@ -17,7 +18,7 @@
       <div class="row">
         <a (click)="routeWithEffect('/team')" class="link hover-linear"><small>TEAM</small></a>
         <a (click)="routeWithEffect('/contact')" class="link hover-linear"><small>CONTACT US</small></a>
-        <a href="https://drive.google.com/file/d/1SrG4Nsis_o887eaMamZdmW77_ZHKfwYh/view?usp=sharing" target="_blank" class="link hover-linear"><small>WHITEPAPER</small></a>
+        <a href="https://drive.google.com/file/d/1M4FuNri1v_Z_uUcy8QilBvZXCkZEY8lt/view?usp=sharing" target="_blank" class="link hover-linear"><small>WHITEPAPER</small></a>
       </div>
     </div>
 
@@ -52,7 +53,8 @@
 
 
 <mat-menu #docsMenu="matMenu">
-  <a href="https://drive.google.com/file/d/1SrG4Nsis_o887eaMamZdmW77_ZHKfwYh/view?usp=sharing" target="_blank" mat-menu-item>Whitepaper</a>
-  <a href="https://drive.google.com/file/d/1iSk-KuUwaD0LhlnemNfw-EiZsvm7c_eI/view?usp=sharing" target="_blank" mat-menu-item>Pitch Deck</a>
-  <a href="https://drive.google.com/file/d/1lpY6AV5NWRddOO86qWSA-DGSh_Bs2dSz/view?usp=sharing" target="_blank" mat-menu-item>Tokenomics</a>
+  <a [routerLink]="['/docs']" routerLinkActive="router-link-active" mat-menu-item>Documentation</a>
+  <a href="https://drive.google.com/file/d/1M4FuNri1v_Z_uUcy8QilBvZXCkZEY8lt/view?usp=sharing" target="_blank" mat-menu-item>Whitepaper <mat-icon>exit_to_app </mat-icon></a>
+  <a href="https://drive.google.com/file/d/1cJkH0-_eMzUB2zv6Hw0_rRkGGNkZU2_S/view?usp=sharing" target="_blank" mat-menu-item>Pitch Deck <mat-icon>exit_to_app </mat-icon></a>
+  <a href="https://drive.google.com/file/d/1hmKPhWj4ufvohFUyVUE9GENQVOA8ZCI9/view?usp=sharing" target="_blank" mat-menu-item>Tokenomics <mat-icon>exit_to_app </mat-icon></a>
 </mat-menu>

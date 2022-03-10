@@ -347,7 +347,8 @@ model-viewer {
 .movement7,
 .movement8,
 .movement9,
-.movement10 {
+.movement10,
+.movement11 {
   filter: blur(40px);
   opacity: 0.5;
   pointer-events: none;
@@ -396,7 +397,8 @@ app-step-f,
 app-step-g,
 app-step-h,
 app-step-i,
-app-step-j {
+app-step-j,
+app-step-k {
   position: absolute;
   top: 0;
   left: 0;
@@ -528,7 +530,6 @@ app-step-f {
 }
 
 
-
 .texts4 {
   top: 15%;
   @include xs {
@@ -655,7 +656,6 @@ app-step-f {
     }
   }
 }
-
 
 
 .texts6 {

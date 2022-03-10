@@ -10,12 +10,12 @@
   <section>
     <div class="container">
       <div class="events" @componentAnimation>
-        <div class="event component-animation" *ngFor="let event of events" (click)="openConcertsModal()">
+        <a [routerLink]="['event-details']" class="event component-animation" *ngFor="let event of events">
           <div class="effect-hover"></div>
           <img src="{{ event.image }}" alt="{{ event.name }} image" class="image" />
           <h2><b>{{ event.title }}</b></h2>
           <p>{{ event.description }}</p>
-        </div>
+        </a>
       </div>
     </div>
   </section>
