@@ -68,6 +68,7 @@ export class ContactComponent implements OnInit {
 
     this.itemsCollection!.add(item);
 
+    this.errors = [];
     this.contactForm.reset();
 
     this._snackBar.open("Your message has been sent successfully", '', {
