@@ -280,10 +280,10 @@
       width: 190px;
       transition: $animation;
       pointer-events: none;
-      padding-bottom: 10px;
+      padding-bottom: 14px;
       app-coming-soon-element{
         position: absolute;
-        bottom: -12px;
+        bottom: -9px;
         left: 13px;
         transform: scale(0.6);
         &::ng-deep b{
@@ -296,6 +296,16 @@
       }
       &:hover{
         background-color: $color_primary_700;
+      }
+    }
+
+    .btn-pre-sell{
+      width: 170px;
+      margin-right: 1em;
+      background-color: $color_primary_900;
+      color: white;
+      app-coming-soon-element{
+        left: 2px;
       }
     }
   }
