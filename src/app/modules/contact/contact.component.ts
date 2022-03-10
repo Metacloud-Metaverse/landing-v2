@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/forms';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Timestamp } from "firebase/firestore";
+import { MainService } from 'src/app/services/main.service';
 
 export interface WebContact {
   email: string;
@@ -22,8 +21,6 @@ export interface WebContact {
 })
 export class ContactComponent implements OnInit {
 
-  itemsCollection?: AngularFirestoreCollection<WebContact>;
-
   contactForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     subject: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -37,7 +34,7 @@ export class ContactComponent implements OnInit {
     private titleService: Title,
     private metaTagService: Meta,
     private _snackBar: MatSnackBar,
-    protected readonly firestore: AngularFirestore
+    protected mainService: MainService
   ) { }
 
   ngOnInit(): void {
@@ -45,15 +42,6 @@ export class ContactComponent implements OnInit {
     this.metaTagService.updateTag(
       { name: 'description', content: 'If you have any questions or concerns, contact metacloud.' }
     );
-    this.loadDatabase();
-  }
-
-  loadDatabase() {
-    this.itemsCollection = this.firestore.collection<WebContact>('web_contact');
-
-    /* this.contactForm.valueChanges.subscribe(res => {
-      this.processValidationErrors();
-    }); */
   }
 
   onClickSubmit() {
@@ -63,10 +51,8 @@ export class ContactComponent implements OnInit {
     }
 
     let item = this.contactForm.value;
-    item.created_at = Timestamp.fromDate(new Date());
-    item.updated_at = Timestamp.fromDate(new Date());
 
-    this.itemsCollection!.add(item);
+    this.mainService.sendContact(item).subscribe(res => {});
 
     this.errors = [];
     this.contactForm.reset();
