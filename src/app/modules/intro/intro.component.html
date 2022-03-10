@@ -42,7 +42,7 @@
 <div *ngIf="startVideo" class="video-container">
   <video *ngIf="!isIosPlatform" #videoIntro [src]="videoBlobSrc" type="mp4" autoplay playsinline muted></video>
   <button mat-stroked-button [routerLink]="['/home']" >SKIP</button>
-  <div class="sound" [ngClass]="{'sound-off': isMuted}" matTooltip="Stop / Play Music"><span></span><span></span><span></span><span></span></div>
+  <!-- <app-sound-element></app-sound-element> -->
 </div>
 
 <div *ngIf="startEndScene" class="end-scene"></div>

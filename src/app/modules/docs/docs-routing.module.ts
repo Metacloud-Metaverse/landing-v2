@@ -10,10 +10,10 @@ const routes: Routes = [
     component: DocsComponent,
     children: [
       { path: 'home', component: HomePageComponent },
-      { path: ':slug', component: DocPageComponent }
+      { path: ':slug', component: DocPageComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
     ]
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

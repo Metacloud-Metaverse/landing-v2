@@ -46,7 +46,7 @@ export class MainLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadVideoManageer();
-    this.loadMusic();
+    /* this.loadMusic(); */
     this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
       .subscribe((state: BreakpointState) => {

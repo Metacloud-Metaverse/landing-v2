@@ -21,11 +21,11 @@ export class DocsComponent implements OnInit {
   docsNav: any[] = [
     {
       title: 'World',
-      icon: 'home',
+      icon: 'travel_explore',
       links: [
         { title: 'Introduction', url: 'introduction', type: 0 },
         { title: 'FAQ', url: 'faq', type: 0 },
-        {
+        /* {
           title: 'DAO',
           type: 1,
           links: [
@@ -42,26 +42,21 @@ export class DocsComponent implements OnInit {
                 { title: 'Participation Requirements', url: '', type: 0 },
               ]
             },
-            {
-              title: 'Grants',
-              type: 1,
-              links: [
-                { title: 'Community Grants', url: 'community-grants', type: 0 },
-                { title: 'Requesting Grants', url: 'requesting-grants', type: 0 },
-                { title: 'Receiving Grants', url: 'receiving-grants', type: 0 },
-              ]
-            },
-            { title: 'DAO User Guide', url: 'dao-user-guide', type: 0 },
+            { title: 'DAO User Guide', url: 'dao-user-guide', type: 2 },
           ]
         },
         { title: 'Whitepaper', url: 'whitepaper', type: 0 },
-        { title: 'Hardware Acceleration', url: 'hardware-acceleration', type: 0 },
+        { title: 'Hardware Acceleration', url: 'hardware-acceleration', type: 2 }, */
       ],
     },
-    {
+    /* {
       title: 'Market',
-      icon: 'home',
-    }
+      icon: 'store',
+    },
+    {
+      title: 'Create',
+      icon: 'draw',
+    }, */
   ];
 
   @Input() isSidebarOpen:boolean = true;

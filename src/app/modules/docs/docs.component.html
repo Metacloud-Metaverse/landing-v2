@@ -13,38 +13,6 @@
 
         <a [routerLink]="['home']" routerLinkActive="active"><mat-icon>home</mat-icon> Home</a>
 
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title><mat-icon>store</mat-icon> World</mat-panel-title>
-          </mat-expansion-panel-header>
-          <a [routerLink]="['introduction']" routerLinkActive="active">Introduction</a>
-          <a [routerLink]="['faq']" routerLinkActive="active">FAQ</a>
-          <a [routerLink]="['dao']" routerLinkActive="active">DAO</a>
-          <a [routerLink]="['/']" routerLinkActive="active">Whitepaper</a>
-          <a [routerLink]="['/']" routerLinkActive="active">Hardware Acceleration</a>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title><mat-icon>store</mat-icon> Market</mat-panel-title>
-          </mat-expansion-panel-header>
-          <a [routerLink]="['/']" routerLinkActive="active">Marketplace</a>
-          <a [routerLink]="['/']" class="active" routerLinkActive="active">LAND Manager</a>
-          <a [routerLink]="['/']" routerLinkActive="active">LAND Manager</a>
-          <a [routerLink]="['/']" routerLinkActive="active">LAND Mortgages (Deprecated)</a>
-          <a [routerLink]="['/']" routerLinkActive="active">Get Parcel Info</a>
-          <a [routerLink]="['/']" routerLinkActive="active">LAND API Reference</a>
-          <a [routerLink]="['/']" routerLinkActive="active">LAND API 2.0 Migration Guide</a>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title><mat-icon>store</mat-icon> Create</mat-panel-title>
-          </mat-expansion-panel-header>
-          <a [routerLink]="['/routePath']" routerLinkActive="active">Marketplace</a>
-        </mat-expansion-panel>
-
-
         <mat-expansion-panel *ngFor="let category of docsNav">
 
           <mat-expansion-panel-header>
@@ -52,29 +20,36 @@
           </mat-expansion-panel-header>
 
           <ng-container *ngFor="let link of category.links">
+
             <a *ngIf="link.type == 0" [routerLink]="link.url" routerLinkActive="active">{{ link.title }}</a>
+            <a *ngIf="link.type == 2" class="link-disable">{{ link.title }} (Coming soon!)</a>
+
             <mat-expansion-panel *ngIf="link.type == 1">
               <mat-expansion-panel-header>
-                <mat-panel-title><mat-icon>asd</mat-icon> asd</mat-panel-title>
+                <mat-panel-title>{{ link.title }}</mat-panel-title>
               </mat-expansion-panel-header>
-              <!-- <ng-container *ngFor="let link2 of link.category.links">
-                <a *ngIf="link2.type == 0" [routerLink]="link.url" routerLinkActive="active">{{ link.title }}</a>
-                <p *ngIf="link2.type == 1">asdasd</p>
-              </ng-container> -->
+
+              <ng-container *ngFor="let link2 of link.links">
+                <a *ngIf="link2.type == 0" [routerLink]="link2.url" routerLinkActive="active">{{ link2.title }}</a>
+                <a *ngIf="link2.type == 2" class="link-disable">{{ link2.title }} (Coming soon!)</a>
+
+                <mat-expansion-panel *ngIf="link2.type == 1">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>{{ link2.title }}</mat-panel-title>
+                  </mat-expansion-panel-header>
+
+                  <ng-container *ngFor="let link3 of link2.links">
+                    <a *ngIf="link3.type == 0" [routerLink]="link3.url" routerLinkActive="active">{{ link3.title }}</a>
+                    <a *ngIf="link3.type == 2" class="link-disable">{{ link3.title }} (Coming soon!)</a>
+                  </ng-container>
+                </mat-expansion-panel>
+              </ng-container>
+
             </mat-expansion-panel>
 
           </ng-container>
 
-          <!-- <mat-expansion-panel *ngFor="let category2 of category">
-            <mat-expansion-panel-header>
-              <mat-panel-title><mat-icon>{{ category2.icon }}</mat-icon> {{ category2.title }}</mat-panel-title>
-            </mat-expansion-panel-header>
-
-            <a *ngFor="let link of category2.links" [routerLink]="link.url" routerLinkActive="active">{{ link.title }}</a>
-          </mat-expansion-panel> -->
-
         </mat-expansion-panel>
-
 
       </nav>
 

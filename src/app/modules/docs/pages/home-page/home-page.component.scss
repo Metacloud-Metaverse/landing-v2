@@ -15,13 +15,15 @@
   gap: 1em;
 
   .card{
-    background: linear-gradient($color_primary_500, $color_primary_800);
-    /* width: calc(25% - 1em); */
+    background-color: $color_primary_500;
+    width: calc(33.3% - 0.5em);
     color: white;
     font-weight: 400;
     padding: 1em;
-    height: 300px;
+    height: 100px;
     box-sizing: border-box;
+    transition: $animation;
+    box-shadow: 0 0 20px 0 rgba($color: #000000, $alpha: 0.0);
 
     h4{
       margin: 0;
@@ -30,6 +32,11 @@
     p{
       margin: 0;
       font-weight: 400;
+    }
+
+    &:hover{
+      background-color: $color_primary_700;
+      box-shadow: 0 5px 15px 0 rgba($color: #000000, $alpha: 0.5);
     }
   }
 }

@@ -435,8 +435,8 @@ model-viewer {
   }
 
   button {
-    position: absolute;
-    top: 4em;
+    position: fixed;
+    top: 1em;
     right: 4em;
     z-index: 21;
     width: 150px;
@@ -451,6 +451,22 @@ model-viewer {
     &:hover {
       background-color: $color_primary_500;
       color: white;
+    }
+  }
+
+  app-sound-element{
+    &::ng-deep .sound-container{
+      position: fixed;
+      top: 0.8em;
+      right: calc(4em + 150px + 10px);
+      z-index: 21;
+      background-color: white;
+      border-radius: 200px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -477,84 +493,5 @@ app-video-element {
   z-index: 6;
   @include lt-md {
     display: none;
-  }
-}
-
-.sound {
-  position: absolute;
-  top: 1.5em;
-  right: 3em;
-  width: 30px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  cursor: pointer;
-  transition: $animation;
-  @include xs {
-    width: 54.4px;
-  }
-
-  span {
-    display: block;
-    width: 2px;
-    background-color: $color_primary_500;
-    animation: sound 0ms -0.8s linear infinite alternate;
-    transition: height 0.8s, background 0.3s;
-    &:nth-child(1) {
-      height: 25px;
-      animation-duration: 474ms;
-    }
-    &:nth-child(2) {
-      height: 25px;
-      animation-duration: 433ms;
-    }
-    &:nth-child(3) {
-      height: 25px;
-      animation-duration: 407ms;
-    }
-    &:nth-child(4) {
-      height: 25px;
-      animation-duration: 458ms;
-    }
-  }
-
-  &:hover {
-    span {
-      background-color: $color_primary_500;
-    }
-  }
-}
-
-.sound-off {
-  span {
-    animation-play-state: paused;
-    &:nth-child(1) {
-      height: 25px;
-      animation-duration: 474ms;
-    }
-    &:nth-child(2) {
-      height: 25px;
-      animation-duration: 433ms;
-    }
-    &:nth-child(3) {
-      height: 25px;
-      animation-duration: 407ms;
-    }
-    &:nth-child(4) {
-      height: 25px;
-      animation-duration: 458ms;
-    }
-  }
-}
-
-@keyframes sound {
-  0% {
-    opacity: 0.35;
-    height: 6px;
-  }
-  100% {
-    opacity: 1;
-    height: 23px;
   }
 }

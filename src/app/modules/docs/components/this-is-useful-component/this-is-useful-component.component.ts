@@ -7,15 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThisIsUsefulComponentComponent implements OnInit {
 
-  isYes = false;
-  isNo = false;
+  isVoted = false;
+  /* isYes = false;
+  isNo = false; */
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onClickYesButton(){
+  onVoteButton(){
+    this.isVoted = true;
+  }
+
+  /* onClickYesButton(){
     this.isNo = false;
     if (this.isYes == true){
       this.isYes = false;
@@ -31,6 +36,6 @@ export class ThisIsUsefulComponentComponent implements OnInit {
     } else{
       this.isNo = true;
     }
-  }
+  } */
 
 }

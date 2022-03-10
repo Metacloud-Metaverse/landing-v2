@@ -30,6 +30,7 @@ import { ComingSoonElementComponent } from './components/coming-soon-element/com
 
 // Modals
 import { VideoElementComponent } from './components/video-element/video-element.component';
+import { SoundElementComponent } from './components/sound-element/sound-element.component';
 
 // Pages
 
@@ -42,6 +43,7 @@ import { VideoElementComponent } from './components/video-element/video-element.
     NavMenuComponent,
     VideoElementComponent,
     ComingSoonElementComponent,
+    SoundElementComponent,
   ],
   imports: [
     CommonModule,
@@ -63,6 +65,7 @@ import { VideoElementComponent } from './components/video-element/video-element.
     FooterComponent,
     VideoElementComponent,
     ComingSoonElementComponent,
+    SoundElementComponent,
   ]
 })
 export class McCoreModule { }

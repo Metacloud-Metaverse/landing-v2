@@ -105,5 +105,21 @@ export class Doc {
       </div>
       `,
     },
+    {
+      slug: 'whitepaper',
+      content_html: `
+      <div class="intro-component-animation">
+
+      </div>
+      `,
+    },
+    {
+      slug: 'hardware-acceleration',
+      content_html: `
+      <div class="intro-component-animation">
+
+      </div>
+      `,
+    },
   ];
 }

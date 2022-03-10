@@ -4,6 +4,10 @@
   text-align: center;
   margin-top: 3em;
 
+  .title{
+    font-weight: 600;
+  }
+
   mat-divider{
     margin: 2em 0;
   }
@@ -23,8 +27,10 @@
   }
 
   .alert{
-    background-color: $color_background;
     align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
     p { margin: 0; }
   }
 }

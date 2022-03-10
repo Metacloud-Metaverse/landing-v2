@@ -17,21 +17,11 @@ import { EventDetailPageComponent } from './pages/event-detail-page/event-detail
 // Components
 
 // Modals
-import { TournamentsModalComponent } from './modals/tournaments-modal/tournaments-modal.component';
-import { ConcertsModalComponent } from './modals/concerts-modal/concerts-modal.component';
-import { TheatersModalComponent } from './modals/theaters-modal/theaters-modal.component';
-import { PodcastsModalComponent } from './modals/podcasts-modal/podcasts-modal.component';
-import { GamesModalComponent } from './modals/games-modal/games-modal.component';
 
 
 @NgModule({
   declarations: [
     EventsComponent,
-    ConcertsModalComponent,
-    TheatersModalComponent,
-    PodcastsModalComponent,
-    TournamentsModalComponent,
-    GamesModalComponent,
     EventDetailPageComponent
   ],
   imports: [
