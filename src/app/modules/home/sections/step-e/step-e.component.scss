@@ -38,7 +38,9 @@
     width: 240px;
     margin-top: 2em;
     @include xs{
+      margin-top: 1em;
       width: 100%;
+      padding: 0;
     }
 
     app-coming-soon-element{

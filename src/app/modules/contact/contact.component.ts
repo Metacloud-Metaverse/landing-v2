@@ -51,13 +51,14 @@ export class ContactComponent implements OnInit {
   loadDatabase() {
     this.itemsCollection = this.firestore.collection<WebContact>('web_contact');
 
-    this.contactForm.valueChanges.subscribe(res => {
+    /* this.contactForm.valueChanges.subscribe(res => {
       this.processValidationErrors();
-    });
+    }); */
   }
 
   onClickSubmit() {
     if(this.contactForm.invalid){
+      this.processValidationErrors();
       return;
     }
 
@@ -74,7 +75,7 @@ export class ContactComponent implements OnInit {
       horizontalPosition: 'right',
       verticalPosition: 'bottom',
       panelClass: 'snackbar_success'
-    }); 
+    });
   }
 
   processValidationErrors() {
@@ -82,7 +83,7 @@ export class ContactComponent implements OnInit {
     this.errors = new Array<any>();
 
     Object.keys(this.contactForm.controls).forEach(key => {
-  
+
       let elementErrors: ValidationErrors|null = this.contactForm.get(key)!.errors;
       if (elementErrors) {
         Object.keys(elementErrors).forEach(keyError => {

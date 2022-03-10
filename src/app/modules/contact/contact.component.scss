@@ -29,8 +29,13 @@
   }
 
   .row-errors{
-    color: red;
     margin-bottom: 0.5em;
+    gap: 1em;
+
+    p{
+      color: red;
+      font-size: 0.8em;
+    }
   }
 
   .texts{
