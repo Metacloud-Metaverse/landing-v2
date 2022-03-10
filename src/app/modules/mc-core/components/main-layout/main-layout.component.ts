@@ -46,7 +46,7 @@ export class MainLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadVideoManageer();
-    /* this.loadMusic(); */
+    this.loadMusic();
     this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
       .subscribe((state: BreakpointState) => {
@@ -57,18 +57,18 @@ export class MainLayoutComponent implements OnInit {
   }
 
   playAudio() {
-    if (this.isMuted == true) {
-      this.isMuted = false;
-      setTimeout(() => { this.audio.nativeElement.volume = 0.0; }, 100);
-      this.audio.nativeElement.play();
-      setTimeout(() => { this.audio.nativeElement.volume = 0.07; }, 250);
-      setTimeout(() => { this.audio.nativeElement.volume = 0.15; }, 500);
-      setTimeout(() => { this.audio.nativeElement.volume = 0.23; }, 750);
-      setTimeout(() => { this.audio.nativeElement.volume = 0.30; }, 1000);
-    } else{
-      this.audio.nativeElement.pause();
-      this.isMuted = true;
-    }
+    this.isMuted = false;
+    setTimeout(() => { this.audio.nativeElement.volume = 0.0; }, 100);
+    this.audio.nativeElement.play();
+    setTimeout(() => { this.audio.nativeElement.volume = 0.07; }, 250);
+    setTimeout(() => { this.audio.nativeElement.volume = 0.15; }, 500);
+    setTimeout(() => { this.audio.nativeElement.volume = 0.23; }, 750);
+    setTimeout(() => { this.audio.nativeElement.volume = 0.30; }, 1000);
+  }
+
+  stopAudio() {
+    this.audio.nativeElement.pause();
+    this.isMuted = true;
   }
 
   closeMenu(e: any){
@@ -77,7 +77,11 @@ export class MainLayoutComponent implements OnInit {
 
   loadMusic(){
     this.mainService.audioMain.subscribe(res=>{
-      this.playAudio();
+      if(res){
+        this.playAudio();
+      } else {
+        this.stopAudio();
+      }
     });
   }
 

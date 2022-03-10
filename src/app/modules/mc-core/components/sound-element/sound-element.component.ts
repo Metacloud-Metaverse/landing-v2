@@ -9,34 +9,24 @@ import { MainService } from 'src/app/services/main.service';
 export class SoundElementComponent implements OnInit {
 
   isMuted = true;
-  @ViewChild('audio') audio!: ElementRef;
 
   constructor(
     protected mainService: MainService,
   ) { }
 
   ngOnInit(): void {
-    this.loadMusic();
+    this.loadMusicConfig();
   }
 
-  loadMusic(){
-    this.mainService.audioMain.subscribe(res=>{
-      this.playAudio();
-    });
+  loadMusicConfig() {
+    this.mainService.audioMain.subscribe(res => this.isMuted = !res);
   }
 
-  playAudio() {
-    if (this.isMuted == true) {
-      this.isMuted = false;
-      setTimeout(() => { this.audio.nativeElement.volume = 0.0; }, 100);
-      this.audio.nativeElement.play();
-      setTimeout(() => { this.audio.nativeElement.volume = 0.07; }, 250);
-      setTimeout(() => { this.audio.nativeElement.volume = 0.15; }, 500);
-      setTimeout(() => { this.audio.nativeElement.volume = 0.23; }, 750);
-      setTimeout(() => { this.audio.nativeElement.volume = 0.30; }, 1000);
-    } else{
-      this.audio.nativeElement.pause();
-      this.isMuted = true;
+  toogleAudio() {
+    if(this.isMuted){
+      this.mainService.audioMain.next(true);
+    } else {
+      this.mainService.audioMain.next(false);
     }
   }
 }
