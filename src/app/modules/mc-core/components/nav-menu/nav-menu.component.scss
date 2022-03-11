@@ -10,8 +10,68 @@
     opacity: 0.4;
   }
 }
+@-o-keyframes intro {
+  0% {
+    filter: blur(200px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(120px);
+    opacity: 0.4;
+  }
+}
+@-webkit-keyframes intro {
+  0% {
+    filter: blur(200px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(120px);
+    opacity: 0.4;
+  }
+}
+@-moz-keyframes intro {
+  0% {
+    filter: blur(200px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(120px);
+    opacity: 0.4;
+  }
+}
 
 @keyframes introBackground {
+  0% {
+    filter: blur(100px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@-o-keyframes introBackground {
+  0% {
+    filter: blur(100px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes introBackground {
+  0% {
+    filter: blur(100px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@-moz-keyframes introBackground {
   0% {
     filter: blur(100px);
     opacity: 0;
@@ -32,8 +92,38 @@
     opacity: 1;
   }
 }
+@-o-keyframes introVideos {
+  0% {
+    filter: blur(30px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes introVideos {
+  0% {
+    filter: blur(30px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@-moz-keyframes introVideos {
+  0% {
+    filter: blur(30px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
 
-.background-nav{
+.background-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -43,13 +133,45 @@
   opacity: 1;
   animation: introNav 1s linear;
   z-index: 7;
-  @include xs{
+  @include xs {
     height: 56px;
   }
 
   @keyframes introNav {
-    from,50%{opacity: 0;}
-    to{opacity: 1;}
+    from,
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-o-keyframes introNav {
+    from,
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes introNav {
+    from,
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes introNav {
+    from,
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
 
@@ -70,7 +192,7 @@
 
   .content {
     overflow: hidden;
-    padding: 6em 3em;
+    padding: 8em 3em;
     position: relative;
     z-index: 6;
     /* border: 1px solid rgba($color: white, $alpha: 0.5); */
@@ -78,6 +200,9 @@
     width: 70vw;
     margin: auto;
     transition: $animation;
+    -o-transition: $animation;
+    -moz-transition: $animation;
+    -webkit-transition: $animation;
     background-color: transparent;
     /* background: radial-gradient(
       rgba($color: white, $alpha: 0),
@@ -85,35 +210,41 @@
     ); */
 
     @include xs {
+      padding-top: 6em;
       padding-left: 2em;
       padding-right: 2em;
       width: 90vw;
     }
 
-    .btn-exploring{
+    .btn-exploring {
       display: none;
       padding: 0.3em 2em;
       margin-bottom: 1.5em;
       width: 100%;
       transition: $animation;
+      -o-transition: $animation;
+      -moz-transition: $animation;
+      -webkit-transition: $animation;
       pointer-events: none;
-      &::ng-deep .mat-button-wrapper{
+      &::ng-deep .mat-button-wrapper {
         display: flex;
         width: 100%;
       }
-      app-coming-soon-element{
+      app-coming-soon-element {
         position: relative;
         top: 2px;
-        &::ng-deep b{
+        &::ng-deep b {
           font-size: 19px;
           color: #e9c338;
-          text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2, 0 0 0.5em #bd00f2, 0 2px 3px #49005e, 0px 0px 7px #fff;
+          text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2, 0 0 0.5em #bd00f2,
+            0 2px 3px #49005e, 0px 0px 7px #fff;
         }
       }
-      &:hover{
+
+      &:hover {
         background-color: $color_primary_700;
       }
-      @include xs{
+      @include xs {
         display: block;
       }
     }
@@ -142,6 +273,11 @@
       pointer-events: none;
       a {
         color: #7a7a7a;
+      }
+      .neon-effect {
+        b {
+          text-shadow: 0 0px 100px, 0 0 2px;
+        }
       }
     }
 
@@ -199,6 +335,9 @@
           left: 50%;
           transform: translate(-50%, -50%);
           transition: $animation;
+          -o-transition: $animation;
+          -moz-transition: $animation;
+          -webkit-transition: $animation;
           border-radius: 200px;
           background-color: rgba($color: #ffffff, $alpha: 0.5);
           z-index: 1;

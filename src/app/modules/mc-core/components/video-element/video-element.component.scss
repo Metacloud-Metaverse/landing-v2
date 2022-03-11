@@ -7,6 +7,9 @@
   cursor: pointer;
   position: relative;
   transition: $animation;
+  -o-transition: $animation;
+  -moz-transition: $animation;
+  -webkit-transition: $animation;
   box-shadow: 0 16px 30px -12px rgba($color: black, $alpha: 0.7);
   border-radius: 0.7em;
   overflow: hidden;
@@ -21,6 +24,9 @@
     height: 100%;
     object-fit: cover;
     transition: $animation;
+    -o-transition: $animation;
+    -moz-transition: $animation;
+    -webkit-transition: $animation;
     z-index: 2;
   }
 
@@ -30,11 +36,17 @@
     right: 50%;
     transform: translate(50%, -50%);
     transition: $animation;
+    -o-transition: $animation;
+    -moz-transition: $animation;
+    -webkit-transition: $animation;
     z-index: 3;
     color: white;
     pointer-events: none;
     mat-icon {
       transition: $animation;
+      -o-transition: $animation;
+      -moz-transition: $animation;
+      -webkit-transition: $animation;
       width: 32px;
       height: 32px;
       line-height: 32px;

@@ -68,6 +68,9 @@
         border: 1px solid rgba($color: white, $alpha: 0.15);
         background: radial-gradient(rgba($color: #bbbbbb, $alpha: 0.15), rgba($color: #bbbbbb, $alpha: 0.3));
         transition: $animation;
+        -o-transition: $animation;
+        -moz-transition: $animation;
+        -webkit-transition: $animation;
         font-size: 0.9em;
         font-weight: 400;
         font-family: $font_text;

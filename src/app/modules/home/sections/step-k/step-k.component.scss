@@ -41,8 +41,8 @@
     width: 100%;
     font-size: 4em;
     @include xs {
-      font-size: 2em !important;
       width: calc(100% - 1em);
+      font-size: 3em;
     }
   }
 

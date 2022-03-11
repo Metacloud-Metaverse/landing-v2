@@ -101,6 +101,9 @@
           z-index: 2;
           border-radius: 1em;
           transition: $animation;
+          -o-transition: $animation;
+          -moz-transition: $animation;
+          -webkit-transition: $animation;
         }
 
         &::before{
@@ -134,6 +137,9 @@
         position: relative;
         z-index: 3;
         transition: $animation;
+        -o-transition: $animation;
+        -moz-transition: $animation;
+        -webkit-transition: $animation;
       }
 
       p {
@@ -143,15 +149,12 @@
         position: relative;
         z-index: 3;
         transition: $animation;
+        -o-transition: $animation;
+        -moz-transition: $animation;
+        -webkit-transition: $animation;
       }
 
       &:hover{
-        h2{
-          /* margin-top: 50%; */
-        }
-        p{
-          /* margin-bottom: 50%; */
-        }
         .effect-hover{
           &::before{
             top: 0;
