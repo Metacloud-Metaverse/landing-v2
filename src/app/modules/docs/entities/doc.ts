@@ -11,8 +11,7 @@ export class Doc {
       content_html: `
       <div class="intro-component-animation">
         <h1>​​Introducing the <b>metacloud</b></h1>
-        <p>The metacloud is a decentralized virtual reality platform that allows users to create and participate through multiple amazing experiences.</p>
-        <p>The 3D virtual space within metacloud is called LAND, a non-fungible digital asset maintained in an BSC (Binance Smart Chain) smart contract which is divided into parcels that are identified by cartesian coordinates (x,y). The parcels are permanently owned by members of the community and are purchased using $CLOUD, metacloud’s cryptocurrency token. This gives users full control over the environments and applications that they create, which can range from anything like static 3D scenes to more interactive applications or games.</p>
+        <p>The metacloud is a virtual reality world where users can interact, create, host and monetize events and experiences, assist in live concerts, and much more.  It’s a decentralized world of possibilities presented for users to create the experiences they have always imagined.</p>
       </div>
       `,
     },
@@ -21,8 +20,8 @@ export class Doc {
       content_html: `
       <div class="intro-component-animation">
         <h1>​​FAQ</h1>
-        <h5>What software do I need to play on the metacloud?</h5>
-        <p>A PC or Mac running Chrome, Firefox, Brave. .</p>
+        <h5>What software do I need to play on the Metacloud?</h5>
+        <p>A PC or Mac running Chrome, Firefox, Brave.</p>
 
         <h5>Can I log in from multiple computers?</h5>
         <p>Yes, you can run metacloud from multiple computers as long as you have your digital wallet installed on each machine.</p>
@@ -31,8 +30,8 @@ export class Doc {
         <p>Mobile devices are not supported on the metacloud (yet).</p>
 
         <h5>Do I need a wallet to play in metacloud?</h5>
-        <p>In order to live the full metacloud experience, you’ll need  a digital wallet to serve you as an account that keeps all your digital assets and in-world progress absolutely safe..</p>
-        <p>The metacloud experience without a digital wallet will have your information stored locally. Events, rewards or multiple device log in will not be possible.</p>
+        <p>In order to live the full Metacloud experience, you’ll need  a digital wallet to serve you as an account that keeps all your digital assets and in-world progress absolutely safe.</p>
+        <p>The metacloud experience without a digital wallet will have your information stored locally. Events, rewards or multiple device log in will not be possible</p>
 
         <h5>What is $CLOUD?</h5>
         <p>$CLOUD is metacloud ’s fungible, BEP20 cryptocurrency token. $CLOUD is burned, or spent, in exchange for LAND parcels.</p>
@@ -72,15 +71,13 @@ export class Doc {
         <p>It’s very important to keep your wallet recovery pass phrases safe. If those are lost, your name, avatar and wearables or NFT items will be lost.</p>
 
         <h5>How is content distributed?</h5>
-        <p>The visual, audio and three dimensional content of metacloud  will be stored in a network of content servers. Anyone can submit a server to join this network, but it must be voted on by the community. This is handled by a Decentralized Autonomous Organization (DAO). When you visit metacloud , the content needed to render your location will be pulled from the content servers. Each LAND token, stored on the BSC blockchain, is associated with an x,y location within the world and links to the content for that location.</p>
+        <p>The visual, audio and three dimensional content of Metacloud  will be stored in a network of content servers. Anyone can submit a server to join this network, but it must be voted on by the community. When you visit Metacloud , the content needed to render your location will be pulled from the content servers. Each LAND token, stored on the BSC blockchain, is associated with an x,y location within the world and links to the content for that location.</p>
 
         <h5>What’s the way to start creating at metacloud?</h5>
         <ul>
           <li>The Builder will provide you with sufficient pre-made items to build your experiences the way you prefer. You can also import and use your own custom 3D models.</li>
           <li>An SDK will be provided for writing code. The community will add amazing development to the metaverse.</li>
         </ul>
-        <p>Both tools can also be combined. You can create a scene visually with the Builder, then export it and work with its code to add interactive functionality. You can also use the SDK to create <a href="https://docs.decentraland.org/development-guide/smart-items/" target="_blank">custom smart items</a> and place these using the Builder.</p>
-        <p>You will be able to use tools like SketchUp, Blender, and Maya to create 3D models that you can then import into metacloud , these models must be in .gltf or .glb format.</p>
 
         <h5>Am I able to control the content on my parcels?</h5>
         <p>Metacloud will present you with tools to control how content on your parcel is presented to other users within the platform. However, you should consider that whenever you upload content to the metacloud servers you are essentially making it publicly available since they are a distributed file system.</p>
@@ -90,7 +87,7 @@ export class Doc {
         <p>Click on another’s Avatar to see their profile, then click on the tab report. If you report a player, you will be able to bring a player’s conduct to the attention of metacloud ’s Community.</p>
 
         <h5>Am I able to block another user/player?</h5>
-        <p>Though you will still see them, those blocked players  won’t be able to address  you by chat.</p>
+        <p>Though you will still see them, those blocked players won’t be able to address you by chat.</p>
       </div>
       `,
     },

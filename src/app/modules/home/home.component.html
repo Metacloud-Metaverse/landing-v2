@@ -63,7 +63,7 @@
 
   <app-step-j *ngIf="pageState == 9" @paragraphAnimation></app-step-j>
 
-  <picture @leaveElements *ngIf="pageState != 7" loading="lazy" class="banner-position">
+  <picture @leaveElements *ngIf="pageState == 0 || pageState == 1 || pageState == 3 || pageState == 4 || pageState == 6 || pageState == 8 || pageState == 9" loading="lazy" class="banner-position">
     <source srcset="/assets/img/banners/520x90px_1.gif" media="(max-width: 600px)">
     <img src="/assets/img/banners/1140x90px_1.gif" alt="Banner" />
 
