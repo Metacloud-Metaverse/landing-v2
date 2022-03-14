@@ -205,10 +205,10 @@ export class Doc {
       `,
     },
     {
-      slug: 'wearables-overview',
+      slug: 'about-wearables',
       content_html: `
       <div class="intro-component-animation">
-        <h1>Wearables Overview</h1>
+        <h1>About Wearables</h1>
         <p>When we talk about wearables, we talk about pants, t-shirts, jackets, shoes, glasses and everything made up to give your avatar the personality you want!</p>
         <p>Metacloud will present you with free of use wearables. But when it comes to creating your own, you will need to consider that our world supports the creation and use of custom wearables working under the non-fungible tokens (or NFTs). This allows a finite amount of different wearables to be minted or created on the blockchain.</p>
         <p>Wearables will be organized into different categories, depending on what part of an avatar they modify:</p>

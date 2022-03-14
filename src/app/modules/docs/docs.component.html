@@ -11,9 +11,9 @@
 
       <nav class="sidebar animated" [ngClass]="{'sidebar_open': isSidebarOpen}">
 
-        <a (click)="isSidebarOpen = false;" [routerLink]="['home']" routerLinkActive="active"><mat-icon>home</mat-icon> Home</a>
+        <!-- <a (click)="isSidebarOpen = false;" [routerLink]="['home']" routerLinkActive="active"><mat-icon>home</mat-icon> Home</a> -->
 
-        <mat-expansion-panel *ngFor="let category of docsNav">
+        <mat-expansion-panel *ngFor="let category of docsNav" [expanded]="category.isExpanded">
 
           <mat-expansion-panel-header>
             <mat-panel-title><mat-icon>{{ category.icon }}</mat-icon> {{ category.title }}</mat-panel-title>

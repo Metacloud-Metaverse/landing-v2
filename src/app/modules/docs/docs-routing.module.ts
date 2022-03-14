@@ -9,9 +9,9 @@ const routes: Routes = [
     path: '',
     component: DocsComponent,
     children: [
-      { path: 'home', component: HomePageComponent },
+      /* { path: 'home', component: HomePageComponent }, */
       { path: ':slug', component: DocPageComponent },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '', redirectTo: 'introduction', pathMatch: 'full' },
     ]
   },
 ];

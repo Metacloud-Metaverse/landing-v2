@@ -22,6 +22,7 @@ export class DocsComponent implements OnInit {
     {
       title: 'World',
       icon: 'travel_explore',
+      isExpanded: true,
       links: [
         { title: 'Introduction', url: 'introduction', type: 0 },
         { title: 'FAQ', url: 'faq', type: 0 },
@@ -50,6 +51,7 @@ export class DocsComponent implements OnInit {
     {
       title: 'Market',
       icon: 'store',
+      isExpanded: false,
       links: [
         { title: 'Marketplace overview', url: 'marketplace-overview', type: 0 },
       ]
@@ -57,11 +59,12 @@ export class DocsComponent implements OnInit {
     {
       title: 'Create',
       icon: 'draw',
+      isExpanded: false,
       links: [
         { title: 'Creating content', url: 'creating-content', type: 0 },
         /* { title: 'Design Experiences', url: 'design-experiences', type: 0 }, */
         { title: 'Builder FAQ', url: 'builder-faq', type: 0 },
-        { title: 'Wearables Overview', url: 'wearables-overview', type: 0 },
+        { title: 'About Wearables', url: 'about-wearables', type: 0 },
         { title: '3D Model essentials', url: '3d-model-essentials', type: 0 },
       ]
     },
