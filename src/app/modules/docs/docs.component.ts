@@ -25,7 +25,7 @@ export class DocsComponent implements OnInit {
       links: [
         { title: 'Introduction', url: 'introduction', type: 0 },
         { title: 'FAQ', url: 'faq', type: 0 },
-        {
+        /* {
           title: 'DAO',
           type: 1,
           links: [
@@ -33,34 +33,38 @@ export class DocsComponent implements OnInit {
               title: 'Overview',
               type: 1,
               links: [
-                /* { title: 'What Is The DAO?', url: 'what-is-the-dao', type: 0 }, */
                 { title: 'Smart contracts fuel the DAO', url: 'smart-contracts-fuel-the-dao', type: 0 },
                 { title: 'On Smart Contracts', url: 'on-smart-contracts', type: 0 },
                 { title: 'Using the DAO', url: 'using-the-dao', type: 0 },
                 { title: 'On How the DAO Works', url: 'on-how-the-dao-works', type: 0 },
                 { title: 'Smart Contracts Within the DAO', url: 'smart-contracts-within-the-dao', type: 0 },
                 { title: 'Metacloud´s DAO Fund', url: 'metacloud-dao-fund', type: 0 },
-                /* { title: 'How The DAO Works', url: 'how-the-dao-works', type: 0 }, */
-                /* { title: "The DAO's Smart Contracts", url: 'the-dao-smart-contracts', type: 0 }, */
-                /* { title: 'The DAO Fund', url: '', type: 0 }, */
-                /* { title: 'DAO Limitations', url: '', type: 0 }, */
-                /* { title: 'Participation Requirements', url: '', type: 0 }, */
               ]
             },
             { title: 'DAO User Guide', url: 'dao-user-guide', type: 2 },
             { title: 'Hardware Acceleration', url: 'hardware-acceleration', type: 2 },
           ]
-        },
+        }, */
       ],
     },
-    /* {
+    {
       title: 'Market',
       icon: 'store',
+      links: [
+        { title: 'Marketplace overview', url: 'marketplace-overview', type: 0 },
+      ]
     },
     {
       title: 'Create',
       icon: 'draw',
-    }, */
+      links: [
+        { title: 'Creating content', url: 'creating-content', type: 0 },
+        { title: 'Design Experiences', url: 'design-experiences', type: 0 },
+        { title: 'Builder FAQ', url: 'builder-faq', type: 0 },
+        { title: 'Wearables Overview', url: 'wearables-overview', type: 0 },
+        { title: '3D Model essentials', url: '3d-model-essentials', type: 0 },
+      ]
+    },
   ];
 
   @Input() isSidebarOpen:boolean = true;

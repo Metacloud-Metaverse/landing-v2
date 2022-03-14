@@ -1,9 +1,17 @@
 @import "../../../../../assets/styles/vars";
 
-::ng-deep div{
+::ng-deep .doc-page{
   h2,h3,h4,h5,h6{
     font-family: $font_text !important;
     font-weight: 600;
+  }
+
+  .number-text{
+    font-family: $font_text !important;
+  }
+
+  h4{
+    margin-top: 2em;
   }
 
   h5{
@@ -12,5 +20,31 @@
 
   h6{
     text-transform: initial !important;
+    margin-bottom: 0.5em;
+  }
+
+  p,li{
+    color: #333333;
+  }
+
+  blockquote{
+    margin: 0;
+    margin-left: 2em;
+    padding: 1em;
+    border-radius: 8px;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
+
+  a{
+    color: $color_primary_500;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  b{
+    font-weight: 600;
   }
 }
