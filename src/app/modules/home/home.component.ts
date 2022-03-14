@@ -83,7 +83,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) { }
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event:any){
-    console.log("execute wheel");
     if(this.mouseScrollExecuting){
       return;
     }
@@ -91,70 +90,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.mouseScrollExecuting = true;
 
     if (event.deltaY < 0) {
-      console.log('Mouse Scroll Up');
-      switch (this.pageState) {
-        case 1:
-        this.activeSection1();
-        this.pageState = 0;
-        break;
-
-        case 2:
-        this.activeSection2();
-        this.pageState = 1;
-        break;
-
-        case 3:
-        this.activeSection3();
-        this.pageState = 2;
-        break;
-
-        case 4:
-        this.activeSection4();
-        this.pageState = 3;
-        break;
-
-        case 5:
-        this.activeSection5();
-        this.pageState = 4;
-        break;
-
-        case 6:
-        this.activeSection6();
-        this.pageState = 5;
-        break;
-
-        case 7:
-        this.activeSection7();
-        this.pageState = 6;
-        break;
-
-        case 8:
-        this.activeSection8();
-        this.pageState = 7;
-        break;
-
-        case 9:
-        this.activeSection9();
-        this.pageState = 8;
-        break;
-
-        case 10:
-        this.activeSection10();
-        this.pageState = 9;
-        break;
-
-        /* case 11:
-        this.activeSection11();
-        this.pageState = 10;
-        break; */
-
-        default:
-        break;
-      }
-    }
-
-    if (event.deltaY > 0) {
-      console.log('Mouse Scroll Down');
+      //console.log('Mouse Scroll Up');
+      this.prevSection();
+    }else if (event.deltaY > 0) {
+      //console.log('Mouse Scroll Down');
       this.nextSection();
     }
 
@@ -172,137 +111,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     let te = event.changedTouches[0].clientY;
    if(this.touchY > te+5){
-
-    switch (this.pageState) {
-      case 0:
-      this.activeSection2();
-      this.pageState = 1;
-      break;
-
-      case 1:
-      this.activeSection3();
-      this.pageState = 2;
-      break;
-
-      case 2:
-      this.activeSection4();
-      this.pageState = 3;
-      break;
-
-      case 3:
-      this.activeSection5();
-      this.pageState = 4;
-      break;
-
-      case 4:
-      this.activeSection6();
-      this.pageState = 5;
-      break;
-
-      case 5:
-      this.activeSection7();
-      this.pageState = 6;
-      break;
-
-      case 6:
-      this.activeSection8();
-      this.pageState = 7;
-      break;
-
-      case 7:
-      this.activeSection9();
-      this.pageState = 8;
-      break;
-
-      case 8:
-      this.activeSection10();
-      this.pageState = 9;
-      break;
-
-      /* case 9:
-      this.activeSection11();
-      this.pageState = 10;
-      break; */
-
-      default:
-      break;
-    }
-
-
+     this.nextSection();
    }else if(this.touchY < te-5){
-
-    switch (this.pageState) {
-      case 1:
-      this.activeSection1();
-      this.pageState = 0;
-      break;
-
-      case 2:
-      this.activeSection2();
-      this.pageState = 1;
-      break;
-
-      case 3:
-      this.activeSection3();
-      this.pageState = 2;
-      break;
-
-      case 4:
-      this.activeSection4();
-      this.pageState = 3;
-      break;
-
-      case 5:
-      this.activeSection5();
-      this.pageState = 4;
-      break;
-
-      case 6:
-      this.activeSection6();
-      this.pageState = 5;
-      break;
-
-      case 7:
-      this.activeSection7();
-      this.pageState = 6;
-      break;
-
-      case 8:
-      this.activeSection8();
-      this.pageState = 7;
-      break;
-
-      case 9:
-      this.activeSection9();
-      this.pageState = 8;
-      break;
-
-      case 10:
-      this.activeSection10();
-      this.pageState = 9;
-      break;
-
-      /* case 11:
-      this.activeSection11();
-      this.pageState = 10;
-      break; */
-
-      default:
-      break;
-    }
-
+     this.prevSection();
    }
-  }
-
-  @HostListener('touchmove', ['$event']) onMove(event:any){
-    this.breakpointObserver
-      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
-      .subscribe((state: BreakpointState) => {
-        if (state.matches && event.clienY > 0) {
-          console.log(event.clientY);
-
-        }
-    });
   }
 
   ngOnInit(): void {
@@ -729,8 +541,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     this.pageState++;
 
-
-
     switch (this.pageState) {
       case 1:
       this.activeSection2();
@@ -761,6 +571,59 @@ export class HomeComponent implements OnInit, AfterViewInit {
       break;
 
       case 8:
+      this.activeSection9();
+      break;
+
+      case 9:
+      this.activeSection10();
+      break;
+
+      default:
+      break;
+    }
+  }
+
+  prevSection() {
+    if(this.pageState <= 0){
+      return;
+    }
+
+    this.pageState--;
+
+    switch (this.pageState) {
+      case 0:
+      this.activeSection1();
+      break;
+
+      case 1:
+      this.activeSection2();
+      break;
+
+      case 2:
+      this.activeSection3();
+      break;
+
+      case 3:
+      this.activeSection4();
+      break;
+
+      case 4:
+      this.activeSection5();
+      break;
+
+      case 5:
+      this.activeSection6();
+      break;
+
+      case 6:
+      this.activeSection7();
+      break;
+
+      case 7:
+      this.activeSection8();
+      break;
+
+      case 9:
       this.activeSection9();
       break;
 
