@@ -65,6 +65,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   section3text3 = false;
 
   sectionActive = 0;
+  scrollCurrentPosition = 0;
 
   activeAnimation = 'inactive';
 
@@ -88,123 +89,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     this.mouseScrollExecuting = true;
 
-    if (event.wheelDelta > 0) {
-      switch (this.pageState) {
-        case 1:
-        this.activeSection1();
-        this.pageState = 0;
-        break;
-
-        case 2:
-        this.activeSection2();
-        this.pageState = 1;
-        break;
-
-        case 3:
-        this.activeSection3();
-        this.pageState = 2;
-        break;
-
-        case 4:
-        this.activeSection4();
-        this.pageState = 3;
-        break;
-
-        case 5:
-        this.activeSection5();
-        this.pageState = 4;
-        break;
-
-        case 6:
-        this.activeSection6();
-        this.pageState = 5;
-        break;
-
-        case 7:
-        this.activeSection7();
-        this.pageState = 6;
-        break;
-
-        case 8:
-        this.activeSection8();
-        this.pageState = 7;
-        break;
-
-        case 9:
-        this.activeSection9();
-        this.pageState = 8;
-        break;
-
-        case 10:
-        this.activeSection10();
-        this.pageState = 9;
-        break;
-
-        /* case 11:
-        this.activeSection11();
-        this.pageState = 10;
-        break; */
-
-        default:
-        break;
-      }
-    }
-
-    if (event.wheelDelta < 0) {
-      switch (this.pageState) {
-        case 0:
-        this.activeSection2();
-        this.pageState = 1;
-        break;
-
-        case 1:
-        this.activeSection3();
-        this.pageState = 2;
-        break;
-
-        case 2:
-        this.activeSection4();
-        this.pageState = 3;
-        break;
-
-        case 3:
-        this.activeSection5();
-        this.pageState = 4;
-        break;
-
-        case 4:
-        this.activeSection6();
-        this.pageState = 5;
-        break;
-
-        case 5:
-        this.activeSection7();
-        this.pageState = 6;
-        break;
-
-        case 6:
-        this.activeSection8();
-        this.pageState = 7;
-        break;
-
-        case 7:
-        this.activeSection9();
-        this.pageState = 8;
-        break;
-
-        case 8:
-        this.activeSection10();
-        this.pageState = 9;
-        break;
-
-        /* case 9:
-        this.activeSection11();
-        this.pageState = 10;
-        break; */
-
-        default:
-        break;
-      }
+    if (event.deltaY < 0) {
+      //console.log('Mouse Scroll Up');
+      this.prevSection();
+    }else if (event.deltaY > 0) {
+      //console.log('Mouse Scroll Down');
+      this.nextSection();
     }
 
     setTimeout(() => {
@@ -218,126 +108,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   @HostListener('touchend', ['$event']) handleTouchEnd(event:any){
     let te = event.changedTouches[0].clientY;
-    if(this.touchY > te+5){
-
-    switch (this.pageState) {
-      case 0:
-      this.activeSection2();
-      this.pageState = 1;
-      break;
-
-      case 1:
-      this.activeSection3();
-      this.pageState = 2;
-      break;
-
-      case 2:
-      this.activeSection4();
-      this.pageState = 3;
-      break;
-
-      case 3:
-      this.activeSection5();
-      this.pageState = 4;
-      break;
-
-      case 4:
-      this.activeSection6();
-      this.pageState = 5;
-      break;
-
-      case 5:
-      this.activeSection7();
-      this.pageState = 6;
-      break;
-
-      case 6:
-      this.activeSection8();
-      this.pageState = 7;
-      break;
-
-      case 7:
-      this.activeSection9();
-      this.pageState = 8;
-      break;
-
-      case 8:
-      this.activeSection10();
-      this.pageState = 9;
-      break;
-
-      /* case 9:
-      this.activeSection11();
-      this.pageState = 10;
-      break; */
-
-      default:
-      break;
-    }
-
-
+   if(this.touchY > te+5){
+     this.nextSection();
    }else if(this.touchY < te-5){
-
-    switch (this.pageState) {
-      case 1:
-      this.activeSection1();
-      this.pageState = 0;
-      break;
-
-      case 2:
-      this.activeSection2();
-      this.pageState = 1;
-      break;
-
-      case 3:
-      this.activeSection3();
-      this.pageState = 2;
-      break;
-
-      case 4:
-      this.activeSection4();
-      this.pageState = 3;
-      break;
-
-      case 5:
-      this.activeSection5();
-      this.pageState = 4;
-      break;
-
-      case 6:
-      this.activeSection6();
-      this.pageState = 5;
-      break;
-
-      case 7:
-      this.activeSection7();
-      this.pageState = 6;
-      break;
-
-      case 8:
-      this.activeSection8();
-      this.pageState = 7;
-      break;
-
-      case 9:
-      this.activeSection9();
-      this.pageState = 8;
-      break;
-
-      case 10:
-      this.activeSection10();
-      this.pageState = 9;
-      break;
-
-      /* case 11:
-      this.activeSection11();
-      this.pageState = 10;
-      break; */
-
-      default:
-      break;
-    }
-
+     this.prevSection();
    }
   }
 
@@ -737,5 +511,107 @@ export class HomeComponent implements OnInit, AfterViewInit {
   activeCreativity(){
     this.sectionActive = 3;
     this.modelAvatarPrimary.nativeElement.animationName = 'looking';
+  }
+
+  nextSection() {
+    if(this.pageState >= 9) {
+      return;
+    }
+
+    this.pageState++;
+
+    switch (this.pageState) {
+      case 1:
+      this.activeSection2();
+      break;
+
+      case 2:
+      this.activeSection3();
+      break;
+
+      case 3:
+      this.activeSection4();
+      break;
+
+      case 4:
+      this.activeSection5();
+      break;
+
+      case 5:
+      this.activeSection6();
+      break;
+
+      case 6:
+      this.activeSection7();
+      break;
+
+      case 7:
+      this.activeSection8();
+      break;
+
+      case 8:
+      this.activeSection9();
+      break;
+
+      case 9:
+      this.activeSection10();
+      break;
+
+      default:
+      break;
+    }
+  }
+
+  prevSection() {
+    if(this.pageState <= 0){
+      return;
+    }
+
+    this.pageState--;
+
+    switch (this.pageState) {
+      case 0:
+      this.activeSection1();
+      break;
+
+      case 1:
+      this.activeSection2();
+      break;
+
+      case 2:
+      this.activeSection3();
+      break;
+
+      case 3:
+      this.activeSection4();
+      break;
+
+      case 4:
+      this.activeSection5();
+      break;
+
+      case 5:
+      this.activeSection6();
+      break;
+
+      case 6:
+      this.activeSection7();
+      break;
+
+      case 7:
+      this.activeSection8();
+      break;
+
+      case 9:
+      this.activeSection9();
+      break;
+
+      case 9:
+      this.activeSection10();
+      break;
+
+      default:
+      break;
+    }
   }
 }
