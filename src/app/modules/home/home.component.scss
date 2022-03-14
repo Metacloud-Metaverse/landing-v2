@@ -1030,6 +1030,10 @@ app-step-f {
   -moz-transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
 
+  @include sm {
+    left: 50% !important;
+  }
+
   button {
     color: #fff;
     border: 3px solid #c266d3;
