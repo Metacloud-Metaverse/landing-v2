@@ -52,7 +52,6 @@ export class IntroComponent implements OnInit {
   }
 
   @HostListener('mousemove', ['$event']) onMouseMove(event: any) {
-    /* console.log('Mouse move' + event.pageX); */
     this.cursor.nativeElement.style.left = event.pageX + 'px';
     this.cursor.nativeElement.style.top = event.pageY + 'px';
     this.mouse_x = -10 + (event.pageX / 100);
@@ -74,11 +73,6 @@ export class IntroComponent implements OnInit {
   }
 
   loadPlanet(){
-    /* this.modelPlanet.nativeElement.addEventListener('load', (event: any) => {
-      this.isLoadingPlanet = false;
-      console.log('Loaded');
-      console.log(this.modelPlanet);
-    }, true); */
     this.modelPlanet.nativeElement.addEventListener('model-visibility', (event: any) => {
         this.isLoadingPlanet = false;
     }, true);

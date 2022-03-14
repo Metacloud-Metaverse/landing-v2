@@ -89,7 +89,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.mouseScrollExecuting = true;
 
     if (event.wheelDelta > 0) {
-      console.log('Mouse Scroll Up');
       switch (this.pageState) {
         case 1:
         this.activeSection1();
@@ -152,7 +151,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     if (event.wheelDelta < 0) {
-      console.log('Mouse Scroll Down');
       switch (this.pageState) {
         case 0:
         this.activeSection2();
@@ -210,7 +208,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     setTimeout(() => {
-        this.mouseScrollExecuting = false;
+      this.mouseScrollExecuting = false;
     }, 1000);
   }
 
@@ -219,10 +217,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener('touchend', ['$event']) handleTouchEnd(event:any){
-    console.log(this.touchY);
-
     let te = event.changedTouches[0].clientY;
-   if(this.touchY > te+5){
+    if(this.touchY > te+5){
 
     switch (this.pageState) {
       case 0:
@@ -345,43 +341,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
    }
   }
 
-  @HostListener('touchmove', ['$event']) onMove(event:any){
-    this.breakpointObserver
-      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
-      .subscribe((state: BreakpointState) => {
-        if (state.matches && event.clienY > 0) {
-          console.log(event.clientY);
-
-        }
-    });
-  }
-
   ngOnInit(): void {
     this.titleService.setTitle('Welcome to the metacloud metaverse | metacloud');
     this.metaTagService.updateTag(
       { name: 'description', content: 'Metacloud is a Metaverse that connects you with anyone, anywhere in a VR world. Move over Meta. Theres a new sheriff in town.' }
     );
-
-    /* this.breakpointObserver
-      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
-      .subscribe((state: BreakpointState) => {
-        if (state.matches) {
-          activeSection2Mobile(){
-            this.modelAvatarPrimary.nativeElement.cameraOrbit = '-45deg 55deg 10m';
-          }
-        }
-      }); */
   }
 
   ngAfterViewInit() {
-    /* this.loadConfigModelViewer(); */
     this.activeSection1();
-
-    /* setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = 'Wave';
-      console.log('Hola');
-      console.log(this.modelAvatarCorner);
-    }, 5000); */
   }
 
   mouseWheelConfig(event: any) {
@@ -392,10 +360,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   changeScene(asset: string) {
     this.modelAvatarPrimary.nativeElement.skyboxImage = asset;
-    //this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/sceneback.png';
   }
 
-  animateScene(modelViewer: any) {
+  /* animateScene(modelViewer: any) {
     this.currentAnimateSceneOrbit = 0;
 
     modelViewer.cameraOrbit = this.getAnimatedSceneOrbit();
@@ -416,9 +383,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.currentAnimateSceneOrbit = 0;
       this.showChangeSceneButton = true;
     }, 3000);
-  }
+  } */
 
-  avatarBackgroundScene() {
+  /* avatarBackgroundScene() {
     this.currentAnimateSceneOrbit = 0;
     this.currentAnimateBackground = 0;
 
@@ -453,7 +420,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.currentAnimateSceneOrbit = 0;
       this.showChangeSceneButton = true;
     }, 8000);
-  }
+  } */
 
   changeAnimationAvatarPrimary(){
     if (this.pageState == 1) {
@@ -485,20 +452,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
 
-  avatarCornerHi(){
+  /* avatarCornerHi(){
     this.modelAvatarCorner.nativeElement.animationName = 'Wave';
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.speed = 0;
       this.modelAvatarCorner.nativeElement.animationName = '';
     }, 1500);
-  }
+  } */
 
-  avatarCornerRun(){
+  /* avatarCornerRun(){
     this.modelAvatarCorner.nativeElement.animationName = 'Running';
     setTimeout(() => {
       this.modelAvatarCorner.nativeElement.animationName = '';
     }, 1000);
-  }
+  } */
 
   activeSection1(){
     this.clearTimeouts();
@@ -676,7 +643,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   loadConfigModelViewer() {
     this.modelAvatarPrimary.nativeElement.addEventListener('load', (event: any) => {
-      console.log('Loaded');
       this.loadBackgroundScenes();
     }, true);
 
