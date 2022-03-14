@@ -232,13 +232,12 @@ export class Doc {
           <li>Tiara (a crown, or other accessory that sits on top of the head)</li>
           <li>Top-head (e.g. a halo, or other effect applied to the head)</li>
         </ul>
-        <h4>Collections & Items</h4>
+        <h4>Items & Collections</h4>
         <p>It’s important to know that every wearable item can be minted to create multiple NFTs of that same item, to a limit according to the item’s rarity. Items are often referred to as the “representations” of the wearable.</p>
         <p>Items cannot be bought or sold, only the NFTs that have been minted from items. Also, individual items cannot be published on their own; they must be part of a collection.</p>
         <h6>Collections</h6>
-        <p>Collections exist to help creators organize and manage their items before publication.</p>
-        <p>For example, let’s say we create a blue t-shirt and a red t-shirt. We can create a new collection called “Summer T-Shirts”, and then add our two shirts to that collection. After publishing our collection, we can then mint copies of the red and blue shirts to share, trade, or sell.</p>
-        <p>The following documentation only covers the Wearables Editor: the tool used to upload, add metadata to, and publish custom items and collections of items.</p>
+        <p>Collections are presented  to help creators organize and manage their items before publication.</p>
+        <p>For example, let’s say we create a black sweater and a green sweater. We can create a new collection called “WInter Sweaters”, and then add our two sweaters to that collection. Once we publish our collection, we can then mint copies of the black and green wearables to share, trade, or sell!</p>
         <p>Documentation covering other aspects will be coming soon.</p>
       </div>
       `,
