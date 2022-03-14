@@ -1,4 +1,4 @@
-<div class="indicators" (touchmove)="mouseWheelConfig($event)">
+<div class="indicators" (mousewheel)="$event.stopPropagation()" (touchend)="$event.stopPropagation()">
   <div [ngClass]="{'active': pageState == 0}" (click)="activeSection1()"><span>1</span><span class="figure"></span></div>
   <div [ngClass]="{'active': pageState == 1}" (click)="activeSection2()"><span>2</span><span class="figure"></span></div>
   <div [ngClass]="{'active': pageState == 2}" (click)="activeSection3()"><span>3</span><span class="figure"></span></div>
