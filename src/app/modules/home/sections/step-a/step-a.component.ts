@@ -1,5 +1,6 @@
-import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, Injectable } from "@angular/core";
+import { timer, Subscription } from "rxjs";
+import { Pipe, PipeTransform } from "@angular/core";
 
 @Component({
   selector: 'app-step-a',
@@ -8,9 +9,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class StepAComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  ngOnDestroy() {
   }
 
 }

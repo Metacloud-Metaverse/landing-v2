@@ -1,3 +1,17 @@
+<div class="indicators" (touchmove)="mouseWheelConfig($event)">
+  <div [ngClass]="{'active': pageState == 0}" (click)="activeSection1()"><span>1</span><span class="figure"></span></div>
+  <div [ngClass]="{'active': pageState == 1}" (click)="activeSection2()"><span>2</span><span class="figure"></span></div>
+  <div [ngClass]="{'active': pageState == 2}" (click)="activeSection3()"><span>3</span><span class="figure"></span></div>
+  <div [ngClass]="{'active': pageState == 3}" (click)="activeSection4()"><span>4</span><span class="figure"></span></div>
+  <div [ngClass]="{'active': pageState == 4}" (click)="activeSection5()"><span>5</span><span class="figure"></span></div>
+  <div [ngClass]="{'active': pageState == 5}" (click)="activeSection6()"><span>6</span><span class="figure"></span></div>
+  <div [ngClass]="{'active': pageState == 6}" (click)="activeSection7()"><span>7</span><span class="figure"></span></div>
+  <div [ngClass]="{'active': pageState == 7}" (click)="activeSection8()"><span>8</span><span class="figure"></span></div>
+  <!-- <div [ngClass]="{'active': pageState == 8}" (click)="activeSection9()"><span>9</span><span class="figure"></span></div> -->
+  <div [ngClass]="{'active': pageState == 8}" (click)="activeSection9()"><span>9</span><span class="figure"></span></div>
+  <div [ngClass]="{'active': pageState == 9}" (click)="activeSection10()"><span>10</span><span class="figure"></span></div>
+</div>
+
 <div class="home-page">
   <div class="background-noise"></div>
   <div class="background-lights light1"></div>
@@ -5,19 +19,6 @@
   <div class="background-lights light3"></div>
   <div class="background-lights light4"></div>
 
-  <div class="indicators">
-    <div [ngClass]="{'active': pageState == 0}" (click)="activeSection1()"><span>1</span><span class="figure"></span></div>
-    <div [ngClass]="{'active': pageState == 1}" (click)="activeSection2()"><span>2</span><span class="figure"></span></div>
-    <div [ngClass]="{'active': pageState == 2}" (click)="activeSection3()"><span>3</span><span class="figure"></span></div>
-    <div [ngClass]="{'active': pageState == 3}" (click)="activeSection4()"><span>4</span><span class="figure"></span></div>
-    <div [ngClass]="{'active': pageState == 4}" (click)="activeSection5()"><span>5</span><span class="figure"></span></div>
-    <div [ngClass]="{'active': pageState == 5}" (click)="activeSection6()"><span>6</span><span class="figure"></span></div>
-    <div [ngClass]="{'active': pageState == 6}" (click)="activeSection7()"><span>7</span><span class="figure"></span></div>
-    <div [ngClass]="{'active': pageState == 7}" (click)="activeSection8()"><span>8</span><span class="figure"></span></div>
-    <div [ngClass]="{'active': pageState == 8}" (click)="activeSection9()"><span>9</span><span class="figure"></span></div>
-    <div [ngClass]="{'active': pageState == 9}" (click)="activeSection10()"><span>10</span><span class="figure"></span></div>
-    <div [ngClass]="{'active': pageState == 10}" (click)="activeSection11()"><span>11</span><span class="figure"></span></div>
-  </div>
 
   <app-step-a *ngIf="pageState == 0" @paragraphAnimation></app-step-a>
 
@@ -56,12 +57,17 @@
 
   <app-step-k *ngIf="pageState == 7" @paragraphAnimation></app-step-k>
 
-  <app-step-h *ngIf="pageState == 8" @paragraphAnimation></app-step-h>
+  <!-- <app-step-h *ngIf="pageState == 8" @paragraphAnimation></app-step-h> -->
 
-  <app-step-i *ngIf="pageState == 9" @paragraphAnimation></app-step-i>
+  <app-step-i *ngIf="pageState == 8" @paragraphAnimation></app-step-i>
 
-  <app-step-j *ngIf="pageState == 10" @paragraphAnimation></app-step-j>
+  <app-step-j *ngIf="pageState == 9" @paragraphAnimation></app-step-j>
 
+  <picture @leaveElements *ngIf="pageState != 7" loading="lazy" class="banner-position">
+    <source srcset="/assets/img/banners/520x90px_1.gif" media="(max-width: 600px)">
+    <img src="/assets/img/banners/1140x90px_1.gif" alt="Banner" />
+
+  </picture>
 
   <div class="lines">
     <div class="line"></div>

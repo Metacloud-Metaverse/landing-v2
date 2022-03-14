@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+
+// Modules
 import { McCoreModule } from '../mc-core/mc-core.module';
+import { CountdownModule } from 'ngx-countdown';
 
 // Angular Material
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -12,7 +15,6 @@ import { MatIconModule } from '@angular/material/icon';
 /* import { MatSnackBarModule } from '@angular/material/snack-bar'; */
 /* import { MatDialogModule } from '@angular/material/dialog'; */
 /* import { MatMenuModule } from '@angular/material/menu'; */
-
 
 // Components
 import { StepAComponent } from './sections/step-a/step-a.component';
@@ -47,6 +49,7 @@ import { StepKComponent } from './sections/step-k/step-k.component';
     CommonModule,
     HomeRoutingModule,
     McCoreModule,
+    CountdownModule,
 
     // Angular Material
     MatButtonModule,
