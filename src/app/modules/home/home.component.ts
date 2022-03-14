@@ -2,6 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { MainService } from 'src/app/services/main.service';
 import { StepFComponent } from './sections/step-f/step-f.component';
 
 @Component({
@@ -76,6 +77,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   listTimeouts = new Array<any>();
 
   constructor(
+    protected mainService: MainService,
     public el: ElementRef<HTMLElement>,
     private breakpointObserver: BreakpointObserver,
     private titleService: Title,
@@ -120,6 +122,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.metaTagService.updateTag(
       { name: 'description', content: 'Metacloud is a Metaverse that connects you with anyone, anywhere in a VR world. Move over Meta. Theres a new sheriff in town.' }
     );
+
+    this.mainService.homeRefresh.subscribe(res => {
+      this.pageState = 0;
+      this.activeSection1();
+    });
   }
 
   ngAfterViewInit() {

@@ -8,6 +8,7 @@ import { Observable, Subject } from 'rxjs';
 export class MainService {
 
   audioMain = new Subject<boolean>();
+  homeRefresh = new Subject<boolean>();
 
   constructor(
     protected http: HttpClient

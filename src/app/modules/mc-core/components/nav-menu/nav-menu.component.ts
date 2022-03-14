@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -33,7 +35,9 @@ export class NavMenuComponent implements OnInit {
   trigger:any;
 
   constructor(
-    public router: Router,
+    protected location: Location,
+    protected mainService: MainService,
+    protected navigator: Router,
   ) { }
 
   ngOnInit(): void {
@@ -45,11 +49,17 @@ export class NavMenuComponent implements OnInit {
   }
 
   routeWithEffect(path: string) {
+    if(this.location.path() == path && path == '/home'){
+      this.sendCloseMenu();
+      this.mainService.homeRefresh.next(true);
+      return;
+    }
+
     this.blinkEffect();
 
     setTimeout(() => {
       this.sendCloseMenu();
-      this.router.navigate([path]);
+      this.navigator.navigate([path]);
     }, 800);
   }
 
