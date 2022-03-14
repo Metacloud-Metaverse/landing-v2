@@ -20,7 +20,7 @@ export class Doc {
       content_html: `
       <div class="intro-component-animation">
         <h1>​​FAQ</h1>
-        <h5>What software do I need to play on the Metacloud?</h5>
+        <h5>What software do I need to play on the metacloud?</h5>
         <p>A PC or Mac running Chrome, Firefox, Brave.</p>
 
         <h5>Can I log in from multiple computers?</h5>
@@ -30,7 +30,7 @@ export class Doc {
         <p>Mobile devices are not supported on the metacloud (yet).</p>
 
         <h5>Do I need a wallet to play in metacloud?</h5>
-        <p>In order to live the full Metacloud experience, you’ll need  a digital wallet to serve you as an account that keeps all your digital assets and in-world progress absolutely safe.</p>
+        <p>In order to live the full metacloud experience, you’ll need  a digital wallet to serve you as an account that keeps all your digital assets and in-world progress absolutely safe.</p>
         <p>The metacloud experience without a digital wallet will have your information stored locally. Events, rewards or multiple device log in will not be possible</p>
 
         <h5>What is $CLOUD?</h5>
@@ -43,7 +43,7 @@ export class Doc {
         <p>Exclusive wearables in the metacloud will be available. But the free of charge avatar editor counts with an interesting selection of wearables and accessories.</p>
 
         <h5>Can I claim my Avatar name later?</h5>
-        <p>You can visit the Names page in the Builder to claim it. All you need is an installed digital wallet and at least 100 $CLOUD to burn. Another alternative is to buy a name in the Metacloud Marketplace.</p>
+        <p>You can visit the Names page in the Builder to claim it. All you need is an installed digital wallet and at least 100 $CLOUD to burn. Another alternative is to buy a name in the metacloud Marketplace.</p>
 
         <h5>What is LAND?</h5>
         <p>LAND is a non-fungible digital asset maintained in an BSC smart contract. It’s divided into parcels that are referenced using unique x,y cartesian coordinates. Each LAND token includes a record of its coordinates, its owner, and a reference to a content description file or parcel manifest that describes and encodes the content the owner wishes to serve on his or her land.</p>
@@ -55,7 +55,7 @@ export class Doc {
         <p>You will be able to visit  the metacloud  Marketplace to browse through all of the available LANDs or Estates of LAND that are currently for sale.</p>
 
         <h5>What does ‘owning’ virtual LAND mean and how does it work?</h5>
-        <p>LAND within metacloud  is represented by non-fungible LAND tokens (meaning that each is unique and cannot be replicated) that track ownership on the BSC blockchain. Owning LAND within metacloud  is akin to owning any other unique, crypto asset like <a href="https://www.cryptokitties.co/" target="_blank">CryptoKitties</a> or <a href="https://www.larvalabs.com/cryptopunks" target="_blank">CryptoPunks</a>, however you will be able to use your LAND within Metacloud  to build three dimensional spaces and applications. LAND is built on our BEP721 standard, making it a digital asset that can be traded with other users, like other digital assets.</p>
+        <p>LAND within metacloud  is represented by non-fungible LAND tokens (meaning that each is unique and cannot be replicated) that track ownership on the BSC blockchain. Owning LAND within metacloud  is akin to owning any other unique, crypto asset like <a href="https://www.cryptokitties.co/" target="_blank">CryptoKitties</a> or <a href="https://www.larvalabs.com/cryptopunks" target="_blank">CryptoPunks</a>, however you will be able to use your LAND within metacloud  to build three dimensional spaces and applications. LAND is built on our BEP721 standard, making it a digital asset that can be traded with other users, like other digital assets.</p>
 
         <h5>Why is LAND scarce?</h5>
         <p>Like CryptoKitties and CryptoPunks, LAND is a non-fungible digital asset. To ensure that the value of LAND parcels remains stable, the amount of land in metacloud  corresponds to the fixed, total amount of $CLOUD.</p>
@@ -71,7 +71,7 @@ export class Doc {
         <p>It’s very important to keep your wallet recovery pass phrases safe. If those are lost, your name, avatar and wearables or NFT items will be lost.</p>
 
         <h5>How is content distributed?</h5>
-        <p>The visual, audio and three dimensional content of Metacloud  will be stored in a network of content servers. Anyone can submit a server to join this network, but it must be voted on by the community. When you visit Metacloud , the content needed to render your location will be pulled from the content servers. Each LAND token, stored on the BSC blockchain, is associated with an x,y location within the world and links to the content for that location.</p>
+        <p>The visual, audio and three dimensional content of metacloud  will be stored in a network of content servers. Anyone can submit a server to join this network, but it must be voted on by the community. When you visit metacloud , the content needed to render your location will be pulled from the content servers. Each LAND token, stored on the BSC blockchain, is associated with an x,y location within the world and links to the content for that location.</p>
 
         <h5>What’s the way to start creating at metacloud?</h5>
         <ul>
