@@ -41,6 +41,8 @@
     padding: 0.6em 1.5em;
     width: 240px;
     margin-top: 2em;
+    background-color: $color_primary_900;
+    color: white;
     @include xs{
       margin-top: 1em;
       width: 100%;
@@ -50,16 +52,21 @@
     app-coming-soon-element{
       &::ng-deep .neon-effect{
         transform: scale(0.7);
+        b{
+          color: #e9c338;
+          text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2;
+        }
       }
     }
   }
 
-  .btn-building{
+  /* .btn-building{
     app-coming-soon-element{
       &::ng-deep b{
         color: #e9c338;
         text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2, 0 0 0.5em #bd00f2, 0 2px 3px #49005e, 0px 0px 7px #fff;
       }
     }
-  }
+  } */
+
 }

@@ -279,6 +279,10 @@
       color: white;
       app-coming-soon-element{
         left: 2px;
+        &::ng-deep b{
+          color: #e9c338;
+          text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2;
+        }
       }
       @include lt-md{
         display: none;
