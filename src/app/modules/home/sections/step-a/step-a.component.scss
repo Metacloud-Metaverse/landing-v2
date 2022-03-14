@@ -1,1 +1,58 @@
 @import "../../home.component.scss";
+
+.texts1 {
+  top: 25%;
+  flex-direction: column;
+  @include xs {
+    top: 50%;
+    left: 10%;
+    width: 90%;
+    transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    margin-bottom: 2em;
+    border-radius: 8px;
+    max-width: 100%;
+    @include xs {
+      margin-top: auto;
+    }
+  }
+
+  h2 {
+    width: 1000px;
+    @include xs {
+      width: calc(100% - 1em);
+      z-index: 8;
+      /* margin-top: 0; */
+    }
+  }
+
+  .countdown {
+    margin-top: 1em;
+    color: #ee34f5;
+    text-shadow: 0 0 20px #dc0be4;
+    font-size: 3em;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    animation-name: glow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0px 0px 5px #830288, 0px 0px 5px #dc0be4;
+    }
+    to {
+      text-shadow: 0px 0px 20px #830288, 0px 0px 20px #dc0be4;
+    }
+  }
+}

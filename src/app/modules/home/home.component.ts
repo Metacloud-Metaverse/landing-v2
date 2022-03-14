@@ -141,6 +141,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.pageState = 9;
         break;
 
+        /* case 11:
+        this.activeSection11();
+        this.pageState = 10;
+        break; */
+
         default:
         break;
       }
@@ -194,6 +199,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.pageState = 9;
         break;
 
+        /* case 9:
+        this.activeSection11();
+        this.pageState = 10;
+        break; */
+
         default:
         break;
       }
@@ -209,6 +219,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener('touchend', ['$event']) handleTouchEnd(event:any){
+    console.log(this.touchY);
+
     let te = event.changedTouches[0].clientY;
    if(this.touchY > te+5){
 
@@ -257,6 +269,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.activeSection10();
       this.pageState = 9;
       break;
+
+      /* case 9:
+      this.activeSection11();
+      this.pageState = 10;
+      break; */
 
       default:
       break;
@@ -316,6 +333,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.pageState = 9;
       break;
 
+      /* case 11:
+      this.activeSection11();
+      this.pageState = 10;
+      break; */
+
       default:
       break;
     }
@@ -323,11 +345,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
    }
   }
 
+  @HostListener('touchmove', ['$event']) onMove(event:any){
+    this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches && event.clienY > 0) {
+          console.log(event.clientY);
+
+        }
+    });
+  }
+
   ngOnInit(): void {
     this.titleService.setTitle('Welcome to the metacloud metaverse | metacloud');
     this.metaTagService.updateTag(
       { name: 'description', content: 'Metacloud is a Metaverse that connects you with anyone, anywhere in a VR world. Move over Meta. Theres a new sheriff in town.' }
     );
+
     /* this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
       .subscribe((state: BreakpointState) => {
@@ -349,6 +383,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
       console.log(this.modelAvatarCorner);
     }, 5000); */
   }
+
+  mouseWheelConfig(event: any) {
+    event.stopPropagation();
+  }
+
+
 
   changeScene(asset: string) {
     this.modelAvatarPrimary.nativeElement.skyboxImage = asset;
@@ -572,34 +612,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.listTimeouts.push(setTimeout(() => {
       this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 90deg 100%';
     }, 500));
-
-    /* this.listTimeouts.push(setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.interpolationDecay = 400;
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/concert-optimized.jpg';
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
-    }, 4000));
-
-    this.listTimeouts.push(setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/casino-optimized.jpg';
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-270deg 80deg 100%';
-    }, 5500));
-
-    this.listTimeouts.push(setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/bonfire-optimized.jpg';
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-359deg 80deg 100%';
-    }, 8000));
-
-    this.listTimeouts.push(setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/nieve-optimized.jpg';
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-90deg 80deg 100%';
-    }, 10500)); */
-
-    /* this.listTimeouts.push(setTimeout(() => {
-      this.modelAvatarPrimary.nativeElement.skyboxImage = '/assets/hdr/museo-optimized.jpg';
-      this.modelAvatarPrimary.nativeElement.cameraOrbit = '-180deg 80deg 100%';
-      this.modelAvatarPrimary.nativeElement.cameraControls = true;
-      this.modelAvatarPrimary.nativeElement.autoRotate = true;
-    }, 13000)); */
   }
 
   clearTimeouts() {
@@ -629,13 +641,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
     /* this.avatarCornerRun(); */
   }
 
-  activeSection9(){
+  /* activeSection9(){
     this.clearTimeouts();
     this.pageState = 8;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
     this.modelAvatarPrimary.nativeElement.autoRotate = true;
+  } */
+
+  activeSection9(){
+    this.clearTimeouts();
+    this.pageState = 8;
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
+    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     /* this.avatarCornerRun(); */
   }
 
@@ -647,21 +666,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     /* this.avatarCornerRun(); */
   }
 
-  activeSection11(){
-    this.clearTimeouts();
-    this.pageState = 10;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
-    this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    /* this.avatarCornerRun(); */
-  }
-
-  activeSection12(){
+  /* activeSection12(){
     this.clearTimeouts();
     this.pageState = 11;
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    /* this.avatarCornerRun(); */
-  }
+  } */
 
 
   loadConfigModelViewer() {

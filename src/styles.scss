@@ -77,8 +77,10 @@ $theme: mat-light-theme($primary, $accent);
 @include angular-material-theme($theme);
 
 
-html, body { height: 100%; font-size: 100%; overscroll-behavior: contain; }
+html, body { height: -webkit-fill-available; font-size: 100%; overscroll-behavior: contain; }
 body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   font-size: 16px;
   font: 16px;
   margin: 0;

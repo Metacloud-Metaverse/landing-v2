@@ -1,6 +1,6 @@
 
 <div class="main-layout">
-  <nav [ngClass]="{'nav-scrolled': scrolled, 'nav-white': router.url == '/' || router.url == '/contact', 'nav-open': isMenuOpen}">
+  <nav [ngClass]="{'nav-scrolled': scrolled && router.url != '/home', 'nav-white': router.url == '/' || router.url == '/contact', 'nav-open': isMenuOpen}">
 
     <div class="menu" (click)="isMenuOpen = !isMenuOpen;">
       <div id="hamburger" onclick="this.classList.toggle('open');" [ngClass]="{'open': isMenuOpen}">
@@ -34,10 +34,10 @@
     <button mat-flat-button color="primary" class="btn-exploring">START EXPLORING <app-coming-soon-element></app-coming-soon-element></button>
   </nav>
 
-  <div *ngIf="router.url == '/home'" class="video-text" (click)="onClickPlayHypeVideo()">
+  <!-- <div *ngIf="router.url == '/home'" class="video-text" (click)="onClickPlayHypeVideo()">
     <p>WATCH THE HYPE VIDEO</p>
     <mat-icon>play_circle_outline</mat-icon>
-  </div>
+  </div> -->
 
   <router-outlet></router-outlet>
 </div>
