@@ -29,6 +29,9 @@
       width: 400px;
       right: calc(50% - 200px);
     }
+    @include sm {
+      width: 500px;
+    }
   }
 
   .img-land-2 {
@@ -42,6 +45,9 @@
       top: 20%;
       width: 150px;
       right: calc(50% - 120px);
+    }
+    @include sm{
+      width: 150px;
     }
   }
 }

@@ -48,6 +48,7 @@
 
     .event {
       min-height: 400px;
+      max-height: 40vh;
       border-radius: 1em;
       overflow: hidden;
       width: calc(20% - 1em);
@@ -123,6 +124,20 @@
         margin-left: auto;
         margin-right: auto;
         /* max-width: 100%; */
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (max-height: 600px) {
+  .texts3{
+    .events{
+      .event{
+        min-width: 300px;
+        min-height: initial;
+        height: 40vh;
       }
     }
   }

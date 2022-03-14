@@ -19,6 +19,9 @@
       margin-bottom: 0;
       font-size: 3.5vh;
     }
+    @include sm{
+      font-size: 5vh !important;
+    }
   }
 }
 

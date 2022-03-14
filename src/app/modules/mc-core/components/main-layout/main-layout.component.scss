@@ -280,6 +280,9 @@
       app-coming-soon-element{
         left: 2px;
       }
+      @include lt-md{
+        display: none;
+      }
     }
   }
 

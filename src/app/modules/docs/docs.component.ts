@@ -59,7 +59,7 @@ export class DocsComponent implements OnInit {
       icon: 'draw',
       links: [
         { title: 'Creating content', url: 'creating-content', type: 0 },
-        { title: 'Design Experiences', url: 'design-experiences', type: 0 },
+        /* { title: 'Design Experiences', url: 'design-experiences', type: 0 }, */
         { title: 'Builder FAQ', url: 'builder-faq', type: 0 },
         { title: 'Wearables Overview', url: 'wearables-overview', type: 0 },
         { title: '3D Model essentials', url: '3d-model-essentials', type: 0 },
