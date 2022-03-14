@@ -65,6 +65,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   section3text3 = false;
 
   sectionActive = 0;
+  scrollCurrentPosition = 0;
 
   activeAnimation = 'inactive';
 
@@ -82,13 +83,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) { }
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event:any){
+    console.log("execute wheel");
     if(this.mouseScrollExecuting){
       return;
     }
 
     this.mouseScrollExecuting = true;
 
-    if (event.wheelDelta > 0) {
+    if (event.deltaY < 0) {
       console.log('Mouse Scroll Up');
       switch (this.pageState) {
         case 1:
@@ -146,57 +148,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
     }
 
-    if (event.wheelDelta < 0) {
+    if (event.deltaY > 0) {
       console.log('Mouse Scroll Down');
-      switch (this.pageState) {
-        case 0:
-        this.activeSection2();
-        this.pageState = 1;
-        break;
-
-        case 1:
-        this.activeSection3();
-        this.pageState = 2;
-        break;
-
-        case 2:
-        this.activeSection4();
-        this.pageState = 3;
-        break;
-
-        case 3:
-        this.activeSection5();
-        this.pageState = 4;
-        break;
-
-        case 4:
-        this.activeSection6();
-        this.pageState = 5;
-        break;
-
-        case 5:
-        this.activeSection7();
-        this.pageState = 6;
-        break;
-
-        case 6:
-        this.activeSection8();
-        this.pageState = 7;
-        break;
-
-        case 7:
-        this.activeSection9();
-        this.pageState = 8;
-        break;
-
-        case 8:
-        this.activeSection10();
-        this.pageState = 9;
-        break;
-
-        default:
-        break;
-      }
+      this.nextSection();
     }
 
     setTimeout(() => {
@@ -761,5 +715,56 @@ export class HomeComponent implements OnInit, AfterViewInit {
   activeCreativity(){
     this.sectionActive = 3;
     this.modelAvatarPrimary.nativeElement.animationName = 'looking';
+  }
+
+  nextSection() {
+    if(this.pageState >= 9) {
+      return;
+    }
+
+    this.pageState++;
+
+
+
+    switch (this.pageState) {
+      case 1:
+      this.activeSection2();
+      break;
+
+      case 2:
+      this.activeSection3();
+      break;
+
+      case 3:
+      this.activeSection4();
+      break;
+
+      case 4:
+      this.activeSection5();
+      break;
+
+      case 5:
+      this.activeSection6();
+      break;
+
+      case 6:
+      this.activeSection7();
+      break;
+
+      case 7:
+      this.activeSection8();
+      break;
+
+      case 8:
+      this.activeSection9();
+      break;
+
+      case 9:
+      this.activeSection10();
+      break;
+
+      default:
+      break;
+    }
   }
 }
