@@ -20,30 +20,30 @@ export class Doc {
       content_html: `
       <div class="intro-component-animation">
         <h1>​​FAQ</h1>
-        <h5>What software do I need to play on the Metacloud?</h5>
+        <h5>What software do I need to play on the metacloud?</h5>
         <p>A PC or Mac running Chrome, Firefox, Brave.</p>
 
         <h5>Can I log in from multiple computers?</h5>
-        <p>Yes, you can run Metacloud from multiple computers as long as you have your digital wallet installed on each machine.</p>
+        <p>Yes, you can run metacloud from multiple computers as long as you have your digital wallet installed on each machine.</p>
 
         <h5>Is this mobile responsive?</h5>
         <p>Mobile devices are not supported on the metacloud (yet).</p>
 
         <h5>Do I need a wallet to play in metacloud?</h5>
-        <p>In order to live the full Metacloud experience, you’ll need  a digital wallet to serve you as an account that keeps all your digital assets and in-world progress absolutely safe.</p>
+        <p>In order to live the full metacloud experience, you’ll need  a digital wallet to serve you as an account that keeps all your digital assets and in-world progress absolutely safe.</p>
         <p>The metacloud experience without a digital wallet will have your information stored locally. Events, rewards or multiple device log in will not be possible</p>
 
         <h5>What is $CLOUD?</h5>
         <p>$CLOUD is metacloud ’s fungible, BEP20 cryptocurrency token. $CLOUD is burned, or spent, in exchange for LAND parcels.</p>
 
         <h5>Will I be able to buy things other than LAND with $CLOUD?</h5>
-        <p>Exactly, users will be able to trade $CLOUD with other users in exchange for goods and services hosted within Metacloud.</p>
+        <p>Exactly, users will be able to trade $CLOUD with other users in exchange for goods and services hosted within metacloud.</p>
 
         <h5>How can I get new wearables?</h5>
-        <p>Exclusive wearables in the Metacloud will be available. But the free of charge avatar editor counts with an interesting selection of wearables and accessories.</p>
+        <p>Exclusive wearables in the metacloud will be available. But the free of charge avatar editor counts with an interesting selection of wearables and accessories.</p>
 
         <h5>Can I claim my Avatar name later?</h5>
-        <p>You can visit the Names page in the Builder to claim it. All you need is an installed digital wallet and at least 100 $CLOUD to burn. Another alternative is to buy a name in the Metacloud Marketplace.</p>
+        <p>You can visit the Names page in the Builder to claim it. All you need is an installed digital wallet and at least 100 $CLOUD to burn. Another alternative is to buy a name in the metacloud Marketplace.</p>
 
         <h5>What is LAND?</h5>
         <p>LAND is a non-fungible digital asset maintained in an BSC smart contract. It’s divided into parcels that are referenced using unique x,y cartesian coordinates. Each LAND token includes a record of its coordinates, its owner, and a reference to a content description file or parcel manifest that describes and encodes the content the owner wishes to serve on his or her land.</p>
@@ -51,18 +51,18 @@ export class Doc {
         <h5>What is an Estate?</h5>
         <p>Like LAND, an estate is a non-fungible digital asset. An estate is an association of two or more directly adjacent parcels of LAND. These parcels must be directly adjacent and cannot be separated by a road, plaza or any other parcel. By connecting parcels to form Estates, you can more easily manage your larger LAND holdings. Estates are especially useful when building larger scenes that span more than one parcel.</p>
 
-        <h5>How can I buy LAND or Estates in Metacloud?</h5>
-        <p>You will be able to visit  the Metacloud  Marketplace to browse through all of the available LANDs or Estates of LAND that are currently for sale.</p>
+        <h5>How can I buy LAND or Estates in metacloud?</h5>
+        <p>You will be able to visit  the metacloud  Marketplace to browse through all of the available LANDs or Estates of LAND that are currently for sale.</p>
 
         <h5>What does ‘owning’ virtual LAND mean and how does it work?</h5>
-        <p>LAND within Metacloud  is represented by non-fungible LAND tokens (meaning that each is unique and cannot be replicated) that track ownership on the BSC blockchain. Owning LAND within Metacloud  is akin to owning any other unique, crypto asset like <a href="https://www.cryptokitties.co/" target="_blank">CryptoKitties</a> or <a href="https://www.larvalabs.com/cryptopunks" target="_blank">CryptoPunks</a>, however you will be able to use your LAND within Metacloud  to build three dimensional spaces and applications. LAND is built on our BEP721 standard, making it a digital asset that can be traded with other users, like other digital assets.</p>
+        <p>LAND within metacloud  is represented by non-fungible LAND tokens (meaning that each is unique and cannot be replicated) that track ownership on the BSC blockchain. Owning LAND within metacloud  is akin to owning any other unique, crypto asset like <a href="https://www.cryptokitties.co/" target="_blank">CryptoKitties</a> or <a href="https://www.larvalabs.com/cryptopunks" target="_blank">CryptoPunks</a>, however you will be able to use your LAND within metacloud  to build three dimensional spaces and applications. LAND is built on our BEP721 standard, making it a digital asset that can be traded with other users, like other digital assets.</p>
 
         <h5>Why is LAND scarce?</h5>
-        <p>Like CryptoKitties and CryptoPunks, LAND is a non-fungible digital asset. To ensure that the value of LAND parcels remains stable, the amount of land in Metacloud  corresponds to the fixed, total amount of $CLOUD.</p>
-        <p>Without LAND scarcity, many parcels would likely be left abandoned, negatively impacting the quality of content in Metacloud  and the user experience.</p>
+        <p>Like CryptoKitties and CryptoPunks, LAND is a non-fungible digital asset. To ensure that the value of LAND parcels remains stable, the amount of land in metacloud  corresponds to the fixed, total amount of $CLOUD.</p>
+        <p>Without LAND scarcity, many parcels would likely be left abandoned, negatively impacting the quality of content in metacloud  and the user experience.</p>
 
         <h5>Is metacloud running on top of its own blockchain?</h5>
-        <p>Metacloud uses the BSC blockchain to store and verify information about LAND ownership and LAND content. It does not run on its own independent blockchain. Content within Metacloud  is hosted and served to users via a network of community-owned content servers.</p>
+        <p>metacloud uses the BSC blockchain to store and verify information about LAND ownership and LAND content. It does not run on its own independent blockchain. Content within metacloud  is hosted and served to users via a network of community-owned content servers.</p>
 
         <h5>How are transactions validated?</h5>
         <p>The BSC LAND smart contract registers any changes to the state of a parcel of LAND, such as a change in the contents of the LAND or a transfer of ownership. These changes are recorded and verified by the BSC blockchain.</p>
@@ -71,7 +71,7 @@ export class Doc {
         <p>It’s very important to keep your wallet recovery pass phrases safe. If those are lost, your name, avatar and wearables or NFT items will be lost.</p>
 
         <h5>How is content distributed?</h5>
-        <p>The visual, audio and three dimensional content of Metacloud  will be stored in a network of content servers. Anyone can submit a server to join this network, but it must be voted on by the community. When you visit Metacloud , the content needed to render your location will be pulled from the content servers. Each LAND token, stored on the BSC blockchain, is associated with an x,y location within the world and links to the content for that location.</p>
+        <p>The visual, audio and three dimensional content of metacloud  will be stored in a network of content servers. Anyone can submit a server to join this network, but it must be voted on by the community. When you visit metacloud , the content needed to render your location will be pulled from the content servers. Each LAND token, stored on the BSC blockchain, is associated with an x,y location within the world and links to the content for that location.</p>
 
         <h5>What’s the way to start creating at metacloud?</h5>
         <ul>
@@ -84,7 +84,7 @@ export class Doc {
         <p>Specifications on which other users can access your art gallery, your house or event can be managed. However, you need to consider that public content as 3D models will be always available to see for other users. They will notice your creations on the metacloud.</p>
 
         <h5>Am I able to report another user?</h5>
-        <p>Click on another’s Avatar to see their profile, then click on the tab report. If you report a player, you will be able to bring a player’s conduct to the attention of Metacloud ’s Community.</p>
+        <p>Click on another’s Avatar to see their profile, then click on the tab report. If you report a player, you will be able to bring a player’s conduct to the attention of metacloud ’s Community.</p>
 
         <h5>Am I able to block another user/player?</h5>
         <p>Though you will still see them, those blocked players won’t be able to address you by chat.</p>
@@ -109,10 +109,10 @@ export class Doc {
       <div class="intro-component-animation">
         <h1>Get ready to bring your ideas to life.</h1>
         <h4>Some Key Concepts</h4>
-        <p>LAND: The Metacloud is made up of 16-meter-by-16-meter-long LAND chunks. SCENE: It´s a collection of in-world Metacloud experiences created on one or more parcels.</p>
+        <p>LAND: The metacloud is made up of 16-meter-by-16-meter-long LAND chunks. SCENE: It´s a collection of in-world metacloud experiences created on one or more parcels.</p>
         <h4>Main Characteristics</h4>
         <ul>
-          <li>By leveraging the private Metacloud SDK, the builder generates the appropriate code without you having to look at it.</li>
+          <li>By leveraging the private metacloud SDK, the builder generates the appropriate code without you having to look at it.</li>
           <li>Every scene represents one unique escence. Scenes might contain goods which cannot cross into another scene.</li>
           <li>Metacloud´s Builder will present you a drag and drop experience, no coding will be needed to create in the metacloud.</li>
         </ul>
@@ -129,7 +129,7 @@ export class Doc {
         <h6>About Single Player / Multiplayer</h6>
         <p>Begin by creating a single-player prototype. Then you may start thinking about how to write multiplayer interactions. Finally, you can work on your transactional layers-based <a href="https://gameanalytics.com/blog/how-to-perfect-your-games-core-loop/" target="_blank">core loop</a></p>
         <h6>On core loop</h6>
-        <p>These loops can be found in any type of virtual experience. The essential loops that drive player´s actions (and the game's response to those actions) are known as a core loop in game design. There are some infrastructure ideas Metacloud´s client draws from Angular JS, and only renders a scene when there is a change, rather than at a steady rate.</p>
+        <p>These loops can be found in any type of virtual experience. The essential loops that drive player´s actions (and the game's response to those actions) are known as a core loop in game design. There are some infrastructure ideas metacloud´s client draws from Angular, and only renders a scene when there is a change, rather than at a steady rate.</p>
         <h6>On Transactional Layers (TLs)</h6>
         <p>The TLs are the interfaces between systems that keep a permanent record of player actions. However, this does not mean that the layers themselves can´t receive an update, for example, the blockchain might get an update (or another application that is integrated into your experience). The creation and maintenance of this permanent record are key in providing a personalized experience.</p>
         <h4>Factors to consider</h4>
@@ -158,7 +158,7 @@ export class Doc {
           <li>In addition, you may add the ability to track each player's events and activities, as well as recall when they entered the scene.</li>
         </ul>
         <h6>Sharing your MVP</h6>
-        <p>Although the Metacloud world is still closed to the general public, you will be able to upload a scene preview to a server, and quickly share a link to it with anyone who can provide feedback. We still advocate testing modifications with test users in a separate preview server before publishing a new version of your scene to Metacloud, even after Metacloud is open to everyone.</p>
+        <p>Although the metacloud world is still closed to the general public, you will be able to upload a scene preview to a server, and quickly share a link to it with anyone who can provide feedback. We still advocate testing modifications with test users in a separate preview server before publishing a new version of your scene to metacloud, even after metacloud is open to everyone.</p>
         <h4>On Persistence</h4>
         <p>Note that you will always want to achieve a level of persistence such that it allows you to portray that your infrastructure´s transactional layers (TLs) are functioning. These refer <b>not only to the activities</b> of the players, but also to the <b>system's responses</b> to them.</p>
         <h6>Typical factors to include</h6>
@@ -248,13 +248,13 @@ export class Doc {
       content_html: `
       <div class="intro-component-animation">
         <h1><span class="number-text"><b>3</b></span>D model essentials</h1>
-        <p>3D models are imported into Metacloud in glTF format. There are a number of supported features that these models can include. This section goes over ways to make them compatible with Metacloud and best practices.</p>
-        <p>See Set entity position for information on how you can configure a 3D model in a Metacloud scene to set its position, scale, etc.</p>
+        <p>3D models are imported into metacloud in glTF format. There are a number of supported features that these models can include. This section goes over ways to make them compatible with metacloud and best practices.</p>
+        <p>See Set entity position for information on how you can configure a 3D model in a metacloud scene to set its position, scale, etc.</p>
         <p>Keep in mind that all models, their shaders and their textures must be within the parameters of the scene limitations.</p>
         <h4>Supported 3D model formats</h4>
-        <p>3D models in Metacloud must be in glTF format. <a href="https://www.khronos.org/gltf" target="_blank">glTF</a> (GL Transmission Format) is an open project by Khronos providing a common format for 3D assets that is efficient and highly interoperable with modern web tech.</p>
+        <p>3D models in metacloud must be in glTF format. <a href="https://www.khronos.org/gltf" target="_blank">glTF</a> (GL Transmission Format) is an open project by Khronos providing a common format for 3D assets that is efficient and highly interoperable with modern web tech.</p>
         <p>Metacloud recommends using .gltf while you’re working on a scene, but then switching to .glb when uploading it!</p>
-        <blockquote>Note: Animations must be embedded inside the glTF file to use in Metacloud.</blockquote>
+        <blockquote>Note: Animations must be embedded inside the glTF file to use in metacloud.</blockquote>
         <h6>Export to glTF from Blender</h6>
         <p>When exporting 3D models that include multiple animations, make sure that all animations are embedded in the model. To do this, open the NLA editor and click Stash to add each animation to the model.</p>
         <h6>Export to glTF from Maya</h6>
