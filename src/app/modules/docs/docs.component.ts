@@ -53,7 +53,7 @@ export class DocsComponent implements OnInit {
       icon: 'store',
       isExpanded: false,
       links: [
-        { title: 'Marketplace overview', url: 'marketplace-overview', type: 0 },
+        { title: 'Marketplace Overview', url: 'marketplace-overview', type: 0 },
       ]
     },
     {
@@ -61,11 +61,11 @@ export class DocsComponent implements OnInit {
       icon: 'draw',
       isExpanded: false,
       links: [
-        { title: 'Creating content', url: 'creating-content', type: 0 },
+        { title: 'Creating Content', url: 'creating-content', type: 0 },
         /* { title: 'Design Experiences', url: 'design-experiences', type: 0 }, */
         { title: 'Builder FAQ', url: 'builder-faq', type: 0 },
         { title: 'About Wearables', url: 'about-wearables', type: 0 },
-        { title: '3D Model essentials', url: '3d-model-essentials', type: 0 },
+        { title: '3D Model Basics', url: '3d-model-basics', type: 0 },
       ]
     },
   ];

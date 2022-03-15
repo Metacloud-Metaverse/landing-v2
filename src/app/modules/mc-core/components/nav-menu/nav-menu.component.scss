@@ -240,9 +240,38 @@
             0 2px 3px #49005e, 0px 0px 7px #fff;
         }
       }
-
       &:hover {
         background-color: $color_primary_700;
+      }
+      @include xs {
+        display: block;
+      }
+    }
+
+    .btn-private-sell{
+      display: none;
+      padding: 0.3em 2em;
+      margin-bottom: 1.5em;
+      width: 100%;
+      background-color: $color_primary_900;
+      color: white;
+      transition: $animation;
+      -o-transition: $animation;
+      -moz-transition: $animation;
+      -webkit-transition: $animation;
+      pointer-events: none;
+      &::ng-deep .mat-button-wrapper {
+        display: flex;
+        width: 100%;
+      }
+      app-coming-soon-element{
+        position: relative;
+        top: 2px;
+        &::ng-deep b{
+          font-size: 19px;
+          color: #e9c338;
+          text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2;
+        }
       }
       @include xs {
         display: block;

@@ -243,10 +243,10 @@ export class Doc {
       `,
     },
     {
-      slug: '3d-model-essentials',
+      slug: '3d-model-basics',
       content_html: `
       <div class="intro-component-animation">
-        <h1><span class="number-text"><b>3</b></span>D model essentials</h1>
+        <h1><span class="number-text"><b>3</b></span>D Model Basics</h1>
         <p>3D models are imported into metacloud in glTF format. There are a number of supported features that these models can include. This section goes over ways to make them compatible with metacloud and best practices.</p>
         <p>See Set entity position for information on how you can configure a 3D model in a metacloud scene to set its position, scale, etc.</p>
         <p>Keep in mind that all models, their shaders and their textures must be within the parameters of the scene limitations.</p>
