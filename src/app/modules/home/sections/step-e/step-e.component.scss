@@ -14,7 +14,7 @@
   h2 {
     width: 1050px;
     @include xs {
-      width: calc(100% - 1em);
+      width: 100%;
       z-index: 8;
       margin-bottom: 0;
       font-size: 3.5vh;
@@ -32,9 +32,11 @@
   pointer-events: none;
   @include xs{
     flex-direction: column;
-    margin-bottom: auto;
     gap: 0;
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
   }
 
   button{
@@ -47,11 +49,21 @@
       margin-top: 1em;
       width: 100%;
       padding: 0;
+      font-size: 0.8em;
+      height: 56px;
     }
 
     app-coming-soon-element{
       &::ng-deep .neon-effect{
         transform: scale(0.7);
+        -o-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        -moz-transform: scale(0.7);
+        -webkit-transform: scale(0.7);
+        @include xs{
+          transform: scale(0.5);
+          top: -18px;
+        }
         b{
           color: #e9c338;
           text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2;
@@ -59,14 +71,4 @@
       }
     }
   }
-
-  /* .btn-building{
-    app-coming-soon-element{
-      &::ng-deep b{
-        color: #e9c338;
-        text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2, 0 0 0.5em #bd00f2, 0 2px 3px #49005e, 0px 0px 7px #fff;
-      }
-    }
-  } */
-
 }

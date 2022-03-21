@@ -28,7 +28,7 @@ export class TeamComponent implements OnInit {
     {
       image: '/assets/img/team/team-francisco-3d.png',
       name: ' Francisco Michelich',
-      rol: 'General Manager (COO)',
+      rol: 'Project Lead',
       linkedin: 'https://www.linkedin.com/in/franciscomichelich/',
       twitter: 'https://twitter.com/ing_fmichelich'
     },

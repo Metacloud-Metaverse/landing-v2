@@ -51,3 +51,9 @@
     }
   }
 }
+
+@media only screen and (max-height: 600px) {
+  .section{
+    bottom: 0;
+  }
+}

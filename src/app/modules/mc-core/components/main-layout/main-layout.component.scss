@@ -65,9 +65,11 @@
     gap: 0.5em;
     @include xs {
       padding: 0.2em 1em;
+      padding-left: 0.3em;
     }
     @include sm {
       padding: 1em 1.5em;
+      padding-left: 1.2em;
     }
 
     .logo {
