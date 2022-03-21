@@ -43,8 +43,6 @@
   <video @leaveElements *ngIf="pageState == 3 && sectionActive == 1" src="/assets/videos/cards-float.mp4" class="video-cards-float" autoplay muted loop></video>
   <video @leaveElements *ngIf="pageState == 3 && sectionActive == 2" src="/assets/videos/wave-music-5.mp4" class="video-music-wave" autoplay muted loop></video>
 
-  <!-- <app-step-d *ngIf="pageState == 3" @paragraphAnimation [modelViewer]="modelAvatarPrimary"></app-step-d> -->
-
   <app-step-e *ngIf="pageState == 4" @paragraphAnimation></app-step-e>
 
   <app-step-f #stepF *ngIf="pageState == 5" @paragraphAnimation [showChangeSceneButton]="showChangeSceneButton" (changeScene)="changeScene($event)"></app-step-f>
@@ -93,7 +91,7 @@
                 'avatar-step-b' : pageState == 1,
                 'avatar-step-c' : pageState == 2,
                 'avatar-step-d' : pageState == 3,
-                'movement5' : pageState == 4,
+                'avatar-step-e' : pageState == 4,
                 'movement6' : pageState == 5,
                 'movement7' : pageState == 6,
                 'movement8' : pageState == 7,

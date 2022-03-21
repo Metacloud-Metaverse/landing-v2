@@ -1,72 +1,76 @@
 @import "../../home.component.scss";
 
-.texts5 {
-  top: 28%;
-  @include xs {
-    top: 50%;
-    left: 10%;
-    width: 90%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+.step-e {
+  flex-direction: column;
+  justify-content: center;
+  width: 1100px;
+
   h2 {
     width: 1050px;
+    @include md{
+      font-size: 5vh;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    pointer-events: none;
+
     @include xs {
-      width: 100%;
-      z-index: 8;
-      margin-bottom: 0;
-      font-size: 3.5vh;
-    }
-    @include sm{
-      font-size: 5vh !important;
-    }
-  }
-}
-
-.buttons{
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-  pointer-events: none;
-  @include xs{
-    flex-direction: column;
-    gap: 0;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-  }
-
-  button{
-    padding: 0.6em 1.5em;
-    width: 240px;
-    margin-top: 2em;
-    background-color: $color_primary_900;
-    color: white;
-    @include xs{
-      margin-top: 1em;
-      width: 100%;
-      padding: 0;
-      font-size: 0.8em;
-      height: 56px;
+      flex-direction: column;
+      gap: 0;
+      width: 90%;
     }
 
-    app-coming-soon-element{
-      &::ng-deep .neon-effect{
-        transform: scale(0.7);
-        -o-transform: scale(0.7);
-        -ms-transform: scale(0.7);
-        -moz-transform: scale(0.7);
-        -webkit-transform: scale(0.7);
-        @include xs{
-          transform: scale(0.5);
-          top: -18px;
-        }
-        b{
-          color: #e9c338;
-          text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2;
+    button {
+      padding: 0.6em 1.5em;
+      width: 240px;
+      background-color: $color_primary_900;
+      color: white;
+
+      @include xs{
+        margin-top: 1em;
+        width: 100%;
+        padding: 0;
+        height: 56px;
+        font-size: 0.8em;
+      }
+
+      @include sm{
+        margin-top: 0;
+        width: 240px;
+        padding: 0;
+        font-size: 0.8em;
+        height: 56px;
+      }
+
+      @include md{
+        margin-top: 0;
+        width: 240px;
+        padding: 0;
+        font-size: 0.8em;
+        height: 56px;
+      }
+
+      app-coming-soon-element {
+        &::ng-deep .neon-effect {
+          transform: scale(0.7);
+          -o-transform: scale(0.7);
+          -ms-transform: scale(0.7);
+          -moz-transform: scale(0.7);
+          -webkit-transform: scale(0.7);
+
+          @include lt-lg {
+            transform: scale(0.5);
+            top: -18px;
+          }
+
+          b {
+            color: #e9c338;
+            text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2;
+          }
         }
       }
     }
