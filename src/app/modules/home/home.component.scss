@@ -689,7 +689,7 @@ model-viewer {
 }
 
 .avatar-step-a,
-.movement3,
+.avatar-step-c,
 .movement5,
 .movement7,
 .movement8,
@@ -718,9 +718,6 @@ model-viewer {
   }
 }
 
-/* .movement3 {
-} */
-
 .movement4 {
   left: 20%;
   @include xs {
@@ -728,21 +725,11 @@ model-viewer {
   }
 }
 
-/* .movement5 {
-} */
-
 .movement6 {
   z-index: 8;
 }
 
-/* .movement7 {
-} */
-
-/* .movement8 {
-} */
-
 .section,
-app-step-c,
 app-step-d,
 app-step-e,
 app-step-f,
@@ -1182,7 +1169,8 @@ app-step-f {
 
 
 app-step-a,
-app-step-b{
+app-step-b,
+app-step-c{
   position: fixed;
   top: 0;
   left: 0;

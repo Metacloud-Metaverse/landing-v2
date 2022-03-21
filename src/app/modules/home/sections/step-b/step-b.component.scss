@@ -19,22 +19,4 @@
       width: 600px;
     }
   }
-
-  /* @include xs {
-    height: initial;
-    top: initial;
-    bottom: 5em;
-    left: 4em;
-    padding-left: 0;
-    h2 {
-      width: calc(100% - 2em);
-      z-index: 8;
-      text-shadow: 0 0 9px #fa9898;
-    }
-  }
-
-  @include sm {
-    top: 13vh;
-    left: 4em;
-  } */
 }

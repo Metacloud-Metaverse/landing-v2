@@ -24,10 +24,6 @@
 
   <app-step-b *ngIf="pageState == 1" @paragraphAnimation></app-step-b>
 
-  <!-- <section *ngIf="pageState == 1" @paragraphAnimation class="section texts-left texts2">
-    <h2 class="display3"><b>Shop hundreds of live events! Discover your favorite artists, concerts, theater events, games and more.</b></h2>
-  </section> -->
-
   <app-step-c *ngIf="pageState == 2" @paragraphAnimation></app-step-c>
 
   <section *ngIf="pageState == 3" @paragraphAnimation class="section texts-left texts4">
@@ -95,7 +91,7 @@
     (click)="changeAnimationAvatarPrimary()"
     [ngClass]="{'avatar-step-a' : pageState == 0,
                 'avatar-step-b' : pageState == 1,
-                'movement3' : pageState == 2,
+                'avatar-step-c' : pageState == 2,
                 'movement4' : pageState == 3,
                 'movement5' : pageState == 4,
                 'movement6' : pageState == 5,
