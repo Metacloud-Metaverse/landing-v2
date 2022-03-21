@@ -26,7 +26,7 @@
 
   <app-step-c *ngIf="pageState == 2" @paragraphAnimation></app-step-c>
 
-  <section *ngIf="pageState == 3" @paragraphAnimation class="section texts-left texts4">
+  <section *ngIf="pageState == 3" @paragraphAnimation class="section texts-left step-d texts4">
     <h2 class="texts3 display2"><span></span><b (mousemove)="onMouseOverGames($event)" class="link hover-linear">GAMES</b></h2>
     <h2 *ngIf="section3text2" class="texts3 display2"><span></span> <b (mousemove)="onMouseOverMusic($event)" class="link hover-linear">MUSIC</b></h2>
     <h2 *ngIf="section3text3" class="texts3 display2"><span></span><b (mousemove)="onMouseOverCreativity($event)" class="link hover-linear">CREATIVITY</b></h2>
@@ -92,7 +92,7 @@
     [ngClass]="{'avatar-step-a' : pageState == 0,
                 'avatar-step-b' : pageState == 1,
                 'avatar-step-c' : pageState == 2,
-                'movement4' : pageState == 3,
+                'avatar-step-d' : pageState == 3,
                 'movement5' : pageState == 4,
                 'movement6' : pageState == 5,
                 'movement7' : pageState == 6,

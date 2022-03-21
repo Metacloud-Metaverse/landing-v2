@@ -718,7 +718,7 @@ model-viewer {
   }
 }
 
-.movement4 {
+.avatar-step-d {
   left: 20%;
   @include xs {
     left: 0%;
@@ -837,7 +837,7 @@ app-step-f {
 
 
 
-.texts4 {
+.step-d {
   top: 15%;
   @include xs {
     height: initial;
@@ -1329,7 +1329,6 @@ app-step-b{
     }
   }
 
-
   .section-text-left{
     text-align: left;
 
@@ -1347,6 +1346,24 @@ app-step-b{
   .avatar-step-b {
     @include sm {
       top: 10%;
+    }
+  }
+
+  .avatar-step-d {
+    @include sm {
+      top: 10%;
+    }
+    @include md {
+      top: 10%;
+    }
+  }
+
+  .step-d{
+    h2{
+      font-size: 10vh;
+      @include xs{
+        font-size: 8vh;
+      }
     }
   }
 }
