@@ -725,14 +725,20 @@ model-viewer {
   }
 }
 
-.movement6 {
+.avatar-step-f {
+  top: 50%;
+  transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
   z-index: 8;
+  max-height: 700px;
+  background-color: white;
+  margin: auto;
 }
 
 .section,
-app-step-d,
-app-step-e,
-app-step-f,
 app-step-g,
 app-step-h,
 app-step-i,
@@ -805,11 +811,6 @@ app-step-k {
     -webkit-transform: translateX(-50%);
     pointer-events: all;
   }
-}
-
-app-step-f {
-  z-index: 30;
-  pointer-events: none;
 }
 
 .texts-left {
@@ -1009,55 +1010,6 @@ app-step-f {
   }
 }
 
-.texts6 {
-  pointer-events: all;
-  width: initial;
-  position: fixed;
-  width: initial;
-  z-index: 200;
-  top: initial;
-  height: 40px;
-  bottom: 3em;
-  left: 50%;
-  transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-
-  @include sm {
-    left: 50% !important;
-  }
-
-  button {
-    color: #fff;
-    border: 3px solid #c266d3;
-    background-image: -webkit-linear-gradient(
-      30deg,
-      #c266d3 50%,
-      transparent 50%
-    );
-    background-image: linear-gradient(30deg, #c266d3 50%, transparent 50%);
-    background-size: 500px;
-    background-repeat: no-repeat;
-    background-position: 0%;
-    -webkit-transition: background 500ms ease-in-out;
-    transition: background 500ms ease-in-out;
-    z-index: 30;
-    left: 50%;
-    transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    position: fixed;
-  }
-  button:hover {
-    background-position: 100%;
-    color: #c266d3;
-  }
-}
-
 .texts7 {
   @include xs {
     top: 50%;
@@ -1170,7 +1122,10 @@ app-step-f {
 
 app-step-a,
 app-step-b,
-app-step-c{
+app-step-c,
+app-step-d,
+app-step-e,
+app-step-f{
   position: fixed;
   top: 0;
   left: 0;
@@ -1181,6 +1136,11 @@ app-step-c{
 
 app-step-b{
   z-index: 5;
+  pointer-events: none;
+}
+
+app-step-f {
+  z-index: 30;
   pointer-events: none;
 }
 
