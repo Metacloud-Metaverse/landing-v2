@@ -688,7 +688,7 @@ model-viewer {
   -webkit-transition: all 1s ease;
 }
 
-.step-a,
+.avatar-step-a,
 .movement3,
 .movement5,
 .movement7,
@@ -701,7 +701,7 @@ model-viewer {
   pointer-events: none;
 }
 
-.movement2 {
+.avatar-step-b {
   left: 20%;
   top: 5%;
   z-index: 3;
@@ -709,8 +709,12 @@ model-viewer {
     left: 0%;
     top: -10%;
   }
-  @include lg{
-    left: 32%;
+  @include sm {
+    left: 30%;
+    top: 0%;
+  }
+  @include md{
+    left: 30%;
   }
 }
 
@@ -738,7 +742,6 @@ model-viewer {
 } */
 
 .section,
-app-step-b,
 app-step-c,
 app-step-d,
 app-step-e,
@@ -845,31 +848,7 @@ app-step-f {
 
 
 
-.texts2 {
-  pointer-events: none;
-  z-index: 9;
-  h2 {
-    pointer-events: all;
-  }
 
-  @include xs {
-    height: initial;
-    top: initial;
-    bottom: 5em;
-    left: 4em;
-    padding-left: 0;
-    h2 {
-      width: calc(100% - 2em);
-      z-index: 8;
-      text-shadow: 0 0 9px #fa9898;
-    }
-  }
-
-  @include sm {
-    top: 13vh;
-    left: 4em;
-  }
-}
 
 .texts4 {
   top: 15%;
@@ -1202,13 +1181,19 @@ app-step-f {
 
 
 
-app-step-a{
+app-step-a,
+app-step-b{
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 3;
+}
+
+app-step-b{
+  z-index: 5;
+  pointer-events: none;
 }
 
 .new-section{
@@ -1234,7 +1219,7 @@ app-step-a{
   @include xs{
     top: 50%;
     padding-top: 54px;
-    padding-bottom: 60px;
+    padding-bottom: 17%;
     padding-left: 52px;
     padding-right: 1em;
   }
@@ -1273,6 +1258,22 @@ app-step-a{
   }
 }
 
+.section-text-left{
+  text-align: left;
+
+  @include xs{
+
+  }
+
+  h2{
+    width: 700px;
+    max-width: 100%;
+    @include xs{
+      margin-top: auto;
+    }
+  }
+}
+
 
 
 
@@ -1293,9 +1294,25 @@ app-step-a{
     display: none !important;
   }
 
+  .indicators {
+    top: calc(50% + 40px);
+    max-height: calc(100vh - 70px);
+    @include xs{
+      top: 20px;
+      max-height: calc(100vh + 20px);
+    }
+    @include sm{
+      top: 50px;
+      max-height: calc(100vh - 30px);
+    }
+    @include md{
+      top: 50px;
+      max-height: calc(100vh - 30px);
+    }
+  }
+
   .section{
     bottom: 0;
-
   }
 
   .new-section{
@@ -1324,20 +1341,24 @@ app-step-a{
     }
   }
 
-  .indicators {
-    top: calc(50% + 40px);
-    max-height: calc(100vh - 70px);
+
+  .section-text-left{
+    text-align: left;
+
     @include xs{
-      top: 20px;
-      max-height: calc(100vh + 20px);
+
     }
-    @include sm{
-      top: 50px;
-      max-height: calc(100vh - 30px);
+
+    h2{
+      @include xs{
+        margin-bottom: 0;
+      }
     }
-    @include md{
-      top: 50px;
-      max-height: calc(100vh - 30px);
+  }
+
+  .avatar-step-b {
+    @include sm {
+      top: 10%;
     }
   }
 }

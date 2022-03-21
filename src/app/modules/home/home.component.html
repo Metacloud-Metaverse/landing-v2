@@ -22,11 +22,11 @@
 
   <app-step-a *ngIf="pageState == 0" @paragraphAnimation></app-step-a>
 
-  <!-- <app-step-b *ngIf="pageState == 1" @paragraphAnimation></app-step-b> -->
+  <app-step-b *ngIf="pageState == 1" @paragraphAnimation></app-step-b>
 
-  <section *ngIf="pageState == 1" @paragraphAnimation class="section texts-left texts2">
+  <!-- <section *ngIf="pageState == 1" @paragraphAnimation class="section texts-left texts2">
     <h2 class="display3"><b>Shop hundreds of live events! Discover your favorite artists, concerts, theater events, games and more.</b></h2>
-  </section>
+  </section> -->
 
   <app-step-c *ngIf="pageState == 2" @paragraphAnimation></app-step-c>
 
@@ -93,8 +93,8 @@
     interpolation-decay="300"
     class="avatar-primary"
     (click)="changeAnimationAvatarPrimary()"
-    [ngClass]="{'step-a' : pageState == 0,
-                'movement2' : pageState == 1,
+    [ngClass]="{'avatar-step-a' : pageState == 0,
+                'avatar-step-b' : pageState == 1,
                 'movement3' : pageState == 2,
                 'movement4' : pageState == 3,
                 'movement5' : pageState == 4,
