@@ -16,6 +16,7 @@ const routes: Routes = [
       { path: 'legals', loadChildren: () => import('./modules/legals/legals.module').then(m => m.LegalsModule), data: { preload: true } },
       { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule), data: { preload: true } },
       { path: 'docs', loadChildren: () => import('./modules/docs/docs.module').then(m => m.DocsModule), data: { preload: true } },
+      { path: 'company', loadChildren: () => import('./modules/company/company.module').then(m => m.CompanyModule) },
     ]
   },
   /* { path: '', redirectTo: '', pathMatch: 'full' }, */

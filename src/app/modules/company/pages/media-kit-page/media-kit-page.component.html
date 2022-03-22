@@ -1,0 +1,34 @@
+<div class="media-kit-page">
+
+  <header>
+    <div class="container">
+      <h1 class="display2"><b>Brand Guidelines</b></h1>
+      <p>Our partners align with our vision to deliver a purely blockchain-driven metaverse that will change the.</p>
+    </div>
+  </header>
+
+  <section class="brand" @componentAnimation>
+    <div class="container">
+      <div class="item animated component-animation" [cdkCopyToClipboard]="'#C959F4'" matTooltip="Copied!" #tooltip1="matTooltip" (click)="tooltip1.show()" (mousemove)="tooltip1.hide()">#C959F4</div>
+      <div class="item animated component-animation" [cdkCopyToClipboard]="'#C959F4'" matTooltip="Copied!" #tooltip2="matTooltip" (click)="tooltip2.show()" (mousemove)="tooltip2.hide()">#633AEB</div>
+      <div class="item animated component-animation" [cdkCopyToClipboard]="'#C959F4'" matTooltip="Copied!" #tooltip3="matTooltip" (click)="tooltip3.show()" (mousemove)="tooltip3.hide()">#75F4FF</div>
+      <div class="item animated component-animation" [cdkCopyToClipboard]="'#C959F4'" matTooltip="Copied!" #tooltip4="matTooltip" (click)="tooltip4.show()" (mousemove)="tooltip4.hide()">#1E182E</div>
+    </div>
+  </section>
+
+  <header>
+    <div class="container">
+      <h1 class="display2"><b>Media kit</b></h1>
+      <p>Click a Logo to Download or <a href="/assets/img/media-kit/logo-all-versions.zip" target="_blank" class="link hover-linear"> Download all Logos</a></p>
+    </div>
+  </header>
+
+  <section class="logos" @componentAnimation>
+    <div class="container">
+      <a href="/assets/img/media-kit/{{ logo.link }}" target="_blank" class="logo animated component-animation" *ngFor="let logo of logos">
+        <img src="/assets/img/media-kit/{{ logo.image }}" alt="{{ logo.name }}" />
+      </a>
+    </div>
+  </section>
+
+</div>

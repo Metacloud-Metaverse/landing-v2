@@ -1,0 +1,126 @@
+@import "../../../../../assets/styles/vars";
+
+.media-kit-page {
+  position: relative;
+  z-index: 2;
+  padding: 8em 0;
+
+  header {
+    .container {
+      display: flex;
+      gap: 6em;
+      @include lt-md {
+        flex-direction: column;
+        text-align: center;
+        gap: 0em;
+      }
+      h1 {
+        width: 500px;
+        min-width: 500px;
+        margin: 0;
+        @include lt-md{
+          margin: auto;
+          min-width: initial;
+          max-width: 100%;
+          font-size: 3em;
+        }
+      }
+      p {
+        position: relative;
+        font-size: 1.1em;
+      }
+    }
+  }
+
+  .brand {
+    margin-bottom: 3em;
+
+    .container {
+      padding-top: 0;
+      display: flex;
+      gap: 2em;
+      @include xs{
+        gap: 1em;
+        flex-wrap: wrap;
+      }
+
+      .item {
+        width: calc(25% - 1em);
+        color: $black_high_emphasis;
+        font-weight: 800;
+        text-align: center;
+        height: 200px;
+        border-radius: 1em;
+        box-sizing: border-box;
+        padding: 1em;
+        border: 8px solid rgba($color: #ffffff, $alpha: 1);
+        cursor: pointer;
+        @include xs{
+          width: calc(50% - 0.5em);
+          height: 160px;
+        }
+
+        &:nth-of-type(1) {
+          background-color: #c959f4;
+        }
+        &:nth-of-type(2) {
+          background-color: #633aeb;
+        }
+        &:nth-of-type(3) {
+          background-color: #75f4ff;
+        }
+        &:nth-of-type(4) {
+          background-color: #1e182e;
+          color: white;
+        }
+
+        &:hover {
+          border: 0px solid rgba($color: white, $alpha: 0.9);
+        }
+      }
+    }
+  }
+
+  .logos {
+    .container {
+      padding-top: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      .logo {
+        cursor: pointer;
+        width: calc(33.3% - 1.33em);
+        color: $black_high_emphasis;
+        height: 200px;
+        border-radius: 1em;
+        box-sizing: border-box;
+        background-color: transparent;
+        border: 8px solid rgba($color: #ffffff, $alpha: 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        @include xs{
+          width: 100%;
+          height: 160px;
+        }
+
+        @include sm{
+          width: calc(50% - 1em);
+          height: 160px;
+        }
+
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+
+        &:hover {
+          border: 0px solid rgba($color: white, $alpha: 0.9);
+          box-shadow: $box_shadow_12;
+        }
+      }
+    }
+  }
+}
