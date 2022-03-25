@@ -7,8 +7,11 @@
     padding-left: 3em;
     box-sizing: border-box;
   }
+  @include md{
+    top: 20%;
+  }
 
-  img{
+  /* img{
     width: 1800px;
     position: fixed;
     top: 55%;
@@ -35,38 +38,108 @@
     @include md{
       width: 1400px;
     }
-  }
+  } */
 
   h2 {
     width: 100%;
     font-size: 4em;
+
     @include xs {
-      width: calc(100% - 1em);
-      font-size: 3em;
+      font-size: 5vh;
+      max-width: 100%;
+    }
+
+    @include sm {
+      font-size: 5vh;
     }
   }
 
-  /* .logos{
+  .logos {
     width: 80%;
     margin: auto;
     margin-top: 3em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 3em;
-    pointer-events: none;
-    @include xs{
+    gap: 2em;
+    @include xs {
       width: 100%;
+      gap: 1em;
+    }
+    @include sm {
+      width: 100%;
+      gap: 1em;
+      margin-top: 1em;
+    }
+    @include md {
+      width: 100%;
+      margin-top: 2em;
     }
 
-    .logo{
-      width: 200px;
-      filter: blur(8px);
-      img{
+    .logo {
+      position: relative;
+      animation: introFloatElements 1s ease-out;
+      height: 10vh;
+      @include xs{
+        height: 6.5vh;
+      }
+      @include sm{
+        height: 13vh;
+      }
+      img {
         width: 100%;
         height: 100%;
         object-fit: contain;
+        position: relative;
+        z-index: 2;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 3px;
+        filter: blur(10px);
+        z-index: 1;
+        transition: $animation;
+        -o-transition: $animation;
+        -moz-transition: $animation;
+        -webkit-transition: $animation;
+      }
+      &:hover{
+        transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        &::before{
+          filter: blur(3px);
+        }
       }
     }
-  } */
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .texts11{
+    h2{
+      font-size: 8vh;
+      @include xs {
+        font-size: 7vh;
+      }
+      @include sm {
+        font-size: 7vh;
+      }
+    }
+    .logos{
+      .logo{
+        @include xs{
+          height: 8vh;
+        }
+      }
+    }
+  }
 }
