@@ -31,6 +31,8 @@ export class MediaKitPageComponent implements OnInit {
     { name: 'Icon Total White Background', link: 'icon-total-white-background.zip', image: 'icon-total-white-background.png' },
     { name: 'Icon Black Background', link: 'icon-black-background.zip', image: 'icon-black-background.png' },
     { name: 'Icon Total Black Background', link: 'icon-total-black-background.zip', image: 'icon-total-black-background.png' },
+    { name: 'Scene Bonfire', link: 'scene-bonfire.jpg', image: 'scene-bonfire-miniature.png' },
+    { name: 'Scene Casino', link: 'scene-casino.jpg', image: 'scene-casino-miniature.png' },
   ]
 
   constructor(

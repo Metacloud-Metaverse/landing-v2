@@ -1,9 +1,9 @@
 @import "../../home.component.scss";
 
 .texts11 {
-  top: 25%;
+  top: 20%;
   @include xs {
-    top: 20%;
+    top: 70px;
     padding-left: 3em;
     box-sizing: border-box;
   }
@@ -54,8 +54,16 @@
     }
   }
 
+  p{
+    font-weight: 600;
+    margin-top: -15px;
+    @include xs{
+      margin-top: 0;
+    }
+  }
+
   .logos {
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-top: 3em;
     display: flex;
@@ -65,6 +73,7 @@
     @include xs {
       width: 100%;
       gap: 1em;
+      margin-top: 2em;
     }
     @include sm {
       width: 100%;
@@ -79,12 +88,21 @@
     .logo {
       position: relative;
       animation: introFloatElements 1s ease-out;
-      height: 10vh;
+      height: 9vh;
       @include xs{
-        height: 6.5vh;
+        height: 6vh;
       }
       @include sm{
-        height: 13vh;
+        width: calc(33.3% - 1em);
+        height: 8vh;
+      }
+      @include md{
+        width: calc(25% - 1.5em);
+        height: 8vh;
+      }
+      @include lg{
+        width: calc(20% - 1.66em);
+        height: 8vh;
       }
       img {
         width: 100%;
@@ -137,7 +155,15 @@
     .logos{
       .logo{
         @include xs{
+          width: calc(33.3% - 1em);
+          height: 7vh;
+        }
+        @include sm{
+          width: calc(25% - 1em);
           height: 8vh;
+        }
+        @include md{
+          width: calc(20% - 1.66em);
         }
       }
     }
