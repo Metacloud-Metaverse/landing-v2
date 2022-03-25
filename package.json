@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build2": "ng build --prod && firebase deploy",
+    "build_preview": "ng build --prod && firebase hosting:channel:deploy preview_metacloud",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
