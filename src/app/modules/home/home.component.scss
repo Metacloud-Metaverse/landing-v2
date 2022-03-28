@@ -693,7 +693,7 @@ model-viewer {
 .avatar-step-e,
 .movement7,
 .movement8,
-.movement9,
+.avatar-step-i,
 .movement10,
 .movement11 {
   filter: blur(40px);
@@ -733,15 +733,17 @@ model-viewer {
   -moz-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   z-index: 8;
-  max-height: 700px;
+  max-height: calc(100vh - 164px);
   background-color: white;
   margin: auto;
+  @include lt-md{
+    max-height: 100%;
+  }
 }
 
 .section,
 app-step-g,
 app-step-h,
-app-step-i,
 app-step-j,
 app-step-k {
   position: fixed;
@@ -1125,7 +1127,8 @@ app-step-b,
 app-step-c,
 app-step-d,
 app-step-e,
-app-step-f{
+app-step-f,
+app-step-i{
   position: fixed;
   top: 0;
   left: 0;
@@ -1217,7 +1220,6 @@ app-step-f {
     }
   }
 }
-
 
 
 

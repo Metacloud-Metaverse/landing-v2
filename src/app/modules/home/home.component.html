@@ -22,7 +22,7 @@
 
   <app-step-a *ngIf="pageState == 0" @paragraphAnimation></app-step-a>
 
-  <app-step-b *ngIf="pageState == 1" @paragraphAnimation></app-step-b>
+  <app-step-i *ngIf="pageState == 1" @paragraphAnimation></app-step-i>
 
   <app-step-c *ngIf="pageState == 2" @paragraphAnimation></app-step-c>
 
@@ -53,7 +53,7 @@
 
   <!-- <app-step-h *ngIf="pageState == 8" @paragraphAnimation></app-step-h> -->
 
-  <app-step-i *ngIf="pageState == 8" @paragraphAnimation></app-step-i>
+  <app-step-b *ngIf="pageState == 8" @paragraphAnimation></app-step-b>
 
   <app-step-j *ngIf="pageState == 9" @paragraphAnimation></app-step-j>
 
@@ -88,14 +88,14 @@
     class="avatar-primary"
     (click)="changeAnimationAvatarPrimary()"
     [ngClass]="{'avatar-step-a' : pageState == 0,
-                'avatar-step-b' : pageState == 1,
+                'avatar-step-i' : pageState == 1,
                 'avatar-step-c' : pageState == 2,
                 'avatar-step-d' : pageState == 3,
                 'avatar-step-e' : pageState == 4,
                 'avatar-step-f' : pageState == 5,
                 'movement7' : pageState == 6,
                 'movement8' : pageState == 7,
-                'movement9' : pageState == 8,
+                'avatar-step-b' : pageState == 8,
                 'movement10': pageState == 9,
                 'movement11': pageState == 10}">
   </model-viewer>

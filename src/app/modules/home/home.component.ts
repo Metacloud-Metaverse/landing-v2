@@ -204,7 +204,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   } */
 
   changeAnimationAvatarPrimary(){
-    if (this.pageState == 1) {
+    if (this.pageState == 8) {
       switch (this.section2AvatarAnimation) {
         case 0:
         this.modelAvatarPrimary.nativeElement.animationName = 'dancing';
@@ -232,22 +232,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     } return
   }
 
-
-  /* avatarCornerHi(){
-    this.modelAvatarCorner.nativeElement.animationName = 'Wave';
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.speed = 0;
-      this.modelAvatarCorner.nativeElement.animationName = '';
-    }, 1500);
-  } */
-
-  /* avatarCornerRun(){
-    this.modelAvatarCorner.nativeElement.animationName = 'Running';
-    setTimeout(() => {
-      this.modelAvatarCorner.nativeElement.animationName = '';
-    }, 1000);
-  } */
-
   activeSection1(){
     this.clearTimeouts();
 
@@ -258,29 +242,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
     this.modelAvatarPrimary.nativeElement.autoRotate = false;
-    /* this.avatarCornerRun(); */
   }
 
   activeSection2(){
     this.clearTimeouts();
-
     this.pageState = 1;
-    this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '30deg 65deg 80%';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    this.modelAvatarPrimary.nativeElement.cameraControls = true;
-    this.modelAvatarPrimary.nativeElement.autoRotate = false;
-    /* this.avatarCornerRun(); */
-    this.section2Text1 = true;
-    this.modelAvatarPrimary.nativeElement.animationName = 'waving';
-
-    this.breakpointObserver
-      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
-      .subscribe((state: BreakpointState) => {
-        if (state.matches) {
-          this.modelAvatarPrimary.nativeElement.cameraOrbit = '-30deg 65deg 10000%';
-        }
-    });
   }
 
   activeSection3(){
@@ -400,10 +368,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   activeSection9(){
     this.clearTimeouts();
+
     this.pageState = 8;
-    this.modelAvatarPrimary.nativeElement.cameraOrbit = '0deg 0deg 100m';
+    this.modelAvatarPrimary.nativeElement.animationName = 'idle0';
+    this.modelAvatarPrimary.nativeElement.cameraOrbit = '30deg 65deg 80%';
     this.modelAvatarPrimary.nativeElement.skyboxImage = '';
-    /* this.avatarCornerRun(); */
+    this.modelAvatarPrimary.nativeElement.cameraControls = true;
+    this.modelAvatarPrimary.nativeElement.autoRotate = false;
+    this.section2Text1 = true;
+    this.modelAvatarPrimary.nativeElement.animationName = 'waving';
+
+    this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.modelAvatarPrimary.nativeElement.cameraOrbit = '-30deg 65deg 10000%';
+        }
+    });
   }
 
   activeSection10(){
