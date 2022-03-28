@@ -71,11 +71,11 @@
       .avatar-secundary{
         position: absolute;
         bottom: -80px;
-        right: -160px;
+        right: -220px;
         width: 310px;
         @include lt-md{
           bottom: -30px;
-          right: -7vh;
+          right: -9vh;
           width: 15vh;
         }
         @include sm{
@@ -83,12 +83,12 @@
         }
         @include md{
           bottom: -60px;
-          right: -140px;
+          right: -180px;
           width: 270px;
         }
         @include lg{
           bottom: -60px;
-          right: -140px;
+          right: -180px;
           width: 270px;
         }
       }
@@ -141,7 +141,7 @@
         }
         .avatar-secundary{
           bottom: -11vh;
-          right: -22vh;
+          right: -27vh;
           width: 44vh;
           @include xs{
             bottom: -30px;
