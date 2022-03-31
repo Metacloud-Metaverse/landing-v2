@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class StepKComponent implements OnInit {
 
   logos:any = [
-    /* { title: 'Hacken', img: 'logo-hacken.png' }, */
+    { title: 'Hacken', img: 'logo-hacken.png' },
     { title: 'Coming Soon', img: 'logo-comingsoon.png' },
     { title: 'Coming Soon', img: 'logo-comingsoon.png' },
     { title: 'Netvrk', img: 'logo-netvrk.png' },
