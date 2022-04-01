@@ -279,13 +279,9 @@
       margin-right: 1em;
       background-color: $color_primary_900;
       color: white;
-      app-coming-soon-element{
-        left: 2px;
-        &::ng-deep b{
-          color: #e9c338;
-          text-shadow: 0 0px 100px, 0 0 2px, 0 0 1em #bd00f2;
-        }
-      }
+      font-weight: 600;
+      padding-bottom: 0;
+      pointer-events: all;
       @include lt-md{
         display: none;
       }

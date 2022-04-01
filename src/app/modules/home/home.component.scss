@@ -472,7 +472,7 @@
     -ms-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-    pointer-events: none;
+    /* pointer-events: none; */
     border-radius: 8px;
     overflow: hidden;
     width: 1000px;
@@ -482,6 +482,13 @@
     -moz-animation: introFloatElements 0.5s ease-out;
     -webkit-animation: introFloatElements 0.5s ease-out;
     display: flex;
+    z-index: 3;
+
+    picture{
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
 
     img{
       width: 100%;
