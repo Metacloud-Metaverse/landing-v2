@@ -12,7 +12,7 @@ export class StepKComponent implements OnInit {
     { title: 'Coming Soon', img: 'logo-comingsoon.png' },
     { title: 'Coming Soon', img: 'logo-comingsoon.png' },
     { title: 'Netvrk', img: 'logo-netvrk.png' },
-    { title: 'Coming Soon', img: 'logo-comingsoon.png' },
+    { title: 'Collective', img: 'logo-collective.png' },
     { title: 'Coming Soon', img: 'logo-comingsoon.png' },
     { title: 'Coming Soon', img: 'logo-comingsoon.png' },
     { title: 'Dextools', img: 'logo-dextools.png' },
