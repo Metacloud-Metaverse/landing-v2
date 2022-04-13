@@ -1,6 +1,6 @@
 @import "../../home.component.scss";
 
-.texts11 {
+.step-k {
   top: 20%;
   @include xs {
     top: 70px;
@@ -10,35 +10,6 @@
   @include md{
     top: 20%;
   }
-
-  /* img{
-    width: 1800px;
-    position: fixed;
-    top: 55%;
-    left: 54%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    animation: introFloatElements 1s ease-out;
-    &:first-of-type{
-      display: none;
-    }
-    @include xs{
-      top: 50%;
-      width: 360px;
-      &:first-of-type{
-        display: block;
-      }
-      &:last-of-type{
-        display: none;
-      }
-    }
-    @include sm{
-      width: 1000px;
-    }
-    @include md{
-      width: 1400px;
-    }
-  } */
 
   h2 {
     width: 100%;
@@ -142,7 +113,7 @@
 }
 
 @media only screen and (max-height: 600px) {
-  .texts11{
+  .step-k{
     h2{
       font-size: 8vh;
       @include xs {

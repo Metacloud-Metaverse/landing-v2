@@ -698,10 +698,10 @@ model-viewer {
 .avatar-step-a,
 .avatar-step-c,
 .avatar-step-e,
-.movement7,
+.avatar-step-g,
 .movement8,
 .avatar-step-i,
-.movement10,
+.avatar-step-j,
 .movement11 {
   filter: blur(40px);
   opacity: 0.5;
@@ -726,9 +726,16 @@ model-viewer {
 }
 
 .avatar-step-d {
+  height: 70vh;
+  top: 15%;
   left: 20%;
   @include xs {
     left: 0%;
+    height: 50vh;
+  }
+  @include sm{
+    top: 20%;
+    height: 60vh;
   }
 }
 
@@ -751,8 +758,7 @@ model-viewer {
 .section,
 app-step-g,
 app-step-h,
-app-step-j,
-app-step-k {
+app-step-j {
   position: fixed;
   top: 0;
   left: 0;
@@ -844,9 +850,6 @@ app-step-k {
 }
 
 
-
-
-
 .step-d {
   top: 15%;
   @include xs {
@@ -854,6 +857,9 @@ app-step-k {
     top: initial;
     bottom: 5em;
     left: 4em;
+  }
+  @include sm{
+    padding-left: 5em;
   }
 
   h2 {
@@ -958,16 +964,30 @@ app-step-k {
     top: 52%;
     right: 20%;
     animation: introFloatElements 0.5s ease-out;
-    @include xs {
-      right: initial;
-      left: calc(50% - 160px);
-      width: 90px;
-      display: none;
+    object-fit: contain;
+
+    @include lt-lg{
+      top: 50%;
+      right: 50%;
+      width: 50vw;
+      height: 50vh;
+      transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
     }
+
     @include sm{
-      right: initial;
-      left: 46%;
-      width: 240px;
+      top: 60%;
+      right: -14%;
+    }
+
+    @include md{
+      top: 65%;
+      right: -14%;
+      width: 40vw;
+      height: 40vh;
     }
   }
 
@@ -994,6 +1014,10 @@ app-step-k {
     top: 20%;
     right: 40%;
     animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
+    @include xs{
+      width: 90px;
+      left: 5%;
+    }
     @include sm {
       right: initial;
       left: 6%;
@@ -1015,28 +1039,6 @@ app-step-k {
     @include lt-md {
       right: 10%;
       width: 80px;
-    }
-  }
-}
-
-.texts7 {
-  @include xs {
-    top: 50%;
-    left: 10%;
-    width: 90%;
-    transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-  }
-  h2 {
-    width: 1050px;
-    @include xs {
-      width: 100%;
-      z-index: 8;
     }
   }
 }
@@ -1064,25 +1066,32 @@ app-step-k {
 }
 
 
-
 .video-music-wave {
   position: fixed;
-  top: 15%;
-  right: 11%;
   mix-blend-mode: color-dodge;
   animation: introFloatElements 0.5s ease-out;
-  @include lt-md {
-    width: 300px;
-    top: 50%;
+  -o-animation: introFloatElements 0.5s ease-out;
+  width: 44vw;
+  max-width: 700px;
+  top: 50%;
+  left: 75%;
+  right: initial;
+  transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+
+  @include xs{
+    top: 35%;
     left: 50%;
-    right: initial;
-    transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
+    width: 70vw;
   }
   @include sm{
+    left: 75%;
+    top: 46%;
+  }
+  @include md{
     left: 75%;
   }
 }
@@ -1135,7 +1144,9 @@ app-step-c,
 app-step-d,
 app-step-e,
 app-step-f,
-app-step-i{
+app-step-i,
+app-step-k,
+app-step-j{
   position: fixed;
   top: 0;
   left: 0;
@@ -1231,17 +1242,6 @@ app-step-f {
 
 
 
-
-
-/* @media only screen
-  and (min-device-width: 600px)
-  and (max-device-width: 812px)
-  and (orientation: landscape) {
-    .home-page{
-      background-color: red !important;
-    }
-} */
-
 @media only screen and (max-height: 600px) {
   .banner-position{
     display: none !important;
@@ -1315,11 +1315,21 @@ app-step-f {
   }
 
   .avatar-step-d {
-    @include sm {
+    @include xs{
       top: 10%;
     }
+    @include sm {
+      left: 30%;
+      top: 20%;
+      height: 70vh;
+    }
     @include md {
-      top: 10%;
+      top: 20%;
+      left: 30%;
+    }
+    @include lg {
+      top: 20%;
+      left: 30%;
     }
   }
 
@@ -1330,5 +1340,17 @@ app-step-f {
         font-size: 8vh;
       }
     }
+    .caption{
+      top: initial;
+      bottom: 1em;
+      @include xs{
+        display: none;
+      }
+    }
+  }
+
+  .video-music-wave{
+    height: 90vh;
+    top: 55%;
   }
 }
