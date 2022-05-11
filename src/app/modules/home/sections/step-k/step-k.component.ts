@@ -24,7 +24,7 @@ export class StepKComponent implements OnInit {
     { title: 'Metawise', img: 'logo-metawise.png' },
     { title: 'SafeGram', img: 'logo-safegram.png' },
     { title: 'Velox', img: 'logo-velox.png' },
-    { title: 'Coming Soon', img: 'logo-comingsoon.png' },
+    { title: 'Crowdcreate', img: 'logo-crowdcreate.png' },
     { title: 'Wall Street Hunters', img: 'logo-wallstreethunters.png' },
   ]
 
