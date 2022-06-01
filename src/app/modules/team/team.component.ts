@@ -11,13 +11,13 @@ import { ComponentAnimation } from '../mc-core/animations/component.animation';
 export class TeamComponent implements OnInit {
 
   team:any = [
-    {
+    /* {
       image: '/assets/img/team/team-madi-3d.png',
       name: 'Madi Sayeed',
       rol: 'Co-Founder',
       linkedin: 'http://www.linkedin.com/in/madis2022',
       twitter: 'http://www.twitter.com/womenwhocrypt0'
-    },
+    }, */
     {
       image: '/assets/img/team/team-sam-3d.png',
       name: ' Samuel Sullivan',
