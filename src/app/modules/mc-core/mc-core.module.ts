@@ -19,6 +19,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+/* import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressBarModule } from '@angular/material/progress-bar'; */
 
 
 // Components
@@ -58,6 +60,8 @@ import { SoundElementComponent } from './components/sound-element/sound-element.
     MatIconModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
+    /* MatExpansionModule,
+    MatProgressBarModule, */
   ],
   exports: [
     MainLayoutComponent,

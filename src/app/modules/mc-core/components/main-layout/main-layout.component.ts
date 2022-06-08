@@ -23,6 +23,7 @@ export class MainLayoutComponent implements OnInit {
 
   isVideoOpen = false;
   videoUrlIframe?: SafeResourceUrl;
+  /* blockAlert = true; */
 
   isMenuOpen = false;
   isMuted = true;

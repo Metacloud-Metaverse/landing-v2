@@ -18,7 +18,7 @@ export class TeamComponent implements OnInit {
       linkedin: 'http://www.linkedin.com/in/madis2022',
       twitter: 'http://www.twitter.com/womenwhocrypt0'
     },
-    /* {
+    {
       image: '/assets/img/team/team-sam-3d.png',
       name: ' Samuel Sullivan',
       rol: 'CO-FOUNDER',
@@ -66,7 +66,7 @@ export class TeamComponent implements OnInit {
       rol: 'UX/UI Designer',
       linkedin: '',
       twitter: ''
-    }, */
+    },
   ]
 
   constructor(
