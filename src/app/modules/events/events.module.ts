@@ -13,6 +13,7 @@ import { DragScrollModule } from 'ngx-drag-scroll';
 
 // Pages
 import { EventDetailPageComponent } from './pages/event-detail-page/event-detail-page.component';
+import { ConcertPageComponent } from './pages/concert-page/concert-page.component';
 
 // Components
 
@@ -22,7 +23,8 @@ import { EventDetailPageComponent } from './pages/event-detail-page/event-detail
 @NgModule({
   declarations: [
     EventsComponent,
-    EventDetailPageComponent
+    EventDetailPageComponent,
+    ConcertPageComponent
   ],
   imports: [
     CommonModule,

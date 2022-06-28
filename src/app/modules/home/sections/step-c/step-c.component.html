@@ -1,7 +1,7 @@
 <section class="new-section step-c">
     <h2 class="display2">Events</h2>
     <div class="events" (touchstart)="touchStartConfig($event)" (touchend)="touchEndConfig($event)" (mousewheel)="mouseWheelConfig($event)">
-      <a [routerLink]="['/events/event-details']" class="event" *ngFor="let event of events">
+      <a [routerLink]="[event.url]" class="event" *ngFor="let event of events">
         <img src="{{ event.image }}" alt="{{ event.name }} image" class="image" />
         <h3><b>{{ event.title }}</b></h3>
         <p>{{ event.description }}</p>
