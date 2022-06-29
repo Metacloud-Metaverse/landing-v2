@@ -995,8 +995,10 @@ app-step-j {
     position: fixed;
     top: 40%;
     right: 15%;
-    animation: introFloatElements 0.4s ease-out,
-      floating 5.5s infinite ease-in-out;
+    animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
+    -o-animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
+    -moz-animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
+    -webkit-animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
     @include xs {
       right: initial;
       left: 10%;
@@ -1014,6 +1016,9 @@ app-step-j {
     top: 20%;
     right: 40%;
     animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
+    -o-animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
+    -moz-animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
+    -webkit-animation: introFloatElements 0.4s ease-out, floating 5.5s infinite ease-in-out;
     @include xs{
       width: 90px;
       left: 5%;

@@ -16,26 +16,31 @@ export class EventsComponent implements OnInit {
       image: '/assets/img/event-concert.png',
       title: 'Concerts',
       description: 'Techno, hip-hop, edm, rock shows, rap, country, blues, jazz, reggae and more.',
+      url: 'concerts',
     },
     {
       image: '/assets/img/event-art.png',
       title: 'Art & Theaters',
       description: 'Attend Live NFT galleries, standup comedy, improv and theatricals',
+      url: 'event-details',
     },
     {
       image: '/assets/img/event-podcast.png',
       title: 'Podcasts',
       description: 'Listen to your favorite podcast',
+      url: 'event-details',
     },
     {
       image: '/assets/img/event-casino.png',
       title: 'Casino & Tournaments',
       description: 'Play Texas hold-em poker, live sports betting, blackjack, slots and tournaments',
+      url: 'event-details',
     },
     {
       image: '/assets/img/event-games.png',
       title: 'Games',
       description: 'Play chess, bingo, puzzles, trivia, sudoku and more',
+      url: 'event-details',
     },
   ]
 

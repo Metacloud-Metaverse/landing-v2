@@ -12,26 +12,31 @@ export class StepCComponent implements OnInit {
       image: '/assets/img/event-concert.png',
       title: 'Concerts',
       description: 'Techno, hip-hop, edm, rock shows, rap, country, blues, jazz, reggae and more.',
+      url: '/events/concerts',
     },
     {
       image: '/assets/img/event-art.png',
       title: 'Art & Theaters',
       description: 'Attend Live NFT galleries, standup comedy, improv and theatricals',
+      url: '/events/event-details',
     },
     {
       image: '/assets/img/event-podcast.png',
       title: 'Podcasts',
       description: 'Listen to your favorite podcast',
+      url: '/events/event-details',
     },
     {
       image: '/assets/img/event-casino.png',
       title: 'Casino & Tournaments',
       description: 'Play Texas hold-em poker, live sports betting, blackjack, slots and tournaments',
+      url: '/events/event-details',
     },
     {
       image: '/assets/img/event-games.png',
       title: 'Games',
       description: 'Play chess, bingo, puzzles, trivia, sudoku and more',
+      url: '/events/event-details',
     },
   ];
 
@@ -62,5 +67,5 @@ export class StepCComponent implements OnInit {
       event.stopPropagation();
     }
   }
-  
+
 }
