@@ -17,7 +17,7 @@ export class StepKComponent implements OnInit {
     { title: 'Coming Soon', img: 'logo-comingsoon.png' },
     { title: 'Dextools', img: 'logo-dextools.png' },
     { title: 'Icodrops', img: 'logo-icodrops.png' },
-    { title: 'Coda', img: 'logo-coda.png' },
+    /* { title: 'Coda', img: 'logo-coda.png' }, */
     { title: '0xJunior', img: 'logo-0xjunior.png' },
     { title: 'Binance Smart Chain', img: 'logo-binancesmartchain.png' },
     { title: 'Wolfe', img: 'logo-wolfe.png' },

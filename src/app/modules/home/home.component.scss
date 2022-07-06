@@ -463,7 +463,7 @@
   position: relative;
   background-color: #fff2ea;
 
-  .banner-position{
+  /* .banner-position{
     position: fixed;
     bottom: 3em;
     left: 50%;
@@ -472,7 +472,6 @@
     -ms-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-    /* pointer-events: none; */
     border-radius: 8px;
     overflow: hidden;
     width: 1000px;
@@ -514,7 +513,7 @@
     @include md{
       bottom: 1em;
     }
-  }
+  } */
 
   .background-lights {
     border-radius: 50px;
@@ -1248,9 +1247,9 @@ app-step-f {
 
 
 @media only screen and (max-height: 600px) {
-  .banner-position{
+  /* .banner-position{
     display: none !important;
-  }
+  } */
 
   .indicators {
     top: calc(50% + 40px);
